@@ -85,7 +85,6 @@
   programs.fish = {
     enable = true;
     generateCompletions = true;
-    defaultShell = pkgs.fish;
     # theme = "";
 
     # set aliases
