@@ -75,10 +75,9 @@
     };
   };
 
-  # terminator
-  programs.terminator = {
+  # terminale
+  programs.ghostty = {
     enable = true;
-    
   };
 
   programs.bash = {
