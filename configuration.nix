@@ -29,6 +29,11 @@
   "fs.file-max" = 524288;
   };
 
+  nix.settings = {
+        substituters = ["https://nix-citizen.cachix.org"];
+        trusted-public-keys = ["nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo="];
+    };
+
   # networking.hostName = "GiovanGianFranco"; # Define your hostname.
 
   # Enable networking
@@ -60,24 +65,24 @@
   services.xserver.enable = true;
 
   # Gpu
-   hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
+    hardware.graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
 
-  hardware.nvidia.prime = {
-    sync.enable = true;
+    hardware.nvidia.prime = {
+      sync.enable = true;
 
-    # integrated
-    amdgpuBusId = "PCI:6:0:0";
-    # dedicated
-    nvidiaBusId = "PCI:1:0:0";
-  };
+      # integrated
+      amdgpuBusId = "PCI:6:0:0";
+      # dedicated
+      nvidiaBusId = "PCI:1:0:0";
+    };
 
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
-  hardware.nvidia.open = true;
+    services.xserver.videoDrivers = ["nvidia"];
+    hardware.nvidia.modesetting.enable = true;
+    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
+    hardware.nvidia.open = true;
 
   # Kde
   services.displayManager.sddm.enable = true;
@@ -158,8 +163,8 @@
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
 
-  # Abilita il servizio ratbagd
-  services.ratbagd.enable = true;
+  # # Abilita il servizio ratbagd
+  # services.ratbagd.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
 
@@ -10,10 +10,10 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-
-    inputs.nix-citizen.packages.${system}.star-citizen
+    # Roba
     fastfetch
     ranger # terminal file manager
+    # inputs.nix-citizen.packages.${system}.star-citizen
 
     # archives
     zip
@@ -98,13 +98,10 @@
     #   export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
     # '';
 
-    # set some aliases, feel free to add more or remove some
+    # set aliases
     shellAliases = {
-      # k = "kubectl";
-      # urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
-      # urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
-      ls = "eza"
-      # ff = "fastfetch"
+      ls = "eza";
+      ff = "fastfetch";
     };
   };
 
