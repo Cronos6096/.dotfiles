@@ -78,15 +78,15 @@
   # terminale
   programs.ghostty = {
     enable = true;
+    enableFishIntegration = true;
   };
 
-  programs.bash = {
+  # fish shell
+  programs.fish = {
     enable = true;
-    enableCompletion = true;
-    # # TODO add your custom bashrc here
-    # bashrcExtra = ''
-    #   export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-    # '';
+    generateCompletions = true;
+    defaultShell = pkgs.fish;
+    # theme = "";
 
     # set aliases
     shellAliases = {
