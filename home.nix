@@ -102,6 +102,7 @@
     shellAliases = {
       ls = "eza";
       ff = "fastfetch";
+      rebuild="/home/andme/.dotfiles/rebuild-and-commit.sh";
     };
   };
 

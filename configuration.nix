@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -29,12 +29,7 @@
   "fs.file-max" = 524288;
   };
 
-  nix.settings = {
-        substituters = ["https://nix-citizen.cachix.org"];
-        trusted-public-keys = ["nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo="];
-    };
-
-  # networking.hostName = "GiovanGianFranco"; # Define your hostname.
+  networking.hostName = "GiovanGianFranco"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -83,6 +78,10 @@
     hardware.nvidia.modesetting.enable = true;
     hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
     hardware.nvidia.open = true;
+
+    hardware.opengl.extraPackages = with pkgs; [
+    rocmPackages.clr.icd
+    ];
 
   # Kde
   services.displayManager.sddm.enable = true;
@@ -154,14 +153,19 @@
     winetricks
     mangohud
     floorp
+    inputs.nix-citizen.packages.${system}.star-citizen
   ];
-
-  programs.firefox.enable = true;
 
   # Steam
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
+
+  # STAR CITIZEN cache
+  nix.settings = {
+    substituters = ["https://nix-gaming.cachix.org"];
+    trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
+  };
 
   # # Abilita il servizio ratbagd
   # services.ratbagd.enable = true;
@@ -178,19 +182,15 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
   # Flatpack
   services.flatpak.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.05";
 }
