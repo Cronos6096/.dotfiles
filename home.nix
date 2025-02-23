@@ -13,7 +13,6 @@
     # Roba
     fastfetch
     ranger # terminal file manager
-    # inputs.nix-citizen.packages.${system}.star-citizen
 
     # archives
     zip
@@ -78,7 +77,6 @@
   # terminale
   programs.ghostty = {
     enable = true;
-    enableFishIntegration = true;
   };
 
   # bash shell

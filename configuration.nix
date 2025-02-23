@@ -79,7 +79,7 @@
     hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
     hardware.nvidia.open = true;
 
-    hardware.opengl.extraPackages = with pkgs; [
+    hardware.graphics.extraPackages = with pkgs; [
     rocmPackages.clr.icd
     ];
 
