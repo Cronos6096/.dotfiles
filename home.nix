@@ -10,6 +10,8 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+
+    inputs.nix-citizen.packages.${system}.star-citizen
     fastfetch
     ranger # terminal file manager
 
@@ -102,6 +104,7 @@
       # urldecode = "python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'";
       # urlencode = "python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'";
       ls = "eza"
+      # ff = "fastfetch"
     };
   };
 
