@@ -24,10 +24,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Swap
-  boot.kernel.sysctl = {
-  "vm.max_map_count" = 16777216;
-  "fs.file-max" = 524288;
-  };
+  swapDevices = [{
+    device = "/swapfile";
+    size = 30 * 1024; # 30GB
+  }];
 
   networking.hostName = "GiovanGianFranco"; # Define your hostname.
 
