@@ -16,7 +16,7 @@
   system.autoUpgrade.dates = "weekly";
   nix.gc.automatic = true;
   nix.gc.dates = "daily";
-  nix.gc.options = "--delete-older-than 5d";
+  nix.gc.options = "--delete-older-than 3d";
   nix.settings.auto-optimise-store = true;
 
   # Bootloader
@@ -79,10 +79,6 @@
     hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
     hardware.nvidia.open = true;
 
-    hardware.graphics.extraPackages = with pkgs; [
-    rocmPackages.clr.icd
-    ];
-
   # Kde
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;  
@@ -124,9 +120,6 @@
     isNormalUser = true;
     description = "Andrei Merciaro";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
   };
 
   # Allow unfree packages/Flake

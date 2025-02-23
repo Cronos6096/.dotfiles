@@ -87,6 +87,7 @@
     shellAliases = {
       ls = "eza";
       ff = "fastfetch";
+      search = "nix search nixpkgs";
     };
   };
 
