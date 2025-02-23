@@ -81,11 +81,9 @@
     enableFishIntegration = true;
   };
 
-  # fish shell
-  programs.fish = {
+  # bash shell
+  programs.bash = {
     enable = true;
-    generateCompletions = true;
-    # theme = "";
 
     # set aliases
     shellAliases = {
