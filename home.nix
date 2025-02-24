@@ -91,7 +91,7 @@
       ls = "eza";
       ff = "fastfetch";
       search = "nix search nixpkgs";
-      rebuild = "nh os switch --update";
+      rebuild = "nh os switch . -H andme";
     };
   };
 
