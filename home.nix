@@ -25,6 +25,9 @@
     ripgrep # recursively searches directories for a regex pattern
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
+    bottles
+    bat
+    discord
 
     # networking tools
     mtr # A network diagnostic tool
@@ -82,18 +85,41 @@
     enable = true;
   };
 
-  # bash shell
-  programs.bash = {
+  # zsh shell
+  programs.zsh = {
     enable = true;
+    enableCompletion = true;  # Enables auto completion.
+    autosuggestions.enable = true;  # Provides command auto-suggestions.
+    syntaxHighlighting.enable = true;  # Enables syntax highlighting.
 
-    # set aliases
+    # Example aliases and history settings:
     shellAliases = {
       ls = "eza";
       ff = "fastfetch";
       search = "nix search nixpkgs";
       rebuild = "nh os switch . -H andme";
+      cat = "bat";
+      top = "btop";
+      htop = "btop";
     };
+    history.size = 10000;
   };
+  
+  # # bash shell
+  # programs.bash = {
+  #   enable = true;
+
+  #   # set aliases
+  #   shellAliases = {
+  #     ls = "eza";
+  #     ff = "fastfetch";
+  #     search = "nix search nixpkgs";
+  #     rebuild = "nh os switch . -H andme";
+  #     cat = "bat";
+  #     top = "btop";
+  #     htop = "btop";
+  #   };
+  # };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
