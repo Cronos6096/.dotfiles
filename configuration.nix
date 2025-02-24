@@ -124,8 +124,12 @@
     isNormalUser = true;
     description = "Andrei Merciaro";
     extraGroups = [ "networkmanager" "wheel" ];
-    defaultUserShell = pkgs.zsh;
+    shell = pkgs.zsh;
+    home = "/home/andme";
   };
+
+  # zsh shell
+  programs.zsh.enable = true;
 
   # Allow unfree packages/Flake
   nixpkgs.config.allowUnfree = true;
