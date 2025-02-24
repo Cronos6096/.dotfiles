@@ -13,6 +13,7 @@
     # Roba
     fastfetch
     ranger # terminal file manager
+    # micro # terminal text editor
 
     # archives
     zip
@@ -45,6 +46,8 @@
     gawk
     zstd
     gnupg
+    cmatrix
+    hollywood
 
     # productivity
     glow # markdown previewer in terminal
