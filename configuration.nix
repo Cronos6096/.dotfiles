@@ -69,15 +69,19 @@
       sync.enable = true;
 
       # integrated
-      amdgpuBusId = "PCI:6:0:0";
+      amdgpuBusId = "PCI:7:0:0";
       # dedicated
       nvidiaBusId = "PCI:1:0:0";
     };
 
     services.xserver.videoDrivers = ["nvidia"];
-    hardware.nvidia.modesetting.enable = true;
-    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
-    hardware.nvidia.open = true;
+    hardware.nvidia = {
+      modesetting.enable = true;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      open = true;
+      powerManagement.finegrained = false;
+      powerManagement.enable = false;
+    };
 
   # Kde
   services.displayManager.sddm.enable = true;
@@ -147,6 +151,14 @@
     mangohud
     floorp
     inputs.nix-citizen.packages.${system}.star-citizen
+    nvtopPackages.nvidia
+    mesa
+    vulkan-loader
+    vulkan-validation-layers
+    vulkan-extension-layer
+    vulkan-tools
+    libva
+    libva-utils
   ];
 
   # Steam
