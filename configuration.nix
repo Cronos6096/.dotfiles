@@ -124,6 +124,7 @@
     isNormalUser = true;
     description = "Andrei Merciaro";
     extraGroups = [ "networkmanager" "wheel" ];
+    defaultUserShell = pkgs.zsh;
   };
 
   # Allow unfree packages/Flake

@@ -112,6 +112,13 @@
       cdconfig = "cd /home/andme/.dotfiles";
     };
     history.size = 10000;
+
+    # oh-my-zsh
+    oh-my-zsh = {
+    enable = true;
+    plugins = [ "git" "vscode" "zsh-interactive-cd" "fzf"]; #vsc per aprire vscode
+    theme = "robbyrussell";
+    };
   };
 
   # # bash shell
