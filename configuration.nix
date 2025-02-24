@@ -11,13 +11,13 @@
       ./hardware-configuration.nix
     ];
 
-  # Update automatici
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.dates = "weekly";
-  nix.gc.automatic = true;
-  nix.gc.dates = "daily";
-  nix.gc.options = "--delete-older-than 3d";
-  nix.settings.auto-optimise-store = true;
+  # # Update automatici
+  # system.autoUpgrade.enable = true;
+  # system.autoUpgrade.dates = "weekly";
+  # nix.gc.automatic = true;
+  # nix.gc.dates = "daily";
+  # nix.gc.options = "--delete-older-than 3d";
+  # nix.settings.auto-optimise-store = true;
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -83,14 +83,6 @@
       powerManagement.enable = false;
     };
 
-  # Nh
-   programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/andme/.dotfiles/";
-  };
-
   # Kde
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;  
@@ -140,35 +132,34 @@
   programs.partition-manager.enable = true;
 
   environment.systemPackages = with pkgs; [
-    wget
-    prismlauncher
-    ranger
-    libreoffice
-    git
-    qalculate-gtk
-    clamtk
-    vscode
-    fzf
-    tldr
     appimage-run
-    orca-slicer
-    piper
-    libratbag
-    wineWowPackages.waylandFull
-    winetricks
-    mangohud
+    clamtk
     floorp
+    fzf
+    git
     inputs.nix-citizen.packages.${system}.star-citizen
-    nvtopPackages.nvidia
-    mesa
-    vulkan-loader
-    vulkan-validation-layers
-    vulkan-extension-layer
-    vulkan-tools
+    libratbag
+    libreoffice
     libva
     libva-utils
+    mangohud
+    mesa
     nix-output-monitor
     nvd
+    nvtopPackages.nvidia
+    orca-slicer
+    piper
+    prismlauncher
+    qalculate-gtk
+    tldr
+    vscode
+    vulkan-extension-layer
+    vulkan-loader
+    vulkan-tools
+    vulkan-validation-layers
+    wget
+    winetricks
+    wineWowPackages.waylandFull
   ];
 
   # Steam
@@ -176,11 +167,11 @@
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
 
-  # STAR CITIZEN cache
-  nix.settings = {
-    substituters = ["https://nix-gaming.cachix.org"];
-    trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
-  };
+  # # STAR CITIZEN cache
+  # nix.settings = {
+  #   substituters = ["https://nix-gaming.cachix.org"];
+  #   trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
+  # };
 
   # # Abilita il servizio ratbagd
   # services.ratbagd.enable = true;

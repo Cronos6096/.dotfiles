@@ -12,7 +12,7 @@
   home.packages = with pkgs; [
     # Roba
     fastfetch
-    ranger # terminal file manager
+    yazi # terminal file manager
     # micro # terminal text editor
 
     # archives
@@ -25,9 +25,9 @@
     ripgrep # recursively searches directories for a regex pattern
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
-    bottles
-    bat
-    discord
+    bottles # Emulatore
+    bat # A cat clone with wings
+    discord # Chats
 
     # networking tools
     mtr # A network diagnostic tool
@@ -75,12 +75,20 @@
     userName = "Cronos6096";
     userEmail = "and.merciaro@gmail.com";
     extraConfig = {
-      init.defaultBranch = "main";
+      init.defaultBranch = "master";
       safe.directory = "/home/andme/.dotfiles";
     };
   };
 
-  # terminale
+    # Nh
+   programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/andme/.dotfiles/";
+  };
+
+  # Terminale
   programs.ghostty = {
     enable = true;
   };
@@ -89,7 +97,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;  # Enables auto completion.
-    autosuggestions.enable = true;  # Provides command auto-suggestions.
+    autosuggestion.enable = true;  # Enables autosuggestions.
     syntaxHighlighting.enable = true;  # Enables syntax highlighting.
 
     # Example aliases and history settings:
@@ -101,10 +109,11 @@
       cat = "bat";
       top = "btop";
       htop = "btop";
+      cdconfig = "cd /home/andme/.dotfiles";
     };
     history.size = 10000;
   };
-  
+
   # # bash shell
   # programs.bash = {
   #   enable = true;
