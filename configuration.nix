@@ -83,6 +83,14 @@
       powerManagement.enable = false;
     };
 
+  # Nh
+   programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/andme/.dotfiles/";
+  };
+
   # Kde
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;  
@@ -159,6 +167,8 @@
     vulkan-tools
     libva
     libva-utils
+    nix-output-monitor
+    nvd
   ];
 
   # Steam
