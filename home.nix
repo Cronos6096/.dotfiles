@@ -71,6 +71,7 @@ in
     gnupg
     cmatrix
     hollywood
+    cava
 
     # productivity
     glow # markdown previewer in terminal
@@ -112,7 +113,12 @@ in
   programs.ghostty = {
     enable = true;
   };
+  
+  # Nvim
+  #programs.neovim = {
 
+  
+  
   # zsh shell
   programs.zsh = {
     enable = true;
@@ -133,8 +139,8 @@ in
     };
     history.size = 10000;
 
-    # oh-my-zsh
-    oh-my-zsh = {
+  # oh-my-zsh
+  oh-my-zsh = {
     enable = true;
     plugins = [ "git" "vscode" "zsh-interactive-cd" "fzf"]; #vsc per aprire vscode
     theme = "robbyrussell";

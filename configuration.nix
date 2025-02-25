@@ -166,6 +166,8 @@
     winetricks
     wineWowPackages.waylandFull
     home-manager
+    nixfmt-rfc-style
+    nil
   ];
 
   # Steam
