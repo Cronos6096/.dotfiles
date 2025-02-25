@@ -46,7 +46,8 @@
     fzf # A command-line fuzzy finder
     bottles # Emulatore
     bat # A cat clone with wings
-    discord # Chats
+    vesktop
+    # discord # Chats
 
     # networking tools
     mtr # A network diagnostic tool
