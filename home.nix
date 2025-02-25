@@ -1,6 +1,23 @@
 { config, pkgs, inputs, ... }:
 
+let
+  nixvim = import (builtins.fetchGit {
+    url = "https://github.com/nix-community/nixvim";
+  });
+in
+
 {
+  imports = [
+
+    # Nvim
+    nixvim.homeManagerModules.nixvim
+    ./nixvimPlugins/copilot.nix
+    ./nixvimPlugins/lsp.nix
+    ./nixvimPlugins/telescope.nix
+    ./nixvimPlugins/syntax-highlighting.nix
+    ./programs/nixvim.nix
+
+    ];
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -8,18 +25,29 @@
   home.username = "andme";
   home.homeDirectory = "/home/andme";
 
+  home.sessionVariables = {
+    # EDITOR = "nvim";
+    # VISUAL = "nvim";
+    BROWSER = "floorp";
+    TERMINAL = "ghostty";
+  };
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # Roba
     fastfetch
     yazi # terminal file manager
-    # micro # terminal text editor
+    neovim
 
     # archives
     zip
     xz
     unzip
     p7zip
+
+    # fonts
+    jetbrains-mono
+    cascadia-code
 
     # utils
     ripgrep # recursively searches directories for a regex pattern
@@ -119,6 +147,11 @@
     plugins = [ "git" "vscode" "zsh-interactive-cd" "fzf"]; #vsc per aprire vscode
     theme = "robbyrussell";
     };
+  };
+
+  programs.starship = {
+    enableZshIntegration = true;
+    enable = true;
   };
 
   # # bash shell

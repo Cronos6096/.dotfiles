@@ -165,6 +165,7 @@
     wget
     winetricks
     wineWowPackages.waylandFull
+    home-manager
   ];
 
   # Steam
