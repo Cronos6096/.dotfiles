@@ -1,15 +1,14 @@
-{ config, pkgs, inputs, ... }:
-
-let
-  nixvim = import (builtins.fetchGit {
-    url = "https://github.com/nix-community/nixvim";
-  });
-in
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
 
-    ];
+  ];
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -18,8 +17,8 @@ in
   home.homeDirectory = "/home/andme";
 
   home.sessionVariables = {
-    # EDITOR = "nvim";
-    # VISUAL = "nvim";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
     BROWSER = "floorp";
     TERMINAL = "ghostty";
   };
@@ -52,12 +51,12 @@ in
     # networking tools
     mtr # A network diagnostic tool
     iperf3
-    dnsutils  # `dig` + `nslookup`
+    dnsutils # `dig` + `nslookup`
     ldns # replacement of `dig`, it provide the command `drill`
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
-    ipcalc  # it is a calculator for the IPv4/v6 addresses
+    ipcalc # it is a calculator for the IPv4/v6 addresses
 
     # misc
     cowsay
@@ -75,7 +74,7 @@ in
 
     # productivity
     glow # markdown previewer in terminal
-    btop  # replacement of htop/nmon
+    btop # replacement of htop/nmon
 
     # system call monitoring
     strace # system call monitoring
@@ -101,8 +100,8 @@ in
     };
   };
 
-    # Nh
-   programs.nh = {
+  # Nh
+  programs.nh = {
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
@@ -113,18 +112,16 @@ in
   programs.ghostty = {
     enable = true;
   };
-  
+
   # Nvim
   #programs.neovim = {
 
-  
-  
   # zsh shell
   programs.zsh = {
     enable = true;
-    enableCompletion = true;  # Enables auto completion.
-    autosuggestion.enable = true;  # Enables autosuggestions.
-    syntaxHighlighting.enable = true;  # Enables syntax highlighting.
+    enableCompletion = true; # Enables auto completion.
+    autosuggestion.enable = true; # Enables autosuggestions.
+    syntaxHighlighting.enable = true; # Enables syntax highlighting.
 
     # Example aliases and history settings:
     shellAliases = {
@@ -139,11 +136,16 @@ in
     };
     history.size = 10000;
 
-  # oh-my-zsh
-  oh-my-zsh = {
-    enable = true;
-    plugins = [ "git" "vscode" "zsh-interactive-cd" "fzf"]; #vsc per aprire vscode
-    theme = "robbyrussell";
+    # oh-my-zsh
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "git"
+        "vscode"
+        "zsh-interactive-cd"
+        "fzf"
+      ]; # vsc per aprire vscode
+      theme = "robbyrussell";
     };
   };
 

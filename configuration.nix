@@ -2,14 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ 
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # # Update automatici
   # system.autoUpgrade.enable = true;
@@ -24,10 +28,12 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Swap
-  swapDevices = [{
-    device = "/swapfile";
-    size = 30 * 1024; # 30GB
-  }];
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 30 * 1024; # 30GB
+    }
+  ];
 
   networking.hostName = "GiovanGianFranco"; # Define your hostname.
 
@@ -60,32 +66,32 @@
   services.xserver.enable = true;
 
   # Gpu
-    hardware.graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
-    hardware.nvidia.prime = {
-      sync.enable = true;
+  hardware.nvidia.prime = {
+    sync.enable = true;
 
-      # integrated
-      amdgpuBusId = "PCI:7:0:0";
-      # dedicated
-      nvidiaBusId = "PCI:1:0:0";
-    };
+    # integrated
+    amdgpuBusId = "PCI:7:0:0";
+    # dedicated
+    nvidiaBusId = "PCI:1:0:0";
+  };
 
-    services.xserver.videoDrivers = ["nvidia"];
-    hardware.nvidia = {
-      modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
-      open = true;
-      powerManagement.finegrained = false;
-      powerManagement.enable = false;
-    };
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    open = true;
+    powerManagement.finegrained = false;
+    powerManagement.enable = false;
+  };
 
   # Kde
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;  
+  services.desktopManager.plasma6.enable = true;
   programs.kdeconnect.enable = true;
 
   # Configure keymap in X11
@@ -123,7 +129,10 @@
   users.users.andme = {
     isNormalUser = true;
     description = "Andrei Merciaro";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
     home = "/home/andme";
   };
@@ -133,7 +142,10 @@
 
   # Allow unfree packages/Flake
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   programs.partition-manager.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -191,7 +203,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-	
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
