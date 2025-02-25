@@ -9,14 +9,6 @@ in
 {
   imports = [
 
-    # Nvim
-    nixvim.homeManagerModules.nixvim
-    ./nixvimPlugins/copilot.nix
-    ./nixvimPlugins/lsp.nix
-    ./nixvimPlugins/telescope.nix
-    ./nixvimPlugins/syntax-highlighting.nix
-    ./programs/nixvim.nix
-
     ];
 
   # Let home Manager install and manage itself.
