@@ -46,8 +46,9 @@
     fzf # A command-line fuzzy finder
     bottles # Emulatore
     bat # A cat clone with wings
-    vesktop
-    # discord # Chats
+    vesktop # Discord
+    # solaar # Logitech Unifying Receiver
+    # openrgb # RGB
 
     # networking tools
     mtr # A network diagnostic tool
@@ -71,7 +72,7 @@
     gnupg
     cmatrix
     hollywood
-    cava
+    cava # Audio visualizer
 
     # productivity
     glow # markdown previewer in terminal

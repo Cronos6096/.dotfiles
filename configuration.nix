@@ -180,6 +180,7 @@
     home-manager
     nixfmt-rfc-style
     nil
+    logitech-udev-rules
   ];
 
   # Steam
