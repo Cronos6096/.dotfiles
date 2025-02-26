@@ -44,7 +44,6 @@
     ripgrep # recursively searches directories for a regex pattern
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
-    bottles # Emulatore
     bat # A cat clone with wings
     vesktop # Discord
     # solaar # Logitech Unifying Receiver
@@ -114,9 +113,6 @@
   programs.ghostty = {
     enable = true;
   };
-
-  # Nvim
-  #programs.neovim = {
 
   # zsh shell
   programs.zsh = {
