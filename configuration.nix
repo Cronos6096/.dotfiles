@@ -2,12 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -28,12 +23,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Swap
-  swapDevices = [
-    {
-      device = "/swapfile";
-      size = 30 * 1024; # 30GB
-    }
-  ];
+  swapDevices = [{
+    device = "/swapfile";
+    size = 30 * 1024; # 30GB
+  }];
 
   networking.hostName = "GiovanGianFranco"; # Define your hostname.
 
@@ -129,10 +122,7 @@
   users.users.andme = {
     isNormalUser = true;
     description = "Andrei Merciaro";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
+    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
     home = "/home/andme";
   };
@@ -142,10 +132,7 @@
 
   # Allow unfree packages/Flake
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   programs.partition-manager.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -178,7 +165,7 @@
     winetricks
     wineWowPackages.waylandFull
     home-manager
-    nixfmt-rfc-style
+    nixfmt
     nil
     logitech-udev-rules
   ];
@@ -187,6 +174,17 @@
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
+
+  # Solarr
+  services.solaar = {
+    enable = true; # Enable the service
+    package = pkgs.solaar; # The package to use
+    window =
+      "hide"; # Show the window on startup (show, *hide*, only [window only])
+    batteryIcons =
+      "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
+    extraArgs = ""; # Extra arguments to pass to solaar on startup
+  };
 
   # # STAR CITIZEN cache
   # nix.settings = {

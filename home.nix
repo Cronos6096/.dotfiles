@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -28,7 +23,6 @@
     # Roba
     fastfetch
     yazi # terminal file manager
-    neovim
 
     # archives
     zip
@@ -46,7 +40,7 @@
     fzf # A command-line fuzzy finder
     bat # A cat clone with wings
     vesktop # Discord
-    # solaar # Logitech Unifying Receiver
+    input-remapper # Remap keys
     # openrgb # RGB
 
     # networking tools
@@ -110,9 +104,7 @@
   };
 
   # Terminale
-  programs.ghostty = {
-    enable = true;
-  };
+  programs.ghostty = { enable = true; };
 
   # zsh shell
   programs.zsh = {
@@ -137,12 +129,8 @@
     # oh-my-zsh
     oh-my-zsh = {
       enable = true;
-      plugins = [
-        "git"
-        "vscode"
-        "zsh-interactive-cd"
-        "fzf"
-      ]; # vsc per aprire vscode
+      plugins =
+        [ "vscode" "zsh-interactive-cd" "fzf" ]; # vsc per aprire vscode
       theme = "robbyrussell";
     };
   };
@@ -150,6 +138,12 @@
   programs.starship = {
     enableZshIntegration = true;
     enable = true;
+  };
+
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
   };
 
   # # bash shell
@@ -168,13 +162,5 @@
   #   };
   # };
 
-  # This value determines the home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update home Manager without changing this value. See
-  # the home Manager release notes for a list of state version
-  # changes in each release.
   home.stateVersion = "25.05";
 }

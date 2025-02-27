@@ -9,9 +9,13 @@
     nix-citizen.url = "github:LovingMelody/nix-citizen";
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-citizen.inputs.nix-gaming.follows = "nix-gaming";
+    solaar = {
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, solaar, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
     in {
@@ -21,6 +25,10 @@
           system = system;
           modules = [
             ./configuration.nix
+
+            # Integrazione di solaar  
+            solaar.nixosModules.default
+
             # Integrazione di Home Manager tramite modulo NixOS
             home-manager.nixosModules.home-manager
             {
