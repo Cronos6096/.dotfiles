@@ -22,6 +22,8 @@
       ff = "fastfetch";
       search = "nix search nixpkgs";
       rebuild = "nh os switch . -H andme";
+      update = "nh os update";
+      uprebuild = "git add * && git commit && git push && rebuild && reboot";
       cat = "bat";
       top = "btop";
       htop = "btop";
