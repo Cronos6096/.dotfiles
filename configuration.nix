@@ -95,7 +95,8 @@
 
   # Configure console keymap
   console.keyMap = "it2";
-
+  console.font = "nerd-fonts.zed-mono"; 
+  
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -186,14 +187,14 @@
     extraArgs = ""; # Extra arguments to pass to solaar on startup
   };
 
-  # # STAR CITIZEN cache
-  # nix.settings = {
-  #   substituters = ["https://nix-gaming.cachix.org"];
-  #   trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
-  # };
+ # STAR CITIZEN cache
+ nix.settings = {
+   substituters = ["https://nix-gaming.cachix.org"];
+   trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
+ };
 
-  # # Abilita il servizio ratbagd
-  # services.ratbagd.enable = true;
+ # Abilita il servizio ratbagd
+ services.ratbagd.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -208,7 +209,7 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # Flatpack
+  # Flatpak
   services.flatpak.enable = true;
 
   # Open ports in the firewall.

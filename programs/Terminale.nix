@@ -27,6 +27,8 @@
       htop = "btop";
       cdconfig = "cd /home/andme/.dotfiles";
       nvim = "lvim";
+      vim = "lvim";
+      vi = "lvim";
     };
     history.size = 10000;
 

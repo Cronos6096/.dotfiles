@@ -13,8 +13,8 @@
   home.homeDirectory = "/home/andme";
 
   home.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
+    EDITOR = "lvim";
+    VISUAL = "lvim";
     BROWSER = "floorp";
     TERMINAL = "ghostty";
   };
@@ -106,22 +106,6 @@
       safe.directory = "/home/andme/.dotfiles";
     };
   };
-
-  # # bash shell
-  # programs.bash = {
-  #   enable = true;
-
-  #   # set aliases
-  #   shellAliases = {
-  #     ls = "eza";
-  #     ff = "fastfetch";
-  #     search = "nix search nixpkgs";
-  #     rebuild = "nh os switch . -H andme";
-  #     cat = "bat";
-  #     top = "btop";
-  #     htop = "btop";
-  #   };
-  # };
 
   home.stateVersion = "25.05";
 }
