@@ -6,9 +6,11 @@
     home-manager.url = "github:nix-community/home-manager";
     # Assicura che home-manager usi lo stesso nixpkgs
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     nix-citizen.url = "github:LovingMelody/nix-citizen";
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-citizen.inputs.nix-gaming.follows = "nix-gaming";
+    
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
       inputs.nixpkgs.follows = "nixpkgs";

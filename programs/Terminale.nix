@@ -25,7 +25,8 @@
       cat = "bat";
       top = "btop";
       htop = "btop";
-      "cd config" = "cd /home/andme/.dotfiles";
+      cdconfig = "cd /home/andme/.dotfiles";
+      nvim = "lvim";
     };
     history.size = 10000;
 

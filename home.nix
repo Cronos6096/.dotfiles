@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./Neovim.nix
-    ./Terminale.nix
+    ./programs/Neovim.nix
+    ./programs/Terminale.nix
   ];
 
   # Let home Manager install and manage itself.
@@ -21,6 +21,7 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+
     # Roba
     fastfetch
     yazi # terminal file manager
@@ -34,17 +35,28 @@
     # fonts
     jetbrains-mono
     cascadia-code
+    nerd-fonts.zed-mono
 
-    # utils
+    # utilities
     ripgrep # recursively searches directories for a regex pattern
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
     bat # A cat clone with wings
     vesktop # Discord
 
+    # Video / Audio
+    davinci-resolve # Video editor
+    obs-studio # Screen recorder
+    flameshot # Screenshot tool
+    gimp # Image editor
+    inkscape # Vector graphics editor
+    blender # 3D creation suite
+    vlc # Media player
+
+
     # networking tools
     mtr # A network diagnostic tool
-    iperf3
+    iperf3 
     dnsutils # `dig` + `nslookup`
     ldns # replacement of `dig`, it provide the command `drill`
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
@@ -52,7 +64,7 @@
     nmap # A utility for network discovery and security auditing
     ipcalc # it is a calculator for the IPv4/v6 addresses
 
-    # misc
+    # Terminale
     cowsay
     file
     which
@@ -66,9 +78,10 @@
     hollywood
     cava # Audio visualizer
 
-    # productivity
+    # Strumenti
     glow # markdown previewer in terminal
     btop # replacement of htop/nmon
+    lunarvim # Neovim configuration
 
     # system call monitoring
     strace # system call monitoring
