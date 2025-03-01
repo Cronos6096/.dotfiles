@@ -166,7 +166,7 @@
     winetricks
     wineWowPackages.waylandFull
     home-manager
-    nixfmt
+    nixfmt-classic
     nil
     logitech-udev-rules
   ];
