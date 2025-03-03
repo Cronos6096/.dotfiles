@@ -44,6 +44,7 @@
     fzf # A command-line fuzzy finder
     bat # A cat clone with wings
     vesktop # Discord
+    virt-manager # Virtual Machine Manager
 
     # Video / Audio
     davinci-resolve # Video editor
