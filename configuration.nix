@@ -188,8 +188,14 @@
     extraArgs = ""; # Extra arguments to pass to solaar on startup
   };
 
-  # Abilita il servizio ratbagd
-  services.ratbagd.enable = true;
+  # Virt Manager
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["andme"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+
+  # # Abilita il servizio ratbagd
+  # services.ratbagd.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
