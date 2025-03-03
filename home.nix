@@ -4,7 +4,6 @@
   imports = [
     ./programs/Neovim.nix
     ./programs/Terminale.nix
-    ./programs/Virt-manager.nix
   ];
 
   # Let home Manager install and manage itself.
@@ -108,6 +107,12 @@
       safe.directory = "/home/andme/.dotfiles";
     };
   };
+
+  # Virt Manager
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["andme"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
   home.stateVersion = "25.05";
 }
