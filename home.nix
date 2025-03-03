@@ -4,6 +4,7 @@
   imports = [
     ./programs/Neovim.nix
     ./programs/Terminale.nix
+    ./programs/Virt-manager.nix
   ];
 
   # Let home Manager install and manage itself.
@@ -44,7 +45,6 @@
     fzf # A command-line fuzzy finder
     bat # A cat clone with wings
     vesktop # Discord
-    virt-manager # Virtual Machine Manager
 
     # Video / Audio
     davinci-resolve # Video editor
