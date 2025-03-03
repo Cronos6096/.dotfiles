@@ -25,7 +25,7 @@
     # Roba
     fastfetch
     yazi # terminal file manager
-    heroic # Launcher
+    lutris # Launcher
 
     # archives
     zip
@@ -44,6 +44,8 @@
     fzf # A command-line fuzzy finder
     bat # A cat clone with wings
     vesktop # Discord
+    qbittorrent-enhanced # Torrent client
+    appimage-run # AppImage runner
 
     # Video / Audio
     davinci-resolve # Video editor
