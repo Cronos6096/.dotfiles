@@ -25,6 +25,7 @@
     # Roba
     fastfetch
     yazi # terminal file manager
+    heroic # Launcher
 
     # archives
     zip

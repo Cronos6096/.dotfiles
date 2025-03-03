@@ -168,6 +168,8 @@
     nixfmt-classic
     nil
     logitech-udev-rules
+    quickemu
+    qemu
   ];
 
   # Steam
