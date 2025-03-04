@@ -26,6 +26,7 @@
     fastfetch
     yazi # terminal file manager
     lutris # Launcher
+    ckan # Kerbal Space Program mod manager
 
     # archives
     zip
