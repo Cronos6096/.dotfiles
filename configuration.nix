@@ -75,6 +75,7 @@
   programs.hyprland.enable = true;
   programs.hyprland.package =
     inputs.hyprland.packages."${pkgs.system}".hyprland;
+  xdg.portal.enable = true;
 
   # Configure console keymap
   console.keyMap = "it";
