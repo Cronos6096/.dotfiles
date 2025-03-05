@@ -170,6 +170,7 @@
     logitech-udev-rules
     quickemu
     qemu
+    anydesk
   ];
 
   # Steam
@@ -187,12 +188,6 @@
       "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
     extraArgs = ""; # Extra arguments to pass to solaar on startup
   };
-
-  # Virt Manager
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = ["andme"];
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
 
   # # Abilita il servizio ratbagd
   # services.ratbagd.enable = true;
