@@ -24,12 +24,18 @@
     yazi # terminal file manager
     lutris # Launcher
     ckan # Kerbal Space Program mod manager
-    
+
     # Hyprland
     waybar
     wofi
     hyprpaper
-    walker
+    polkit-kde-agent
+    cliphist
+    xdg-desktop-portal-hyprland
+    pipewire
+    wireplumber
+    hypridel
+    hyprlock
 
     # archives
     zip
