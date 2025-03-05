@@ -3,22 +3,29 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    # Assicura che home-manager usi lo stesso nixpkgs
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Hyprland
-    inputs.hyprland.url = "github:hyprwm/Hyprland";
-   
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/Hyprland-Plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+
+    # Solaar
     solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
+      url =
+        "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, solaar, home-manager, ... }@inputs:
-    let
-      system = "x86_64-linux";
+  outputs = { self, nixpkgs, solaar, home-manager, hyprland, ... }@inputs:
+    let system = "x86_64-linux";
     in {
       # Configurazione NixOS con integrazione di Home Manager
       nixosConfigurations = {

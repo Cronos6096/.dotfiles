@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, inputs, ... }:
 
 {
@@ -27,6 +23,12 @@
     device = "/swapfile";
     size = 30 * 1024; # 30GB
   }];
+
+  nix.settings = {
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys =
+      [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+  };
 
   networking.hostName = "GiovanGianFranco"; # Define your hostname.
 
@@ -88,24 +90,14 @@
   programs.kdeconnect.enable = true;
 
   # Hyprland
-  programs.hyprland = {
-    enable = true;
-    # set the flake package
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    # make sure to also set the portal package, so that they are in sync
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "it";
-    variant = "";
-  };
+  programs.hyprland.enable = true;
+  programs.hyprland.package =
+    inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   # Configure console keymap
   console.keyMap = "it2";
-  console.font = "nerd-fonts.zed-mono"; 
-  
+  console.font = "nerd-fonts.zed-mono";
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 

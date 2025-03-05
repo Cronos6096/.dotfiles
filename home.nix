@@ -1,10 +1,8 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [
-    ./programs/Neovim.nix
-    ./programs/Terminale.nix
-  ];
+  imports =
+    [ ./programs/Terminale.nix ./programs/Hyprland.nix ];
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -16,7 +14,8 @@
     EDITOR = "lvim";
     VISUAL = "lvim";
     BROWSER = "floorp";
-    TERMINAL = "ghostty";
+    # TERMINAL = "ghostty";
+    TERMINAL = "kitty";
   };
 
   # Packages that should be installed to the user profile.
@@ -57,10 +56,9 @@
     blender # 3D creation suite
     vlc # Media player
 
-
     # networking tools
     mtr # A network diagnostic tool
-    iperf3 
+    iperf3
     dnsutils # `dig` + `nslookup`
     ldns # replacement of `dig`, it provide the command `drill`
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
@@ -85,7 +83,7 @@
     # Strumenti
     glow # markdown previewer in terminal
     btop # replacement of htop/nmon
-    lunarvim # Neovim configuration
+    lunarvim # Neovim
 
     # system call monitoring
     strace # system call monitoring
