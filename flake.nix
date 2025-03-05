@@ -6,6 +6,9 @@
     home-manager.url = "github:nix-community/home-manager";
     # Assicura che home-manager usi lo stesso nixpkgs
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Hyprland
+    inputs.hyprland.url = "github:hyprwm/Hyprland";
    
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
