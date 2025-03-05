@@ -1,8 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports =
-    [ ./programs/Terminale.nix ./programs/Hyprland.nix ];
+  imports = [ ./programs/Terminale.nix ];
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -14,8 +13,7 @@
     EDITOR = "lvim";
     VISUAL = "lvim";
     BROWSER = "floorp";
-    # TERMINAL = "ghostty";
-    TERMINAL = "kitty";
+    TERMINAL = "ghostty";
   };
 
   # Packages that should be installed to the user profile.
@@ -26,6 +24,12 @@
     yazi # terminal file manager
     lutris # Launcher
     ckan # Kerbal Space Program mod manager
+    
+    # Hyprland
+    waybar
+    wofi
+    hyprpaper
+    walker
 
     # archives
     zip

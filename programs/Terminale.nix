@@ -8,8 +8,7 @@
   };
 
   # Terminale
-  # programs.ghostty = { enable = true; };
-  programs.kitty = { enable = true; };
+  programs.ghostty = { enable = true; };
 
   # zsh shell
   programs.zsh = {
