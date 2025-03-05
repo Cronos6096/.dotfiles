@@ -24,18 +24,17 @@
     yazi # terminal file manager
     lutris # Launcher
     ckan # Kerbal Space Program mod manager
+    xfce.thunar # File manager
+    xfce.thunar-volman # Thunar volume manager
+    xfce.thunar-vcs-plugin # Thunar VCS plugin
 
     # Hyprland
     waybar
     wofi
     hyprpaper
-    polkit-kde-agent
-    cliphist
-    xdg-desktop-portal-hyprland
-    pipewire
-    wireplumber
-    hypridel
-    hyprlock
+    # cliphist
+    # wireplumber
+    # hyprlock
 
     # archives
     zip

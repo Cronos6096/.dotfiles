@@ -78,7 +78,7 @@
 
   # Configure console keymap
   console.keyMap = "it";
-  console.font = "nerd-fonts.zed-mono";
+  # console.font = "terminus-font";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "it_IT.UTF-8";
