@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./programs/Terminale.nix ];
+  imports = [ ./programs/Terminale.nix ./programs/Anyrun ];
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
