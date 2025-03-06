@@ -9,19 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/Hyprland-Plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-
-    # Anyrun  
-    anyrun = {
-      url = "github:anyrun-org/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Solaar
     solaar = {
       url =
@@ -31,7 +18,7 @@
   };
 
   outputs =
-    { self, nixpkgs, solaar, home-manager, hyprland, anyrun, ... }@inputs:
+    { self, nixpkgs, solaar, home-manager, hyprland, ... }@inputs:
     let system = "x86_64-linux";
     in {
       # Configurazione NixOS con integrazione di Home Manager
@@ -40,15 +27,10 @@
           system = system;
           modules = [
             ./configuration.nix
-            ./programs/Vm.nix
+            programs/Vm.nix
 
             # Integrazione di solaar  
             solaar.nixosModules.default
-
-            # Integrazione di Anyrun
-            {
-              environment.systemPackages = [ anyrun.packages.${system}.anyrun ];
-            }
 
             # Integrazione di Home Manager tramite modulo NixOS
             home-manager.nixosModules.home-manager

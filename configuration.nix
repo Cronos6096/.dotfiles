@@ -1,7 +1,7 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ ./hardware-configuration.nix ./gpu.nix ];
 
   # # Update automatici
   # system.autoUpgrade.enable = true;
@@ -39,40 +39,10 @@
   # Set your time zone.
   time.timeZone = "Europe/Rome";
 
-  # Gpu
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
-  hardware.nvidia.prime = {
-    sync.enable = true;
-
-    # integrated
-    amdgpuBusId = "PCI:7:0:0";
-    # dedicated
-    nvidiaBusId = "PCI:1:0:0";
-  };
-
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    modesetting.enable = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
-    open = true;
-    powerManagement.finegrained = false;
-    powerManagement.enable = false;
-  };
-
   # Kde
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   programs.kdeconnect.enable = true;
-
-  # Hyprland
-  programs.hyprland.enable = true;
-  programs.hyprland.package =
-    inputs.hyprland.packages."${pkgs.system}".hyprland;
-  xdg.portal.enable = true;
 
   # Configure console keymap
   console.keyMap = "it";
@@ -115,9 +85,6 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.andme = {
     isNormalUser = true;
@@ -127,7 +94,7 @@
     home = "/home/andme";
   };
 
-  users.groups.gcis = {};
+  users.groups.gcis = { };
   users.users.gcis = {
     isSystemUser = true;
     group = "gcis";
