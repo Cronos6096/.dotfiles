@@ -127,6 +127,12 @@
     home = "/home/andme";
   };
 
+  users.groups.gcis = {};
+  users.users.gcis = {
+    isSystemUser = true;
+    group = "gcis";
+  };
+
   # zsh shell
   programs.zsh.enable = true;
 
@@ -136,18 +142,23 @@
   programs.partition-manager.enable = true;
 
   environment.systemPackages = with pkgs; [
+    anydesk
     appimage-run
     clamtk
     floorp
     fzf
     git
+    home-manager
     libratbag
     libreoffice
     libva
     libva-utils
+    logitech-udev-rules
     mangohud
     mesa
+    nil
     nix-output-monitor
+    nixfmt-classic
     nvd
     nvtopPackages.nvidia
     orca-slicer
@@ -163,11 +174,6 @@
     wget
     winetricks
     wineWowPackages.waylandFull
-    home-manager
-    nixfmt-classic
-    nil
-    logitech-udev-rules
-    anydesk
   ];
 
   # Steam

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./programs/Terminale.nix ./programs/Vm.nix ];
+  imports = [ ./programs/Terminale.nix ];
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -24,18 +24,23 @@
     yazi # terminal file manager
     lutris # Launcher
     ckan # Kerbal Space Program mod manager
-    dolphin # File manager
+    kdePackages.dolphin # File manager
 
     # Hyprland
     waybar
     wofi
     rofi-wayland
     swww
-    dunst
     libnotify
     networkmanagerapplet
     hyprpolkitagent
     pywal
+    hyprpicker
+    pywal
+    blueman
+    bluez
+    swaync
+    clipse
 
     # archives
     zip

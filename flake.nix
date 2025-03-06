@@ -33,6 +33,7 @@
           system = system;
           modules = [
             ./configuration.nix
+            ./programs/Vm.nix
 
             # Integrazione di solaar  
             solaar.nixosModules.default
