@@ -1,10 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-  ];
+  imports = [ ./hardware-configuration.nix ];
 
   # # Update automatici
   # system.autoUpgrade.enable = true;
@@ -170,8 +167,6 @@
     nixfmt-classic
     nil
     logitech-udev-rules
-    quickemu
-    qemu
     anydesk
   ];
 

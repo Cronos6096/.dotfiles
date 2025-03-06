@@ -21,9 +21,11 @@
       ls = "eza";
       ff = "fastfetch";
       search = "nix search nixpkgs";
-      rebuild = "nh os switch . -H andme";
+      rebuild =
+        "cd /home/andme/.dotfiles && nh os switch . -H andme && cd /home/andme/";
       update = "nh os update";
-      uprebuild = "git add * && git commit && git push && nh os switch . -H andme && reboot";
+      uprebuild =
+        "git add * && git commit && git push && nh os switch . -H andme && reboot";
       cat = "bat";
       top = "btop";
       htop = "btop";
@@ -37,8 +39,7 @@
     # oh-my-zsh
     oh-my-zsh = {
       enable = true;
-      plugins =
-        [ "vscode" "zsh-interactive-cd" "fzf" ]; # vsc per aprire vscode
+      plugins = [ "vscode" "zsh-interactive-cd" "fzf" ]; # vsc per aprire vscode
       theme = "robbyrussell";
     };
   };
