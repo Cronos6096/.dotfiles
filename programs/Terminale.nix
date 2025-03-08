@@ -31,7 +31,7 @@
       htop = "btop";
       cdconfig = "cd /home/andme/.dotfiles";
       vi = "lvim";
-      emacs = "emacsclient";
+      em = "emacsclient -c -a 'emacs'";
     };
     history.size = 10000;
 
