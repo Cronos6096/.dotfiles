@@ -22,7 +22,7 @@
       ff = "fastfetch";
       search = "nix search nixpkgs";
       rebuild =
-        "cd /home/andme/.dotfiles && nh os switch . -H andme && cd /home/andme/";
+        "nh os switch /home/andme/.dotfiles/ -H andme";
       update = "nh os update";
       uprebuild =
         "git add * && git commit && git push && nh os switch . -H andme && reboot";

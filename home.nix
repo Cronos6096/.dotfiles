@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    programs/Terminale.nix  # programs/Anyrun.nix
-  ];
+  imports = [ programs/Terminale.nix ];
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -22,81 +20,81 @@
   home.packages = with pkgs; [
 
     # Roba
-    fastfetch
-    yazi # terminal file manager
-    lutris # Launcher
     ckan # Kerbal Space Program mod manager
+    fastfetch
     kdePackages.dolphin # File manager
+    lutris # Launcher
     protonvpn-gui # VPN
+    yazi # terminal file manager
 
     # archives
-    zip
-    xz
-    unzip
     p7zip
+    unzip
+    xz
+    zip
 
     # fonts
-    jetbrains-mono
     cascadia-code
+    jetbrains-mono
     nerd-fonts.zed-mono
 
     # utilities
-    ripgrep # recursively searches directories for a regex pattern
+    appimage-run # AppImage runner
+    bat # A cat clone with wings
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
-    bat # A cat clone with wings
-    vesktop # Discord
     qbittorrent-enhanced # Torrent client
-    appimage-run # AppImage runner
+    ripgrep # recursively searches directories for a regex pattern
+    vesktop # Discord
 
     # Video / Audio
+    blender # 3D creation suite
     davinci-resolve # Video editor
-    obs-studio # Screen recorder
     flameshot # Screenshot tool
     gimp # Image editor
     inkscape # Vector graphics editor
-    blender # 3D creation suite
+    obs-studio # Screen recorder
     vlc # Media player
 
     # networking tools
-    mtr # A network diagnostic tool
-    iperf3
-    dnsutils # `dig` + `nslookup`
-    ldns # replacement of `dig`, it provide the command `drill`
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
-    socat # replacement of openbsd-netcat
-    nmap # A utility for network discovery and security auditing
+    dnsutils # `dig` + `nslookup`
     ipcalc # it is a calculator for the IPv4/v6 addresses
+    iperf3
+    ldns # replacement of `dig`, it provide the command `drill`
+    mtr # A network diagnostic tool
+    nmap # A utility for network discovery and security auditing
+    socat # replacement of openbsd-netcat
 
     # Terminale
+    cava # Audio visualizer
+    cmatrix
     cowsay
     file
-    which
-    tree
+    gawk
+    gnupg
     gnused
     gnutar
-    gawk
-    zstd
-    gnupg
-    cmatrix
     hollywood
-    cava # Audio visualizer
+    tree
+    which
+    zstd
 
     # Strumenti
-    glow # markdown previewer in terminal
     btop # replacement of htop/nmon
+    glow # markdown previewer in terminal
     lunarvim # Neovim
 
     # system call monitoring
-    strace # system call monitoring
-    ltrace # library call monitoring
     lsof # list open files
+    ltrace # library call monitoring
+    strace # system call monitoring
 
     # system tools
-    sysstat
-    lm_sensors # for `sensors` command
     ethtool
+    lm_sensors # for `sensors` command
     pciutils # lspci
+    sysstat
     usbutils # lsusb
   ];
 

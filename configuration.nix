@@ -17,7 +17,7 @@
     size = 30 * 1024; # 30GB
   }];
 
-  networking.hostName = "GiovanGianFranco"; # Define your hostname.
+  networking.hostName = "GiovanGianFranco"; # Hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -33,12 +33,6 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   programs.kdeconnect.enable = true;
-
-  nix.settings = {
-    substituters = [ "https://cosmic.cachix.org/" ];
-    trusted-public-keys =
-      [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-  };
 
   # Configure console keymap
   console.keyMap = "it";
