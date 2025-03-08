@@ -31,14 +31,7 @@
             ./configuration.nix
             programs/Vm.nix
 
-            {
-              nix.settings = {
-                substituters = [ "https://cosmic.cachix.org/" ];
-                trusted-public-keys = [
-                  "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
-                ];
-              };
-            }
+            # Integrazione di Cosmic
             nixos-cosmic.nixosModules.default
 
             # Integrazione di solaar  

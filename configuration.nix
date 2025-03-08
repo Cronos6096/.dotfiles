@@ -3,13 +3,9 @@
 {
   imports = [ ./hardware-configuration.nix ./gpu.nix ];
 
-  # # Update automatici
-  # system.autoUpgrade.enable = true;
-  # system.autoUpgrade.dates = "weekly";
-  # nix.gc.automatic = true;
-  # nix.gc.dates = "daily";
-  # nix.gc.options = "--delete-older-than 3d";
-  # nix.settings.auto-optimise-store = true;
+  # Update automatici
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.dates = "weekly";
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -38,9 +34,11 @@
   services.desktopManager.plasma6.enable = true;
   programs.kdeconnect.enable = true;
 
-  # cosmic
-  services.desktopManager.cosmic.enable = true;
-  services.displayManager.cosmic-greeter.enable = true;
+  nix.settings = {
+    substituters = [ "https://cosmic.cachix.org/" ];
+    trusted-public-keys =
+      [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+  };
 
   # Configure console keymap
   console.keyMap = "it";
