@@ -133,6 +133,13 @@
     wineWowPackages.waylandFull
   ];
 
+  # Emacs deamon
+  services.emacs = {
+    enable = true;
+    package =
+      pkgs.emacs; # replace with emacs-gtk, or a version provided by the community overlay if desired.
+  };
+
   # Steam
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
