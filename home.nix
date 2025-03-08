@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ programs/Terminale.nix programs/Emacs.nix ];
+  imports = [ programs/Terminale.nix ];
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;

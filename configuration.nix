@@ -137,7 +137,7 @@
   services.emacs = {
     enable = true;
     package =
-      pkgs.emacsGcc; # replace with emacs-gtk, or a version provided by the community overlay if desired.
+      pkgs.emacs; # replace with emacs-gtk, or a version provided by the community overlay if desired.
   };
 
   # Steam

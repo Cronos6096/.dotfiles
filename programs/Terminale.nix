@@ -21,8 +21,7 @@
       ls = "eza";
       ff = "fastfetch";
       search = "nix search nixpkgs";
-      rebuild =
-        "nh os switch /home/andme/.dotfiles/ -H andme";
+      rebuild = "nh os switch /home/andme/.dotfiles/ -H andme";
       update = "nh os update";
       uprebuild =
         "git add * && git commit && git push && nh os switch . -H andme && reboot";
@@ -31,7 +30,7 @@
       htop = "btop";
       cdconfig = "cd /home/andme/.dotfiles";
       vi = "lvim";
-      em = "emacsclient -c -a 'emacs'";
+      v = "lvim";
     };
     history.size = 10000;
 
