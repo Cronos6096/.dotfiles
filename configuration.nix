@@ -21,12 +21,6 @@
     size = 30 * 1024; # 30GB
   }];
 
-  nix.settings = {
-    substituters = [ "https://hyprland.cachix.org" ];
-    trusted-public-keys =
-      [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
-  };
-
   networking.hostName = "GiovanGianFranco"; # Define your hostname.
 
   # Enable networking
@@ -44,9 +38,13 @@
   services.desktopManager.plasma6.enable = true;
   programs.kdeconnect.enable = true;
 
+  # cosmic
+  services.desktopManager.cosmic.enable = true;
+  services.displayManager.cosmic-greeter.enable = true;
+
   # Configure console keymap
   console.keyMap = "it";
-  # console.font = "terminus-font";
+  services.xserver.xkb.layout = "it";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "it_IT.UTF-8";
@@ -109,7 +107,7 @@
   programs.partition-manager.enable = true;
 
   environment.systemPackages = with pkgs; [
-    anydesk
+    # anydesk
     appimage-run
     clamtk
     floorp

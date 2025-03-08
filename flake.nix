@@ -9,6 +9,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # NixOS Cosmic
+    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+
     # Solaar
     solaar = {
       url =
@@ -17,8 +20,7 @@
     };
   };
 
-  outputs =
-    { self, nixpkgs, solaar, home-manager, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, solaar, home-manager, nixos-cosmic, ... }@inputs:
     let system = "x86_64-linux";
     in {
       # Configurazione NixOS con integrazione di Home Manager
@@ -28,6 +30,16 @@
           modules = [
             ./configuration.nix
             programs/Vm.nix
+
+            {
+              nix.settings = {
+                substituters = [ "https://cosmic.cachix.org/" ];
+                trusted-public-keys = [
+                  "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+                ];
+              };
+            }
+            nixos-cosmic.nixosModules.default
 
             # Integrazione di solaar  
             solaar.nixosModules.default

@@ -2,7 +2,7 @@
 
 {
   imports = [
-    programs/Terminale.nix # programs/Anyrun.nix
+    programs/Terminale.nix  # programs/Anyrun.nix
   ];
 
   # Let home Manager install and manage itself.
@@ -27,6 +27,7 @@
     lutris # Launcher
     ckan # Kerbal Space Program mod manager
     kdePackages.dolphin # File manager
+    protonvpn-gui # VPN
 
     # archives
     zip
