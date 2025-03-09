@@ -4,7 +4,7 @@ let
     inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 
 in {
-  imports = [ ./hardware-configuration.nix ./gpu.nix programs/Stylix.nix ];
+  imports = [ ./hardware-configuration.nix ./gpu.nix programs/Stylix.nix programs/Vm.nix ];
 
   # Update automatici
   system.autoUpgrade.enable = true;
