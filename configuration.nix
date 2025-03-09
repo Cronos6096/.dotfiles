@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
+let
+  pkgs-unstable =
+    inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 
-{
+in {
   imports = [ ./hardware-configuration.nix ./gpu.nix ];
 
   # Update automatici
@@ -17,7 +20,8 @@
     size = 30 * 1024; # 30GB
   }];
 
-  networking.hostName = "GiovanGianFranco"; # Hostname.
+  # Hostname.
+  networking.hostName = "GiovanGianFranco";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -28,6 +32,34 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Rome";
+
+  # Hyprland
+  programs.hyprland = {
+    enable = true;
+    # set the flake package
+    package =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # make sure to also set the portal package, so that they are in sync
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
+
+  hardware.opengl = {
+    package = pkgs-unstable.mesa.drivers;
+
+    # if you also want 32-bit support (e.g for Steam)
+    driSupport32Bit = true;
+    package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
+  };
+
+  nix.settings = {
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys =
+      [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+  };
+
+  # Stylix
+  stylix.enable = true;
 
   # Kde
   services.displayManager.sddm.enable = true;
@@ -99,7 +131,7 @@
   programs.partition-manager.enable = true;
 
   environment.systemPackages = with pkgs; [
-    # anydesk
+    anydesk
     appimage-run
     clamtk
     floorp
@@ -132,13 +164,6 @@
     winetricks
     wineWowPackages.waylandFull
   ];
-
-  # Emacs deamon
-  services.emacs = {
-    enable = true;
-    package =
-      pkgs.emacs; # replace with emacs-gtk, or a version provided by the community overlay if desired.
-  };
 
   # Steam
   programs.steam.enable = true;

@@ -9,6 +9,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    # Stylix
+    stylix.url = "github:danth/stylix";
+
     # Solaar
     solaar = {
       url =
@@ -26,6 +32,9 @@
           modules = [
             ./configuration.nix
             programs/Vm.nix
+            
+            # Stylix
+            inputs.stylix.nixosModules.stylix
 
             # Integrazione di solaar  
             solaar.nixosModules.default
