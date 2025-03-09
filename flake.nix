@@ -11,6 +11,7 @@
 
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
 
     # Stylix
     stylix.url = "github:danth/stylix";
@@ -31,11 +32,12 @@
           system = system;
           modules = [
             ./configuration.nix
-            programs/Vm.nix
-            
+
             # Stylix
             inputs.stylix.nixosModules.stylix
-
+            {
+              nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
+            }
             # Integrazione di solaar  
             solaar.nixosModules.default
 
@@ -48,6 +50,8 @@
             }
           ];
           specialArgs = { inherit inputs; };
+          specialArgs = { inherit system; };
+
         };
       };
     };

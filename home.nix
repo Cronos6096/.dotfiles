@@ -1,8 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
-  imports = [ programs/Terminale.nix ];
-
+  imports = [
+  programs/Terminale
+  programs/Hyprland
+  ];
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -29,7 +31,7 @@
 
     # Hyprland
     wofi
-    waybar
+    #waybar
     hyprpaper
     dunst
     pavucontrol
