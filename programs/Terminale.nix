@@ -21,7 +21,7 @@
       ls = "eza";
       ff = "fastfetch";
       search = "nix search nixpkgs";
-      rebuild = "nh os switch /home/andme/.dotfiles/ -H andme";
+      rebuild = "nh os switch /home/andme/.dotfiles/ -H andme --update";
       update = "nh os update";
       uprebuild =
         "git add * && git commit && git push && nh os switch . -H andme && reboot";

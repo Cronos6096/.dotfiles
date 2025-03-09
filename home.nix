@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    programs/Terminale.nix # programs/Stylix.nix
-  ];
+  imports = [ programs/Terminale.nix ];
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
