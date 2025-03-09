@@ -1,27 +1,14 @@
-#{ pkgs, ... }: 
+{ pkgs, ... }: 
 
 {
-  # Palette
-#  stylix.base16Scheme = {
-#    base00 = "#191919";
-#    base01 = "#202020";
-#    base02 = "#303030";
-#    base03 = "#5f5a60";
-#    base04 = "#505050";
-#    base05 = "#a7a7a7";
-#    base06 = "#808080";
-#    base07 = "#ffffff";
-#    base08 = "#dc657d";
-#    base09 = "#4bb1a7";
-#    base0A = "#c3ba63";
-#    base0B = "#84b97c";
-#    base0C = "#4bb1a7";
-#    base0D = "#639ee4";
-#    base0E = "#b888e2";
-#    base0F = "#b888e2";
-#  };
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/evenok-dark.yaml";
 
-  # Don't forget to apply wallpaper
+# Don't forget to apply wallpaper
   stylix.image = ./wallpaper.jpg;
   stylix.polarity = "dark";
+  
+  stylix.cursor.package = pkgs.bibata-cursors;
+  stylix.cursor.name = "Bibata-Modern-Ice"; 
+  
+  stylix.autoEnable = true;
 }

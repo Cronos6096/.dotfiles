@@ -4,7 +4,7 @@ let
     inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 
 in {
-  imports = [ ./hardware-configuration.nix ./gpu.nix programs/Stylix.nix];
+  imports = [ ./hardware-configuration.nix ./gpu.nix programs/Stylix.nix ];
 
   # Update automatici
   system.autoUpgrade.enable = true;
@@ -61,8 +61,11 @@ in {
   # Stylix
   stylix.enable = true;
 
+  # Ly
+  services.displayManager.ly.enable = true;
+
   # Kde
-  services.displayManager.sddm.enable = true;
+  #services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   programs.kdeconnect.enable = true;
 
