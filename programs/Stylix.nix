@@ -2,6 +2,6 @@
 
 {
   # Don't forget to apply wallpaper
-  stylix.image = ./my-cool-wallpaper.png;
+  stylix.image = /home/andme/.dotfiles/wallpaper.jpg;
 
 }
