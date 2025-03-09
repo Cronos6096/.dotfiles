@@ -1,7 +1,9 @@
 { pkgs, ... }:
 
 {
-  imports = [ programs/Terminale.nix programs/Stylix.nix ];
+  imports = [
+    programs/Terminale.nix # programs/Stylix.nix
+  ];
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -26,12 +28,12 @@
     lutris # Launcher
     protonvpn-gui # VPN
     yazi # terminal file manager
-    
+
     # Hyprland
     wofi
     waybar
     hyprpaper
-    waytrogen
+    dunst
     pavucontrol
 
     # archives
