@@ -1,9 +1,8 @@
 {
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    extraConfig = "";
-  };
+#  wayland.windowManager.hyprland = {
+#    enable = true;
+#  };
 
   # programs.waybar = {
   #   enable = true;

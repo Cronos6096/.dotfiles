@@ -2,8 +2,8 @@
 
 {
   imports = [
-  programs/Terminale
-  programs/Hyprland
+  programs/Terminale.nix
+  programs/Hyprland.nix
   ];
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
