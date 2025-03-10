@@ -31,7 +31,6 @@
 
     # Hyprland
     wofi
-    #waybar
     hyprpaper
     dunst
     pavucontrol
@@ -55,6 +54,7 @@
     qbittorrent-enhanced # Torrent client
     ripgrep # recursively searches directories for a regex pattern
     vesktop # Discord
+    udiskie
 
     # Video / Audio
     blender # 3D creation suite

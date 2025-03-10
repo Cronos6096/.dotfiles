@@ -1,10 +1,9 @@
 { pkgs, ... }: 
 
 {
-  #stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/evenok-dark.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/da-one-black.yaml";
 
-# Don't forget to apply wallpaper
-  stylix.image = ./colors.jpg;
+  stylix.image = ./wallpaper.jpg;
   stylix.polarity = "dark";
   
   stylix.cursor.package = pkgs.bibata-cursors;
