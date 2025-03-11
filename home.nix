@@ -26,8 +26,8 @@
     fastfetch
     kdePackages.dolphin # File manager
     lutris # Launcher
-    protonvpn-gui # VPN
     yazi # terminal file manager
+    whatsapp-for-linux # Whatsapp
 
     # Hyprland
     wofi

@@ -41,18 +41,14 @@ in {
   # Hyprland
   programs.hyprland = {
     enable = true;
-    # set the flake package
     package =
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    # make sure to also set the portal package, so that they are in sync
     portalPackage =
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   hardware.opengl = {
     package = pkgs-unstable.mesa.drivers;
-
-    # if you also want 32-bit support (e.g for Steam)
     driSupport32Bit = true;
     package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
   };
@@ -92,6 +88,13 @@ in {
     LC_TELEPHONE = "it_IT.UTF-8";
     LC_TIME = "it_IT.UTF-8";
   };
+
+  # Ollama
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+  };
+  services.open-webui.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
