@@ -1,6 +1,5 @@
-{pkgs, ...}:
 {
-  imports = [ moduli/Terminale.nix ./pacchetti.nix ];
+  imports = [ moduli/Terminale.nix ./pacchetti.nix moduli/Git.nix ];
 
   # Home Manager
   programs.home-manager.enable = true;
@@ -13,17 +12,6 @@
     VISUAL = "lvim";
     BROWSER = "floorp";
     TERMINAL = "ghostty";
-  };
-
-  # basic configuration of git
-  programs.git = {
-    enable = true;
-    userName = "Cronos6096";
-    userEmail = "and.merciaro@gmail.com";
-    extraConfig = {
-      init.defaultBranch = "master";
-      safe.directory = "/home/andme/.dotfiles";
-    };
   };
 
   home.stateVersion = "25.05";

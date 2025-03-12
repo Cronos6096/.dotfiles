@@ -7,6 +7,8 @@ in {
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    package = pkgs-unstable.mesa.drivers;
+    package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
   };
 
   hardware.nvidia.prime = {
@@ -18,6 +20,8 @@ in {
     nvidiaBusId = "PCI:1:0:0";
   };
 
+  boot.blacklistedKernelModules = [ "nouveau" ];
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
@@ -27,9 +31,8 @@ in {
     powerManagement.enable = false;
   };
 
-  hardware.graphics = {
-    package = pkgs-unstable.mesa.drivers;
-    #enable32Bit = true;
-    package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
-  };
+  # Xorg
+
+  services.xserver.enable = true;
+  services.xserver.autorun = true;
 }

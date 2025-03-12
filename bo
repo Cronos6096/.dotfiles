@@ -1,6 +1,0 @@
-evaluation warning: stylix: qt: Plasma6 is currently unsupported: https://github.com/nix-community/home-manager/issues/5098
-evaluation warning: andme profile: You have set either `nixpkgs.config` or `nixpkgs.overlays` while using `home-manager.useGlobalPkgs`.
-                    This will soon not be possible. Please remove all `nixpkgs` options when using `home-manager.useGlobalPkgs`.
-evaluation warning: The option `hardware.opengl.package32' defined in `/nix/store/mdbgrcrgmldq9q69bbn2mnjxj0phs4qd-source/gpu.nix' has been renamed to `hardware.graphics.package32'.
-evaluation warning: The option `hardware.opengl.package' defined in `/nix/store/mdbgrcrgmldq9q69bbn2mnjxj0phs4qd-source/gpu.nix' has been renamed to `hardware.graphics.package'.
-evaluation warning: The option `hardware.opengl.driSupport32Bit' defined in `/nix/store/mdbgrcrgmldq9q69bbn2mnjxj0phs4qd-source/gpu.nix' has been renamed to `hardware.graphics.enable32Bit'.
