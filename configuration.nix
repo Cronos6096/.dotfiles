@@ -1,14 +1,13 @@
-{ pkgs, inputs, ... }:
-let
-  pkgs-unstable =
-    inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+{ pkgs, ... }:
 
-in {
+{
   imports = [
     ./hardware-configuration.nix
     ./gpu.nix
-    programs/Stylix.nix
-    programs/Vm.nix
+    ./audio.nix
+    moduli/Stylix.nix
+    moduli/Vm.nix
+    moduli/Hyprland.nix
   ];
 
   # Update automatici
@@ -25,7 +24,7 @@ in {
     size = 30 * 1024; # 30GB
   }];
 
-  # Hostname.
+  # Hostname
   networking.hostName = "GiovanGianFranco";
 
   # Enable networking
@@ -38,26 +37,15 @@ in {
   # Set your time zone.
   time.timeZone = "Europe/Rome";
 
-  # Hyprland
-  programs.hyprland = {
-    enable = true;
-    package =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+  services.xserver.autorun = true;
 
-  hardware.opengl = {
-    package = pkgs-unstable.mesa.drivers;
-    driSupport32Bit = true;
-    package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
-  };
-
-  nix.settings = {
-    substituters = [ "https://hyprland.cachix.org" ];
-    trusted-public-keys =
-      [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
-  };
+  # Kde
+  #services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  programs.kdeconnect.enable = true;
+  programs.partition-manager.enable = true;
 
   # Stylix
   stylix.enable = true;
@@ -65,16 +53,10 @@ in {
   # Ly
   services.displayManager.ly.enable = true;
 
-  # Kde
-  #services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  programs.kdeconnect.enable = true;
-
-  # Configure console keymap
+  # Keymap
   console.keyMap = "it";
   services.xserver.xkb.layout = "it";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "it_IT.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -89,36 +71,10 @@ in {
     LC_TIME = "it_IT.UTF-8";
   };
 
-  # Ollama
-  services.ollama = {
-    enable = true;
-    acceleration = "cuda";
-  };
-  services.open-webui.enable = true;
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Account
   users.users.andme = {
     isNormalUser = true;
     description = "Andrei Merciaro";
@@ -136,10 +92,9 @@ in {
   # zsh shell
   programs.zsh.enable = true;
 
-  # Allow unfree packages/Flake
+  # Abilita pacchetti unfree/Flake
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  programs.partition-manager.enable = true;
 
   environment.systemPackages = with pkgs; [
     anydesk
@@ -188,41 +143,14 @@ in {
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
 
-  # Solarr
-  services.solaar = {
-    enable = true; # Enable the service
-    package = pkgs.solaar; # The package to use
-    window =
-      "hide"; # Show the window on startup (show, *hide*, only [window only])
-    batteryIcons =
-      "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
-    extraArgs = ""; # Extra arguments to pass to solaar on startup
-  };
-
-  # # Abilita il servizio ratbagd
-  # services.ratbagd.enable = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
+  # Servizi
+  # OpenSSH daemon.
   services.openssh.enable = true;
 
   # Flatpak
   services.flatpak.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  # services.ratbagd.enable = true;
 
   system.stateVersion = "25.05";
 }
