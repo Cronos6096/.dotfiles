@@ -149,6 +149,7 @@ in {
     fzf
     git
     home-manager
+    hyprpanel
     libratbag
     libreoffice
     libva
@@ -161,7 +162,6 @@ in {
     nixfmt-classic
     nvd
     nvtopPackages.nvidia
-    orca-slicer
     piper
     prismlauncher
     qalculate-gtk
@@ -174,7 +174,13 @@ in {
     wget
     winetricks
     wineWowPackages.waylandFull
-    hyprpanel
+
+    # Rust
+    cargo
+    clippy
+    rustc
+    rustfmt
+    gcc
   ];
 
   # Steam

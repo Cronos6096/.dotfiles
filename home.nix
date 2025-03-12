@@ -25,6 +25,7 @@
     lutris # Launcher
     yazi # terminal file manager
     whatsapp-for-linux # Whatsapp
+    orca-slicer # 3D slicer
 
     # Hyprland
     wofi
@@ -51,7 +52,7 @@
     qbittorrent-enhanced # Torrent client
     ripgrep # recursively searches directories for a regex pattern
     vesktop # Discord
-    udiskie
+    udiskie # Automontatore
 
     # Video / Audio
     blender # 3D creation suite
@@ -86,7 +87,6 @@
     which
     zstd
     fd
-    find
     ripgrep
 
     # Strumenti

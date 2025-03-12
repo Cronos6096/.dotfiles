@@ -29,7 +29,7 @@
       top = "btop";
       htop = "btop";
       cdconfig = "cd /home/andme/.dotfiles";
-      vi = "lvim";
+      emacs = "emacsclient -c";
       v = "lvim";
     };
     history.size = 10000;
