@@ -1,3 +1,4 @@
+{pkgs, ...}:
 {
   imports = [ moduli/Terminale.nix ./pacchetti.nix ];
 

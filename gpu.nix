@@ -27,9 +27,9 @@ in {
     powerManagement.enable = false;
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     package = pkgs-unstable.mesa.drivers;
-    driSupport32Bit = true;
+    #enable32Bit = true;
     package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
   };
 }

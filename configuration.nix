@@ -8,6 +8,8 @@
     moduli/Stylix.nix
     moduli/Vm.nix
     moduli/Hyprland.nix
+    moduli/Ollama.nix
+    moduli/Solaar.nix
   ];
 
   # Update automatici
