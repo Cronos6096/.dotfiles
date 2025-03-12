@@ -1,10 +1,7 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [
-  programs/Terminale.nix
-  programs/Hyprland.nix
-  ];
+  imports = [ programs/Terminale.nix programs/Hyprland.nix programs/Emacs.nix ];
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -88,6 +85,9 @@
     tree
     which
     zstd
+    fd
+    find
+    ripgrep
 
     # Strumenti
     btop # replacement of htop/nmon
