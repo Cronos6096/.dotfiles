@@ -1,4 +1,5 @@
 {pkgs, ...}:
+
 {
   # Pacchetti utente
   home.packages = with pkgs; [
@@ -11,6 +12,7 @@
     yazi # terminal file manager
     whatsapp-for-linux # Whatsapp
     orca-slicer # 3D slicer
+    pcmanfm # File manager
 
     # Hyprland
     wofi

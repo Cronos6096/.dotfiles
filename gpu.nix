@@ -32,7 +32,6 @@ in {
   };
 
   # Xorg
-
   services.xserver.enable = true;
   services.xserver.autorun = true;
 }

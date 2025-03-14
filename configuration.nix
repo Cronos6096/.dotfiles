@@ -5,11 +5,11 @@
     ./hardware-configuration.nix
     ./gpu.nix
     ./audio.nix
-    moduli/Stylix.nix
     moduli/Vm.nix
     moduli/Hyprland.nix
     moduli/Ollama.nix
     moduli/Solaar.nix
+    moduli/Stylix.nix
   ];
 
   # Update automatici
@@ -41,7 +41,7 @@
 
   # Kde
   #services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  #services.desktopManager.plasma5.enable = true;
   programs.kdeconnect.enable = true;
   programs.partition-manager.enable = true;
 
@@ -103,7 +103,6 @@
     git
     home-manager
     hyprpanel
-    libratbag
     libreoffice
     libva
     libva-utils
@@ -115,7 +114,6 @@
     nixfmt-classic
     nvd
     nvtopPackages.nvidia
-    piper
     prismlauncher
     qalculate-gtk
     tldr
@@ -127,13 +125,6 @@
     wget
     winetricks
     wineWowPackages.waylandFull
-
-    # Rust
-    cargo
-    clippy
-    rustc
-    rustfmt
-    gcc
   ];
 
   # Steam
@@ -147,8 +138,6 @@
 
   # Flatpak
   services.flatpak.enable = true;
-
-  # services.ratbagd.enable = true;
 
   system.stateVersion = "25.05";
 }

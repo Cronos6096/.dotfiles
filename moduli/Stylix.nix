@@ -10,4 +10,8 @@
   stylix.cursor.name = "Bibata-Modern-Ice"; 
   
   stylix.autoEnable = true;
+  stylix.cursor.size = 18;
+
+  #stylix.targets.floorp.enable = true;
+  #stylix.targets.floorp.profileNames = [ "default" ];
 }
