@@ -7,12 +7,12 @@
     # Roba
     ckan # Kerbal Space Program mod manager
     fastfetch
-    kdePackages.dolphin # File manager
     lutris # Launcher
     yazi # terminal file manager
     whatsapp-for-linux # Whatsapp
     orca-slicer # 3D slicer
     pcmanfm # File manager
+
 
     # Hyprland
     wofi

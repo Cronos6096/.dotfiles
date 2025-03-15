@@ -10,6 +10,7 @@
     moduli/Ollama.nix
     moduli/Solaar.nix
     moduli/Stylix.nix
+    moduli/Python.nix
   ];
 
   # Update automatici
