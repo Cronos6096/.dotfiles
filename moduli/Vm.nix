@@ -1,25 +1,28 @@
 { pkgs, ... }:
 
 {
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   programs.dconf.enable = true;
-  
+
   users.users.gcis.extraGroups = [ "libvirtd" ];
-  
+
   environment.systemPackages = with pkgs; [
-    virt-manager
-    virt-viewer
+    OVMF
+    pkgs.adwaita-icon-theme
     polkit
-    spice 
+    spice
     spice-gtk
     spice-protocol
-    win-virtio
+    virt-manager
+    virt-viewer
     win-spice
-    pkgs.adwaita-icon-theme
+    win-virtio
   ];
-  
+
   virtualisation = {
     libvirtd = {
-      enable = true;
       qemu = {
         swtpm.enable = true;
         ovmf.enable = true;

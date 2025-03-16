@@ -11,6 +11,7 @@
     moduli/Solaar.nix
     moduli/Stylix.nix
     moduli/Python.nix
+    moduli/Emacs.nix
   ];
 
   # Update automatici
@@ -77,7 +78,7 @@
   users.users.andme = {
     isNormalUser = true;
     description = "Andrei Merciaro";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     shell = pkgs.zsh;
     home = "/home/andme";
   };
@@ -134,6 +135,7 @@
   programs.gamemode.enable = true;
 
   # Servizi
+ 
   # OpenSSH daemon.
   services.openssh.enable = true;
 

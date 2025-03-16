@@ -11,8 +11,8 @@
     yazi # terminal file manager
     whatsapp-for-linux # Whatsapp
     orca-slicer # 3D slicer
-    pcmanfm # File manager
-
+    kdePackages.dolphin # File manager
+    ficsit-cli
 
     # Hyprland
     wofi
