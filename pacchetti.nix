@@ -13,6 +13,7 @@
     orca-slicer # 3D slicer
     kdePackages.dolphin # File manager
     ficsit-cli
+    sphinx
 
     # Hyprland
     wofi
@@ -25,6 +26,8 @@
     unzip
     xz
     zip
+    unrar
+    unp
 
     # font
     cascadia-code

@@ -11,7 +11,7 @@
     moduli/Solaar.nix
     moduli/Stylix.nix
     moduli/Python.nix
-    moduli/Emacs.nix
+    #moduli/Emacs.nix
   ];
 
   # Update automatici
@@ -21,6 +21,15 @@
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  nix.settings.substituters = [
+    "https://nix-community.cachix.org"
+  ];
+
+  nix.settings.trusted-public-keys = [
+    "nix-community.cachix.org-3:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  ];
 
   # Swap
   swapDevices = [{
