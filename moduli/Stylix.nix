@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{pkgs, ...}:
 
 {
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/da-one-black.yaml";
@@ -27,7 +27,5 @@
       package = pkgs.fira-code;
       name = "Fira Code";
     };
-
-    emoji = config.stylix.fonts.monospace;
   };
 }

@@ -29,6 +29,8 @@
       cdconf = "cd /home/andme/.dotfiles";
       cdpr = "cd /home/andme/progetti";
       v = "lvim";
+      py = "python";
+      py3 = "python3";
     };
     history.size = 10000;
 
