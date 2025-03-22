@@ -3,7 +3,7 @@
   programs.nh = {
     enable = true;
     clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
+    clean.extraArgs = "--keep-since 3d --keep 3";
     flake = "/home/andme/.dotfiles/";
   };
 
@@ -31,6 +31,7 @@
       v = "lvim";
       py = "python";
       py3 = "python3";
+      orcaslicer = "flatpak run io.github.softfever.OrcaSlicer";
     };
     history.size = 10000;
 

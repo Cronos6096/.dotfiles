@@ -10,7 +10,6 @@
     lutris # Launcher
     yazi # terminal file manager
     whatsapp-for-linux # Whatsapp
-    orca-slicer # 3D slicer
     kdePackages.dolphin # File manager
 
     # Hyprland
