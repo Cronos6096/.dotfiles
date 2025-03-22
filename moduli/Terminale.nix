@@ -26,10 +26,8 @@
       uprebuild =
         "git add * && git commit && git push && nh os switch . -H andme && reboot";
       cat = "bat";
-      top = "btop";
-      htop = "btop";
-      cdconfig = "cd /home/andme/.dotfiles";
-      emacs = "emacsclient -c";
+      cdconf = "cd /home/andme/.dotfiles";
+      cdpr = "cd /home/andme/progetti";
       v = "lvim";
     };
     history.size = 10000;

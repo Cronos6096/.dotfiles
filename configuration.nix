@@ -23,9 +23,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  nix.settings.substituters = [
-    "https://nix-community.cachix.org"
-  ];
+  nix.settings.substituters = [ "https://nix-community.cachix.org" ];
 
   nix.settings.trusted-public-keys = [
     "nix-community.cachix.org-3:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
@@ -144,7 +142,7 @@
   programs.gamemode.enable = true;
 
   # Servizi
- 
+
   # OpenSSH daemon.
   services.openssh.enable = true;
 
@@ -152,4 +150,13 @@
   services.flatpak.enable = true;
 
   system.stateVersion = "25.05";
+
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 25565 ];
+    allowedUDPPortRanges = [{
+      from = 25565;
+      to = 25565;
+    }];
+  };
 }

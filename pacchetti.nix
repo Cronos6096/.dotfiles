@@ -12,8 +12,6 @@
     whatsapp-for-linux # Whatsapp
     orca-slicer # 3D slicer
     kdePackages.dolphin # File manager
-    ficsit-cli
-    sphinx
 
     # Hyprland
     wofi
@@ -43,6 +41,7 @@
     ripgrep
     vesktop # Discord
     udiskie # Automontatore
+    ruff
 
     # Video / Audio
     blender
