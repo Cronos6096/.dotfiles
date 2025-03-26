@@ -31,7 +31,7 @@
       v = "lvim";
       py = "python";
       py3 = "python3";
-      orcaslicer = "flatpak run io.github.softfever.OrcaSlicer";
+      bottles = "flatpak run com.usebottles.bottles";
     };
     history.size = 10000;
 

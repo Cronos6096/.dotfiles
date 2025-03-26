@@ -11,12 +11,12 @@
     yazi # terminal file manager
     whatsapp-for-linux # Whatsapp
     kdePackages.dolphin # File manager
+    obsidian
 
     # Hyprland
     wofi
     hyprpaper
     dunst
-    pavucontrol
 
     # archivi
     p7zip
