@@ -2,6 +2,7 @@
   description = "NixOS configuration";
 
   inputs = {
+    imports = [moduli/Rust.nix];
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
