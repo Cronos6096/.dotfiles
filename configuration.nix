@@ -48,19 +48,13 @@
   # Set your time zone.
   time.timeZone = "Europe/Rome";
 
-  # Kde
-  #services.displayManager.sddm.enable = true;
-  #services.desktopManager.plasma5.enable = true;
-  programs.kdeconnect.enable = true;
-  programs.partition-manager.enable = true;
-
   # Stylix
   stylix.enable = true;
 
   # Ly
   services.displayManager.ly.enable = true;
 
-  # Keymap
+  # Lingua
   console.keyMap = "it";
   services.xserver.xkb.layout = "it";
 
@@ -77,9 +71,6 @@
     LC_TELEPHONE = "it_IT.UTF-8";
     LC_TIME = "it_IT.UTF-8";
   };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Account
   users.users.andme = {
@@ -141,26 +132,6 @@
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
 
-  # Servizi
-
-  # OpenSSH daemon.
-  services.openssh.enable = true;
-
-  # Flatpak
-  services.flatpak.enable = true;
-
-  # Udiskie
-  services.udisks2.enable = true;
-  security.polkit.enable = true;
-
   system.stateVersion = "25.05";
 
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 25565 ];
-    allowedUDPPortRanges = [{
-      from = 25565;
-      to = 25565;
-    }];
-  };
 }
