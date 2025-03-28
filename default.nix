@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ./gpu.nix
@@ -26,10 +24,12 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Swap
-  swapDevices = [{
-    device = "/swapfile";
-    size = 30 * 1024; # 30GB
-  }];
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 30 * 1024; # 30GB
+    }
+  ];
 
   # Hostname
   networking.hostName = "GiovanGianFranco";
@@ -49,25 +49,25 @@
   users.users.andme = {
     isNormalUser = true;
     description = "Andrei Merciaro";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = ["networkmanager" "wheel" "libvirtd"];
     shell = pkgs.zsh;
     home = "/home/andme";
   };
 
-  users.groups.gcis = { };
+  users.groups.gcis = {};
   users.users.gcis = {
     isSystemUser = true;
     group = "gcis";
   };
 
-  nix.settings.trusted-users = [ "root" "andme" ];
+  nix.settings.trusted-users = ["root" "andme"];
 
   # zsh shell
   programs.zsh.enable = true;
 
   # Abilita pacchetti unfree/Flake
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   environment.systemPackages = with pkgs; [
     anydesk
@@ -86,8 +86,9 @@
     mesa
     nil
     nix-output-monitor
-    nixfmt # -classic
+    alejandra
     nvd
+    freecad-qt6
     orca-slicer
     nvtopPackages.nvidia
     prismlauncher
@@ -108,5 +109,4 @@
   programs.gamemode.enable = true;
 
   system.stateVersion = "25.05";
-
 }

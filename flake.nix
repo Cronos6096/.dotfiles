@@ -23,42 +23,46 @@
 
     # Solaar
     solaar = {
-      url =
-        "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, solaar, home-manager, ... }@inputs:
-    let system = "x86_64-linux";
-    in {
-      nixosConfigurations = {
-        andme = nixpkgs.lib.nixosSystem {
-          system = system;
-          modules = [
-            ./default.nix
+  outputs = {
+    self,
+    nixpkgs,
+    solaar,
+    home-manager,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+  in {
+    nixosConfigurations = {
+      andme = nixpkgs.lib.nixosSystem {
+        system = system;
+        modules = [
+          ./default.nix
 
-            # Stylix
-            inputs.stylix.nixosModules.stylix
+          # Stylix
+          inputs.stylix.nixosModules.stylix
 
-            # Hyprpanel
-            {
-              nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
-            }
-            # Integrazione di solaar  
-            solaar.nixosModules.default
+          # Hyprpanel
+          {
+            nixpkgs.overlays = [inputs.hyprpanel.overlay];
+          }
+          # Integrazione di solaar
+          solaar.nixosModules.default
 
-            # Integrazione di Home Manager tramite modulo NixOS
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useUserPackages = true;
-              home-manager.users.andme = import ./home.nix;
-            }
-          ];
-          specialArgs = { inherit inputs; };
-          specialArgs = { inherit system; };
-
-        };
+          # Integrazione di Home Manager tramite modulo NixOS
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useUserPackages = true;
+            home-manager.users.andme = import ./home.nix;
+          }
+        ];
+        specialArgs = {inherit inputs;};
+        specialArgs = {inherit system;};
       };
     };
+  };
 }

@@ -1,9 +1,6 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   # Pacchetti utente
   home.packages = with pkgs; [
-
     # Roba
     ckan # Kerbal Space Program mod manager
     fastfetch
@@ -11,7 +8,6 @@
     yazi # terminal file manager
     whatsapp-for-linux # Whatsapp
     obsidian # note taking app
-    freecad-wayland
 
     # Hyprland
     wofi

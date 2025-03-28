@@ -8,7 +8,7 @@
   };
 
   # Terminale
-  programs.ghostty = { enable = true; };
+  programs.ghostty = {enable = true;};
 
   # zsh shell
   programs.zsh = {
@@ -23,8 +23,7 @@
       search = "nix search nixpkgs";
       rebuild = "nh os switch /home/andme/.dotfiles/ -H andme --update";
       update = "nh os update";
-      uprebuild =
-        "git add * && git commit && git push && nh os switch . -H andme && reboot";
+      uprebuild = "git add * && git commit && git push && nh os switch . -H andme && reboot";
       cat = "bat";
       cdconf = "cd /home/andme/.dotfiles";
       cdpr = "cd /home/andme/progetti";
@@ -38,7 +37,7 @@
     # oh-my-zsh
     oh-my-zsh = {
       enable = true;
-      plugins = [ "vscode" "zsh-interactive-cd" "fzf" ]; # vsc per aprire vscode
+      plugins = ["vscode" "zsh-interactive-cd" "fzf"]; # vsc per aprire vscode
       theme = "robbyrussell";
     };
   };
