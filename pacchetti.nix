@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 
 {
   # Pacchetti utente
@@ -10,8 +10,8 @@
     lutris # Launcher
     yazi # terminal file manager
     whatsapp-for-linux # Whatsapp
-    kdePackages.dolphin # File manager
-    obsidian
+    obsidian # note taking app
+    freecad-wayland
 
     # Hyprland
     wofi
@@ -25,6 +25,15 @@
     zip
     unrar
     unp
+
+    # dolphin
+    kdePackages.dolphin
+    kdePackages.kservice
+    kdePackages.kio
+    kdePackages.kio-extras
+    kdePackages.breeze-icons
+    kdePackages.qtsvg
+    shared-mime-info
 
     # font
     cascadia-code
