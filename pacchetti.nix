@@ -12,6 +12,7 @@
     whatsapp-for-linux # Whatsapp
     kdePackages.dolphin # File manager
     obsidian
+    orca-slicer
 
     # Hyprland
     wofi
@@ -40,7 +41,7 @@
     ripgrep
     vesktop # Discord
     udiskie # Automontatore
-    ruff
+    flatpak
 
     # Video / Audio
     blender

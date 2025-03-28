@@ -11,7 +11,7 @@
     moduli/Solaar.nix
     moduli/Stylix.nix
     moduli/Python.nix
-    #moduli/Emacs.nix
+    moduli/Servizi.nix
   ];
 
   # Update automatici
