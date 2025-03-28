@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ./gpu.nix
     ./audio.nix
+    ./cachix.nix
     moduli/Hyprland.nix
     moduli/Lingua.nix
     moduli/Ollama.nix
@@ -59,6 +60,8 @@
     group = "gcis";
   };
 
+  nix.settings.trusted-users = [ "root" "andme" ];
+
   # zsh shell
   programs.zsh.enable = true;
 
@@ -98,6 +101,10 @@
     winetricks
     wineWowPackages.waylandFull
   ];
+
+  programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+  programs.gamemode.enable = true;
 
   system.stateVersion = "25.05";
 

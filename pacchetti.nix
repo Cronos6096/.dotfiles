@@ -42,6 +42,7 @@
     vesktop # Discord
     udiskie # Automontatore
     flatpak
+    cachix
 
     # Video / Audio
     blender
@@ -77,6 +78,7 @@
     zstd
     fd
     ripgrep
+    undollar
 
     # Strumenti
     btop # replacement of htop/nmon
