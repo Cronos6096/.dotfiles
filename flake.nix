@@ -36,7 +36,7 @@
         andme = nixpkgs.lib.nixosSystem {
           system = system;
           modules = [
-            ./configuration.nix
+            ./default.nix
 
             # Stylix
             inputs.stylix.nixosModules.stylix
