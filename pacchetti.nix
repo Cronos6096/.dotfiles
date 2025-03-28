@@ -12,7 +12,6 @@
     whatsapp-for-linux # Whatsapp
     kdePackages.dolphin # File manager
     obsidian
-    orca-slicer
 
     # Hyprland
     wofi

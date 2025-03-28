@@ -86,8 +86,9 @@
     mesa
     nil
     nix-output-monitor
-    nixfmt-classic
+    nixfmt # -classic
     nvd
+    orca-slicer
     nvtopPackages.nvidia
     prismlauncher
     qalculate-gtk

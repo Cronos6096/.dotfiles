@@ -1,5 +1,5 @@
 {
-   # OpenSSH daemon.
+  # OpenSSH daemon.
   services.openssh.enable = true;
 
   # Flatpak
