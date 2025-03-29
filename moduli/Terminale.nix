@@ -8,7 +8,14 @@
   };
 
   # Terminale
-  programs.ghostty = {enable = true;};
+  programs.ghostty = {
+    enable = true;
+    settings = {
+      font-family = "Fira Code";
+      font-size = 14;
+      theme = "stylix";
+    };
+  };
 
   # zsh shell
   programs.zsh = {
@@ -37,7 +44,11 @@
     # oh-my-zsh
     oh-my-zsh = {
       enable = true;
-      plugins = ["vscode" "zsh-interactive-cd" "fzf"]; # vsc per aprire vscode
+      plugins = [
+        "vscode"
+        "zsh-interactive-cd"
+        "fzf"
+      ]; # vsc per aprire vscode
       theme = "robbyrussell";
     };
   };

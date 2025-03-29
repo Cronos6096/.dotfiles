@@ -1,9 +1,9 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./hardware-configuration.nix
     ./gpu.nix
     ./audio.nix
-    ./cachix.nix
     moduli/Hyprland.nix
     moduli/Lingua.nix
     moduli/Ollama.nix
@@ -49,27 +49,33 @@
   users.users.andme = {
     isNormalUser = true;
     description = "Andrei Merciaro";
-    extraGroups = ["networkmanager" "wheel" "libvirtd"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "libvirtd"
+    ];
     shell = pkgs.zsh;
     home = "/home/andme";
   };
 
-  users.groups.gcis = {};
+  users.groups.gcis = { };
   users.users.gcis = {
     isSystemUser = true;
     group = "gcis";
   };
-
-  nix.settings.trusted-users = ["root" "andme"];
 
   # zsh shell
   programs.zsh.enable = true;
 
   # Abilita pacchetti unfree/Flake
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   environment.systemPackages = with pkgs; [
+    nixfmt-rfc-style
     anydesk
     appimage-run
     clamtk
@@ -86,11 +92,9 @@
     mesa
     nil
     nix-output-monitor
-    alejandra
     nvd
-    freecad-qt6
-    orca-slicer
     nvtopPackages.nvidia
+    orca-slicer
     prismlauncher
     qalculate-gtk
     tldr

@@ -1,10 +1,11 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
   programs.dconf.enable = true;
 
-  users.users.gcis.extraGroups = ["libvirtd"];
+  users.users.gcis.extraGroups = [ "libvirtd" ];
 
   environment.systemPackages = with pkgs; [
     OVMF
@@ -24,7 +25,7 @@
       qemu = {
         swtpm.enable = true;
         ovmf.enable = true;
-        ovmf.packages = [pkgs.OVMFFull.fd];
+        ovmf.packages = [ pkgs.OVMFFull.fd ];
       };
     };
     spiceUSBRedirection.enable = true;

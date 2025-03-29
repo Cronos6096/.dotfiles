@@ -1,5 +1,4 @@
 {
-  # Lingua
   console.keyMap = "it";
   services.xserver.xkb.layout = "it";
 

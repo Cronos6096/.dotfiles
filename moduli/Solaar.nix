@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   services.solaar = {
     enable = true; # Enable the service
     package = pkgs.solaar; # The package to use

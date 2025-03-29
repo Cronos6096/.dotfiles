@@ -5,29 +5,29 @@
     ckan # Kerbal Space Program mod manager
     fastfetch
     lutris # Launcher
-    yazi # terminal file manager
-    whatsapp-for-linux # Whatsapp
     obsidian # note taking app
+    whatsapp-for-linux # Whatsapp
+    yazi # terminal file manager
 
     # Hyprland
-    wofi
-    hyprpaper
     dunst
+    hyprpaper
+    wofi
 
     # archivi
     p7zip
+    unp
+    unrar
     unzip
     xz
     zip
-    unrar
-    unp
 
     # dolphin
+    kdePackages.breeze-icons
     kdePackages.dolphin
-    kdePackages.kservice
     kdePackages.kio
     kdePackages.kio-extras
-    kdePackages.breeze-icons
+    kdePackages.kservice
     kdePackages.qtsvg
     shared-mime-info
 
@@ -38,15 +38,15 @@
 
     # utilities
     appimage-run # AppImage runner
+    kdePackages.ark # File archiver
     bat # cat migliorato
     eza # ls migliorato
+    flatpak
     fzf
     qbittorrent-enhanced
     ripgrep
-    vesktop # Discord
     udiskie # Automontatore
-    flatpak
-    cachix
+    vesktop # Discord
 
     # Video / Audio
     blender
@@ -71,18 +71,19 @@
     cava # Audio visualizer
     cmatrix
     cowsay
+    fd
     file
     gawk
     gnupg
     gnused
     gnutar
     hollywood
-    tree
-    which
-    zstd
-    fd
     ripgrep
+    tree
     undollar
+    which
+    zoxide
+    zstd
 
     # Strumenti
     btop # replacement of htop/nmon
