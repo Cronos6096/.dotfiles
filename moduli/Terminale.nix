@@ -16,7 +16,6 @@
       theme = "stylix";
     };
   };
-
   # zsh shell
   programs.zsh = {
     enable = true;
@@ -26,10 +25,10 @@
 
     shellAliases = {
       ls = "eza";
+      z = "zoxide";
       ff = "fastfetch";
       search = "nix search nixpkgs";
-      rebuild = "nh os switch /home/andme/.dotfiles/ -H andme --update";
-      update = "nh os update";
+      rebuild = "nh os switch /home/andme/.dotfiles/flake.nix -H andme --update";
       uprebuild = "git add * && git commit && git push && nh os switch . -H andme && reboot";
       cat = "bat";
       cdconf = "cd /home/andme/.dotfiles";

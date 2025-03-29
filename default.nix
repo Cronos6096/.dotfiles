@@ -76,6 +76,7 @@
 
   environment.systemPackages = with pkgs; [
     nixfmt-rfc-style
+    cachix
     anydesk
     appimage-run
     clamtk
