@@ -12,10 +12,11 @@
     enable = true;
     settings = {
       font-family = "Fira Code";
-      font-size = 14;
+      font-size = 12;
       theme = "stylix";
     };
   };
+
   # zsh shell
   programs.zsh = {
     enable = true;
@@ -25,7 +26,6 @@
 
     shellAliases = {
       ls = "eza";
-      z = "zoxide";
       ff = "fastfetch";
       search = "nix search nixpkgs";
       rebuild = "nh os switch /home/andme/.dotfiles/flake.nix -H andme --update";
@@ -44,10 +44,9 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
-        "vscode"
         "zsh-interactive-cd"
         "fzf"
-      ]; # vsc per aprire vscode
+      ];
       theme = "robbyrussell";
     };
   };

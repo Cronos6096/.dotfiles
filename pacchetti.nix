@@ -13,7 +13,6 @@
     # Hyprland
     dunst
     hyprpaper
-    wofi
 
     # archivi
     p7zip
@@ -83,7 +82,6 @@
     tree
     undollar
     which
-    zoxide
     zstd
 
     # Strumenti
