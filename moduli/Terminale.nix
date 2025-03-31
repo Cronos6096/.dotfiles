@@ -21,7 +21,6 @@
     enable = true;
     shellIntegration.enableZshIntegration = true;
     settings = {
-      visual_bell_duration = 0.1;
       scrollback_lines = 10000;
       confirm_os_window_close = 0;
       # cursor_trail_decay = 0.1 0.4;

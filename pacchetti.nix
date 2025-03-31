@@ -13,6 +13,8 @@
     # Hyprland
     dunst
     hyprpaper
+    wofi
+    cliphist
 
     # archivi
     p7zip
