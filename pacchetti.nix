@@ -14,7 +14,8 @@
     dunst
     hyprpaper
     wofi
-    cliphist
+    wl-clipboard
+    clipse
 
     # archivi
     p7zip
