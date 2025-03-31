@@ -17,6 +17,18 @@
     };
   };
 
+  programs.kitty = {
+    enable = true;
+    shellIntegration.enableZshIntegration = true;
+    settings = {
+      visual_bell_duration = 0.1;
+      scrollback_lines = 10000;
+      confirm_os_window_close = 0;
+      # cursor_trail_decay = 0.1 0.4;
+      cursor_trail_start_threshold = 2;
+    };
+  };
+
   # zsh shell
   programs.zsh = {
     enable = true;
@@ -28,7 +40,7 @@
       ls = "eza";
       ff = "fastfetch";
       search = "nix search nixpkgs";
-      rebuild = "nh os switch /home/andme/.dotfiles/flake.nix -H andme --update";
+      rebuild = "nh os switch /home/andme/.dotfiles/ -H andme --update";
       uprebuild = "git add * && git commit && git push && nh os switch . -H andme && reboot";
       cat = "bat";
       cdconf = "cd /home/andme/.dotfiles";
