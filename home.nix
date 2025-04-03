@@ -1,5 +1,11 @@
 {
-  imports = [moduli/Terminale.nix ./pacchetti.nix moduli/Git.nix moduli/Stylix.nix];
+  imports = [
+    moduli/Terminale.nix
+    ./pacchetti.nix
+    moduli/Git.nix
+    moduli/Stylix.nix
+    moduli/Nixvim/default.nix
+  ];
 
   # Home Manager
   programs.home-manager.enable = true;
