@@ -12,6 +12,7 @@
     moduli/Solaar.nix
     moduli/Stylix.nix
     moduli/Vm.nix
+    moduli/Piper.nix
   ];
 
   # Update automatici
