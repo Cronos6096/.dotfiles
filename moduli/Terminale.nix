@@ -39,8 +39,9 @@
       ls = "eza";
       ff = "fastfetch";
       search = "nix search nixpkgs";
-      rebuild = "nh os switch /home/andme/.dotfiles/ -H andme --update";
-      uprebuild = "git add * && git commit && git push && nh os switch . -H andme && reboot";
+      rebuild = "nh os switch /home/andme/.dotfiles/ -H andme";
+      uprebuild = "nh os switch /home/andme/.dotfiles/ -H andme --update";
+      rebuildpush = "git add * && git commit && git push && nh os switch . -H andme && reboot";
       clean = "nh clean all --keep=5";
       cat = "bat";
       cdconf = "cd /home/andme/.dotfiles";
