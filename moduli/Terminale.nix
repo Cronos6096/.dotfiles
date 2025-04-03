@@ -40,8 +40,8 @@
       ff = "fastfetch";
       search = "nix search nixpkgs";
       rebuild = "nh os switch /home/andme/.dotfiles/ -H andme";
-      uprebuild = "nh os switch /home/andme/.dotfiles/ -H andme --update";
-      rebuildpush = "git add * && git commit && git push && nh os switch . -H andme";
+      update = "nh os switch /home/andme/.dotfiles/ -H andme --update";
+      rebuildpush = " cdconf && git add * && git commit && git push && nh os switch . -H andme";
       clean = "nh clean all --keep=5";
       cat = "bat";
       cdconf = "cd /home/andme/.dotfiles";
