@@ -14,10 +14,10 @@
   home.homeDirectory = "/home/andme";
 
   home.sessionVariables = {
-    EDITOR = "lvim";
-    VISUAL = "lvim";
+    # EDITOR = "lvim";
+    # VISUAL = "lvim";
     BROWSER = "floorp";
-    TERMINAL = "ghostty";
+    TERMINAL = "kitty";
   };
 
   nixpkgs.config.allowUnfree = true;

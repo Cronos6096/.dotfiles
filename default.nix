@@ -89,7 +89,6 @@
     libva
     libva-utils
     logitech-udev-rules
-    mangohud
     mesa
     nil
     nix-output-monitor
