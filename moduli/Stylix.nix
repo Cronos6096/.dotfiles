@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/da-one-gray.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/da-one-black.yaml";
 
   stylix.image = ./wallpaper.jpg;
   stylix.polarity = "dark";
@@ -27,7 +27,4 @@
       name = "Fira Code";
     };
   };
-
-  # stylix.targets.hyprland.enable = true;
-  # stylix.targets.ghostty.enable = false;
 }
