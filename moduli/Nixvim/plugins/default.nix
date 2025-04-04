@@ -45,6 +45,10 @@
         lazyLoad.settings.cmd = "Oil";
       };
 
+      auto-save.enable = true;
+      barbecue.enable = true;
+      lazygit.enable = true;
+
       trim = {
         enable = true;
         settings = {

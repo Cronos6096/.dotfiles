@@ -76,6 +76,7 @@
     cowsay
     fd
     file
+    lazygit
     gawk
     gnupg
     gnused

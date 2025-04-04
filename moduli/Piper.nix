@@ -2,11 +2,10 @@
 
 let
   # Overriding the libratbag package with the local source directory
-  libratbag-g502 = pkgs.libratbag.overrideAttrs (oldAttrs: rec {
-    pname = "libratbag-g502";
-    version = "your-version"; # You can specify the version or leave it empty
+    libratbag-g502 = pkgs.libratbag.overrideAttrs (oldAttrs: rec {
+    #pname = "libratbag-g502";
+    #version = "your-version"; # You can specify the version or leave it empty
 
-    # Using fetchFromPath to point to a local directory
     src = pkgs.fetchFromPath {
       name = "libratbag-g502";
       path = "/home/andme/progetti/libratbag-g502/"; # Local path to your source directory
