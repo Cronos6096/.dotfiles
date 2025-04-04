@@ -8,16 +8,7 @@
   };
 
   # Terminale
-  programs.ghostty = {
-    enable = true;
-    settings = {
-      font-family = "Fira Code";
-      font-size = 12;
-      theme = "stylix";
-    };
-  };
-
-  programs.kitty = {
+ programs.kitty = {
     enable = true;
     shellIntegration.enableZshIntegration = true;
     settings = {
