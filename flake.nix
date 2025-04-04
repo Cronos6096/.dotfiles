@@ -67,8 +67,14 @@
             home-manager.nixosModules.home-manager
             {
               home-manager.useUserPackages = true;
-              home-manager.users.andme = { pkgs, ... }: {
-              imports = [ inputs.nixvim.homeManagerModules.nixvim ./home.nix ]; };
+              home-manager.users.andme =
+                { pkgs, ... }:
+                {
+                  imports = [
+                    inputs.nixvim.homeManagerModules.nixvim
+                    ./home.nix
+                  ];
+                };
             }
           ];
           specialArgs = { inherit inputs; };

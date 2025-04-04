@@ -14,8 +14,8 @@
   home.homeDirectory = "/home/andme";
 
   home.sessionVariables = {
-    # EDITOR = "lvim";
-    # VISUAL = "lvim";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
     BROWSER = "floorp";
     TERMINAL = "kitty";
   };

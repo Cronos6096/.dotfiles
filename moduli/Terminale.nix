@@ -45,7 +45,7 @@
       cat = "bat";
       cdconf = "cd /home/andme/.dotfiles";
       cdpr = "cd /home/andme/progetti";
-      v = "lvim";
+      v = "nvim";
       py = "python";
       py3 = "python3";
       bottles = "flatpak run com.usebottles.bottles";

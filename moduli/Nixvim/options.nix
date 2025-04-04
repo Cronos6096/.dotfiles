@@ -48,15 +48,12 @@
       wrap = false; # Prevent text from wrapping
 
       # Tab options
-      tabstop = 4; # Number of spaces a <Tab> in the text stands for (local to buffer)
-      shiftwidth = 4; # Number of spaces used for each step of (auto)indent (local to buffer)
+      tabstop = 2; # Number of spaces a <Tab> in the text stands for (local to buffer)
+      shiftwidth = 2; # Number of spaces used for each step of (auto)indent (local to buffer)
       expandtab = true; # Expand <Tab> to spaces in Insert mode (local to buffer)
       autoindent = true; # Do clever autoindenting
 
       textwidth = 0; # Maximum width of text that is being inserted.  A longer line will be
-      #   broken after white space to get this width.
-
-      # Folding
       foldlevel = 99; # Folds with a level higher than this number will be closed
     };
   };

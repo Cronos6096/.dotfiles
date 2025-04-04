@@ -10,6 +10,11 @@
   programs.nixvim = {
     enable = true;
     nixpkgs.useGlobalPackages = true;
+    opts = {
+      tabstop = 2;
+      shiftwidth = 2;
+      expandtab = true;
+    };
     performance = {
       combinePlugins = {
         enable = true;

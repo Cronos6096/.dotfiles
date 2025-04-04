@@ -15,10 +15,6 @@
     # moduli/Piper.nix
   ];
 
-  # Update automatici
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.dates = "weekly";
-
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

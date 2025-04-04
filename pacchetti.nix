@@ -90,7 +90,6 @@
     # Strumenti
     btop # replacement of htop/nmon
     glow # markdown previewer in terminal
-    lunarvim # Neovim
 
     # system call monitoring
     lsof # list open files

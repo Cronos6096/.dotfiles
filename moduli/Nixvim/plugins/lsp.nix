@@ -12,6 +12,7 @@
         enable = true;
 
         inlayHints = true;
+        servers.nil_ls.enable = true;
 
         keymaps = {
           silent = true;
