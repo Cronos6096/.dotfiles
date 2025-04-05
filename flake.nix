@@ -4,11 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # nix.settings.substituters = [ "https://nix-community.cachix.org" ];
-    # nix.settings.trusted-public-keys = [
-    #   "nix-community.cachix.org-3:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    # ];
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,6 +27,12 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =
@@ -41,6 +42,7 @@
       solaar,
       home-manager,
       nixvim,
+      rust-overlay,
       ...
     }@inputs:
     let
@@ -56,10 +58,18 @@
             # Stylix
             inputs.stylix.nixosModules.stylix
 
-            # Hyprpanel
+            # Hyprland
             {
-              nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
+              nixpkgs.overlays = [
+                inputs.hyprpanel.overlay
+              ];
             }
+
+            ({ pkgs, ... }: {
+            nixpkgs.overlays = [ rust-overlay.overlays.default ];
+            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+            })
+
             # Integrazione di solaar
             solaar.nixosModules.default
 

@@ -5,6 +5,7 @@
       # python-pkgs: with python-pkgs; [
         # pandas
         # requests
+        python312
         python312Packages.pip
         python312Packages.numpy
         python312Packages.matplotlib
