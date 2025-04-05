@@ -13,6 +13,10 @@
 
         inlayHints = true;
         servers.nil_ls.enable = true;
+        servers.rust-analyzer = {
+          installCargo = true;
+          installRustc = true;
+        };
 
         keymaps = {
           silent = true;

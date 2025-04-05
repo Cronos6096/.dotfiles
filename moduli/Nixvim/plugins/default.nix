@@ -49,6 +49,20 @@
       barbecue.enable = true;
       lazygit.enable = true;
 
+      conform-nvim.enable = true;
+      conform-nvim.settings.format_on_save = {
+        timeout_ms = 500;
+        lsp_format = "fallback";
+      };
+
+      conform-nvim.settings.formatters_by_ft = {
+        lua = [ "stylua" ];
+        python = [
+          "isort"
+          "black"
+        ];
+      };
+
       trim = {
         enable = true;
         settings = {
