@@ -22,10 +22,14 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Swap
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 16777216;
+    "fs.file-max" = 524288;
+  };
   swapDevices = [
     {
       device = "/swapfile";
-      size = 30 * 1024; # 30GB
+      size = 32 * 1024;
     }
   ];
 
@@ -73,9 +77,9 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    nixfmt-rfc-style
     anydesk
     appimage-run
+    cabextract
     clamtk
     floorp
     fzf
@@ -89,20 +93,35 @@
     mesa
     nil
     nix-output-monitor
+    nixfmt-rfc-style
     nvd
     nvtopPackages.nvidia
     orca-slicer
     prismlauncher
     qalculate-gtk
     tldr
+    unzip
     vscode
     vulkan-extension-layer
     vulkan-loader
     vulkan-tools
     vulkan-validation-layers
     wget
+    wine
     winetricks
+    wineWowPackages.full
     wineWowPackages.waylandFull
+  ];
+
+  services.emacs.package = pkgs.emacs-unstable;
+  services.emacs.enable = true;
+  nixpkgs.overlays = [
+    (import (
+      builtins.fetchTarball {
+        url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+        sha256 = "1x2q47bzw2j97c6xvxixzp2skyavivm928wl7p83z9scdwcf7ryr";
+      }
+    ))
   ];
 
   programs.steam.enable = true;

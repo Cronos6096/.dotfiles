@@ -9,8 +9,6 @@
     whatsapp-for-linux # Whatsapp
     yazi # terminal file manager
     kdePackages.kate # editor di testo
-    zathura
-    kdiskmark
 
     # Hyprland
     dunst
@@ -68,12 +66,7 @@
     # networking tools
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     dnsutils # `dig` + `nslookup`
-    ipcalc # it is a calculator for the IPv4/v6 addresses
-    iperf3
-    ldns # replacement of `dig`, it provide the command `drill`
-    mtr # A network diagnostic tool
     nmap # A utility for network discovery and security auditing
-    socat # replacement of openbsd-netcat
 
     # Terminale
     cava # Audio visualizer
