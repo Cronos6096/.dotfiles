@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
   # Pacchetti utente
   home.packages = with pkgs; [
     # Roba
@@ -9,6 +9,8 @@
     whatsapp-for-linux # Whatsapp
     yazi # terminal file manager
     kdePackages.kate # editor di testo
+    zathura
+    kdiskmark
 
     # Hyprland
     dunst
@@ -33,11 +35,14 @@
     kdePackages.kservice
     kdePackages.qtsvg
     shared-mime-info
+    hyprpolkitagent
 
     # font
     cascadia-code
     jetbrains-mono
     nerd-fonts.zed-mono
+    liberation_ttf
+    times-newer-roman
 
     # utilities
     appimage-run # AppImage runner

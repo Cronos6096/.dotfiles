@@ -9,6 +9,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Trova pacchetti
+    nix-search-tv.url = "github:3timeslazy/nix-search-tv";
+
+    # Nix-citizen
+    nix-citizen.url = "github:LovingMelody/nix-citizen";
+    nix-gaming.url = "github:fufexan/nix-gaming";
+    nix-citizen.inputs.nix-gaming.follows = "nix-gaming";
+
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
@@ -43,6 +51,7 @@
       home-manager,
       nixvim,
       rust-overlay,
+      nix-search-tv,
       ...
     }@inputs:
     let
@@ -55,6 +64,13 @@
           modules = [
             ./default.nix
 
+            {
+              environment.systemPackages = [
+                nix-search-tv.packages.x86_64-linux.default
+                inputs.nix-citizen.packages.${system}.star-citizen
+
+              ];
+            }
             # Stylix
             inputs.stylix.nixosModules.stylix
 
@@ -65,10 +81,13 @@
               ];
             }
 
-            ({ pkgs, ... }: {
-            nixpkgs.overlays = [ rust-overlay.overlays.default ];
-            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-            })
+            (
+              { pkgs, ... }:
+              {
+                nixpkgs.overlays = [ rust-overlay.overlays.default ];
+                environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+              }
+            )
 
             # Integrazione di solaar
             solaar.nixosModules.default

@@ -7,5 +7,7 @@
     rustfmt
     rustlings
     libgcc
+    gcc_multi
+    gcc
   ];
 }

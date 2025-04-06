@@ -8,6 +8,7 @@
     moduli/Lingua.nix
     moduli/Ollama.nix
     moduli/Python.nix
+    moduli/Rust.nix
     moduli/Servizi.nix
     moduli/Solaar.nix
     moduli/Stylix.nix

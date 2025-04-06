@@ -20,6 +20,9 @@
     TERMINAL = "kitty";
   };
 
+  # Polkit
+  xdg.autostart.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   home.stateVersion = "25.05";
 }

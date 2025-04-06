@@ -8,7 +8,7 @@
   };
 
   # Terminale
- programs.kitty = {
+  programs.kitty = {
     enable = true;
     shellIntegration.enableZshIntegration = true;
     settings = {
@@ -40,6 +40,7 @@
       py = "python";
       py3 = "python3";
       bottles = "flatpak run com.usebottles.bottles";
+      nixsearch = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     };
     history.size = 10000;
 

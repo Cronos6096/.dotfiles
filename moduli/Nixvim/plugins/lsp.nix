@@ -12,11 +12,21 @@
         enable = true;
 
         inlayHints = true;
-        servers.nil_ls.enable = true;
-        servers.rust-analyzer = {
+        servers.nil_ls = {
+          enable = true;
+            settings = {
+              formatting = {
+                command = [ "nixpkgs-fmt" ];
+          };
+          };
+        };
+
+        servers.rust_analyzer = {
           installCargo = true;
           installRustc = true;
         };
+
+        
 
         keymaps = {
           silent = true;
