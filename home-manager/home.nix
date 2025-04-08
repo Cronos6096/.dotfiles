@@ -1,10 +1,7 @@
 {
   imports = [
-    moduli/Terminale.nix
     ./pacchetti.nix
-    moduli/Git.nix
-    moduli/Stylix.nix
-    moduli/Nixvim/default.nix
+    ./homeImports.nix
   ];
 
   # Home Manager

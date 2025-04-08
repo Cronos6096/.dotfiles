@@ -62,7 +62,7 @@
         andme = nixpkgs.lib.nixosSystem {
           system = system;
           modules = [
-            ./default.nix
+            ./sys
 
             {
               environment.systemPackages = [
@@ -103,7 +103,7 @@
                 {
                   imports = [
                     inputs.nixvim.homeManagerModules.nixvim
-                    ./home.nix
+                    ./home-manager/home.nix
                   ];
                 };
             }
