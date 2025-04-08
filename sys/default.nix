@@ -4,15 +4,7 @@
     ./hardware-configuration.nix
     ./gpu.nix
     ./audio.nix
-    moduli/Hyprland.nix
-    moduli/Lingua.nix
-    moduli/Ollama.nix
-    moduli/Python.nix
-    moduli/Rust.nix
-    moduli/Servizi.nix
-    moduli/Solaar.nix
-    moduli/Stylix.nix
-    moduli/Vm.nix
+    ../moduli
   ];
 
   # Bootloader
@@ -25,15 +17,12 @@
     "vm.max_map_count" = 16777216;
     "fs.file-max" = 524288;
   };
-
   swapDevices = [
     {
       device = "/swapfile";
       size = 32 * 1024;
     }
   ];
-
-  zramSwap.enable = true;
 
   # Hostname
   networking.hostName = "GiovanGianFranco";
