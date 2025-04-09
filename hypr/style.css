@@ -1,0 +1,56 @@
+window {
+  margin: 0px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  color: #e0def4;
+  font-family: "SF Pro Display";
+  font-size: 15px;
+}
+
+#input {
+  margin: 7px;
+  border-radius: 8px;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: rgba(67, 67, 67, 0.6);
+  padding: 8px;
+}
+
+#inner-box {
+  margin: 10px;
+  border: none;
+  color: #212023;
+  border-radius: 0px;
+}
+
+#outer-box {
+  margin: 15px;
+  border: none;
+}
+
+#scroll {
+  margin: 0px;
+  border: none;
+}
+
+#text {
+  margin: 8px;
+  border: none;
+  color: #e0def4;
+  font-weight: 700;
+}
+
+#entry:selected {
+  background-color: rgba(38, 35, 58, 0.8);
+  color: #ffffff;
+  border-radius: 8px;
+  outline: none;
+}
+
+#entry:selected * {
+  color: #ffffff;
+  border-radius: 8px;
+  outline: none;
+}
