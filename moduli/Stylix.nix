@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/colors.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
   # https://tinted-theming.github.io/tinted-gallery/
   # evenok-dark
 

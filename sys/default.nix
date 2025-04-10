@@ -71,7 +71,6 @@
     anydesk
     appimage-run
     cabextract
-    clamtk
     floorp
     fzf
     git
