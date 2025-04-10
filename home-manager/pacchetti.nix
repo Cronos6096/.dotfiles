@@ -55,6 +55,8 @@
     udiskie # Automontatore
     vesktop # Discord
     pandoc
+    cmake
+    emacsPackages.vterm
 
     # Video / Audio
     blender
