@@ -17,6 +17,7 @@
     wofi
     wl-clipboard
     clipse
+    hyprshot
 
     # archivi
     p7zip
@@ -56,12 +57,11 @@
     vesktop # Discord
     pandoc
     cmake
-    emacsPackages.vterm
+    pyright
 
     # Video / Audio
     blender
     davinci-resolve # Video editor
-    flameshot # Screenshot
     gimp # Image editor
     inkscape
     obs-studio

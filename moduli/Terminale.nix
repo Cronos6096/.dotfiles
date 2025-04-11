@@ -14,10 +14,9 @@
     settings = {
       scrollback_lines = 10000;
       confirm_os_window_close = 0;
-      cursor_trail_start_threshold = 2;
+      cursor_trail_start_threshold = 1;
       enable_audio_bell = false;
-      mouse_hide_wait = "-1.0";
-      window_padding_width = 10;
+      mouse_hide_wait = "0.5";
     };
   };
 
