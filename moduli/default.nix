@@ -9,5 +9,6 @@
     ./Solaar.nix
     ./Stylix.nix
     ./Vm.nix
+    ./Adb.nix
   ];
 }

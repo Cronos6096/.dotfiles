@@ -12,6 +12,12 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  system.autoUpgrade = {
+    enable = true;
+    dates = "16:00";
+    randomizedDelaySec = "45min";
+  };
+
   # Swap
   boot.kernel.sysctl = {
     "vm.max_map_count" = 16777216;
@@ -110,16 +116,16 @@
     wineWowPackages.waylandFull
   ];
 
-  services.emacs.package = pkgs.emacs-unstable;
-  services.emacs.enable = true;
-  nixpkgs.overlays = [
-    (import (
-      builtins.fetchTarball {
-        url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-        sha256 = "12md9gzyg4w4dvz76y9kyy5kwdq34r880ki87ykyln72wyxx6gwv";
-      }
-    ))
-  ];
+  # services.emacs.package = pkgs.emacs-unstable;
+  # services.emacs.enable = true;
+  # nixpkgs.overlays = [
+  #   (import (
+  #     builtins.fetchTarball {
+  #       url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+  #       sha256 = "12md9gzyg4w4dvz76y9kyy5kwdq34r880ki87ykyln72wyxx6gwv";
+  #     }
+  #   ))
+  # ];
 
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;

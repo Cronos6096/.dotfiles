@@ -43,7 +43,6 @@
       py3 = "python3";
       bottles = "flatpak run com.usebottles.bottles";
       nixsearch = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
-      emacs = "emacsclient -c -a 'emacs'";
     };
     history.size = 10000;
 

@@ -12,11 +12,6 @@
     # Trova pacchetti
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
 
-    # Nix-citizen
-    nix-citizen.url = "github:LovingMelody/nix-citizen";
-    nix-gaming.url = "github:fufexan/nix-gaming";
-    nix-citizen.inputs.nix-gaming.follows = "nix-gaming";
-
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
@@ -67,8 +62,6 @@
             {
               environment.systemPackages = [
                 nix-search-tv.packages.x86_64-linux.default
-                inputs.nix-citizen.packages.${system}.star-citizen
-
               ];
             }
             # Stylix
