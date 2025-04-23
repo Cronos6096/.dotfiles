@@ -59,8 +59,6 @@
     pandoc
     cmake
     pyright
-    distrobox
-    docker
 
     # Video / Audio
     blender

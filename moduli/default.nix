@@ -10,5 +10,6 @@
     ./Stylix.nix
     ./Vm.nix
     ./Adb.nix
+    ./Distrobox.nix
   ];
 }
