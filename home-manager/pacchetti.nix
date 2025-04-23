@@ -43,7 +43,7 @@
     nerd-fonts.zed-mono
     liberation_ttf
     times-newer-roman
-    icu77
+    icu
 
     # utilities
     appimage-run # AppImage runner
@@ -59,6 +59,8 @@
     pandoc
     cmake
     pyright
+    distrobox
+    docker
 
     # Video / Audio
     blender
