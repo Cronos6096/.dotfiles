@@ -2,7 +2,7 @@
 
 {
   virtualisation.podman.enable = true;
-  virtualisation.podman.dockerCompat = true; # Optional: makes it act like Docker
+  virtualisation.podman.dockerCompat = true;
 
   environment.systemPackages = with pkgs; [
     podman

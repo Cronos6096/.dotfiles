@@ -43,6 +43,7 @@
       py3 = "python3";
       bottles = "flatpak run com.usebottles.bottles";
       nixsearch = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
+      arch = "distrobox-enter arch";
     };
     history.size = 10000;
 

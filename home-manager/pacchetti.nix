@@ -59,6 +59,7 @@
     pandoc
     cmake
     pyright
+    rustdesk
 
     # Video / Audio
     blender
