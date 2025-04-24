@@ -18,6 +18,8 @@
     wl-clipboard
     clipse
     hyprshot
+    pavucontrol
+    networkmanager
 
     # archivi
     p7zip
