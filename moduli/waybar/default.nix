@@ -79,12 +79,12 @@
 
     style = ''
       * {
-        font-family: "Fira Code Light";
+        font-family: "JetBrains Nerd Font";
         font-size: 12px;
       }
 
       window#waybar {
-        background-color: rgba(128, 128, 128, 0);
+        background-color: rgba(0, 0, 0, 0.4);            
         border: none;
         box-shadow: none;
       }
@@ -107,6 +107,14 @@
       #network.disconnected {
         color: #ff6c6b;
       }
+
+      #tooltip {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #e0def4;
+        border-radius: 4px;
+        padding: 3px 6px;
+        font-size: 11px;
+     }
     '';
   };
 }
