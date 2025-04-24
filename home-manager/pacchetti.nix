@@ -62,6 +62,7 @@
     cmake
     pyright
     rustdesk
+    hyprls
 
     # Video / Audio
     blender
