@@ -131,12 +131,11 @@ in
         font-size: 12px;
         border-radius: 0px;
         border: none;
-        min-height: 0px; 
-        opacity: 1.0;
+        min-height: 16px; 
+        opacity: 1;
       }
-      #waybar {
-        background-color: rgba(0, 0, 0, 0);
-        border: none;
+      window#waybar {
+        background: transparent;
       }
 
       #workspaces {

@@ -39,14 +39,8 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
-  # Tracking batteria
-  services.upower.enable = true;
-  services.blueman.enable = true;
-  services.libinput.enable = true;
-  services.power-profiles-daemon.enable = true;
-
+  # Hyprland
   programs.hyprland.enable = true;
-  # programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   # Stylix
   stylix.enable = true;
