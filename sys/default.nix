@@ -5,6 +5,7 @@
     ./gpu.nix
     ./audio.nix
     ../moduli
+    ../Pacchetti.nix
   ];
 
   # Bootloader
@@ -46,7 +47,7 @@
 
   programs.hyprland.enable = true;
   # programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-  
+
   # Stylix
   stylix.enable = true;
 
@@ -74,48 +75,6 @@
 
   # zsh shell
   programs.zsh.enable = true;
-
-  # Abilita pacchetti unfree/Flake
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  environment.systemPackages = with pkgs; [
-    appimage-run
-    cabextract
-    clamtk
-    floorp
-    fzf
-    git
-    home-manager
-    libreoffice
-    libva
-    libva-utils
-    logitech-udev-rules
-    mesa
-    nil
-    nix-output-monitor
-    nixfmt-rfc-style
-    nvd
-    nvtopPackages.nvidia
-    orca-slicer
-    prismlauncher
-    qalculate-gtk
-    tldr
-    unzip
-    vscode
-    vulkan-extension-layer
-    vulkan-loader
-    vulkan-tools
-    vulkan-validation-layers
-    wget
-    wine
-    winetricks
-    wineWowPackages.full
-    wineWowPackages.waylandFull
-  ];
 
   system.stateVersion = "25.05";
 }

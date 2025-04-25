@@ -84,14 +84,6 @@
           # Integrazione di solaar
           solaar.nixosModules.default
 
-          # Pacchetti
-          {
-            environment.systemPackages = with pkgs; [
-              xorg.libxcb
-              xorg.libXcursor
-            ];
-          }
-
           # Portale xdg
           {
             services.dbus.enable = true;
@@ -128,27 +120,5 @@
         ];
         specialArgs = { inherit inputs system; };
       };
-
-      # homeConfigurations."${user}@${hostname}" = home-manager.lib.homeManagerConfiguration {
-      #   pkgs = pkgs;
-      #   system = system;
-      #   home.stateVersion = "25.05";
-      #   modules = [
-
-      #     ./home-manager/home.nix
-
-      #     inputs.nixvim.homeManagerModules.nixvin
-
-      #     #{
-      #     # wayland.windowManager.hyprland = {
-      #     #   enable = true;
-      #     #   # Flake
-      #     #   package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      #     #   portalPackage =
-      #     #     inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-      #     # };
-      #     #}
-      #   ];
-      # };
     };
 }
