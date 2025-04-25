@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -116,10 +116,6 @@
     wineWowPackages.full
     wineWowPackages.waylandFull
   ];
-
-  programs.steam.enable = true;
-  programs.steam.gamescopeSession.enable = true;
-  programs.gamemode.enable = true;
 
   system.stateVersion = "25.05";
 }

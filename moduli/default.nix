@@ -9,6 +9,7 @@
     ./Solaar.nix
     ./Stylix.nix
     ./Vm.nix
+    ./Steam.nix
     # ./Ollama.nix
   ];
 }
