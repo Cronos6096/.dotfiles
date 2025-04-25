@@ -94,18 +94,19 @@
 
           # Portale xdg
           {
+            services.dbus.enable = true;
+
             xdg.portal = {
               enable = true;
-              config.common.default = [ "kde" ];
+              config.common.default = [ "hyprland" ];
               extraPortals = with pkgs; [
-                kdePackages.xdg-desktop-portal-kde
                 xdg-desktop-portal-hyprland
+                xdg-desktop-portal-gtk
               ];
             };
             services.dbus.packages = with pkgs; [
-              xdg-desktop-portal
               xdg-desktop-portal-hyprland
-              kdePackages.xdg-desktop-portal-kde
+              xdg-desktop-portal-gtk
             ];
           }
 

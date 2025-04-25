@@ -7,7 +7,7 @@
     xwayland.enable = true;
     systemd.enable = true;
     extraConfig = ''
-          env = LIBVA_DRIVER_NAME,nvidia
+      env = LIBVA_DRIVER_NAME,nvidia
       env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 
       cursor {
@@ -18,6 +18,8 @@
       monitor= eDP-1, 1920x1080@144,0x0 , 1
       monitor= HDMI-A-1, 2560x1440@59.95, 1920x-590, 1.25
 
+      layerrule = blur, waybar
+    
       # Xorg che scassa
       xwayland {
         force_zero_scaling = true
@@ -137,7 +139,7 @@
           kb_layout = it
           kb_variant =
           kb_model =
-          kb_options = caps:swapescape
+          kb_options = #caps:swapescape
           kb_rules =
 
           follow_mouse = 1

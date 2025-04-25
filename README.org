@@ -1,3 +1,0 @@
-#+title: Nixos config
-#+DESCRIPTION:
-Config di nixos con Home-Manager e flake
