@@ -134,8 +134,10 @@ in
         min-height: 16px; 
         opacity: 1;
       }
+
       window#waybar {
-        background: transparent;
+        background:rgba(1, 1, 1, 0.1);
+        border: none;
       }
 
       #workspaces {
