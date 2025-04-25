@@ -1,15 +1,14 @@
 {
   imports = [
-    ./Hyprland.nix
+    ./Adb.nix
+    ./Distrobox.nix
     ./Lingua.nix
-    # ./Ollama.nix
     ./Python.nix
     ./Rust.nix
     ./Servizi.nix
     ./Solaar.nix
     ./Stylix.nix
     ./Vm.nix
-    ./Adb.nix
-    ./Distrobox.nix
+    # ./Ollama.nix
   ];
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -44,6 +44,9 @@
   services.libinput.enable = true;
   services.power-profiles-daemon.enable = true;
 
+  programs.hyprland.enable = true;
+  # programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  
   # Stylix
   stylix.enable = true;
 
@@ -80,7 +83,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    anydesk
     appimage-run
     cabextract
     clamtk
@@ -88,7 +90,6 @@
     fzf
     git
     home-manager
-    hyprpanel
     libreoffice
     libva
     libva-utils
@@ -115,17 +116,6 @@
     wineWowPackages.full
     wineWowPackages.waylandFull
   ];
-
-  # services.emacs.package = pkgs.emacs-unstable;
-  # services.emacs.enable = true;
-  # nixpkgs.overlays = [
-  #   (import (
-  #     builtins.fetchTarball {
-  #       url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-  #       sha256 = "12md9gzyg4w4dvz76y9kyy5kwdq34r880ki87ykyln72wyxx6gwv";
-  #     }
-  #   ))
-  # ];
 
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;

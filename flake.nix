@@ -14,7 +14,6 @@
 
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
 
     # Stylix
     stylix.url = "github:danth/stylix";
@@ -40,70 +39,114 @@
 
   outputs =
     {
-      self,
-      nixpkgs,
-      solaar,
       home-manager,
+      hyprland,
+      nix-search-tv,
+      nixpkgs,
       nixvim,
       rust-overlay,
-      nix-search-tv,
+      self,
+      solaar,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      user = "andme";
+      hostname = "GiovanGianFranco";
     in
     {
-      nixosConfigurations = {
-        andme = nixpkgs.lib.nixosSystem {
-          system = system;
-          modules = [
-            ./sys
+      nixosConfigurations."${user}" = nixpkgs.lib.nixosSystem {
+        system = system;
+        modules = [
+          ./sys
 
-            {
-              environment.systemPackages = [
-                nix-search-tv.packages.x86_64-linux.default
-              ];
-            }
-            # Stylix
-            inputs.stylix.nixosModules.stylix
+          # Nix search
+          {
+            environment.systemPackages = [
+              nix-search-tv.packages.x86_64-linux.default
+            ];
+          }
 
-            # Hyprland
+          # Stylix
+          inputs.stylix.nixosModules.stylix
+
+          (
+            { pkgs, ... }:
             {
               nixpkgs.overlays = [
-                inputs.hyprpanel.overlay
+                rust-overlay.overlays.default
               ];
+              environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
             }
+          )
 
-            (
-              { pkgs, ... }:
-              {
-                nixpkgs.overlays = [
-                  rust-overlay.overlays.default
-                ];
-                environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-              }
-            )
+          # Integrazione di solaar
+          solaar.nixosModules.default
 
-            # Integrazione di solaar
-            solaar.nixosModules.default
+          # Pacchetti
+          {
+            environment.systemPackages = with pkgs; [
+              xorg.libxcb
+              xorg.libXcursor
+            ];
+          }
 
-            # Integrazione di Home Manager tramite modulo NixOS
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useUserPackages = true;
-              home-manager.users.andme =
-                { pkgs, ... }:
-                {
-                  imports = [
-                    inputs.nixvim.homeManagerModules.nixvim
-                    ./home-manager/home.nix
-                  ];
-                };
-            }
-          ];
-          specialArgs = { inherit inputs; };
-          specialArgs = { inherit system; };
-        };
+          # Portale xdg
+          {
+            xdg.portal = {
+              enable = true;
+              config.common.default = [ "kde" ];
+              extraPortals = with pkgs; [
+                kdePackages.xdg-desktop-portal-kde
+                xdg-desktop-portal-hyprland
+              ];
+            };
+            services.dbus.packages = with pkgs; [
+              xdg-desktop-portal
+              xdg-desktop-portal-hyprland
+              kdePackages.xdg-desktop-portal-kde
+            ];
+          }
+
+          home-manager.nixosModules.home-manager
+
+          {
+            home-manager.useUserPackages = true;
+
+            home-manager.users.andme = {
+              home.stateVersion = "25.05";
+              imports = [
+                ./home-manager/home.nix
+                inputs.nixvim.homeManagerModules.nixvim
+              ];
+            };
+          }
+
+        ];
+        specialArgs = { inherit inputs system; };
       };
+
+      # homeConfigurations."${user}@${hostname}" = home-manager.lib.homeManagerConfiguration {
+      #   pkgs = pkgs;
+      #   system = system;
+      #   home.stateVersion = "25.05";
+      #   modules = [
+
+      #     ./home-manager/home.nix
+
+      #     inputs.nixvim.homeManagerModules.nixvin
+
+      #     #{
+      #     # wayland.windowManager.hyprland = {
+      #     #   enable = true;
+      #     #   # Flake
+      #     #   package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      #     #   portalPackage =
+      #     #     inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      #     # };
+      #     #}
+      #   ];
+      # };
     };
 }

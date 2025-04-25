@@ -65,7 +65,7 @@ in
               "󰤨"
             ];
             format-ethernet = " {bandwidthDownOctets}";
-            format-wifi = "{icon} {ssid}%";
+            format-wifi = "{icon} {signalStrength}%";
             format-disconnected = "󰤮";
             tooltip = false;
           };
@@ -188,7 +188,7 @@ in
           #clock {
             font-weight: bold;
             color: #0D0E15;
-            background: #${config.lib.stylix.colors.base0B};
+            background: #${config.lib.stylix.colors.base0D};
             margin: 0px;
             padding: 8px;
             border-radius: 4px;

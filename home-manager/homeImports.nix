@@ -5,5 +5,6 @@
     ../moduli/Nixvim/default.nix
     ../moduli/Terminale.nix
     ../moduli/waybar
+    ../moduli/Hyprland.nix
   ];
 }
