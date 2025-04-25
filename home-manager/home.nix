@@ -1,3 +1,5 @@
+{lib, ...}:
+
 {
   programs.home-manager.enable = true;
 
@@ -18,6 +20,9 @@
     XDG_SESSION_DESKTOP = "Hyprland";
     GTK_USE_PORTAL = "1";
   };
+
+  home.file."/home/andme/.config/hypr/hyprland.conf".source = lib.mkForce ../hypr/hyprland.conf;
+  # home.file.".config/hypr/hyprpaper.conf".source = ../hypr/hyprpaper.conf;
 
   # Polkit
   xdg.autostart.enable = true;

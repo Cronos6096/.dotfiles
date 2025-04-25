@@ -53,7 +53,6 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       user = "andme";
-      hostname = "GiovanGianFranco";
     in
     {
       nixosConfigurations."${user}" = nixpkgs.lib.nixosSystem {

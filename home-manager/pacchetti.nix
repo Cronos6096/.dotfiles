@@ -99,17 +99,5 @@
     # Strumenti
     btop # replacement of htop/nmon
     glow # markdown previewer in terminal
-
-    # system call monitoring
-    lsof # list open files
-    ltrace # library call monitoring
-    strace # system call monitoring
-
-    # system tools
-    ethtool
-    lm_sensors # for `sensors` command
-    pciutils # lspci
-    sysstat
-    usbutils # lsusb
   ];
 }
