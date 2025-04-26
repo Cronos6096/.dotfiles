@@ -22,6 +22,7 @@
     hyprshot
     pavucontrol
     networkmanager
+    handlr
 
     # archivi
     p7zip
