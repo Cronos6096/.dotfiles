@@ -10,6 +10,7 @@
     ./Stylix.nix
     ./Vm.nix
     ./Steam.nix
+    ./Stylix.nix
     # ./Ollama.nix
   ];
 }

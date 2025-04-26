@@ -1,10 +1,11 @@
 {
   imports = [
     ../moduli/Git.nix
-    ../moduli/Stylix.nix
+    ../moduli/Hyprland.nix
     ../moduli/Nixvim/default.nix
     ../moduli/Terminale.nix
     ../moduli/waybar
-    ../moduli/Hyprland.nix
+    ../moduli/Walker.nix
+    # ../moduli/Stylix.nix
   ];
 }

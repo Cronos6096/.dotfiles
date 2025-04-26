@@ -33,7 +33,7 @@ in
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
         "clock" = {
-          format = '' {:L%H:%M}'';
+          format = ''{:L%H:%M:%S}'';
           tooltip = true;
           tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>";
         };
@@ -76,7 +76,7 @@ in
           tooltip = false;
         };
         "tray" = {
-          spacing = 16;
+          spacing = 12;
         };
         "pulseaudio" = {
           format = "{icon} {volume}% {format_source}";
@@ -131,12 +131,11 @@ in
         font-size: 12px;
         border-radius: 0px;
         border: none;
-        min-height: 16px; 
-        opacity: 1;
+        min-height: 12px; 
       }
 
       window#waybar {
-        background:rgba(1, 1, 1, 0.1);
+        background:rgba(0, 0, 0, 0.1);
         border: none;
       }
 

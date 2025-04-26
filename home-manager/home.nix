@@ -1,4 +1,4 @@
-{lib, ...}:
+{ lib, ... }:
 
 {
   programs.home-manager.enable = true;
@@ -15,10 +15,6 @@
     VISUAL = "nvim";
     BROWSER = "floorp";
     TERMINAL = "kitty";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE = "wayland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-    GTK_USE_PORTAL = "1";
   };
 
   home.file."/home/andme/.config/hypr/hyprland.conf".source = lib.mkForce ../hypr/hyprland.conf;
@@ -28,5 +24,5 @@
   xdg.autostart.enable = true;
 
   nixpkgs.config.allowUnfree = true;
-  # home.stateVersion = "25.05";
+  home.stateVersion = "25.05";
 }

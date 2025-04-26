@@ -20,7 +20,7 @@
 
     # Solaar
     solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -35,6 +35,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    walker.url = "github:abenz1267/walker";
+
   };
 
   outputs =
@@ -47,12 +49,15 @@
       rust-overlay,
       self,
       solaar,
+      stylix,
+      walker,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       user = "andme";
+      # hostname = "GiovanGianFranco";
     in
     {
       nixosConfigurations."${user}" = nixpkgs.lib.nixosSystem {
@@ -67,9 +72,6 @@
             ];
           }
 
-          # Stylix
-          inputs.stylix.nixosModules.stylix
-
           (
             { pkgs, ... }:
             {
@@ -83,22 +85,21 @@
           # Integrazione di solaar
           solaar.nixosModules.default
 
+          # Modulo di Stylix NixOS
+          stylix.nixosModules.stylix
+
           # Portale xdg
           {
-            services.dbus.enable = true;
-
             xdg.portal = {
               enable = true;
               wlr.enable = true;
-              config.common.default = [ "hyprland" ];
-              extraPortals = with pkgs; [
-                xdg-desktop-portal-hyprland
-                xdg-desktop-portal-gtk
-              ];
+              xdgOpenUsePortal = true;
+              extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
             };
-            services.dbus.packages = with pkgs; [
-              xdg-desktop-portal-hyprland
-              xdg-desktop-portal-gtk
+
+            services.dbus.packages = [
+              pkgs.xdg-desktop-portal
+              inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
             ];
           }
 
@@ -106,18 +107,24 @@
 
           {
             home-manager.useUserPackages = true;
-
             home-manager.users.andme = {
               home.stateVersion = "25.05";
               imports = [
                 ./home-manager/home.nix
                 inputs.nixvim.homeManagerModules.nixvim
+                inputs.walker.homeManagerModules.default
+                # stylix.homeManagerModules.stylix
               ];
             };
           }
-
         ];
-        specialArgs = { inherit inputs system; };
+        specialArgs = {
+          inherit
+            inputs
+            system
+            ;
+          # walker = inputs.walker;
+        };
       };
     };
 }
