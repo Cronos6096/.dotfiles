@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/evenok-dark.yaml";
+  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/helios.yaml";
   # https://tinted-theming.github.io/tinted-gallery/
 
   stylix.image = ./wallpaper.jpg;
@@ -12,13 +12,10 @@
 
   stylix.autoEnable = true;
 
-  # stylix.targets.waybar = {
-  #   enable = true;
-  #   addCss = false;
-  #   enableLeftBackColors = true;
-  #   enableCenterBackColors = true;
-  #   enableRightBackColors = true;
-  # };
+  stylix.opacity = {
+    desktop = 0.0;
+    terminal = 0.7;
+  };
 
   stylix.cursor.size = 18;
 

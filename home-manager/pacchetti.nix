@@ -10,6 +10,7 @@
     whatsapp-for-linux # Whatsapp
     yazi # terminal file manager
     kdePackages.kate # editor di testo
+    pinta # Paint.net (circa)
 
     # Hyprland
     dunst

@@ -11,15 +11,14 @@ in
         position = "top";
         modules-center = [ "hyprland/window" ];
         modules-left = [
-          "hyprland/workspaces"
           "pulseaudio"
-          "cpu"
-          "memory"
+          "hyprland/workspaces"
         ];
         modules-right = [
           "network"
-          "tray"
           "battery"
+          "bluetooth"
+          "tray"
           "clock"
         ];
         "hyprland/workspaces" = {
@@ -35,10 +34,10 @@ in
         "clock" = {
           format = ''{:L%H:%M:%S}'';
           tooltip = true;
-          tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>";
+          tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt>{calendar}</tt>";
         };
         "hyprland/window" = {
-          max-length = 128;
+          max-length = 40;
           separate-outputs = false;
         };
         "bluetooth" = {
@@ -50,17 +49,6 @@ in
             "disabled" = "";
           };
           tooltip-format = "{}";
-        };
-
-        "memory" = {
-          interval = .1;
-          format = " {}%";
-          tooltip = true;
-        };
-        "cpu" = {
-          interval = .1;
-          format = " {usage:2}%";
-          tooltip = true;
         };
         "network" = {
           format-icons = [
@@ -128,10 +116,10 @@ in
     style = ''
       * {
         font-family: JetBrainsMono Nerd Font Mono;
-        font-size: 12px;
+        font-size: 14px;
         border-radius: 0px;
         border: none;
-        min-height: 12px; 
+        min-height: 20px; 
       }
 
       window#waybar {
@@ -144,13 +132,13 @@ in
         background: #${config.lib.stylix.colors.base01};
         margin: 4px 4px;
         padding: 5px 5px;
-        border-radius: 4px;
+        border-radius: 8px;
       }
       #workspaces button {
         font-weight: bold;
         padding: 0px 5px;
         margin: 0px 3px;
-        border-radius: 4px;
+        border-radius: 8px;
         color: #${config.lib.stylix.colors.base00};
         background: #${config.lib.stylix.colors.base0D};
         opacity: 0.5;
@@ -177,28 +165,28 @@ in
       }
       tooltip {
         background: #${config.lib.stylix.colors.base00};
-        border: 1px solid #${config.lib.stylix.colors.base08};
+        border: 1px solid #${config.lib.stylix.colors.base04};
         border-radius: 12px;
       }
       tooltip label {
-        color: #${config.lib.stylix.colors.base08};
+        color: #${config.lib.stylix.colors.base04};
       }
-      #window, #pulseaudio, #cpu, #memory #network {
+      #window, #pulseaudio, #cpu, #memory, #network, #tray, #battery, #bluetooth {
         font-weight: bold;
         margin: 4px 0px;
         margin-left: 7px;
         padding: 0px 8px;
         background: #${config.lib.stylix.colors.base04};
         color: #${config.lib.stylix.colors.base00};
-        border-radius: 4px;
+        border-radius: 8px;
       }
       #clock {
         font-weight: bold;
         color: #0D0E15;
         background: #${config.lib.stylix.colors.base0D};
-        margin: 0px;
+        margin: 2px;
         padding: 4px;
-        border-radius: 4px;
+        border-radius: 16px;
       }
     '';
   };
