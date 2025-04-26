@@ -17,7 +17,6 @@ in
         modules-right = [
           "network"
           "battery"
-          "bluetooth"
           "tray"
           "clock"
         ];
@@ -40,17 +39,7 @@ in
           max-length = 40;
           separate-outputs = false;
         };
-        "bluetooth" = {
-          format = "<b>{icon}</b>";
-          format-alt = "{status} {icon}";
-          interval = 30;
-          format-icons = {
-            "enabled" = "";
-            "disabled" = "";
-          };
-          tooltip-format = "{}";
-        };
-        "network" = {
+       "network" = {
           format-icons = [
             "󰤯"
             "󰤟"
@@ -121,12 +110,10 @@ in
         border: none;
         min-height: 20px; 
       }
-
       window#waybar {
         background:rgba(0, 0, 0, 0.1);
         border: none;
       }
-
       #workspaces {
         color: #${config.lib.stylix.colors.base01};
         background: #${config.lib.stylix.colors.base01};
@@ -171,7 +158,7 @@ in
       tooltip label {
         color: #${config.lib.stylix.colors.base04};
       }
-      #window, #pulseaudio, #cpu, #memory, #network, #tray, #battery, #bluetooth {
+      #window, #pulseaudio, #cpu, #memory, #network, #tray, #battery {
         font-weight: bold;
         margin: 4px 0px;
         margin-left: 7px;
