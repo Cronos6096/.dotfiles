@@ -55,7 +55,6 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       user = "andme";
       # hostname = "GiovanGianFranco";
     in
@@ -89,18 +88,9 @@
           stylix.nixosModules.stylix
 
           # Portale xdg
+          ./moduli/Auto-xdg-portal.nix
           {
-            xdg.portal = {
-              enable = true;
-              wlr.enable = true;
-              xdgOpenUsePortal = true;
-              extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-            };
-
-            services.dbus.packages = [
-              pkgs.xdg-desktop-portal
-              inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
-            ];
+            autoXdgPortal.enable = true;
           }
 
           home-manager.nixosModules.home-manager

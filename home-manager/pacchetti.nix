@@ -9,8 +9,9 @@
     obsidian # note taking app
     whatsapp-for-linux # Whatsapp
     yazi # terminal file manager
-    kdePackages.kate # editor di testo
+    kdePackages.kate # Notepad
     pinta # Paint.net (circa)
+    zed-editor # Ide
 
     # Hyprland
     dunst

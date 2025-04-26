@@ -163,8 +163,8 @@ in
         margin: 4px 0px;
         margin-left: 7px;
         padding: 0px 8px;
-        background: #${config.lib.stylix.colors.base04};
-        color: #${config.lib.stylix.colors.base00};
+        background: #${config.lib.stylix.colors.base01};
+        color: #${config.lib.stylix.colors.base07};
         border-radius: 8px;
       }
       #clock {

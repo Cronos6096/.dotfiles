@@ -11,6 +11,6 @@
     ./Vm.nix
     ./Steam.nix
     ./Stylix.nix
-    # ./Ollama.nix
+    ./Ollama.nix
   ];
 }

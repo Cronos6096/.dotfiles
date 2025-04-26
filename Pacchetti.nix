@@ -15,8 +15,9 @@
     logitech-udev-rules
     mesa
     nil
+    nixd
     nix-output-monitor
-    nixfmt-rfc-style
+    # nixfmt-rfc-style
     nvd
     nvtopPackages.nvidia
     orca-slicer
