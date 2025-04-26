@@ -18,8 +18,7 @@
       mouse_hide_wait = "0.5";
     };
 
-
-    extraConfig = 
+    extraConfig =
     ''
     disable_ligatures never
     cursor_blink_interval 0

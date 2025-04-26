@@ -6,6 +6,7 @@
     ./audio.nix
     ../moduli
     ../Pacchetti.nix
+    ../Pacchetti-NUR.nix
   ];
 
   # Bootloader

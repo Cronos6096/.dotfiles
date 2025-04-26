@@ -59,6 +59,7 @@
       solaar,
       stylix,
       walker,
+      nur,
       ...
     }@inputs:
     let
@@ -80,13 +81,7 @@
           }
 
           # NUR
-          {
-            nixpkgs.config.packageOverrides = pkgs: {
-              nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/main.tar.gz") {
-                inherit pkgs;
-              };
-            };
-          }
+          nur.modules.nixos.default
 
           (
             { pkgs, ... }:
