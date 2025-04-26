@@ -9,6 +9,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Nur
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Trova pacchetti
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
 
@@ -30,11 +36,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Rust
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Walker
     walker.url = "github:abenz1267/walker";
 
   };
@@ -69,6 +77,15 @@
             environment.systemPackages = [
               nix-search-tv.packages.x86_64-linux.default
             ];
+          }
+
+          # NUR
+          {
+            nixpkgs.config.packageOverrides = pkgs: {
+              nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/main.tar.gz") {
+                inherit pkgs;
+              };
+            };
           }
 
           (
