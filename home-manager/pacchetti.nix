@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  # Pacchetti utente
   home.packages = with pkgs; [
     # Roba
     ckan # Kerbal Space Program mod manager

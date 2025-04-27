@@ -1,6 +1,7 @@
 {
   imports = [
     ./Adb.nix
+    ./Auto-xdg-portal.nix
     ./Distrobox.nix
     ./Fusion-360.nix
     ./Lingua.nix

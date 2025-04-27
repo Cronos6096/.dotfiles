@@ -105,7 +105,6 @@
           stylix.nixosModules.stylix
 
           # Portale xdg
-          ./moduli/Auto-xdg-portal.nix
           {
             autoXdgPortal.enable = true;
           }

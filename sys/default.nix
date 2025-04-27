@@ -17,7 +17,7 @@
   system.autoUpgrade = {
     enable = true;
     dates = "16:00";
-    randomizedDelaySec = "45min";
+    randomizedDelaySec = "15min";
   };
 
   # Swap
