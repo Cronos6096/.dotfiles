@@ -2,16 +2,16 @@
   imports = [
     ./Adb.nix
     ./Distrobox.nix
+    ./Fusion-360.nix
     ./Lingua.nix
+    ./Ollama.nix
     ./Python.nix
     ./Rust.nix
     ./Servizi.nix
     ./Solaar.nix
-    ./Stylix.nix
-    ./Vm.nix
     ./Steam.nix
     ./Stylix.nix
-    ./Ollama.nix
-    ./Fusion-360.nix
+    ./Stylix.nix
+    ./Vm.nix
   ];
 }

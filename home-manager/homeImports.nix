@@ -1,5 +1,0 @@
-{
-  imports = [
-    ../moduli/home-manager
-  ];
-}

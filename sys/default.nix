@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
     ./gpu.nix
     ./audio.nix
-    ../moduli
+    ../moduli/system
     ../Pacchetti.nix
     ../Pacchetti-NUR.nix
   ];
