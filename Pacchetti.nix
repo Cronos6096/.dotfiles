@@ -5,7 +5,6 @@
     appimage-run
     cabextract
     clamtk
-    freecad
     floorp
     fzf
     git
