@@ -20,6 +20,10 @@
 
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     # Stylix
     stylix.url = "github:danth/stylix";
@@ -60,6 +64,7 @@
       stylix,
       walker,
       nur,
+      split-monitor-workspaces,
       ...
     }@inputs:
     let
@@ -125,7 +130,6 @@
             inputs
             system
             ;
-          # walker = inputs.walker;
         };
       };
     };

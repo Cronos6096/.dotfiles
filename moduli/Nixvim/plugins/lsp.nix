@@ -14,10 +14,10 @@
         inlayHints = true;
         servers.nil_ls = {
           enable = true;
-            settings = {
-              formatting = {
-                command = [ "nixpkgs-fmt" ];
-          };
+          settings = {
+            formatting = {
+              command = [ "nixpkgs-fmt" ];
+            };
           };
         };
 
@@ -25,8 +25,6 @@
           installCargo = true;
           installRustc = true;
         };
-
-        
 
         keymaps = {
           silent = true;
