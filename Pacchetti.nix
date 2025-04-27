@@ -9,14 +9,15 @@
     fzf
     git
     home-manager
+    impression
     libreoffice
     libva
     libva-utils
     logitech-udev-rules
     mesa
+    nix-output-monitor
     nixd
     nixfmt-rfc-style
-    nix-output-monitor
     nvd
     nvtopPackages.nvidia
     orca-slicer
@@ -31,11 +32,11 @@
     vulkan-validation-layers
     wget
     wine
-    winetricks
     wineWowPackages.full
     wineWowPackages.waylandFull
-    xorg.libxcb
+    winetricks
     xorg.libXcursor
+    xorg.libxcb
   ];
 
   # Pacchetti liberi / Flake

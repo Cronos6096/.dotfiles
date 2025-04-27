@@ -31,7 +31,7 @@ in
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
         "clock" = {
-          format = ''{:L%H:%M:%S}'';
+          format = ''{:L%R:%S}'';
           tooltip = true;
           tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt>{calendar}</tt>";
         };
@@ -39,7 +39,7 @@ in
           max-length = 40;
           separate-outputs = false;
         };
-       "network" = {
+        "network" = {
           format-icons = [
             "󰤯"
             "󰤟"
@@ -108,7 +108,7 @@ in
         font-size: 14px;
         border-radius: 0px;
         border: none;
-        min-height: 20px; 
+        min-height: 20px;
       }
       window#waybar {
         background:rgba(0, 0, 0, 0.1);

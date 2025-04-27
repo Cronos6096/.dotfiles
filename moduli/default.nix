@@ -12,5 +12,6 @@
     ./Steam.nix
     ./Stylix.nix
     ./Ollama.nix
+    ./Fusion-360.nix
   ];
 }
