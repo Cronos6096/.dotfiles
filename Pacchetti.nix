@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     appimage-run
+    bitwarden-desktop
     cabextract
     clamtk
     floorp
