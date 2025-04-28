@@ -31,7 +31,7 @@ in
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
         "clock" = {
-          format = ''{:L%R:%S}'';
+          format = ''{:L%R}'';
           tooltip = true;
           tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt>{calendar}</tt>";
         };
@@ -48,9 +48,10 @@ in
             "󰤨"
           ];
           format-ethernet = " {bandwidthDownOctets}";
-          format-wifi = "{icon} {signalStrength}%";
+          format-wifi = "{icon} {essid}";
           format-disconnected = "󰤮";
           tooltip = false;
+          on-click = "nmtui";
         };
         "tray" = {
           spacing = 12;
@@ -104,8 +105,8 @@ in
     ];
     style = ''
       * {
-        font-family: JetBrainsMono Nerd Font Mono;
-        font-size: 14px;
+        font-family: DejaVu Sans;
+        font-size: 16px;
         border-radius: 0px;
         border: none;
         min-height: 20px;
