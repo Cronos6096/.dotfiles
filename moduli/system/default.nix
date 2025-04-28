@@ -3,6 +3,7 @@
     ./Adb.nix
     ./Auto-xdg-portal.nix
     ./Distrobox.nix
+    ./Plasma.nix
     ./Fusion-360.nix
     ./Lingua.nix
     ./Ollama.nix

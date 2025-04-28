@@ -109,6 +109,24 @@
             autoXdgPortal.enable = true;
           }
 
+          # Dolphin
+          (
+            { pkgs, ... }:
+            {
+
+              xdg.menus.enable = true;
+              xdg.mime.enable = true;
+
+              environment.etc."xdg/menus/applications.menu".source =
+                "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/applications.menu";
+
+              environment.systemPackages = with pkgs; [
+                kdePackages.dolphin
+                xdg-utils
+              ];
+            }
+          )
+
           home-manager.nixosModules.home-manager
 
           {
