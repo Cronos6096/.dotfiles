@@ -19,9 +19,15 @@
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
 
     # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
-    split-monitor-workspaces = {
-      url = "github:Duckonaut/split-monitor-workspaces";
+    hyprland = {
+      type = "git";
+      url = "https://github.com/hyprwm/Hyprland";
+      submodules = true;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    Hyprspace = {
+      url = "github:KZDKM/Hyprspace";
       inputs.hyprland.follows = "hyprland";
     };
 
@@ -113,7 +119,6 @@
           (
             { pkgs, ... }:
             {
-
               xdg.menus.enable = true;
               xdg.mime.enable = true;
 

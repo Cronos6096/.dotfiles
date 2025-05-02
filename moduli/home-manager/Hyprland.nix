@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 {
   wayland.windowManager.hyprland = {
@@ -6,6 +11,7 @@
     package = pkgs.hyprland;
     xwayland.enable = true;
     systemd.enable = true;
+    plugins = [ inputs.Hyprspace.packages.${pkgs.system}.Hyprspace ];
   };
 
   home.file."/home/andme/.config/hypr/hyprland.conf".source = lib.mkForce ../../hypr/hyprland.conf;
