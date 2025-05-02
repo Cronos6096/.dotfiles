@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     appimage-run
     bitwarden-desktop
-    nexusmods-app-unfree
     cabextract
     clamtk
     floorp
@@ -15,18 +14,20 @@
     libreoffice
     libva
     libva-utils
+    lm_sensors
     logitech-udev-rules
     mesa
+    nexusmods-app-unfree
     nix-output-monitor
     nixd
     nixfmt-rfc-style
     nvd
     nvtopPackages.nvidia
     orca-slicer
-    prismlauncher
-    lm_sensors
     pciutils
+    prismlauncher
     qalculate-gtk
+    rpi-imager
     tldr
     unzip
     vscode
