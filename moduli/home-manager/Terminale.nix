@@ -18,13 +18,12 @@
       mouse_hide_wait = "0.5";
     };
 
-    extraConfig =
-    ''
-    disable_ligatures never
-    cursor_blink_interval 0
-    cursor_trail 0
-    cursor_trail_start_threshold 1
-    background_opacity 0.7
+    extraConfig = ''
+      disable_ligatures never
+      cursor_blink_interval 0
+      cursor_trail 0
+      cursor_trail_start_threshold 1
+      background_opacity 0.7
     '';
   };
 
@@ -39,6 +38,7 @@
       ls = "eza";
       ff = "fastfetch";
       rebuild = "nh os switch /home/andme/.dotfiles/ -H andme --update";
+      rebuildpi = "nh os switch /home/andme/.dotfiles/ -H pi5 --update";
       rebuildnoup = "nh os switch /home/andme/.dotfiles/ -H andme";
       rebuildpush = " cdconf && git add * && git commit && git push && nh os switch . -H andme";
       clean = "nh clean all --keep=5";

@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-hardware = {
+      url = "github:nixos/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Nur
     nur = {
       url = "github:nix-community/NUR";
@@ -75,83 +80,100 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      user = "andme";
+      # user = "andme";
       # hostname = "GiovanGianFranco";
     in
     {
-      nixosConfigurations."${user}" = nixpkgs.lib.nixosSystem {
-        system = system;
-        modules = [
-          ./sys
+      nixosConfigurations = {
+        # Laptop
+        andme = nixpkgs.lib.nixosSystem {
+          system = system;
+          modules = [
+            ./sys
 
-          # Nix search
-          {
-            environment.systemPackages = [
-              nix-search-tv.packages.x86_64-linux.default
-            ];
-          }
-
-          # NUR
-          nur.modules.nixos.default
-
-          (
-            { pkgs, ... }:
+            # Nix search
             {
-              nixpkgs.overlays = [
-                rust-overlay.overlays.default
-              ];
-              environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-            }
-          )
-
-          # Integrazione di solaar
-          solaar.nixosModules.default
-
-          # Modulo di Stylix NixOS
-          stylix.nixosModules.stylix
-
-          # Portale xdg
-          {
-            autoXdgPortal.enable = true;
-          }
-
-          # Dolphin
-          (
-            { pkgs, ... }:
-            {
-              xdg.menus.enable = true;
-              xdg.mime.enable = true;
-
-              environment.etc."xdg/menus/applications.menu".source =
-                "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/applications.menu";
-
-              environment.systemPackages = with pkgs; [
-                kdePackages.dolphin
-                xdg-utils
+              environment.systemPackages = [
+                nix-search-tv.packages.x86_64-linux.default
               ];
             }
-          )
 
-          home-manager.nixosModules.home-manager
+            # NUR
+            nur.modules.nixos.default
 
-          {
-            home-manager.useUserPackages = true;
-            home-manager.users.andme = {
-              home.stateVersion = "25.05";
-              imports = [
-                ./home-manager/home.nix
-                inputs.nixvim.homeManagerModules.nixvim
-                inputs.walker.homeManagerModules.default
-                # stylix.homeManagerModules.stylix
-              ];
-            };
-          }
-        ];
-        specialArgs = {
-          inherit
-            inputs
-            system
-            ;
+            (
+              { pkgs, ... }:
+              {
+                nixpkgs.overlays = [
+                  rust-overlay.overlays.default
+                ];
+                environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+              }
+            )
+
+            # Integrazione di solaar
+            solaar.nixosModules.default
+
+            # Modulo di Stylix NixOS
+            stylix.nixosModules.stylix
+
+            # Portale xdg
+            {
+              autoXdgPortal.enable = true;
+            }
+
+            # Dolphin
+            (
+              { pkgs, ... }:
+              {
+                xdg.menus.enable = true;
+                xdg.mime.enable = true;
+
+                environment.etc."xdg/menus/applications.menu".source =
+                  "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/applications.menu";
+
+                environment.systemPackages = with pkgs; [
+                  kdePackages.dolphin
+                  xdg-utils
+                ];
+              }
+            )
+
+            home-manager.nixosModules.home-manager
+
+            {
+              home-manager.useUserPackages = true;
+              home-manager.users.andme = {
+                home.stateVersion = "25.05";
+                imports = [
+                  ./home-manager/home.nix
+                  inputs.nixvim.homeManagerModules.nixvim
+                  inputs.walker.homeManagerModules.default
+                  # stylix.homeManagerModules.stylix
+                ];
+              };
+            }
+          ];
+          specialArgs = {
+            inherit
+              inputs
+              system
+              ;
+          };
+        };
+
+        # Pi5
+        pi5 = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
+
+          modules = [
+            ./sys
+
+            # Pi5 hardware
+            inputs.nixos-hardware.raspberry-pi-5
+
+            home-manager.nixosModules.home-manager
+          ];
         };
       };
     };
