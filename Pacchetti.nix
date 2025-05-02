@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     appimage-run
     bitwarden-desktop
+    nexusmods-app-unfree
     cabextract
     clamtk
     floorp
@@ -23,6 +24,8 @@
     nvtopPackages.nvidia
     orca-slicer
     prismlauncher
+    lm_sensors
+    pciutils
     qalculate-gtk
     tldr
     unzip

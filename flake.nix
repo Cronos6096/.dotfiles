@@ -70,7 +70,7 @@
       stylix,
       walker,
       nur,
-      split-monitor-workspaces,
+      Hyprspace,
       ...
     }@inputs:
     let

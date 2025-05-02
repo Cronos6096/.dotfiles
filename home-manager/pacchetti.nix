@@ -48,7 +48,7 @@
     nerd-fonts.zed-mono
     liberation_ttf
     times-newer-roman
-    icu
+    icu77
 
     # utilities
     appimage-run # AppImage runner
