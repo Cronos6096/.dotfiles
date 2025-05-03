@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   options = {
@@ -10,8 +15,9 @@
       enable = true;
       xdgOpenUsePortal = true;
       extraPortals = with pkgs; [
+        xdg-desktop-portal
         xdg-desktop-portal-hyprland
-        xdg-desktop-portal-gtk
+        kdePackages.xdg-desktop-portal-kde
       ];
     };
 

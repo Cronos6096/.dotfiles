@@ -37,10 +37,12 @@
     vulkan-validation-layers
     wget
     wine
+    wineWowPackages.stable
     wineWowPackages.full
     wineWowPackages.waylandFull
     winetricks
     xorg.libXcursor
+    mokutil
     xorg.libxcb
   ];
 

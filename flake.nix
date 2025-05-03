@@ -75,7 +75,6 @@
       stylix,
       walker,
       nur,
-      Hyprspace,
       ...
     }@inputs:
     let
@@ -164,7 +163,7 @@
 
         # Pi5
         pi5 = nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
+          # system = "aarch64-linux";
 
           modules = [
             ./sys
