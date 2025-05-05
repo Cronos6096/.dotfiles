@@ -28,6 +28,7 @@
     prismlauncher
     qalculate-gtk
     rpi-imager
+    scrcpy
     tldr
     unzip
     vscode
@@ -37,13 +38,11 @@
     vulkan-validation-layers
     wget
     wine
-    wineWowPackages.stable
     wineWowPackages.full
     wineWowPackages.waylandFull
     winetricks
-    xorg.libXcursor
-    mokutil
-    xorg.libxcb
+    # xorg.libXcursor
+    # xorg.libxcb
   ];
 
   # Pacchetti liberi / Flake
