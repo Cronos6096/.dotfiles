@@ -13,8 +13,7 @@
     extraConfig = ''
       disable_ligatures never
       cursor_blink_interval 0
-      cursor_trail 0
-      cursor_trail_start_threshold 1
+      cursor_trail 1
       background_opacity 0.9
     '';
   };
