@@ -69,7 +69,7 @@
 
     # Video / Audio
     blender
-    davinci-resolve # Video editor
+    # davinci-resolve # Video editor
     gimp # Image editor
     inkscape
     obs-studio

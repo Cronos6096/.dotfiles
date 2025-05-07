@@ -9,11 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-hardware = {
-      url = "github:nixos/nixos-hardware";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Nur
     nur = {
       url = "github:nix-community/NUR";
@@ -162,18 +157,15 @@
         };
 
         # Pi5
-        pi5 = nixpkgs.lib.nixosSystem {
-          # system = "aarch64-linux";
-
-          modules = [
-            ./sys
-
-            # Pi5 hardware
-            inputs.nixos-hardware.raspberry-pi-5
-
-            home-manager.nixosModules.home-manager
-          ];
-        };
+        # pi5 = nixpkgs.lib.nixosSystem {
+        #   # system = "aarch64-linux";
+        #   modules = [
+        #     ./sys
+        #     # Pi5 hardware
+        #     inputs.nixos-hardware.raspberry-pi-5
+        #     home-manager.nixosModules.home-manager
+        #   ];
+        # };
       };
     };
 }
