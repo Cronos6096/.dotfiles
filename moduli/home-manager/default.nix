@@ -7,6 +7,7 @@
     ./Zsh.nix
     ./Walker.nix
     ./waybar
+    ./Wezterm.nix
     # ./Stylix.nix
   ];
 }
