@@ -3,7 +3,8 @@
     ./Git.nix
     ./Hyprland.nix
     ./Nixvim
-    ./Terminale.nix
+    ./Kitty.nix
+    ./Zsh.nix
     ./Walker.nix
     ./waybar
     # ./Stylix.nix

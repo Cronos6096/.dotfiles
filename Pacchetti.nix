@@ -37,9 +37,8 @@
     vulkan-tools
     vulkan-validation-layers
     wget
-    wine
-    wineWowPackages.full
-    wineWowPackages.waylandFull
+    wine64
+    wine64Packages.waylandFull
     winetricks
     # xorg.libXcursor
     # xorg.libxcb

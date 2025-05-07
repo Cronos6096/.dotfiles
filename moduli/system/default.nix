@@ -6,7 +6,7 @@
     ./Plasma.nix
     ./Lingua.nix
     ./Ollama.nix
-    ./Piper
+    # ./piper
     ./Python.nix
     ./Rust.nix
     ./Servizi.nix
