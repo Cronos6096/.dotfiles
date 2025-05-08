@@ -20,6 +20,7 @@
     nexusmods-app-unfree
     nix-output-monitor
     nixd
+    nixpkgs-fmt
     nixfmt-rfc-style
     nvd
     nvtopPackages.nvidia

@@ -14,7 +14,7 @@
 
   stylix.opacity = {
     desktop = 0.0;
-    terminal = 0.7;
+    terminal = 0.9;
   };
 
   stylix.cursor.size = 18;

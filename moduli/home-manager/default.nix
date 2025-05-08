@@ -2,12 +2,10 @@
   imports = [
     ./Git.nix
     ./Hyprland.nix
-    ./Nixvim
+    # ./Nixvim
     ./Kitty.nix
     ./Zsh.nix
     ./Walker.nix
     ./waybar
-    ./Wezterm.nix
-    # ./Stylix.nix
   ];
 }

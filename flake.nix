@@ -26,6 +26,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Nvf
+    nvf.url = "github:notashelf/nvf";
+
     Hyprspace = {
       url = "github:KZDKM/Hyprspace";
       inputs.hyprland.follows = "hyprland";
@@ -70,6 +73,7 @@
       stylix,
       walker,
       nur,
+      nvf,
       ...
     }@inputs:
     let
@@ -78,12 +82,21 @@
       # hostname = "GiovanGianFranco";
     in
     {
+      packages.${system}.default =
+        (nvf.lib.neovimConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          modules = [ ./moduli/system/Nvf.nix ];
+        }).neovim;
+
       nixosConfigurations = {
         # Laptop
         andme = nixpkgs.lib.nixosSystem {
           system = system;
           modules = [
             ./sys
+
+            # Nvf
+            nvf.nixosModules.default
 
             # Nix search
             {
@@ -143,7 +156,6 @@
                   ./home-manager/home.nix
                   inputs.nixvim.homeManagerModules.nixvim
                   inputs.walker.homeManagerModules.default
-                  # stylix.homeManagerModules.stylix
                 ];
               };
             }
