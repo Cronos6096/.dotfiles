@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   # Nh
   programs.nh = {
@@ -13,6 +14,14 @@
     enableCompletion = true; # Enables auto completion.
     autosuggestion.enable = true; # Enables autosuggestions.
     syntaxHighlighting.enable = true; # Enables syntax highlighting.
+
+    plugins = [
+      {
+        name = "vi-mode";
+        src = pkgs.zsh-vi-mode;
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+      }
+    ];
 
     shellAliases = {
       ls = "eza";
