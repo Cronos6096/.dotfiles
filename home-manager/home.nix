@@ -10,8 +10,8 @@
   home.username = "andme";
   home.homeDirectory = "/home/andme";
   home.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
+    EDITOR = "nix run /home/andme/.dotfiles/ --";
+    VISUAL = "kwrite";
     BROWSER = "floorp";
     TERMINAL = "kitty";
     XDG_CURRENT_DESKTOP = "Hyprland";

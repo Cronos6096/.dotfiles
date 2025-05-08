@@ -504,11 +504,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1746710194,
-        "narHash": "sha256-r2zE8+rWZieU05LMKixeU5SsMy9I4truiTPKchTPNaw=",
+        "lastModified": 1746719124,
+        "narHash": "sha256-KOL73WIjO00ds1oIe+5HAcGcpd/TfE6dymmmYbiSlYM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "cea975d46d08293eae3ad0d9f16207f1ce2dfc81",
+        "rev": "3c59c5132b64e885faca381e713b579dcbddba75",
         "type": "github"
       },
       "original": {
@@ -614,11 +614,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1746655655,
-        "narHash": "sha256-GUXHo9U5eJRjOas1LPPOlUy2pBB9DzFT24RBh+Mk8sk=",
+        "lastModified": 1746721787,
+        "narHash": "sha256-wPR7ph//djEWcedRhmSHIYaJmkRSEQPFt8ZjAqRnFiQ=",
         "ref": "refs/heads/main",
-        "rev": "22b12e3013adf66b462b174688f82bd53ba8e721",
-        "revCount": 6090,
+        "rev": "fa1e343b0448d20b9b64dfa19fa28b6883d8af47",
+        "revCount": 6091,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -993,11 +993,11 @@
         "nuschtosSearch": "nuschtosSearch"
       },
       "locked": {
-        "lastModified": 1746694286,
-        "narHash": "sha256-qGtw+vMZ3fOpdEhHRgLFM+hyGHhKwO3aIymGgLOxxu0=",
+        "lastModified": 1746715878,
+        "narHash": "sha256-F880kqYiTwsbzBZ5QBz4Pn8L4LBCVEb17KC0qrZit7I=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "5fed6b9363b69913313c3b7ae0a84fa551177d03",
+        "rev": "10f899d669659f0248b9c9768bd2fd06eaa8d3b1",
         "type": "github"
       },
       "original": {
@@ -1015,11 +1015,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1746711310,
-        "narHash": "sha256-QTMwpjOrbmMDVyhK0kjXdGnO9DL9U9KBArcHgKKfgV0=",
+        "lastModified": 1746719398,
+        "narHash": "sha256-iTD93W1PqnPeQB+jANRy/aAQEV0k2M1y+erA7uGFTbk=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "f3492743e91bfa1593a99812250c1ecde54a8a2a",
+        "rev": "9ff00ad8e28a1f807a24669c0c3d6ffa2124f327",
         "type": "github"
       },
       "original": {

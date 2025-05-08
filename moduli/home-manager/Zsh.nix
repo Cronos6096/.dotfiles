@@ -25,13 +25,12 @@
       cat = "bat";
       cdconf = "cd /home/andme/.dotfiles";
       cdpr = "cd /home/andme/progetti";
-      v = "nvim";
+      nvf = "nix run /home/andme/.dotfiles/ --";
       py = "python";
       py3 = "python3";
       bottles = "flatpak run com.usebottles.bottles";
       nixsearch = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
       arch = "distrobox-enter arch";
-      s = "sudo !!";
     };
     history.size = 10000;
 
