@@ -41,8 +41,6 @@
     wine64
     wine64Packages.waylandFull
     winetricks
-    # xorg.libXcursor
-    # xorg.libxcb
   ];
 
   # Pacchetti liberi / Flake

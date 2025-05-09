@@ -2,8 +2,26 @@
 {
   vim = {
     theme = {
+      base16-colors = {
+        base00 = "#1d2021";
+        base01 = "#383c3e";
+        base02 = "#53585b";
+        base03 = "#6f7579";
+        base04 = "#cdcdcd";
+        base05 = "#d5d5d5";
+        base06 = "#dddddd";
+        base07 = "#e5e5e5";
+        base08 = "#d72638";
+        base09 = "#eb8413";
+        base0A = "#f19d1a";
+        base0B = "#88b92d";
+        base0C = "#1ba595";
+        base0D = "#1e8bac";
+        base0E = "#be4264";
+        base0F = "#c85e0d";
+      };
       enable = true;
-      name = "onedark";
+      name = "base16";
       transparent = true;
     };
 
@@ -30,6 +48,8 @@
 
     autocomplete.nvim-cmp.enable = true;
 
+    autopairs.nvim-autopairs.enable = true;
+
     comments.comment-nvim = {
       enable = true;
     };
@@ -46,8 +66,13 @@
       enable = true;
     };
 
-    filetree.nvimTree = {
-      enable = true;
+    utility = {
+      yazi-nvim = {
+        enable = true;
+        mappings = {
+          openYaziDir = " e";
+        };
+      };
     };
 
     extraPlugins = with pkgs.vimPlugins; {
@@ -60,11 +85,6 @@
         package = harpoon;
         setup = "require('harpoon').setup {}";
         after = [ "aerial" ];
-      };
-
-      autopairs = {
-        package = nvim-autopairs;
-        setup = "require('nvim-autopairs').setup {}";
       };
 
       gitsigns = {
@@ -87,10 +107,19 @@
           vim.notify = require("notify")
         '';
       };
+
+      ollama = {
+        package = ollama-nvim;
+        after = [ "plenary" ];
+        setup = ''
+          require("ollama").setup({})
+        '';
+      };
     };
 
+    lsp.enable = true;
+
     languages = {
-      enableLSP = true;
       enableTreesitter = true;
 
       markdown = {
