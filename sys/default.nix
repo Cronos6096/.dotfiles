@@ -46,9 +46,6 @@
   # Stylix
   stylix.enable = true;
 
-  # Ly
-  services.displayManager.ly.enable = true;
-
   # Account
   users.users.andme = {
     isNormalUser = true;

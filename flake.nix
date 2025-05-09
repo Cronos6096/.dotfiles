@@ -29,11 +29,6 @@
     # Nvf
     nvf.url = "github:notashelf/nvf";
 
-    Hyprspace = {
-      url = "github:KZDKM/Hyprspace";
-      inputs.hyprland.follows = "hyprland";
-    };
-
     # Stylix
     stylix.url = "github:danth/stylix";
 
@@ -67,13 +62,13 @@
       nix-search-tv,
       nixpkgs,
       nixvim,
+      nur,
+      nvf,
       rust-overlay,
       self,
       solaar,
       stylix,
       walker,
-      nur,
-      nvf,
       ...
     }@inputs:
     let

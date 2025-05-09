@@ -17,6 +17,10 @@
     terminal = 0.9;
   };
 
+  stylix.targets = {
+    plymouth.enable = false;
+  };
+
   stylix.cursor.size = 18;
 
   stylix.fonts = {

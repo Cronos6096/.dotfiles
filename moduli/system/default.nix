@@ -1,13 +1,15 @@
 {
   imports = [
+    # ./piper
     ./Adb.nix
     ./Auto-xdg-portal.nix
     ./Distrobox.nix
-    ./Plasma.nix
     ./Lingua.nix
     ./Ollama.nix
-    # ./piper
+    ./Plasma.nix
+    ./Plymouth.nix
     ./Python.nix
+    ./Ly.nix
     ./Rust.nix
     ./Servizi.nix
     ./Solaar.nix

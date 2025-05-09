@@ -43,6 +43,8 @@
 
     statusline.lualine.enable = true;
 
+    syntaxHighlighting = true;
+
     telescope.enable = true;
     telescope.mappings.buffers = " f";
 
@@ -105,14 +107,6 @@
         package = nvim-notify;
         setup = ''
           vim.notify = require("notify")
-        '';
-      };
-
-      ollama = {
-        package = ollama-nvim;
-        after = [ "plenary" ];
-        setup = ''
-          require("ollama").setup({})
         '';
       };
     };
