@@ -111,6 +111,15 @@
       };
     };
 
+    hideSearchHighlight = true;
+
+    presence.neocord = {
+      enable = true;
+      setupOpts = {
+        auto_update = true;
+      };
+    };
+
     lsp.enable = true;
 
     languages = {
