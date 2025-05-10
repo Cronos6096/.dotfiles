@@ -35,6 +35,7 @@
       cdconf = "cd /home/andme/.dotfiles";
       cdpr = "cd /home/andme/progetti";
       nvf = "nix run /home/andme/.dotfiles/ --";
+      v = "nvf";
       nvfconfig = "nix run /home/andme/.dotfiles/ -- /home/andme/.dotfiles/moduli/system/Nvf.nix";
       py = "python";
       py3 = "python3";

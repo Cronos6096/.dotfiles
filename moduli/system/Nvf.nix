@@ -57,15 +57,25 @@
     };
 
     terminal = {
-      toggleterm.enable = true;
-      toggleterm.lazygit = {
+      toggleterm = {
         enable = true;
+        lazygit = {
+          enable = true;
+        };
+        setupOpts.enable_winbar = true;
       };
-      toggleterm.setupOpts.enable_winbar = true;
     };
 
     dashboard.startify = {
       enable = true;
+    };
+
+    assistant.codecompanion-nvim = {
+      enable = true;
+      setupOpts = {
+        display.chat.start_in_insert_mode = true;
+        display.diff.enabled = true;
+      };
     };
 
     utility = {
