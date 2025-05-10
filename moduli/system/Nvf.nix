@@ -125,9 +125,34 @@
         enable = true;
         lsp = {
           enable = true;
-          server = "nixd";
+          server = "nil";
+        };
+        extraDiagnostics = {
+          enable = true;
+          types = [
+            "deadnix"
+            "statix"
+          ];
+        };
+        format = {
+          enable = true;
+          type = "nixfmt";
+        };
+        treesitter = {
+          enable = true;
         };
       };
+
+      python = {
+        enable = true;
+        format = {
+          enable = true;
+          type = "ruff";
+        };
+        lsp.enable = true;
+        treesitter.enable = true;
+      };
+
       rust.enable = true;
     };
   };

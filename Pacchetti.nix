@@ -18,10 +18,6 @@
     logitech-udev-rules
     mesa
     nexusmods-app-unfree
-    nix-output-monitor
-    nixd
-    nixpkgs-fmt
-    nixfmt-rfc-style
     nvd
     nvtopPackages.nvidia
     orca-slicer
@@ -32,7 +28,6 @@
     scrcpy
     tldr
     unzip
-    vscode
     vulkan-extension-layer
     vulkan-loader
     vulkan-tools

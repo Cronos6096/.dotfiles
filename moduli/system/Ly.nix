@@ -1,8 +1,6 @@
 {
   services.displayManager.ly = {
     enable = true;
-    settings = {
-      tty = "tty3";
-    };
+    # settings = { tty = "tty3"; };
   };
 }
