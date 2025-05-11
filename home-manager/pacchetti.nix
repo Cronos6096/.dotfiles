@@ -11,7 +11,6 @@
     kdePackages.kate # Notepad
     pinta # Paint.net (circa)
     zed-editor # Ide
-    freecad
 
     # Hyprland
     dunst
@@ -65,7 +64,6 @@
     cmake
     pyright
     rustdesk
-    hyprls
 
     # Video / Audio
     blender

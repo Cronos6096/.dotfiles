@@ -33,8 +33,7 @@
     vulkan-tools
     vulkan-validation-layers
     wget
-    wine64
-    wine64Packages.waylandFull
+    wineWowPackages.full
     winetricks
   ];
 

@@ -7,7 +7,7 @@
     ./Lingua.nix
     ./Ollama.nix
     ./Plasma.nix
-    ./Plymouth.nix
+    # ./Plymouth.nix
     ./Python.nix
     ./Ly.nix
     ./Rust.nix
