@@ -8,6 +8,7 @@
         pip 
         wheel 
         matplotlib
+        requests
       ]
     ))
   ];

@@ -2,11 +2,10 @@
   imports = [
     # ./piper
     ./Adb.nix
-    ./Auto-xdg-portal.nix
     ./Distrobox.nix
     ./Lingua.nix
     ./Ollama.nix
-    ./Plasma.nix
+    # ./Plasma.nix
     # ./Plymouth.nix
     ./Python.nix
     ./Ly.nix

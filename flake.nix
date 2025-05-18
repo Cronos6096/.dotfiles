@@ -26,6 +26,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Dolphin
+    dolphin-overlay.url = "github:rumboon/dolphin-overlay";
+
     # Nvf
     nvf.url = "github:notashelf/nvf";
 
@@ -69,6 +72,7 @@
       solaar,
       stylix,
       walker,
+      dolphin-overlay,
       ...
     }@inputs:
     let
@@ -77,6 +81,7 @@
       # hostname = "GiovanGianFranco";
     in
     {
+      # Nvf
       packages.${system}.default =
         (nvf.lib.neovimConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
@@ -89,6 +94,7 @@
           system = system;
           modules = [
             ./sys
+            ./moduli/system/Portals.nix
 
             # Nvf
             nvf.nixosModules.default
@@ -102,6 +108,11 @@
 
             # NUR
             nur.modules.nixos.default
+
+            # Dolphin
+            {
+              nixpkgs.overlays = [ dolphin-overlay.overlays.default ];
+            }
 
             (
               { pkgs, ... }:
@@ -119,28 +130,7 @@
             # Modulo di Stylix NixOS
             stylix.nixosModules.stylix
 
-            # Portale xdg
-            {
-              autoXdgPortal.enable = true;
-            }
-
-            # Dolphin
-            (
-              { pkgs, ... }:
-              {
-                xdg.menus.enable = true;
-                xdg.mime.enable = true;
-
-                environment.etc."xdg/menus/applications.menu".source =
-                  "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/applications.menu";
-
-                environment.systemPackages = with pkgs; [
-                  kdePackages.dolphin
-                  xdg-utils
-                ];
-              }
-            )
-
+            # Home-manager
             home-manager.nixosModules.home-manager
 
             {

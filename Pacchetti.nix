@@ -35,6 +35,8 @@
     wget
     wineWowPackages.full
     winetricks
+    desktop-file-utils
+    kdePackages.qt6ct
   ];
 
   # Pacchetti liberi / Flake

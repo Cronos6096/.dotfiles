@@ -39,6 +39,7 @@
     kdePackages.kservice
     kdePackages.qtsvg
     shared-mime-info
+    kdePackages.plasma-workspace    # <- Provides plasma-applications.menu
     hyprpolkitagent
 
     # font
