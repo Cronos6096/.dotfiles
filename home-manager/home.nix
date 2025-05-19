@@ -12,7 +12,7 @@
   home.sessionVariables = {
     EDITOR = "nix run /home/andme/.dotfiles/ --";
     VISUAL = "kwrite";
-    BROWSER = "floorp";
+    BROWSER = "zen";
     TERMINAL = "kitty";
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_DESKTOP = "Hyprland";

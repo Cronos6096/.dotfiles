@@ -3,10 +3,9 @@
 {
   environment.systemPackages = with pkgs; [
     appimage-run
-    bitwarden-desktop
+    bleachbit
     cabextract
-    clamtk
-    floorp
+    desktop-file-utils
     fzf
     git
     home-manager
@@ -35,8 +34,6 @@
     wget
     wineWowPackages.full
     winetricks
-    desktop-file-utils
-    kdePackages.qt6ct
   ];
 
   # Pacchetti liberi / Flake
