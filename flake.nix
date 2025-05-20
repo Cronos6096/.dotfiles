@@ -33,7 +33,10 @@
     nvf.url = "github:notashelf/nvf";
 
     # Stylix
-    stylix.url = "github:danth/stylix";
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Solaar
     solaar = {
