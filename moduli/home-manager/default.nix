@@ -4,7 +4,7 @@
     ./Hyprland.nix
     # ./Nixvim
     ./Kitty.nix
-    ./Terminale
+    ./Terminale.nix
     ./Walker.nix
     ./waybar
   ];

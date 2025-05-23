@@ -11,7 +11,7 @@
   home.homeDirectory = "/home/andme";
   home.sessionVariables = {
     EDITOR = "nix run /home/andme/.dotfiles/ --";
-    VISUAL = "kwrite";
+    VISUAL = "nix run /home/andme/.dotfiles/ --";
     BROWSER = "zen";
     TERMINAL = "kitty";
     XDG_CURRENT_DESKTOP = "Hyprland";
