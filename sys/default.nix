@@ -74,7 +74,7 @@
   # Nix-shell
   nixpkgs.config = {
     stdenv = {
-      shell = pkgs.nushell;
+      shell = pkgs.zsh;
     };
   };
 
