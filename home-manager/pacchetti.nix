@@ -89,6 +89,8 @@
     file
     lazygit
     gawk
+    gitui
+    wiki-tui
     gnupg
     gnused
     gnutar
