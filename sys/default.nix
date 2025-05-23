@@ -71,5 +71,12 @@
   # zsh shell
   programs.zsh.enable = true;
 
+  # Nix-shell
+  nixpkgs.config = {
+    stdenv = {
+      shell = pkgs.nushell;
+    };
+  };
+
   system.stateVersion = "25.11";
 }

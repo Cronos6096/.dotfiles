@@ -1,13 +1,15 @@
+{pkgs, ...}:
 {
   # Terminale
   programs.kitty = {
     enable = true;
-    shellIntegration.enableZshIntegration = true;
+    # shellIntegration.enableZshIntegration = true;
     settings = {
       scrollback_lines = 10000;
       confirm_os_window_close = 0;
       enable_audio_bell = false;
       mouse_hide_wait = "0.5";
+      shell = "${pkgs.nushell}/bin/nu";
     };
 
     extraConfig = ''
