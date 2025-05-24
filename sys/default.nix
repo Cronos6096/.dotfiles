@@ -55,7 +55,7 @@
       "wheel"
       "libvirtd"
     ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
     home = "/home/andme";
   };
 
@@ -71,10 +71,13 @@
   # zsh shell
   programs.zsh.enable = true;
 
+  # Fish shell
+  programs.fish.enable = true;
+
   # Nix-shell
   nixpkgs.config = {
     stdenv = {
-      shell = pkgs.zsh;
+      shell = pkgs.fish;
     };
   };
 
