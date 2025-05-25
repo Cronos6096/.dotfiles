@@ -6,7 +6,8 @@
     fastfetch
     lutris # Launcher
     obsidian # note taking app
-    whatsapp-for-linux # Whatsapp
+    logseq # Note
+    whatsie # Whatsapp
     yazi # terminal file manager
     kdePackages.kate # Notepad
     pinta # Paint.net (circa)
