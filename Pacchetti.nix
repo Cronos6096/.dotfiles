@@ -10,6 +10,7 @@
     git
     home-manager
     impression
+    kdePackages.kdeconnect-kde
     libreoffice
     libva
     libva-utils
