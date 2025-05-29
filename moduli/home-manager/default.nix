@@ -5,7 +5,7 @@
     # ./Nixvim
     ./Kitty.nix
     ./Terminale.nix
-    ./Walker.nix
-    ./waybar
+    ./Wofi.nix
+    ./Waybar.nix
   ];
 }

@@ -1,6 +1,5 @@
-{ pkgs, ... }:
 let
-  aliases = {
+  shellAliases = {
     ls = "eza";
     ff = "fastfetch";
     rebuild = "nh os switch /home/andme/.dotfiles/ -H andme --update";
@@ -30,39 +29,9 @@ in
     flake = "/home/andme/.dotfiles/";
   };
 
-  # zsh shell
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true; # Enables auto completion.
-    autosuggestion.enable = true; # Enables autosuggestions.
-    syntaxHighlighting.enable = true; # Enables syntax highlighting.
-
-    plugins = [
-      {
-        name = "vi-mode";
-        src = pkgs.zsh-vi-mode;
-        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
-      }
-    ];
-
-    shellAliases = aliases;
-
-    history.size = 10000;
-
-    # oh-my-zsh
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "zsh-interactive-cd"
-        "fzf"
-      ];
-      theme = "robbyrussell";
-    };
-  };
-
   programs.fish = {
     enable = true;
-    shellAliases = aliases;
+    inherit shellAliases;
     interactiveShellInit = ''
       set fish_greeting     
     '';

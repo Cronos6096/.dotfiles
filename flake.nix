@@ -94,7 +94,7 @@
       nixosConfigurations = {
         # Laptop
         andme = nixpkgs.lib.nixosSystem {
-          system = system;
+          inherit system;
           modules = [
             ./sys
             ./moduli/system/Portals.nix
@@ -139,11 +139,9 @@
             {
               home-manager.useUserPackages = true;
               home-manager.users.andme = {
-                home.stateVersion = "25.05";
                 imports = [
                   ./home-manager/home.nix
                   inputs.nixvim.homeManagerModules.nixvim
-                  inputs.walker.homeManagerModules.default
                 ];
               };
             }

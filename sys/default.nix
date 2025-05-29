@@ -9,10 +9,12 @@
     ../Pacchetti-NUR.nix
   ];
 
-  # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # Boot
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    # kernelPackages = pkgs.linuxPackages_latest;
+  };
 
   system.autoUpgrade = {
     enable = true;

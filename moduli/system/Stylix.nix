@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   stylix = {
-    # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/helios.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/helios.yaml";
     # https://tinted-theming.github.io/tinted-gallery/
 
     image = ./wallpaper.jpg;

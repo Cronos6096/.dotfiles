@@ -21,7 +21,7 @@ in
           "clock"
         ];
         "hyprland/workspaces" = {
-          format = "{name}";
+          format = "·";
           format-icons = {
             default = " ";
             active = " ";
@@ -47,8 +47,8 @@ in
             "󰤥"
             "󰤨"
           ];
-          format-ethernet = " {bandwidthDownOctets}";
-          format-wifi = "{icon} {essid}";
+          format-ethernet = " {bandwidthTotalBytes}";
+          format-wifi = "{icon} {essid} {bandwidthTotalBytes}";
           format-disconnected = "󰤮";
           tooltip = false;
           on-click = "nmtui";
@@ -116,8 +116,8 @@ in
         border: none;
       }
       #workspaces {
-        color: #${config.lib.stylix.colors.base01};
-        background: #${config.lib.stylix.colors.base01};
+        color: #${config.lib.stylix.colors.base00};
+        background: #${config.lib.stylix.colors.base00};
         margin: 4px 4px;
         padding: 5px 5px;
         border-radius: 8px;
@@ -128,7 +128,7 @@ in
         margin: 0px 3px;
         border-radius: 8px;
         color: #${config.lib.stylix.colors.base00};
-        background: #${config.lib.stylix.colors.base0D};
+        background: #${config.lib.stylix.colors.base0B};
         opacity: 0.5;
         transition: ${betterTransition};
       }
@@ -138,7 +138,7 @@ in
         margin: 0px 3px;
         border-radius: 16px;
         color: #${config.lib.stylix.colors.base00};
-        background: #${config.lib.stylix.colors.base0D};
+        background: #${config.lib.stylix.colors.base0B};
         transition: ${betterTransition};
         opacity: 1.0;
         min-width: 40px;
@@ -147,7 +147,7 @@ in
         font-weight: bold;
         border-radius: 16px;
         color: #${config.lib.stylix.colors.base00};
-        background: #${config.lib.stylix.colors.base0D};
+        background: #${config.lib.stylix.colors.base0B};
         opacity: 0.8;
         transition: ${betterTransition};
       }
@@ -164,17 +164,17 @@ in
         margin: 4px 0px;
         margin-left: 7px;
         padding: 0px 8px;
-        background: #${config.lib.stylix.colors.base01};
+        background: #${config.lib.stylix.colors.base00};
         color: #${config.lib.stylix.colors.base07};
         border-radius: 8px;
       }
       #clock {
         font-weight: bold;
-        color: #0D0E15;
-        background: #${config.lib.stylix.colors.base0D};
+        color: #${config.lib.stylix.colors.base0B};
+        background: #${config.lib.stylix.colors.base00};
         margin: 2px;
         padding: 4px;
-        border-radius: 16px;
+        border-radius: 12px;
       }
     '';
   };
