@@ -1,7 +1,6 @@
 {
   imports = [
     ./Adb.nix
-    ./Distrobox.nix
     ./Lingua.nix
     # ./Ollama.nix
     # ./Plasma.nix

@@ -9,11 +9,22 @@
     ../Pacchetti-NUR.nix
   ];
 
-  # Boot
-  boot = {
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
-    # kernelPackages = pkgs.linuxPackages_latest;
+  # Kernel
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Grub
+  boot.loader = {
+    efi.canTouchEfiVariables = false; # we’ll use the fallback .EFI/BOOT path
+
+    grub = {
+      enable = true;
+      version = 2;
+      efiSupport = true;
+      efiInstallAsRemovable = true;
+      device = "nodev";
+
+      configurationLimit = 5;
+    };
   };
 
   system.autoUpgrade = {
@@ -23,10 +34,6 @@
   };
 
   # Swap
-  boot.kernel.sysctl = {
-    "vm.max_map_count" = 16777216;
-    "fs.file-max" = 524288;
-  };
   swapDevices = [
     {
       device = "/swapfile";
@@ -49,39 +56,32 @@
   stylix.enable = true;
 
   # Account
-  users.users.andme = {
-    isNormalUser = true;
-    description = "Andrei Merciaro";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "libvirtd"
-    ];
-    shell = pkgs.fish;
-    home = "/home/andme";
-  };
+  users = {
+    users.andme = {
+      isNormalUser = true;
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "libvirtd"
+      ];
+      shell = pkgs.fish;
+      home = "/home/andme";
+    };
 
-  users.groups.gcis = { };
-  users.users.gcis = {
-    isSystemUser = true;
-    group = "gcis";
+    groups.gcis = { };
+    users.gcis = {
+      isSystemUser = true;
+      group = "gcis";
+    };
   };
 
   environment.etc."/xdg/menus/applications.menu".text =
     builtins.readFile "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 
-  # zsh shell
-  programs.zsh.enable = true;
-
   # Fish shell
   programs.fish.enable = true;
-
-  # Nix-shell
-  nixpkgs.config = {
-    stdenv = {
-      shell = pkgs.fish;
-    };
-  };
+  environment.variables.NIX_BUILD_SHELL = "${pkgs.fish}/bin/fish";
+  users.defaultUserShell = pkgs.fish;
 
   system.stateVersion = "25.11";
 }
