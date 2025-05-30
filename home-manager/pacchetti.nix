@@ -5,12 +5,10 @@
     ckan # Kerbal Space Program mod manager
     fastfetch
     lutris # Launcher
-    obsidian # note taking app
-    logseq # Note
+    obsidian # Note
     whatsie # Whatsapp
     yazi # terminal file manager
     kdePackages.kate # Notepad
-    pinta # Paint.net (circa)
     zed-editor # Ide
 
     # Hyprland
@@ -53,7 +51,6 @@
     icu77
 
     # utilities
-    appimage-run # AppImage runner
     kdePackages.ark # File archiver
     bat # cat migliorato
     eza # ls migliorato
@@ -72,14 +69,12 @@
     blender
     # davinci-resolve # Video editor
     gimp # Image editor
-    inkscape
-    obs-studio
     vlc # Media player
 
-    # networking tools
-    aria2 # A lightweight multi-protocol & multi-source command-line download utility
-    dnsutils # `dig` + `nslookup`
-    nmap # A utility for network discovery and security auditing
+    # Network
+    aria2
+    dnsutils
+    nmap
 
     # Terminale
     cava # Audio visualizer
@@ -89,8 +84,6 @@
     fd
     file
     lazygit
-    gawk
-    gitui
     wiki-tui
     gnupg
     gnused
@@ -101,9 +94,6 @@
     undollar
     which
     zstd
-
-    # Strumenti
-    btop # replacement of htop/nmon
-    glow # markdown previewer in terminal
+    btop
   ];
 }
