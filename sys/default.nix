@@ -12,19 +12,10 @@
   # Kernel
   # boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Grub
+  # Boot
   boot.loader = {
-    efi.canTouchEfiVariables = false; # we’ll use the fallback .EFI/BOOT path
-
-    grub = {
-      enable = true;
-      version = 2;
-      efiSupport = true;
-      efiInstallAsRemovable = true;
-      device = "nodev";
-
-      configurationLimit = 5;
-    };
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
   };
 
   system.autoUpgrade = {
@@ -80,8 +71,6 @@
 
   # Fish shell
   programs.fish.enable = true;
-  environment.variables.NIX_BUILD_SHELL = "${pkgs.fish}/bin/fish";
-  users.defaultUserShell = pkgs.fish;
 
   system.stateVersion = "25.11";
 }

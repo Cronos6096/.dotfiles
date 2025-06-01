@@ -13,5 +13,6 @@
     ./Stylix.nix
     ./Stylix.nix
     ./Vm.nix
+    ./Zig.nix
   ];
 }

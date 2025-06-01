@@ -3,7 +3,6 @@ let
     ls = "eza";
     ff = "fastfetch";
     rebuild = "nh os switch /home/andme/.dotfiles/ -H andme --update";
-    rebuildpi = "nh os switch /home/andme/.dotfiles/ -H pi5 --update";
     rebuildnoup = "nh os switch /home/andme/.dotfiles/ -H andme";
     rebuildpush = " cdconf && git add * && git commit && git push && nh os switch . -H andme";
     clean = "nh clean all --keep=5";
@@ -37,7 +36,6 @@ in
   };
 
   programs.starship = {
-    enableZshIntegration = true;
     enableFishIntegration = true;
     enable = true;
   };

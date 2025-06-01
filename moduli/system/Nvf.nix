@@ -167,6 +167,12 @@
         treesitter.enable = true;
       };
 
+      zig = {
+        enable = true;
+        lsp.enable = true;
+        treesitter.enable = true;
+      };
+
       rust.enable = true;
     };
   };
