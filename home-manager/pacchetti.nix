@@ -24,7 +24,6 @@
     hyprsome
 
     # archivi
-    p7zip
     unp
     unrar
     unzip

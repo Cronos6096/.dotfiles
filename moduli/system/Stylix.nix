@@ -17,8 +17,8 @@
     autoEnable = true;
 
     opacity = {
-      desktop = 0.0;
       terminal = 0.75;
+      desktop = 0.75;
     };
 
     targets = {

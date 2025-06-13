@@ -7,5 +7,6 @@
     ./Terminale.nix
     ./Wofi.nix
     ./Waybar.nix
+    ./Wezterm.nix
   ];
 }

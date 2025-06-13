@@ -55,10 +55,6 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Walker
-    walker.url = "github:abenz1267/walker";
-
   };
 
   outputs =
@@ -74,14 +70,11 @@
       self,
       solaar,
       stylix,
-      walker,
       dolphin-overlay,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
-      # user = "andme";
-      # hostname = "GiovanGianFranco";
     in
     {
       # Nvf
@@ -92,6 +85,7 @@
         }).neovim;
 
       nixosConfigurations = {
+
         # Laptop
         andme = nixpkgs.lib.nixosSystem {
           inherit system;
@@ -153,17 +147,6 @@
               ;
           };
         };
-
-        # Pi5
-        # pi5 = nixpkgs.lib.nixosSystem {
-        #   # system = "aarch64-linux";
-        #   modules = [
-        #     ./sys
-        #     # Pi5 hardware
-        #     inputs.nixos-hardware.raspberry-pi-5
-        #     home-manager.nixosModules.home-manager
-        #   ];
-        # };
       };
     };
 }

@@ -31,9 +31,8 @@ in
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
         "clock" = {
-          format = ''{:L%R}'';
-          tooltip = true;
-          tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt>{calendar}</tt>";
+          format = ''{:%Y-%m-%d %T}'';
+          interval = 1;
         };
         "hyprland/window" = {
           max-length = 40;
@@ -54,7 +53,8 @@ in
           on-click = "nmtui";
         };
         "tray" = {
-          spacing = 12;
+          spacing = 16;
+          icon-size = 16;
         };
         "pulseaudio" = {
           format = "{icon} {volume}% {format_source}";
@@ -105,15 +105,16 @@ in
     ];
     style = ''
       * {
-        font-family: DejaVu Sans;
+        font-family: Fira Code font;
         font-size: 16px;
-        border-radius: 0px;
-        border: none;
-        min-height: 20px;
+        padding: 0;
+        margin: 0;
       }
       window#waybar {
-        background:rgba(0, 0, 0, 0.1);
-        border: none;
+        background:rgba(0, 0, 0, 0.75);
+        border: 2px solid #404040;
+        padding: 4px;
+        border-radius: 12px;
       }
       #workspaces {
         color: #${config.lib.stylix.colors.base00};
@@ -160,12 +161,13 @@ in
         color: #${config.lib.stylix.colors.base04};
       }
       #window, #pulseaudio, #cpu, #memory, #network, #tray, #battery {
-        font-weight: bold;
         margin: 4px 0px;
         margin-left: 7px;
         padding: 0px 8px;
-        background: #${config.lib.stylix.colors.base00};
         color: #${config.lib.stylix.colors.base07};
+        border-radius: 8px;
+      }
+      #tray menu {
         border-radius: 8px;
       }
       #clock {

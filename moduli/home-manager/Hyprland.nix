@@ -12,5 +12,5 @@
     systemd.enable = true;
   };
 
-  home.file."/home/andme/.config/hypr/hyprland.conf".source = lib.mkForce ../../hypr/hyprland.conf;
+  home.file."/home/andme/.config/hypr/hyprland.conf".source = lib.mkForce ../wm/hypr/hyprland.conf;
 }

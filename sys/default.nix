@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -10,7 +10,7 @@
   ];
 
   # Kernel
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Boot
   boot.loader = {
@@ -20,6 +20,14 @@
 
   system.autoUpgrade = {
     enable = true;
+
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--print-build-logs"
+    ];
+
     dates = "16:00";
     randomizedDelaySec = "15min";
   };
@@ -54,6 +62,7 @@
         "networkmanager"
         "wheel"
         "libvirtd"
+        "dialout"
       ];
       shell = pkgs.fish;
       home = "/home/andme";
