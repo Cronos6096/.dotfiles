@@ -35,7 +35,7 @@
     qalculate-gtk
 
     # Giochi
-    nexusmods-app-unfree
+    # nexusmods-app-unfree
     prismlauncher
     wineWowPackages.full
     winetricks

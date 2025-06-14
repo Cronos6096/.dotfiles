@@ -63,6 +63,7 @@
         "wheel"
         "libvirtd"
         "dialout"
+        "kvm"
       ];
       shell = pkgs.fish;
       home = "/home/andme";

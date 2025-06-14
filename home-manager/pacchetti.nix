@@ -10,6 +10,7 @@
     yazi # terminal file manager
     kdePackages.kate # Notepad
     zed-editor # Ide
+    floorp # Browser
 
     # Hyprland
     dunst
@@ -42,12 +43,10 @@
     hyprpolkitagent
 
     # font
-    cascadia-code
-    jetbrains-mono
-    nerd-fonts.zed-mono
     liberation_ttf
     times-newer-roman
     icu77
+    fira-code
 
     # utilities
     kdePackages.ark # File archiver

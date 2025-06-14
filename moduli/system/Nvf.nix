@@ -3,7 +3,7 @@
   vim = {
     theme = {
       base16-colors = {
-        base00 = "#272822";
+        base00 = "#000000";
         base01 = "#383830";
         base02 = "#49483e";
         base03 = "#75715e";
@@ -70,14 +70,6 @@
 
     dashboard.startify = {
       enable = true;
-    };
-
-    assistant.codecompanion-nvim = {
-      enable = true;
-      setupOpts = {
-        display.chat.start_in_insert_mode = true;
-        display.diff.enabled = true;
-      };
     };
 
     utility = {
@@ -170,6 +162,16 @@
       zig = {
         enable = true;
         lsp.enable = true;
+        treesitter.enable = true;
+      };
+
+      lua = {
+        enable = true;
+        extraDiagnostics.enable = true;
+        format.enable = true;
+        lsp = {
+          enable = true;
+        };
         treesitter.enable = true;
       };
 

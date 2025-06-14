@@ -22,7 +22,6 @@
     };
 
     targets = {
-      gnome.enable = true;
     };
 
     fonts = {

@@ -9,6 +9,7 @@
 
   environment.systemPackages = with pkgs; [
     OVMF
+    qemu_kvm
     pkgs.adwaita-icon-theme
     polkit
     spice
