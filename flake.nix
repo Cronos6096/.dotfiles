@@ -26,12 +26,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Dolphin
-    dolphin-overlay.url = "github:rumboon/dolphin-overlay";
-
-    # Nvf
-    nvf.url = "github:notashelf/nvf";
-
     # Stylix
     stylix = {
       url = "github:danth/stylix";
@@ -44,15 +38,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Nixvim
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Rust
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Zen
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -63,27 +57,17 @@
       hyprland,
       nix-search-tv,
       nixpkgs,
-      nixvim,
       nur,
-      nvf,
       rust-overlay,
       self,
       solaar,
       stylix,
-      dolphin-overlay,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
     in
     {
-      # Nvf
-      packages.${system}.default =
-        (nvf.lib.neovimConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
-          modules = [ ./moduli/system/Nvf.nix ];
-        }).neovim;
-
       nixosConfigurations = {
 
         # Laptop
@@ -92,9 +76,6 @@
           modules = [
             ./sys
             ./moduli/system/Portals.nix
-
-            # Nvf
-            nvf.nixosModules.default
 
             # Nix search
             {
@@ -105,11 +86,6 @@
 
             # NUR
             nur.modules.nixos.default
-
-            # Dolphin
-            {
-              nixpkgs.overlays = [ dolphin-overlay.overlays.default ];
-            }
 
             (
               { pkgs, ... }:
@@ -135,7 +111,6 @@
               home-manager.users.andme = {
                 imports = [
                   ./home-manager/home.nix
-                  inputs.nixvim.homeManagerModules.nixvim
                 ];
               };
             }

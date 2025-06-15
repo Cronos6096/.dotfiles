@@ -1,11 +1,16 @@
 { pkgs, ... }:
 {
   stylix = {
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
+    base16Scheme = builtins.fetchurl {
+      url = "https://raw.githubusercontent.com/scottmckendry/cyberdream.nvim/main/extras/base16/cyberdream.yaml";
+      sha256 = "1bfi479g7v5cz41d2s0lbjlqmfzaah68cj1065zzsqksx3n63znf";
+    };
+
+    #"${pkgs.base16-schemes}/share/themes/monokai.yaml";
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/helios.yaml";
     # https://tinted-theming.github.io/tinted-gallery/
 
-    image = ./wallpaper.jpg;
+    image = ./wallpaper.png;
     polarity = "dark";
 
     cursor = {
@@ -37,7 +42,7 @@
 
       monospace = {
         package = pkgs.fira-code;
-        name = "Fira Code";
+        name = "Jet Brains Mono";
       };
     };
   };

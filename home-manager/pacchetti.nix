@@ -46,7 +46,7 @@
     liberation_ttf
     times-newer-roman
     icu77
-    fira-code
+    jetbrains-mono
 
     # utilities
     kdePackages.ark # File archiver

@@ -9,13 +9,9 @@ let
     cat = "bat";
     cdconf = "cd /home/andme/.dotfiles";
     cdpr = "cd /home/andme/progetti";
-    nvf = "nix run /home/andme/.dotfiles/ --offline";
-    v = "nvf";
-    nvfupdate = "nix run /home/andme/.dotfiles/ --";
-    nvfconfig = "nix run /home/andme/.dotfiles/ -- /home/andme/.dotfiles/moduli/system/Nvf.nix";
+    v = "nvim";
     py = "python";
     py3 = "python3";
-    bottles = "flatpak run com.usebottles.bottles";
     nixsearch = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
   };
 in
@@ -32,7 +28,7 @@ in
     enable = true;
     inherit shellAliases;
     interactiveShellInit = ''
-      set fish_greeting     
+      set fish_greeting
     '';
   };
 

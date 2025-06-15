@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -10,6 +10,13 @@
     wget
     git
     ncdu
+
+    nixd
+    nixfmt
+    statix
+    #---#
+    lua-language-server
+    lua
 
     bleachbit
     pciutils
@@ -51,4 +58,5 @@
     "nix-command"
     "flakes"
   ];
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}"];
 }

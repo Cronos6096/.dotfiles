@@ -99,7 +99,7 @@ in
     ];
     style = ''
       * {
-        font-family: Fira Code;
+        font-family: Jet Brains Mono;
         font-size: 16px;
       }
       window#waybar {
@@ -129,7 +129,7 @@ in
         margin: 0px 3px;
         border-radius: 16px;
         color: #${config.lib.stylix.colors.base00};
-        background: #${config.lib.stylix.colors.base0B};
+        background: #${config.lib.stylix.colors.base06};
         transition: ${betterTransition};
         opacity: 1.0;
         min-width: 40px;
@@ -152,11 +152,12 @@ in
         border-radius: 8px;
       }
       #tray menu {
-        border-radius: 8px;
+         color: #${config.lib.stylix.colors.base00};
+	 border-radius: 8px;
       }
       #clock {
         font-weight: bold;
-        color: #${config.lib.stylix.colors.base0B};
+        color: #${config.lib.stylix.colors.base08};
         margin: 2px;
         border-radius: 12px;
       }
