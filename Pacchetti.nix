@@ -12,7 +12,7 @@
     ncdu
 
     nixd
-    nixfmt
+    nixfmt-rfc-style
     statix
     #---#
     lua-language-server

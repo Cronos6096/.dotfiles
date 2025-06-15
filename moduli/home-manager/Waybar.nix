@@ -107,7 +107,7 @@ in
         padding: 2px;
       }
       #workspaces {
-        color: #${config.lib.stylix.colors.base00};
+        color: #${config.lib.stylix.colors.base01};
         background: #${config.lib.stylix.colors.base00};
         margin: 4px 4px;
         padding: 5px 5px;
@@ -118,7 +118,7 @@ in
         padding: 0px 5px;
         margin: 0px 3px;
         border-radius: 8px;
-        color: #${config.lib.stylix.colors.base00};
+        color: #${config.lib.stylix.colors.base0B};
         background: #${config.lib.stylix.colors.base0B};
         opacity: 0.5;
         transition: ${betterTransition};
@@ -128,7 +128,7 @@ in
         padding: 0px 5px;
         margin: 0px 3px;
         border-radius: 16px;
-        color: #${config.lib.stylix.colors.base00};
+        color: #${config.lib.stylix.colors.base0B};
         background: #${config.lib.stylix.colors.base06};
         transition: ${betterTransition};
         opacity: 1.0;
@@ -152,12 +152,12 @@ in
         border-radius: 8px;
       }
       #tray menu {
-         color: #${config.lib.stylix.colors.base00};
+         color: #${config.lib.stylix.colors.base01};
 	 border-radius: 8px;
       }
       #clock {
         font-weight: bold;
-        color: #${config.lib.stylix.colors.base08};
+        color: #${config.lib.stylix.colors.base07};
         margin: 2px;
         border-radius: 12px;
       }
