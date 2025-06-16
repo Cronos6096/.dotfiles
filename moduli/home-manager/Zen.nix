@@ -1,17 +1,18 @@
-{ inputs, pkgs, ... }: {
-  imports = [ inputs.zen-browser.homeModules.beta ];
+{ pkgs, ... }:
+{
   programs.zen-browser = {
     enable = true;
-    # policies = {
-    #   DisableAppUpdate = true;
-    #   DisableTelemetry = true;
-    #   AutofillAddressEnabled = false;
-    #   AutofillCreditCardEnabled = false;
-    #   DisableFeedbackCommands = true;
-    #   DisableFirefoxStudies = true;
-    #   DontCheckDefaultBrowser = true;
-    #   OfferToSaveLogins = false;
-    # };
-    # nativeMessagingHosts = [ pkgs.firefoxpwa ];
+    nativeMessagingHosts = [ pkgs.firefoxpwa ];
+    policies = {
+      AutofillAddressEnabled = false;
+      AutofillCreditCardEnabled = false;
+      DisableAppUpdate = true;
+      DisableFeedbackCommands = true;
+      DisableFirefoxStudies = true;
+      DisableTelemetry = true;
+      DontCheckDefaultBrowser = true;
+      NoDefaultBookmarks = true;
+      OfferToSaveLogins = false;
+    };
   };
 }

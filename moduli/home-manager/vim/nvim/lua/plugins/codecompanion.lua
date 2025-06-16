@@ -1,14 +1,26 @@
 return {
   {
     "olimorris/codecompanion.nvim",
-    opts = {},
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
+      { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+      { "nvim-lua/plenary.nvim", branch = "master" },
+
+      {
+	"saghen/blink.cmp",
+	lazy = false,
+	version = "*",
+	opts = {
+	  keymap = {
+	    preset = "enter",
+	    ["<S-Tab>"] = { "select_prev", "fallback" },
+	    ["<Tab>"] = { "select_next", "fallback" },
+	  },
+	  cmdline = { sources = { "cmdline" } },
+	  sources = {
+	    default = { "lsp", "path", "buffer", "codecompanion" },
+	  },
+	},
+      },
     },
-  },
-  {
-    "MeanderingProgrammer/render-markdown.nvim",
-    ft = { "markdown", "codecompanion" }
-  },
+  }
 }

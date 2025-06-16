@@ -20,11 +20,6 @@ in
           "tray"
           "clock"
         ];
-        "hyprland/workspaces" = {
-          format = "·";
-          on-scroll-up = "hyprctl dispatch workspace e+1";
-          on-scroll-down = "hyprctl dispatch workspace e-1";
-        };
         "clock" = {
           format = ''{:%Y-%m-%d %T}'';
           interval = 1;
@@ -98,69 +93,53 @@ in
       }
     ];
     style = ''
-      * {
-        font-family: Jet Brains Mono;
-        font-size: 16px;
-      }
-      window#waybar {
-        background:rgba(0, 0, 0, 0.75);
-        padding: 2px;
-      }
-      #workspaces {
-        color: #${config.lib.stylix.colors.base01};
-        background: #${config.lib.stylix.colors.base00};
-        margin: 4px 4px;
-        padding: 5px 5px;
-        border-radius: 8px;
-      }
-      #workspaces button {
-        font-weight: bold;
-        padding: 0px 5px;
-        margin: 0px 3px;
-        border-radius: 8px;
-        color: #${config.lib.stylix.colors.base0B};
-        background: #${config.lib.stylix.colors.base0B};
-        opacity: 0.5;
-        transition: ${betterTransition};
-      }
-      #workspaces button.active {
-        font-weight: bold;
-        padding: 0px 5px;
-        margin: 0px 3px;
-        border-radius: 16px;
-        color: #${config.lib.stylix.colors.base0B};
-        background: #${config.lib.stylix.colors.base06};
-        transition: ${betterTransition};
-        opacity: 1.0;
-        min-width: 40px;
-      }
-      #workspaces button:hover {
-        font-weight: bold;
-        border-radius: 16px;
-        color: #${config.lib.stylix.colors.base00};
-        background: #${config.lib.stylix.colors.base0B};
-        opacity: 0.8;
-        transition: ${betterTransition};
-      }
-      tooltip label {
-        color: #${config.lib.stylix.colors.base04};
-      }
-      #window, #pulseaudio, #cpu, #memory, #network, #tray, #battery {
-        margin: 4px 0px;
-        margin-left: 7px;
-        color: #${config.lib.stylix.colors.base07};
-        border-radius: 8px;
-      }
-      #tray menu {
-         color: #${config.lib.stylix.colors.base01};
-	 border-radius: 8px;
-      }
-      #clock {
-        font-weight: bold;
-        color: #${config.lib.stylix.colors.base07};
-        margin: 2px;
-        border-radius: 12px;
-      }
+                              * {
+                                font-family: Jet Brains Mono;
+                                font-size: 16px;
+                              }
+                              window#waybar {
+                                padding: 2px;
+                                background: transparent;
+                              }
+
+            		  .modules-right {
+            		    padding-left: 5px;
+            		    border-radius: 15px 0 0 15px;
+            		    margin-top: 2px;
+            		    background: #${config.lib.stylix.colors.base00};
+            		  }
+
+            		  .modules-center {
+            		    padding: 0 15px;
+            		    margin-top: 2px;
+            		    border-radius: 15px 15px 15px 15px;
+            		    background: #${config.lib.stylix.colors.base00};
+            		  }
+
+            		  .modules-left {
+            		    border-radius: 0 15px 15px 0;
+            		    margin-top: 2px;
+            		    background: #${config.lib.stylix.colors.base00};
+            		  }
+                              tooltip label {
+                                color: #${config.lib.stylix.colors.base04};
+                              }
+                              #window, #pulseaudio, #cpu, #memory, #network, #tray, #battery {
+                                margin: 4px 0px;
+                                margin-left: 7px;
+                                color: #${config.lib.stylix.colors.base07};
+                                border-radius: 8px;
+      			}
+                              #tray menu {
+                                color: #${config.lib.stylix.colors.base00};
+      			  border-radius: 8px;
+                              }
+                              #clock {
+                                font-weight: bold;
+                                color: #${config.lib.stylix.colors.base07};
+                                margin: 2px;
+                                border-radius: 12px;
+                              }
     '';
   };
 }

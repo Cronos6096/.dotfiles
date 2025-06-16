@@ -10,11 +10,9 @@
     yazi # terminal file manager
     kdePackages.kate # Notepad
     zed-editor # Ide
-    floorp # Browser
 
     # Hyprland
     dunst
-    hyprpaper
     wofi
     wl-clipboard
     clipse
@@ -82,9 +80,9 @@
     fd
     file
     lazygit
-    wiki-tui
     gnupg
     gnused
+    pinentry-all
     gnutar
     hollywood
     ripgrep

@@ -5,7 +5,7 @@
     # ./Kitty.nix
     ./Terminale.nix
     ./Waybar.nix
-    # ./Zen.nix
+    ./Zen.nix
 
     ./wezterm
     ./vim

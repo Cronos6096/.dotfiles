@@ -17,6 +17,7 @@
     #---#
     lua-language-server
     lua
+    stylua
 
     bleachbit
     pciutils
@@ -58,5 +59,5 @@
     "nix-command"
     "flakes"
   ];
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}"];
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 }
