@@ -9,12 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Nur
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Trova pacchetti
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
 
@@ -60,7 +54,6 @@
       hyprland,
       nix-search-tv,
       nixpkgs,
-      nur,
       rust-overlay,
       self,
       solaar,
@@ -86,9 +79,6 @@
                 nix-search-tv.packages.x86_64-linux.default
               ];
             }
-
-            # NUR
-            nur.modules.nixos.default
 
             (
               { pkgs, ... }:
