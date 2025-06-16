@@ -27,6 +27,17 @@
     appimage-run
     kdePackages.kdeconnect-kde
 
+    # dolphin
+    kdePackages.breeze-icons
+    kdePackages.dolphin
+    kdePackages.kio
+    kdePackages.kio-extras
+    kdePackages.kservice
+    kdePackages.qtsvg
+    shared-mime-info
+    hyprpolkitagent
+    kdePackages.plasma-workspace
+
     # GPU
     mesa
     nvtopPackages.nvidia

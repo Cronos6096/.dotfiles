@@ -21,6 +21,7 @@
     networkmanager
     handlr
     hyprsome
+    hyprpaper
 
     # archivi
     unp
@@ -28,17 +29,6 @@
     unzip
     xz
     zip
-
-    # dolphin
-    kdePackages.breeze-icons
-    kdePackages.dolphin
-    kdePackages.kio
-    kdePackages.kio-extras
-    kdePackages.kservice
-    kdePackages.qtsvg
-    shared-mime-info
-    kdePackages.plasma-workspace
-    hyprpolkitagent
 
     # font
     liberation_ttf

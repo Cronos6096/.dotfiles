@@ -6,7 +6,6 @@
     ./audio.nix
     ../moduli/system
     ../Pacchetti.nix
-    ../Pacchetti-NUR.nix
   ];
 
   # Kernel

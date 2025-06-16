@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
   xdg.portal = {
     enable = true;
@@ -10,8 +10,8 @@
     ];
   };
 
-  xdg.menus.enable = true;         # Default: true :contentReference[oaicite:5]{index=5}
-  xdg.mime.enable  = true;
+  xdg.menus.enable = true;
+  xdg.mime.enable = true;
 
   services.dbus.enable = true;
 }

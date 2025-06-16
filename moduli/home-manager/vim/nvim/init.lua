@@ -32,17 +32,17 @@ require("mini.basics").setup({
 })
 require("mini.animate").setup()
 
+-- Lsp
 vim.lsp.enable("lua_ls")
 
 -- ALtri plugin
-require("nvim-highlight-colors").setup({})
+require("colorizer").setup()
 
 require("noice").setup({
 	lsp = {
 		override = {
 			["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 			["vim.lsp.util.stylize_markdown"] = true,
-			["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
 		},
 	},
 	presets = {
@@ -80,4 +80,9 @@ require("codecompanion").setup({
 			},
 		},
 	},
+})
+
+require("neogit").setup({
+	graph_style = "unicode",
+	process_spinner = true,
 })
