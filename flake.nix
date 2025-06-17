@@ -9,6 +9,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Nur
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Trova pacchetti
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
 
@@ -57,6 +63,7 @@
       anyrun,
       home-manager,
       nix-search-tv,
+      nur,
       nixpkgs,
       solaar,
       stylix,
@@ -82,6 +89,9 @@
                 nix-search-tv.packages.x86_64-linux.default
               ];
             }
+
+            # Nur
+            nur.modules.nixos.default
 
             # Anyrun
             { environment.systemPackages = [ anyrun.packages.${system}.anyrun-with-all-plugins ]; }

@@ -8,6 +8,7 @@
     ./Zen.nix
 
     ./anyrun
+    ./nixvim
     ./vim
     ./wezterm
   ];
