@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ./gpu.nix
     ./audio.nix
+    ./secrets.nix
     ../moduli/system
     ../Pacchetti.nix
   ];

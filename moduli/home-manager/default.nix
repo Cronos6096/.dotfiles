@@ -7,7 +7,8 @@
     ./Waybar.nix
     ./Zen.nix
 
-    ./wezterm
+    ./anyrun
     ./vim
+    ./wezterm
   ];
 }

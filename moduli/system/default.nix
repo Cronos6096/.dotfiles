@@ -6,7 +6,6 @@
     # ./Plasma.nix
     ./Python.nix
     ./Ly.nix
-    ./Rust.nix
     ./Servizi.nix
     ./Solaar.nix
     ./Steam.nix

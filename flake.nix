@@ -9,6 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    agenix.url = "github:ryantm/agenix";
+
     # Trova pacchetti
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
 
@@ -46,16 +48,19 @@
       };
     };
 
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
+      agenix,
+      anyrun,
       home-manager,
-      hyprland,
       nix-search-tv,
       nixpkgs,
-      rust-overlay,
-      self,
       solaar,
       stylix,
       ...
@@ -71,7 +76,12 @@
           inherit system;
           modules = [
             ./sys
+            ./nix
             ./moduli/system/Portals.nix
+
+            # Segreti
+            agenix.nixosModules.default
+            ./secrets/secrets.nix
 
             # Nix search
             {
@@ -80,15 +90,8 @@
               ];
             }
 
-            (
-              { pkgs, ... }:
-              {
-                nixpkgs.overlays = [
-                  rust-overlay.overlays.default
-                ];
-                environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-              }
-            )
+            # Anyrun
+            { environment.systemPackages = [ anyrun.packages.${system}.anyrun-with-all-plugins ]; }
 
             # Integrazione di solaar
             solaar.nixosModules.default
@@ -100,7 +103,12 @@
             home-manager.nixosModules.home-manager
 
             {
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+              };
+
               home-manager.useUserPackages = true;
+
               home-manager.users.andme = {
                 imports = [
                   ./home-manager/home.nix
@@ -109,12 +117,7 @@
               };
             }
           ];
-          specialArgs = {
-            inherit
-              inputs
-              system
-              ;
-          };
+          specialArgs = { inherit inputs system; };
         };
       };
     };
