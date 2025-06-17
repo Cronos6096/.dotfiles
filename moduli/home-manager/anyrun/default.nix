@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 {
   programs.anyrun = {
     enable = true;
@@ -8,10 +8,13 @@
       plugins = with inputs.anyrun.packages.x86_64-linux; [
         applications
         shell
-        symbols
+        randr
+        kidex
+        rink
+        dictionary
+        # symbols
       ];
 
-      # width.fraction = 0.25;
       y.fraction = 0.3;
       hidePluginInfo = true;
       hideIcons = false;

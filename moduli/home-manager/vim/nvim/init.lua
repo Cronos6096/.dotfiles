@@ -7,12 +7,8 @@ require("mini.pairs").setup()
 require("mini.starter").setup()
 require("mini.diff").setup()
 require("mini.splitjoin").setup({
-	mappings = {
-		toggle = "gS",
-	},
-	detect = {
-		separator = ",",
-	},
+	mappings = { toggle = "gS" },
+	detect = { separator = "," },
 })
 require("mini.basics").setup({
 	options = {
@@ -30,10 +26,47 @@ require("mini.basics").setup({
 		basic = true,
 	},
 })
+require("mini.operators").setup({
+	evaluate = {
+		prefix = "gl",
+		-- Function which does the evaluation
+		func = nil,
+	},
+
+	exchange = {
+		prefix = " gx",
+
+		reindent_linewise = true,
+	},
+
+	-- Multiply (duplicate) text
+	multiply = {
+		prefix = " gm",
+
+		func = nil,
+	},
+
+	-- Replace text with register
+	replace = {
+		prefix = " gr",
+
+		-- Whether to reindent new text to match previous indent
+		reindent_linewise = true,
+	},
+
+	sort = {
+		prefix = " gs",
+		func = nil,
+	},
+})
 require("mini.animate").setup()
+require("mini.ai").setup()
+require("mini.jump2d").setup()
+require("mini.jump").setup()
 
 -- Lsp
 vim.lsp.enable("lua_ls")
+vim.lsp.enable("nixd")
 
 -- ALtri plugin
 require("colorizer").setup()
@@ -86,3 +119,5 @@ require("neogit").setup({
 	graph_style = "unicode",
 	process_spinner = true,
 })
+
+require("stay-centered").setup()

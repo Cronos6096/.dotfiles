@@ -1,18 +1,10 @@
 return {
 	{
-		"scottmckendry/cyberdream.nvim",
+		"nyoom-engineering/oxocarbon.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("cyberdream").setup({
-				variant = "auto",
-				transparent = true,
-				italic_comments = true,
-				hide_fillchars = true,
-				cache = true,
-				borderless_pickers = true,
-			})
-			vim.cmd("colorscheme cyberdream")
+			vim.cmd("colorscheme oxocarbon")
 		end,
 	},
 	{

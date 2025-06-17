@@ -11,6 +11,7 @@ return {
 			lsp_format = "fallback",
 		},
 	},
+
 	config = function(_, opts)
 		require("conform").setup(opts)
 		vim.api.nvim_create_autocmd("BufWritePre", {

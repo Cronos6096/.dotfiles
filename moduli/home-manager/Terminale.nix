@@ -13,7 +13,6 @@ let
     py = "python";
     py3 = "python3";
     nixsearch = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
-    "nix-shell -p" = ",";
   };
 in
 {

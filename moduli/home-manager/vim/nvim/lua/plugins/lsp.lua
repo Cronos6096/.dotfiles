@@ -30,14 +30,6 @@ return {
 					},
 				},
 			})
-
-			local nil_path = vim.fn.exepath("nil")
-			lspconfig.nil_ls.setup({
-				cmd = { nil_path, "--stdio" },
-				filetypes = { "nix" },
-				root_dir = lspconfig.util.root_pattern("flake.nix", "default.nix", ".git"),
-				capabilities = caps,
-			})
 		end,
 	},
 

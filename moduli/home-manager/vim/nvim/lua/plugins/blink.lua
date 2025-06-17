@@ -2,10 +2,7 @@ return {
 	"saghen/blink.cmp",
 	dependencies = { "rafamadriz/friendly-snippets" },
 
-	version = "1.*",
-	-- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
-	-- build = 'cargo build --release',
-	-- If you use nix, you can build from source using latest nightly rust with:
+	version = "*",
 	build = "nix run .#build-plugin",
 
 	---@module 'blink.cmp'
@@ -23,16 +20,16 @@ return {
 		-- C-k: Toggle signature help (if signature.enabled = true)
 		--
 		-- See :h blink-cmp-config-keymap for defining your own keymap
-		keymap = { preset = "default" },
+		keymap = { preset = "enter" },
 
 		appearance = {
-			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-			-- Adjusts spacing to ensure icons are aligned
 			nerd_font_variant = "mono",
 		},
 
 		-- (Default) Only show the documentation popup when manually triggered
-		completion = { documentation = { auto_show = true } },
+		completion = {
+			documentation = { auto_show = false },
+		},
 
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },

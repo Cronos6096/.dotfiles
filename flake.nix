@@ -54,7 +54,6 @@
 
   outputs =
     {
-      agenix,
       anyrun,
       home-manager,
       nix-search-tv,
