@@ -9,8 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    agenix.url = "github:ryantm/agenix";
-
     # Trova pacchetti
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
 
@@ -78,10 +76,6 @@
             ./sys
             ./nix
             ./moduli/system/Portals.nix
-
-            # Segreti
-            agenix.nixosModules.default
-            ./secrets/secrets.nix
 
             # Nix search
             {
