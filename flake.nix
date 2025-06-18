@@ -145,6 +145,7 @@
                 };
 
                 home-manager.useUserPackages = true;
+                home.stateVersion = "25.11";
 
                 home-manager.users.andme = {
                   nixpkgs.config.allowUnfree = true;
