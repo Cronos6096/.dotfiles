@@ -4,6 +4,9 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    # Rpi
+    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -64,6 +67,7 @@
       home-manager,
       nix-search-tv,
       nur,
+      nixos-raspberrypi,
       nixpkgs,
       solaar,
       stylix,
@@ -76,10 +80,10 @@
       nixosConfigurations = {
 
         # Laptop
-        andme = nixpkgs.lib.nixosSystem {
+        GiovanGianFranco = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
-            ./sys
+            ./sys/GiovanGianFranco
             ./nix
             ./moduli/system/Portals.nix
 
@@ -121,6 +125,59 @@
             }
           ];
           specialArgs = { inherit inputs system; };
+        };
+
+        Pi = nixos-raspberrypi.lib.nixosSystem {
+          specialArgs = inputs;
+          modules = [
+            (
+              { ... }:
+              {
+                imports = with nixos-raspberrypi.nixosModules; [
+                  raspberry-pi-5.base
+                  raspberry-pi-5.bluetooth
+                ];
+              }
+            )
+            (
+              { ... }:
+              {
+                networking.hostName = "andme";
+                users.users.yourUserName = {
+                  initialPassword = "1234";
+                  isNormalUser = true;
+                  extraGroups = [
+                    "wheel"
+                  ];
+                };
+
+                services.openssh.enable = true;
+              }
+            )
+
+            (
+              { ... }:
+              {
+                fileSystems = {
+                  "/boot/firmware" = {
+                    device = "/dev/disk/by-uuid/2175-794E";
+                    fsType = "vfat";
+                    options = [
+                      "noatime"
+                      "noauto"
+                      "x-systemd.automount"
+                      "x-systemd.idle-timeout=1min"
+                    ];
+                  };
+                  "/" = {
+                    device = "/dev/disk/by-uuid/44444444-4444-4444-8888-888888888888";
+                    fsType = "ext4";
+                    options = [ "noatime" ];
+                  };
+                };
+              }
+            )
+          ];
         };
       };
     };

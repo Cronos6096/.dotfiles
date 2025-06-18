@@ -52,6 +52,7 @@
     # Strumenti
     libreoffice
     qalculate-gtk
+    rpi-imager
 
     # Giochi
     # nexusmods-app-unfree

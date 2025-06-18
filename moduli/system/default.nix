@@ -2,7 +2,7 @@
   imports = [
     ./Adb.nix
     ./Lingua.nix
-    ./Ollama.nix
+    # ./Ollama.nix
     # ./Plasma.nix
     ./Python.nix
     ./Ly.nix

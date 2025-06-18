@@ -4,9 +4,9 @@
     ./hardware-configuration.nix
     ./gpu.nix
     ./audio.nix
-    ../moduli/system
-    ../Pacchetti.nix
-    ../Pacchetti-NUR.nix
+    ../../moduli/system
+    ../../Pacchetti.nix
+    ../../Pacchetti-NUR.nix
   ];
 
   # Kernel

@@ -2,13 +2,14 @@ let
   shellAliases = {
     ls = "eza";
     ff = "fastfetch";
-    rebuild = "nh os switch /home/andme/.dotfiles/ -H andme --update";
-    rebuildnoup = "nh os switch /home/andme/.dotfiles/ -H andme";
-    rebuildpush = " cdconf && git add * && git commit && git push && nh os switch . -H andme";
+    rebuild = "nh os switch ~/.dotfiles/ -H GiovanGianFranco --update";
+    rebuildpi = "nh os switch ~/.dotfiles/ -H GiovanGianFranco --update";
+    rebuildnoup = "nh os switch ~/.dotfiles/ -H GiovanGianFranco";
+    rebuildpush = " cdconf && git add * && git commit && git push && nh os switch . -H GiovanGianFranco";
     clean = "nh clean all --keep=5";
     cat = "bat";
-    cdconf = "cd /home/andme/.dotfiles";
-    cdpr = "cd /home/andme/progetti";
+    cdconf = "cd ~/.dotfiles";
+    cdpr = "cd ~/progetti";
     v = "nvim";
     py = "python";
     py3 = "python3";
@@ -21,7 +22,7 @@ in
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 3d --keep 3";
-    flake = "/home/andme/.dotfiles/";
+    flake = "~/.dotfiles/";
   };
 
   programs.fish = {
