@@ -145,13 +145,13 @@
                 };
 
                 home-manager.useUserPackages = true;
-                home.stateVersion = "25.11";
 
                 home-manager.users.andme = {
                   nixpkgs.config.allowUnfree = true;
                   home.username = "andme";
                   home.homeDirectory = "/home/andme";
                   programs.home-manager.enable = true;
+                  home.stateVersion = "25.11";
 
                   home.packages = with pkgs; [
                     eza
