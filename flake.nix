@@ -130,6 +130,44 @@
         Pi = nixos-raspberrypi.lib.nixosSystem {
           specialArgs = inputs;
           modules = [
+            ./moduli/system/Lingua.nix
+            ./moduli/system/Stylix.nix
+
+            stylix.nixosModules.stylix
+
+            home-manager.nixosModules.home-manager
+
+            (
+              { pkgs, ... }:
+              {
+                home-manager.extraSpecialArgs = {
+                  inherit inputs;
+                };
+
+                home-manager.useUserPackages = true;
+
+                home-manager.users.andme = {
+                  nixpkgs.config.allowUnfree = true;
+                  home.username = "andme";
+                  home.homeDirectory = "/home/andme";
+                  programs.home-manager.enable = true;
+
+                  home.packages = with pkgs; [
+                    eza
+                    bat
+                    fzf
+                    yazi
+                  ];
+
+                  imports = [
+                    ./moduli/home-manager/vim/default.nix
+                    ./moduli/home-manager/Git.nix
+                    ./moduli/home-manager/Terminale.nix
+                  ];
+                };
+              }
+            )
+
             (
               { ... }:
               {
