@@ -3,7 +3,7 @@
     ./Adb.nix
     ./Lingua.nix
     # ./Ollama.nix
-    # ./Plasma.nix
+    ./Plasma.nix
     ./Python.nix
     ./Ly.nix
     ./Servizi.nix

@@ -151,7 +151,7 @@
                   home.username = "andme";
                   home.homeDirectory = "/home/andme";
                   programs.home-manager.enable = true;
-                  home.stateVersion = "25.11";
+                  home.stateVersion = "25.05";
 
                   home.packages = with pkgs; [
                     eza
@@ -181,8 +181,8 @@
             (
               { ... }:
               {
-                networking.hostName = "andme";
-                users.users.yourUserName = {
+                networking.hostName = "Pi";
+                users.users.andme = {
                   initialPassword = "1234";
                   isNormalUser = true;
                   extraGroups = [

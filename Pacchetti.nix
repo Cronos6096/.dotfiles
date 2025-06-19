@@ -72,4 +72,7 @@
     "flakes"
   ];
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
+  # Manager partizioni
+  programs.partition-manager.enable = true;
 }
