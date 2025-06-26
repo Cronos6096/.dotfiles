@@ -14,4 +14,17 @@
   };
 
   home.file."/home/andme/.config/hypr/hyprland.conf".source = lib.mkForce ../wm/hypr/hyprland.conf;
+
+  home.packages = with pkgs; [
+    dunst
+    wofi
+    wl-clipboard
+    clipse
+    hyprshot
+    pavucontrol
+    networkmanager
+    handlr
+    hyprsome
+    hyprpaper
+  ];
 }

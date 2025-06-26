@@ -1,7 +1,4 @@
 { config, ... }:
-let
-  betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
-in
 {
   programs.waybar = {
     enable = true;
@@ -131,7 +128,8 @@ in
                                 border-radius: 8px;
       			}
                               #tray menu {
-                                color: #${config.lib.stylix.colors.base00};
+                                color: #${config.lib.stylix.colors.base07};
+                                background: transparent;
       			  border-radius: 8px;
                               }
                               #clock {

@@ -10,18 +10,7 @@
     yazi # terminal file manager
     kdePackages.kate # Notepad
     zed-editor-fhs # Ide
-
-    # Hyprland
-    dunst
-    wofi
-    wl-clipboard
-    clipse
-    hyprshot
-    pavucontrol
-    networkmanager
-    handlr
-    hyprsome
-    hyprpaper
+    telegram-desktop
 
     # archivi
     unp
