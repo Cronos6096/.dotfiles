@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
   programs.dconf.enable = true;
@@ -23,6 +22,7 @@
 
   virtualisation = {
     libvirtd = {
+      enable = true;
       qemu = {
         swtpm.enable = true;
         ovmf.enable = true;

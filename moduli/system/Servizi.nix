@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   # Tracking batteria
   services.upower.enable = true;

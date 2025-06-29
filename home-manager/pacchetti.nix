@@ -10,7 +10,7 @@
     yazi # terminal file manager
     kdePackages.kate # Notepad
     zed-editor-fhs # Ide
-    telegram-desktop
+    kdePackages.kget
 
     # archivi
     unp

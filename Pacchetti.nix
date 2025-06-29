@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, self, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -11,13 +11,8 @@
     git
     ncdu
 
-    nixd
-    nixfmt-rfc-style
-    statix
-    #---#
-    lua-language-server
-    lua
-    stylua
+    # Neovim
+    self.packages.${pkgs.system}.default
 
     bleachbit
     pciutils

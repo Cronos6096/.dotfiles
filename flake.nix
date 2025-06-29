@@ -59,6 +59,9 @@
       url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Neovim
+    nvf.url = "github:notashelf/nvf";
   };
 
   outputs =
@@ -66,22 +69,32 @@
       anyrun,
       home-manager,
       nix-search-tv,
-      nur,
       nixos-raspberrypi,
       nixpkgs,
+      nvf,
+      nur,
       solaar,
       stylix,
+      self,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
     in
     {
+      # Neovim
+      packages.${system}.default =
+        (nvf.lib.neovimConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          modules = [ ./moduli/system/Nvf.nix ];
+        }).neovim;
+
       nixosConfigurations = {
 
         # Laptop
         GiovanGianFranco = nixpkgs.lib.nixosSystem {
           inherit system;
+          specialArgs = { inherit inputs self; };
           modules = [
             ./sys/GiovanGianFranco
             ./nix
@@ -93,6 +106,16 @@
                 nix-search-tv.packages.x86_64-linux.default
               ];
             }
+
+            # Neovim
+            (
+              { pkgs, ... }@args:
+              {
+                environment.systemPackages = [
+                  self.packages.${pkgs.system}.default
+                ];
+              }
+            )
 
             # Nur
             nur.modules.nixos.default
@@ -124,7 +147,6 @@
               };
             }
           ];
-          specialArgs = { inherit inputs system; };
         };
 
         Pi = nixos-raspberrypi.lib.nixosSystem {
