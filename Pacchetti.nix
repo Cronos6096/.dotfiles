@@ -2,28 +2,32 @@
 
 {
   environment.systemPackages = with pkgs; [
+    # Archivi
     cabextract
     unzip
 
+    # Strumenti da linea di comando
     fzf
     tldr
     wget
     git
     ncdu
 
-    # Neovim
-    self.packages.${pkgs.system}.default
-    codex
+    # Editor e strumenti di sviluppo
+    self.packages.${pkgs.system}.default   # Neovim
+    codex                                  # Codex CLI
 
+    # Amministrazione di sistema
     bleachbit
     pciutils
     home-manager
 
+    # Integrazione desktop
     desktop-file-utils
     appimage-run
     kdePackages.kdeconnect-kde
 
-    # dolphin
+    # File manager e KDE
     kdePackages.breeze-icons
     kdePackages.dolphin
     kdePackages.kio
@@ -34,31 +38,32 @@
     hyprpolkitagent
     kdePackages.plasma-workspace
 
-    # GPU
+    # Grafica e GPU
     mesa
     nvtopPackages.nvidia
     vulkan-loader
     vulkan-tools
     vulkan-extension-layer
     vulkan-validation-layers
-
     libva
     libva-utils
 
-    # Strumenti
+    # Produttività e documenti
     libreoffice
     qalculate-gtk
+
+    # Strumenti Raspberry Pi
     rpi-imager
 
-    # Giochi
-    # nexusmods-app-unfree
+    # Giochi e compatibilità Windows
     prismlauncher
     wineWowPackages.full
     winetricks
 
+    # Progetti e utilità varie
     nvd
-    orca-slicer # Slicer
-    impression # Iso
+    orca-slicer    # Slicer 3D
+    impression     # Creazione ISO
   ];
 
   # Pacchetti liberi / Flake

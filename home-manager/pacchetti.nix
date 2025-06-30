@@ -54,7 +54,6 @@
     # Terminale
     cava # Audio visualizer
     cmatrix
-    cmake
     cowsay
     fd
     file
@@ -64,7 +63,7 @@
     pinentry-all
     gnutar
     hollywood
-    ripgrep
+    
     tree
     undollar
     which
