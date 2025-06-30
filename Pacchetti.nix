@@ -13,6 +13,7 @@
 
     # Neovim
     self.packages.${pkgs.system}.default
+    codex
 
     bleachbit
     pciutils
