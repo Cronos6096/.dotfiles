@@ -4,7 +4,6 @@
     theme = {
       enable = true;
       transparent = true;
-
       name = "base16";
       base16-colors = {
         base00 = "#0F1419";
@@ -26,8 +25,6 @@
       };
     };
 
-    ui.noice.enable = true;
-
     options = {
       tabstop = 2;
       shiftwidth = 2;
@@ -46,7 +43,14 @@
       enable = true;
     };
 
-    assistant.codecompanion-nvim.enable = true;
+    assistant = {
+      codecompanion-nvim.enable = true;
+      copilot.enable = true;
+    };
+
+    ui = {
+      smartcolumn.enable = true;
+    };
 
     statusline.lualine.enable = true;
 
@@ -60,6 +64,7 @@
       friendly-snippets.enable = true;
       setupOpts.cmdline.keymap.preset = "enter";
       sourcePlugins.ripgrep.enable = true;
+      sourcePlugins.emoji.enable = true;
     };
 
     comments.comment-nvim = {
@@ -89,6 +94,13 @@
         mappings = {
           openYaziDir = " e";
         };
+      };
+    };
+
+    filetree.nvimTree = {
+      enable = true;
+      mappings = {
+        toggle = "<leader>t";
       };
     };
 
@@ -122,11 +134,6 @@
     };
 
     extraPlugins = with pkgs.vimPlugins; {
-      aerial = {
-        package = aerial-nvim;
-        setup = "require('aerial').setup {}";
-      };
-
       gitsigns = {
         package = gitsigns-nvim;
         setup = ''

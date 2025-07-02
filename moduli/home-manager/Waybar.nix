@@ -91,7 +91,7 @@
     ];
     style = ''
                               * {
-                                font-family: Jet Brains Mono;
+                                font-family: JetBrains Mono;
                                 font-size: 16px;
                               }
                               window#waybar {

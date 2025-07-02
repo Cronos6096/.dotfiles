@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
   stylix = {
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/vesper.yaml";
 
     # builtins.fetchurl {
     #   url = "https://raw.githubusercontent.com/scottmckendry/cyberdream.nvim/main/extras/base16/cyberdream.yaml";
