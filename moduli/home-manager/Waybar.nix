@@ -90,54 +90,58 @@
       }
     ];
     style = ''
-                              * {
-                                font-family: JetBrains Mono;
-                                font-size: 16px;
-                              }
-                              window#waybar {
-                                padding: 2px;
-                                background: transparent;
-                              }
+      * {
+        font-family: JetBrains Mono;
+        font-size: 16px;
+      }
+      window#waybar {
+        padding: 2px;
+        background: transparent;
+      }
 
-            		  .modules-right {
-            		    padding-left: 5px;
-            		    border-radius: 15px 0 0 15px;
-            		    margin-top: 2px;
-            		    background: #${config.lib.stylix.colors.base00};
-            		  }
+      .modules-right {
+        padding-left: 5px;
+        border-radius: 15px 0 0 15px;
+        margin-top: 2px;
+        background: #${config.lib.stylix.colors.base00};
+      }
 
-            		  .modules-center {
-            		    padding: 0 15px;
-            		    margin-top: 2px;
-            		    border-radius: 15px 15px 15px 15px;
-            		    background: #${config.lib.stylix.colors.base00};
-            		  }
+      .modules-center {
+        padding: 0 15px;
+        margin-top: 2px;
+        border-radius: 15px 15px 15px 15px;
+        background: #${config.lib.stylix.colors.base00};
+      }
 
-            		  .modules-left {
-            		    border-radius: 0 15px 15px 0;
-            		    margin-top: 2px;
-            		    background: #${config.lib.stylix.colors.base00};
-            		  }
-                              tooltip label {
-                                color: #${config.lib.stylix.colors.base04};
-                              }
-                              #window, #pulseaudio, #cpu, #memory, #network, #tray, #battery {
-                                margin: 4px 0px;
-                                margin-left: 7px;
-                                color: #${config.lib.stylix.colors.base07};
-                                border-radius: 8px;
-      			}
-                              #tray menu {
-                                color: #${config.lib.stylix.colors.base07};
-                                background: transparent;
-      			  border-radius: 8px;
-                              }
-                              #clock {
-                                font-weight: bold;
-                                color: #${config.lib.stylix.colors.base07};
-                                margin: 2px;
-                                border-radius: 12px;
-                              }
+      .modules-left {
+        border-radius: 0 15px 15px 0;
+        margin-top: 2px;
+        background: #${config.lib.stylix.colors.base00};
+      }
+
+      tooltip label {
+        color: #${config.lib.stylix.colors.base04};
+      }
+
+      #window, #pulseaudio, #cpu, #memory, #network, #tray, #battery {
+        margin: 4px 0px;
+        margin-left: 7px;
+        color: #${config.lib.stylix.colors.base07};
+        border-radius: 8px;
+      }
+
+      #tray menu {
+        color: #${config.lib.stylix.colors.base07};
+        background: transparent;
+        border-radius: 8px;
+      }
+
+      #clock {
+        font-weight: bold;
+        color: #${config.lib.stylix.colors.base07};
+        margin: 2px;
+        border-radius: 12px;
+      }
     '';
   };
 }
