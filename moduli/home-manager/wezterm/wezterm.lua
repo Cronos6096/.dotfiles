@@ -82,7 +82,6 @@ config.visual_bell = {
 
 -- Key mappings
 config.keys = {
-    { key = "v", mods = "CTRL", action = wezterm.action({ PasteFrom = "Clipboard" }) },
     { key = "w", mods = "ALT",  action = wezterm.action.CloseCurrentTab({ confirm = true }) },
     { key = "t", mods = "ALT",  action = wezterm.action.SpawnTab("CurrentPaneDomain") },
 }

@@ -86,7 +86,7 @@
       packages.${system}.default =
         (nvf.lib.neovimConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
-          modules = [ ./moduli/system/Nvf.nix ];
+          modules = [ ./moduli/system/Nvf ];
         }).neovim;
 
       nixosConfigurations = {

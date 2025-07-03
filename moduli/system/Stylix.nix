@@ -2,7 +2,7 @@
 {
   stylix = {
     #  base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/vesper.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
     # builtins.fetchurl {
     #   url = "https://raw.githubusercontent.com/scottmckendry/cyberdream.nvim/main/extras/base16/cyberdream.yaml";
@@ -39,8 +39,13 @@
       };
 
       monospace = {
-        package = pkgs.fira-code;
+        package = pkgs.jetbrains-mono;
         name = "Jet Brains Mono";
+      };
+
+      emoji = {
+        package = pkgs.nerd-fonts.symbols-only;
+        name = "Symbols Nerd Font";
       };
     };
   };

@@ -3,26 +3,9 @@
   vim = {
     theme = {
       enable = true;
+      name = "catppuccin";
+      style = "mocha";
       transparent = true;
-      name = "base16";
-      base16-colors = {
-        base00 = "#0F1419";
-        base01 = "#131721";
-        base02 = "#272D38";
-        base03 = "#3E4B59";
-        base04 = "#BFBDB6";
-        base05 = "#E6E1CF";
-        base06 = "#E6E1CF";
-        base07 = "#F3F4F5";
-        base08 = "#F07178";
-        base09 = "#FF8F40";
-        base0A = "#FFB454";
-        base0B = "#B8CC52";
-        base0C = "#95E6CB";
-        base0D = "#59C2FF";
-        base0E = "#D2A6FF";
-        base0F = "#E6B673";
-      };
     };
 
     options = {
@@ -44,27 +27,28 @@
     };
 
     assistant = {
-      codecompanion-nvim.enable = true;
-      copilot.enable = true;
+      avante-nvim = {
+        enable = true;
+        setupOpts.behaviour.enable_cursor_planning_mode = true;
+      };
     };
 
     ui = {
       smartcolumn.enable = true;
+      noice.enable = true;
     };
 
     statusline.lualine.enable = true;
 
     syntaxHighlighting = true;
 
-    telescope.enable = true;
-    telescope.mappings.buffers = " f";
-
-    autocomplete.blink-cmp = {
+    telescope = {
       enable = true;
-      friendly-snippets.enable = true;
-      setupOpts.cmdline.keymap.preset = "enter";
-      sourcePlugins.ripgrep.enable = true;
-      sourcePlugins.emoji.enable = true;
+      mappings.buffers = " f";
+    };
+
+    autocomplete.nvim-cmp = {
+      enable = true;
     };
 
     comments.comment-nvim = {
@@ -81,7 +65,7 @@
         lazygit = {
           enable = true;
           mappings = {
-            open = " g";
+            open = " gg";
           };
         };
         setupOpts.enable_winbar = true;
@@ -94,13 +78,6 @@
         mappings = {
           openYaziDir = " e";
         };
-      };
-    };
-
-    filetree.nvimTree = {
-      enable = true;
-      mappings = {
-        toggle = "<leader>t";
       };
     };
 
@@ -147,9 +124,34 @@
           require("colorizer").setup()
         '';
       };
+
+      auto-session = {
+        package = auto-session;
+        setup = ''
+          require("auto-session").setup()
+        '';
+      };
+
+      satellite = {
+        package = satellite-nvim;
+        setup = ''
+          require("satellite").setup()
+        '';
+      };
+
+      git-blame = {
+        package = git-blame-nvim;
+        setup = ''
+          require("gitblame")
+        '';
+      };
     };
 
     hideSearchHighlight = true;
+    binds = {
+      cheatsheet.enable = true;
+      whichKey.enable = true;
+    };
 
     lsp = {
       enable = true;
