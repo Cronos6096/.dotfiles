@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   stylix = {
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
+    #  base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/vesper.yaml";
 
     # builtins.fetchurl {
