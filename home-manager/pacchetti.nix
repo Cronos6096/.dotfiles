@@ -9,7 +9,7 @@
     whatsie # Whatsapp
     yazi # terminal file manager
     kdePackages.kate # Notepad
-    zed-editor-fhs # Ide
+    zed-editor # Ide
     kdePackages.kget
 
     # archivi
