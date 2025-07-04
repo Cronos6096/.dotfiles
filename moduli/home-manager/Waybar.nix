@@ -6,16 +6,16 @@
       {
         layer = "top";
         position = "top";
-        modules-center = [ "hyprland/window" ];
+        modules-center = [ "clock" ];
         modules-left = [
-          "pulseaudio"
           "hyprland/workspaces"
+          "tray"
+          "hyprland/window"
         ];
         modules-right = [
           "network"
+          "pulseaudio"
           "battery"
-          "tray"
-          "clock"
         ];
         "clock" = {
           format = ''{:%Y-%m-%d %T}'';
@@ -23,7 +23,7 @@
           tooltip = false;
         };
         "hyprland/window" = {
-          max-length = 40;
+          max-length = 64;
           separate-outputs = true;
         };
         "network" = {
@@ -34,8 +34,8 @@
             "󰤥"
             "󰤨"
           ];
-          format-ethernet = " {bandwidthTotalBytes}";
-          format-wifi = "{icon} {essid} {bandwidthTotalBytes}";
+          format-ethernet = "";
+          format-wifi = "{icon} {essid}";
           format-disconnected = "󰤮";
         };
         "tray" = {
@@ -45,8 +45,8 @@
         "pulseaudio" = {
           format = "{icon} {volume}% {format_source}";
           format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
-          format-muted = " {format_source}";
+          format-bluetooth-muted = "{icon} {format_source}";
+          format-muted = "{format_source}";
           format-source = " {volume}%";
           format-source-muted = "";
           format-icons = {
@@ -91,9 +91,10 @@
     ];
     style = ''
       * {
-        font-family: JetBrains Mono;
+        font-family: "JetBrains Mono Nerd Font", "Symbols Nerd Font Mono";
         font-size: 16px;
       }
+
       window#waybar {
         padding: 2px;
         background: transparent;
@@ -120,14 +121,20 @@
       }
 
       tooltip label {
-        color: #${config.lib.stylix.colors.base04};
+        color: #${config.lib.stylix.colors.base07};
       }
 
-      #window, #pulseaudio, #cpu, #memory, #network, #tray, #battery {
+      #window, #pulseaudio, #cpu, #memory, #network, #battery {
         margin: 4px 0px;
         margin-left: 7px;
         color: #${config.lib.stylix.colors.base07};
         border-radius: 8px;
+      }
+
+      #tray {
+        color: #${config.lib.stylix.colors.base03};
+        border-radius: 8px;
+        margin: 4px;
       }
 
       #tray menu {
@@ -140,7 +147,6 @@
         font-weight: bold;
         color: #${config.lib.stylix.colors.base07};
         margin: 2px;
-        border-radius: 12px;
       }
     '';
   };
