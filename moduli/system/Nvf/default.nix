@@ -132,13 +132,6 @@
         '';
       };
 
-      satellite = {
-        package = satellite-nvim;
-        setup = ''
-          require("satellite").setup()
-        '';
-      };
-
       git-blame = {
         package = git-blame-nvim;
         setup = ''
@@ -147,6 +140,7 @@
       };
     };
 
+    undoFile.enable = true;
     hideSearchHighlight = true;
     binds = {
       cheatsheet.enable = true;
