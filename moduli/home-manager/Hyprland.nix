@@ -26,5 +26,6 @@
     handlr
     hyprsome
     hyprpaper
+    better-control
   ];
 }
