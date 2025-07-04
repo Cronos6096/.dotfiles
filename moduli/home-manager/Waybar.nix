@@ -96,26 +96,26 @@
       }
 
       window#waybar {
-        padding: 2px;
         background: transparent;
       }
 
       .modules-right {
         padding-left: 5px;
-        border-radius: 15px 0 0 15px;
+        border-radius: 8px 0 0 8px;
         margin-top: 2px;
         background: #${config.lib.stylix.colors.base00};
       }
 
       .modules-center {
-        padding: 0 15px;
+        padding: 0 10px;
         margin-top: 2px;
-        border-radius: 15px 15px 15px 15px;
+        border-radius: 8px;
         background: #${config.lib.stylix.colors.base00};
       }
 
       .modules-left {
-        border-radius: 0 15px 15px 0;
+        padding-right: 5px;
+        border-radius: 0 8px 8px 0;
         margin-top: 2px;
         background: #${config.lib.stylix.colors.base00};
       }
