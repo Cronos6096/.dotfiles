@@ -121,31 +121,32 @@
       }
 
       tooltip label {
-        color: #${config.lib.stylix.colors.base07};
+        color: #${config.lib.stylix.colors.base06};
       }
 
       #window, #pulseaudio, #cpu, #memory, #network, #battery {
         margin: 4px 0px;
         margin-left: 7px;
-        color: #${config.lib.stylix.colors.base07};
+        color: #${config.lib.stylix.colors.base06};
         border-radius: 8px;
       }
 
       #tray {
-        color: #${config.lib.stylix.colors.base03};
+        background: #${config.lib.stylix.colors.base02};
+        padding: 6px;
         border-radius: 8px;
         margin: 4px;
       }
 
       #tray menu {
-        color: #${config.lib.stylix.colors.base07};
+        color: #${config.lib.stylix.colors.base06};
         background: transparent;
         border-radius: 8px;
       }
 
       #clock {
         font-weight: bold;
-        color: #${config.lib.stylix.colors.base07};
+        color: #${config.lib.stylix.colors.base06};
         margin: 2px;
       }
     '';
