@@ -6,7 +6,6 @@
     fastfetch
     lutris # Launcher
     obsidian # Note
-    whatsie # Whatsapp
     yazi # terminal file manager
     kdePackages.kate # Notepad
     zed-editor # Ide
@@ -64,7 +63,6 @@
     gnutar
     hollywood
     
-    tree
     undollar
     which
     zstd
