@@ -7,13 +7,17 @@ let
     rebuildnoup = "nh os switch ~/.dotfiles/ -H GiovanGianFranco";
     rebuildpush = " cdconf && git add * && git commit && git push && nh os switch . -H GiovanGianFranco";
     clean = "nh clean all --keep=5";
-    cat = "bat";
     cdconf = "cd ~/.dotfiles";
     cdpr = "cd ~/progetti";
     v = "nvim";
     py = "python";
     py3 = "python3";
     nixsearch = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
+
+    cat = "bat";
+    find = "fd";
+    grep = "rg";
+    tree = "eza --git --icons --tree";
   };
 in
 {
