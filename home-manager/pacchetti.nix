@@ -28,7 +28,6 @@
     kdePackages.ark # File archiver
     bat # cat migliorato
     eza # ls migliorato
-    flatpak
     fzf
     qbittorrent-enhanced
     ripgrep
