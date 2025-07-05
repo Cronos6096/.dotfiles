@@ -20,6 +20,15 @@
         key = " z";
         action = ":lua vim.lsp.buf.format()<CR>";
       }
+
+      # Undotree
+      {
+        key = " u";
+        mode = "n";
+        silent = true;
+        action = ":UndotreeToggle<CR>";
+        lua = false;
+      }
     ];
 
     clipboard = {
@@ -36,6 +45,8 @@
     ui = {
       smartcolumn.enable = true;
       noice.enable = true;
+      borders.plugins.nvim-cmp.enable = true;
+      borders.enable = true;
     };
 
     statusline.lualine.enable = true;
@@ -49,6 +60,12 @@
 
     autocomplete.nvim-cmp = {
       enable = true;
+      sourcePlugins = [
+        "avante-nvim"
+        "icon-picker-nvim"
+        "telescope"
+        "trouble"
+      ];
     };
 
     comments.comment-nvim = {
@@ -138,6 +155,10 @@
           require("gitblame")
         '';
       };
+
+      undotree = {
+        package = undotree;
+      };
     };
 
     undoFile.enable = true;
@@ -189,6 +210,13 @@
           enable = true;
           type = "ruff";
         };
+        lsp.enable = true;
+        treesitter.enable = true;
+      };
+
+      lua = {
+        enable = true;
+        format.enable = true;
         lsp.enable = true;
         treesitter.enable = true;
       };
