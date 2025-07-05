@@ -14,6 +14,7 @@
   };
 
   home.file."/home/andme/.config/hypr/hyprland.conf".source = lib.mkForce ../wm/hypr/hyprland.conf;
+  home.file."/home/andme/.config/hypr/pyprland.toml".source = lib.mkForce ../wm/hypr/pyprland.toml;
 
   home.packages = with pkgs; [
     dunst
@@ -27,5 +28,6 @@
     hyprsome
     hyprpaper
     better-control
+    pyprland
   ];
 }

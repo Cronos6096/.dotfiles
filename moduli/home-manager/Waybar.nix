@@ -45,17 +45,13 @@
         "pulseaudio" = {
           format = "{icon} {volume}% {format_source}";
           format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = "{icon} {format_source}";
-          format-muted = "{format_source}";
+          format-bluetooth-muted = " {icon} {format_source}";
+          format-muted = "󰟎 {format_source}";
           format-source = " {volume}%";
           format-source-muted = "";
           format-icons = {
-            headphone = "";
-            hands-free = "";
-            headset = "";
-            phone = "";
-            portable = "";
-            car = "";
+            headphone = "󰋋";
+            headset = "󰋎";
             default = [
               ""
               ""
@@ -87,11 +83,22 @@
           on-click = "";
           tooltip = false;
         };
+        "hyprland/workspaces" = {
+          format = "{icon}";
+          on-click = "activate";
+          on-scroll-up = "hyprctl dispatch workspace e-1";
+          on-scroll-down = "hyprctl dispatch workspace e+1";
+          format-icons = {
+            "active" = "";
+            "urgent" = "󰚽";
+            "default" = "";
+          };
+        };
       }
     ];
     style = ''
       * {
-        font-family: "JetBrains Mono Nerd Font", "Symbols Nerd Font Mono";
+        font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font Mono";
         font-size: 16px;
       }
 
@@ -118,6 +125,25 @@
         border-radius: 0 8px 8px 0;
         margin-top: 2px;
         background: #${config.lib.stylix.colors.base00};
+      }
+
+      #workspaces {
+        background: none;
+      }
+
+      #workspaces button {
+        color: #${config.lib.stylix.colors.base06};
+        background: none;
+      }
+
+      #workspaces button:hover {
+        color: #${config.lib.stylix.colors.base0B};
+        background: none;
+      }
+
+      #workspaces button.active {
+        color: #${config.lib.stylix.colors.base0C};
+        background: none;
       }
 
       tooltip label {
