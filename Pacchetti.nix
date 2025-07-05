@@ -59,6 +59,8 @@
     prismlauncher
     wineWowPackages.full
     winetricks
+    protonup-qt
+    protontricks
 
     # Progetti e utilità varie
     nvd
