@@ -129,17 +129,19 @@
             home-manager.nixosModules.home-manager
 
             {
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-              };
+              home-manager = {
+                extraSpecialArgs = {
+                  inherit inputs;
+                };
 
-              home-manager.useUserPackages = true;
+                useUserPackages = true;
 
-              home-manager.users.andme = {
-                imports = [
-                  ./home-manager/home.nix
-                  inputs.zen-browser.homeModules.default
-                ];
+                users.andme = {
+                  imports = [
+                    ./home-manager/home.nix
+                    inputs.zen-browser.homeModules.default
+                  ];
+                };
               };
             }
           ];
