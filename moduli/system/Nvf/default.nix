@@ -8,6 +8,14 @@
       transparent = true;
     };
 
+    diagnostics = {
+      enable = true;
+      config = {
+        update_in_insert = true;
+        virtual_text = true;
+      };
+    };
+
     options = {
       tabstop = 2;
       shiftwidth = 2;
@@ -20,15 +28,6 @@
         key = " z";
         action = ":lua vim.lsp.buf.format()<CR>";
       }
-
-      # Undotree
-      {
-        key = " u";
-        mode = "n";
-        silent = true;
-        action = ":UndotreeToggle<CR>";
-        lua = false;
-      }
     ];
 
     clipboard = {
@@ -36,9 +35,9 @@
     };
 
     assistant = {
-      avante-nvim = {
+      copilot = {
         enable = true;
-        setupOpts.behaviour.enable_cursor_planning_mode = true;
+        cmp.enable = true;
       };
     };
 
@@ -96,6 +95,8 @@
           openYaziDir = " e";
         };
       };
+      snacks-nvim.enable = true;
+      motion.flash-nvim.enable = true;
     };
 
     mini = {
@@ -125,6 +126,7 @@
       jump2d.enable = true;
       splitjoin.enable = true;
       trailspace.enable = true;
+      icons.enable = true;
     };
 
     extraPlugins = with pkgs.vimPlugins; {
@@ -158,6 +160,9 @@
 
       undotree = {
         package = undotree;
+        setup = ''
+          vim.keymap.set("n", " u", vim.cmd.UndotreeToggle)
+        '';
       };
     };
 
@@ -171,15 +176,18 @@
     lsp = {
       enable = true;
       trouble.enable = true;
+      lspSignature.enable = true;
     };
 
     languages = {
       enableTreesitter = true;
       enableFormat = true;
+      enableExtraDiagnostics = true;
 
       markdown = {
         enable = true;
         format.enable = true;
+        extensions.render-markdown-nvim.enable = true;
       };
 
       nix = {
