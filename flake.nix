@@ -4,9 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # Rpi
-    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -69,7 +66,6 @@
       anyrun,
       home-manager,
       nix-search-tv,
-      nixos-raspberrypi,
       nixpkgs,
       nvf,
       nur,
@@ -146,98 +142,6 @@
                 ];
               };
             }
-          ];
-        };
-
-        Pi = nixos-raspberrypi.lib.nixosSystem {
-          specialArgs = inputs;
-          modules = [
-            ./moduli/system/Lingua.nix
-            ./moduli/system/Stylix.nix
-
-            stylix.nixosModules.stylix
-
-            home-manager.nixosModules.home-manager
-
-            (
-              { pkgs, ... }:
-              {
-                home-manager.extraSpecialArgs = {
-                  inherit inputs;
-                };
-
-                home-manager.useUserPackages = true;
-
-                home-manager.users.andme = {
-                  nixpkgs.config.allowUnfree = true;
-                  home.username = "andme";
-                  home.homeDirectory = "/home/andme";
-                  programs.home-manager.enable = true;
-                  home.stateVersion = "25.05";
-
-                  home.packages = with pkgs; [
-                    eza
-                    bat
-                    fzf
-                    yazi
-                  ];
-
-                  imports = [
-                    ./moduli/home-manager/vim/default.nix
-                    ./moduli/home-manager/Git.nix
-                    ./moduli/home-manager/Terminale.nix
-                  ];
-                };
-              }
-            )
-
-            (
-              { ... }:
-              {
-                imports = with nixos-raspberrypi.nixosModules; [
-                  raspberry-pi-5.base
-                  raspberry-pi-5.bluetooth
-                ];
-              }
-            )
-            (
-              { ... }:
-              {
-                networking.hostName = "Pi";
-                users.users.andme = {
-                  initialPassword = "1234";
-                  isNormalUser = true;
-                  extraGroups = [
-                    "wheel"
-                  ];
-                };
-
-                services.openssh.enable = true;
-              }
-            )
-
-            (
-              { ... }:
-              {
-                fileSystems = {
-                  "/boot/firmware" = {
-                    device = "/dev/disk/by-uuid/2175-794E";
-                    fsType = "vfat";
-                    options = [
-                      "noatime"
-                      "noauto"
-                      "x-systemd.automount"
-                      "x-systemd.idle-timeout=1min"
-                    ];
-                  };
-                  "/" = {
-                    device = "/dev/disk/by-uuid/44444444-4444-4444-8888-888888888888";
-                    fsType = "ext4";
-                    options = [ "noatime" ];
-                  };
-                };
-              }
-            )
           ];
         };
       };
