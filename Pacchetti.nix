@@ -15,7 +15,6 @@
 
     # Editor e strumenti di sviluppo
     self.packages.${pkgs.system}.default   # Neovim
-    codex                                  # Codex CLI
 
     # Amministrazione di sistema
     bleachbit
@@ -51,6 +50,7 @@
     # Produttività e documenti
     libreoffice
     qalculate-gtk
+    kicad
 
     # Strumenti Raspberry Pi
     rpi-imager

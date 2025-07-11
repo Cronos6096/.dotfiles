@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -72,6 +73,7 @@
       solaar,
       stylix,
       self,
+      chaotic,
       ...
     }@inputs:
     let
@@ -115,6 +117,9 @@
 
             # Nur
             nur.modules.nixos.default
+
+            # Chaotic
+            chaotic.nixosModules.default
 
             # Anyrun
             { environment.systemPackages = [ anyrun.packages.${system}.anyrun-with-all-plugins ]; }

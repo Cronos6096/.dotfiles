@@ -10,7 +10,8 @@
   ];
 
   # Kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  services.scx.enable = true;
 
   # Boot
   boot.loader = {
