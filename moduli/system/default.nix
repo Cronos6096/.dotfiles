@@ -10,7 +10,7 @@
     ./Solaar.nix
     ./Steam.nix
     ./Stylix.nix
-    ./Vm.nix
+    # ./Vm.nix
     ./Zig.nix
   ];
 }
