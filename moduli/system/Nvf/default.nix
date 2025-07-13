@@ -35,9 +35,8 @@
     };
 
     assistant = {
-      copilot = {
+      chatgpt = {
         enable = true;
-        cmp.enable = true;
       };
     };
 
