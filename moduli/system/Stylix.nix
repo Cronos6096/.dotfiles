@@ -19,13 +19,6 @@
     # base0E: "#f6c177"
     # base0F: "#524f67"
 
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-
-    # builtins.fetchurl {
-    #   url = "https://raw.githubusercontent.com/scottmckendry/cyberdream.nvim/main/extras/base16/cyberdream.yaml";
-    #   sha256 = "1bfi479g7v5cz41d2s0lbjlqmfzaah68cj1065zzsqksx3n63znf";
-    # };
-
     # https://tinted-theming.github.io/tinted-gallery/
 
     image = ./wallpaper.png;
