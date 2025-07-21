@@ -41,8 +41,9 @@
     # Video / Audio
     blender
     # davinci-resolve # Video editor
-    gimp # Image editor
     vlc # Media player
+    kdePackages.okular # Pdf
+    krita # Image editor
 
     # Network
     aria2
@@ -60,8 +61,6 @@
     gnused
     pinentry-all
     gnutar
-    hollywood
-    
     undollar
     which
     zstd
