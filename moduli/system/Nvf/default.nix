@@ -56,14 +56,16 @@
       mappings.buffers = " f";
     };
 
-    autocomplete.nvim-cmp = {
-      enable = true;
-      sourcePlugins = [
-        "avante-nvim"
-        "icon-picker-nvim"
-        "telescope"
-        "trouble"
-      ];
+    autocomplete = {
+      enableSharedCmpSources = true;
+      nvim-cmp = {
+        enable = true;
+        sourcePlugins = [
+          "icon-picker-nvim"
+          "telescope"
+          "trouble"
+        ];
+      };
     };
 
     comments.comment-nvim = {
