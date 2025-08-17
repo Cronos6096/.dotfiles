@@ -19,6 +19,7 @@
     options = {
       tabstop = 2;
       shiftwidth = 2;
+      virtualedit = "all";
       expandtab = true;
     };
 
@@ -42,7 +43,7 @@
 
     ui = {
       smartcolumn.enable = true;
-      noice.enable = true;
+      # noice.enable = true;
       borders.plugins.nvim-cmp.enable = true;
       borders.enable = true;
     };
@@ -102,6 +103,7 @@
 
     mini = {
       surround.enable = true;
+      pick.enable = true;
       ai.enable = true;
       basics = {
         enable = true;

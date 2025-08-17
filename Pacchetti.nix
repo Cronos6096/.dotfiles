@@ -5,6 +5,7 @@
     # Archivi
     cabextract
     unzip
+    p7zip
 
     # Strumenti da linea di comando
     fzf
@@ -61,6 +62,16 @@
     winetricks
     protonup-qt
     protontricks
+
+    # Fusion 360
+    mokutil
+    gawk
+    bc
+    samba
+    spacenavd
+    glxinfo
+    lsb-release
+    gettext
 
     # Progetti e utilità varie
     nvd

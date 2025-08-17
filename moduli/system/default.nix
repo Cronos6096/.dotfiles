@@ -1,6 +1,6 @@
 {
   imports = [
-    # ./Plasma.nix
+    ./Plasma.nix
     ./Vm.nix
     ./Adb.nix
     ./Lingua.nix

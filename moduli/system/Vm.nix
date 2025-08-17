@@ -1,5 +1,11 @@
 { pkgs, ... }:
 {
+  # Docker
+  virtualisation.docker.enable = true;
+
+  # FIXME stupido
+  users.extraGroups.docker.members = [ "username-with-access-to-socket" ];
+  # Vm
   programs.virt-manager.enable = true;
 
   programs.dconf.enable = true;
