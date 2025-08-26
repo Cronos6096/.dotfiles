@@ -94,7 +94,8 @@
       yazi-nvim = {
         enable = true;
         mappings = {
-          openYaziDir = " e";
+          openYaziDir = " -";
+          openYazi = " e";
         };
       };
       snacks-nvim.enable = true;
@@ -103,7 +104,6 @@
 
     mini = {
       surround.enable = true;
-      pick.enable = true;
       ai.enable = true;
       basics = {
         enable = true;
