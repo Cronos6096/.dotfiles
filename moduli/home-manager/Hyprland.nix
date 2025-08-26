@@ -17,7 +17,6 @@
   home.file."/home/andme/.config/hypr/pyprland.toml".source = lib.mkForce ../wm/hypr/pyprland.toml;
 
   home.packages = with pkgs; [
-    dunst
     wofi
     wl-clipboard
     clipse
