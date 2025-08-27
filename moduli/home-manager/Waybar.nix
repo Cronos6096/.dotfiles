@@ -89,8 +89,8 @@
           on-scroll-up = "hyprctl dispatch workspace e-1";
           on-scroll-down = "hyprctl dispatch workspace e+1";
           format-icons = {
-            "active" = "";
-            "urgent" = "󰚽";
+            "active" = " ";
+            "urgent" = "󰚽 ";
             "default" = "";
           };
         };
@@ -103,7 +103,7 @@
       }
 
       window#waybar {
-        background: transparent;
+        background: none;
       }
 
       .modules-right {
@@ -126,7 +126,6 @@
         margin-top: 2px;
         background: #${config.lib.stylix.colors.base00};
       }
-
       #workspaces {
         background: none;
       }

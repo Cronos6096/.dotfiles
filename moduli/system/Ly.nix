@@ -8,12 +8,12 @@
       # matrix   -> CMatrix
       # colormix -> Color mixing shader
       # gameoflife -> John Conway's Game of Life
-      animation = "matrix";
+      animation = "none";
 
       # bigclock = "en";
       # asterisk = "·";
       # blankbox = "false";
-      # clock = "null";
+      # # clock = "null";
     };
   };
   environment.systemPackages = [

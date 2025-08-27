@@ -3,8 +3,8 @@
   vim = {
     theme = {
       enable = true;
-      name = "rose-pine";
-      style = "main";
+      name = "onedark";
+      style = "darker";
       transparent = true;
     };
 
@@ -165,6 +165,32 @@
         package = undotree;
         setup = ''
           vim.keymap.set("n", " u", vim.cmd.UndotreeToggle)
+        '';
+      };
+
+      # Snippet
+
+      luasnip = {
+        package = luasnip;
+        setup = ''
+          local ls = require("luasnip")
+
+          vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
+          vim.keymap.set({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})
+          vim.keymap.set({"i", "s"}, "<C-J>", function() ls.jump(-1) end, {silent = true})
+
+          vim.keymap.set({"i", "s"}, "<C-E>", function()
+             if ls.choice_active() then
+             ls.change_choice(1)
+            end
+          end, {silent = true})
+        '';
+      };
+
+      friendly-snippets = {
+        package = friendly-snippets;
+        setup = ''
+          require("luasnip.loaders.from_vscode").lazy_load()
         '';
       };
     };

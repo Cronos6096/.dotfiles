@@ -1,23 +1,23 @@
 { pkgs, ... }:
 {
   stylix = {
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-    # base00: "#191724"
-    # base01: "#1f1d2e"
-    # base02: "#26233a"
-    # base03: "#6e6a86"
-    # base04: "#908caa"
-    # base05: "#e0def4"
-    # base06: "#e0def4"
-    # base07: "#524f67"
-    # base08: "#eb6f92"
-    # base09: "#f6c177"
-    # base0A: "#ebbcba"
-    # base0B: "#31748f"
-    # base0C: "#9ccfd8"
-    # base0D: "#c4a7e7"
-    # base0E: "#f6c177"
-    # base0F: "#524f67"
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/black-metal-immortal.yaml";
+    # base00: "#000000"
+    # base01: "#121212"
+    # base02: "#222222"
+    # base03: "#333333"
+    # base04: "#999999"
+    # base05: "#c1c1c1"
+    # base06: "#999999"
+    # base07: "#c1c1c1"
+    # base08: "#5f8787"
+    # base09: "#aaaaaa"
+    # base0A: "#556677"
+    # base0B: "#7799bb"
+    # base0C: "#aaaaaa"
+    # base0D: "#888888"
+    # base0E: "#999999"
+    # base0F: "#444444"
 
     # https://tinted-theming.github.io/tinted-gallery/
 
@@ -39,12 +39,12 @@
 
     fonts = {
       serif = {
-        package = pkgs.dejavu_fonts;
+        package = pkgs.nerd-fonts.jetbrains-mono;
         name = "DejaVu Serif";
       };
 
       sansSerif = {
-        package = pkgs.dejavu_fonts;
+        package = pkgs.nerd-fonts.jetbrains-mono;
         name = "DejaVu Sans";
       };
 
