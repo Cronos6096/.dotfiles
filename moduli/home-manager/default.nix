@@ -1,6 +1,5 @@
 {
   imports = [
-    ./Zellij.nix
     ./Git.nix
     ./Distrobox.nix
     ./Hyprland.nix

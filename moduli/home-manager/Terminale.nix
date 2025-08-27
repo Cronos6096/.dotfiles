@@ -13,6 +13,7 @@ let
     py = "python";
     py3 = "python3";
     nixsearch = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
+    gas = "git add * && git stage *";
 
     cat = "bat";
     find = "fd";
@@ -37,8 +38,26 @@ in
     '';
   };
 
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   programs.starship = {
     enableFishIntegration = true;
     enable = true;
+  };
+
+  programs.tmux = {
+    enable = true;
+    sensibleOnTop = true;
+    shortcut = "a";
+    clock24 = true;
+    baseIndex = 1;
+    focusEvents = true;
+
+    plugins = [
+
+    ];
   };
 }
