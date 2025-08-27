@@ -33,7 +33,7 @@
     autoEnable = true;
 
     opacity = {
-      terminal = 0.75;
+      terminal = 0.5;
       desktop = 0.00;
     };
 
