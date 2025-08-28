@@ -203,12 +203,8 @@
             saturation = 0.5,
             italic_comments = true,
             hide_fillchars = true,
-
             borderless_pickers = true,
             terminal_colors = true,
-
-            -- Improve start up time by caching highlights. Generate cache with :CyberdreamBuildCache and clear with :CyberdreamClearCache
-            cache = false,
           })
 
           vim.cmd("colorscheme cyberdream")

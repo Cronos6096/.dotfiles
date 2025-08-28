@@ -2,8 +2,8 @@
   # Terminale
   programs.kitty = {
     enable = true;
-    # shellIntegration.enableZshIntegration = true;
     shellIntegration.enableFishIntegration = true;
+    enableGitIntegration = true;
     settings = {
       scrollback_lines = 10000;
       confirm_os_window_close = 0;

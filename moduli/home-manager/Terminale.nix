@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let
   shellAliases = {
     ls = "eza";
@@ -22,42 +23,49 @@ let
   };
 in
 {
-  # Nh
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 3d --keep 3";
-    flake = "~/.dotfiles/";
-  };
+  programs = {
+    # Nh
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 3d --keep 3";
+      flake = "~/.dotfiles/";
+    };
 
-  programs.fish = {
-    enable = true;
-    inherit shellAliases;
-    interactiveShellInit = ''
-      set fish_greeting
-    '';
-  };
+    fish = {
+      enable = true;
+      inherit shellAliases;
+      interactiveShellInit = ''
+        set fish_greeting
+      '';
+    };
 
-  programs.zoxide = {
-    enable = true;
-    enableFishIntegration = true;
-  };
+    zoxide = {
+      enable = true;
+      enableFishIntegration = true;
+    };
 
-  programs.starship = {
-    enableFishIntegration = true;
-    enable = true;
-  };
+    starship = {
+      enableFishIntegration = true;
+      enable = true;
+    };
 
-  programs.tmux = {
-    enable = true;
-    sensibleOnTop = true;
-    shortcut = "a";
-    clock24 = true;
-    baseIndex = 1;
-    focusEvents = true;
+    tmux = {
+      enable = true;
+      sensibleOnTop = true;
+      shortcut = "a";
+      clock24 = true;
+      baseIndex = 1;
+      focusEvents = true;
 
-    plugins = [
-
-    ];
+      plugins = with pkgs.tmuxPlugins; [
+        continuum
+        resurrect
+        sensible
+        tmux-which-key
+        yank
+        urlview
+      ];
+    };
   };
 }
