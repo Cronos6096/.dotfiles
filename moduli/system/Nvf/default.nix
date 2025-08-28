@@ -2,7 +2,7 @@
 {
   vim = {
     theme = {
-      enable = true;
+      enable = false;
       name = "onedark";
       style = "darker";
       transparent = true;
@@ -191,6 +191,27 @@
         package = friendly-snippets;
         setup = ''
           require("luasnip.loaders.from_vscode").lazy_load()
+        '';
+      };
+
+      cyberdream = {
+        package = cyberdream-nvim;
+        setup = ''
+          require("cyberdream").setup({
+            variant = "dark",
+            transparent = true,
+            saturation = 0.5,
+            italic_comments = true,
+            hide_fillchars = true,
+
+            borderless_pickers = true,
+            terminal_colors = true,
+
+            -- Improve start up time by caching highlights. Generate cache with :CyberdreamBuildCache and clear with :CyberdreamClearCache
+            cache = false,
+          })
+
+          vim.cmd("colorscheme cyberdream")
         '';
       };
     };
