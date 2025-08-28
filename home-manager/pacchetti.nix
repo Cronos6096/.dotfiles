@@ -65,5 +65,6 @@
     which
     zstd
     btop
+    caligula
   ];
 }
