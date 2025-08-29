@@ -40,12 +40,12 @@
     fonts = {
       serif = {
         package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "DejaVu Serif";
+        name = "JetBrains Mono Nerd Fonts";
       };
 
       sansSerif = {
         package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "DejaVu Sans";
+        name = "JetBrains Mono Nerd Fonts";
       };
 
       monospace = {
