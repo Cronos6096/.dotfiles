@@ -21,10 +21,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  nix = {
-    autoOptimiseStore = true;
-  };
-
   system.autoUpgrade = {
     enable = true;
 

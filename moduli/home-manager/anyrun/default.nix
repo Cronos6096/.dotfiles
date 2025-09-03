@@ -22,6 +22,6 @@
       maxEntries = null;
     };
 
-    extraCss = builtins.readFile (./. + "/style.css");
+    # extraCss = builtins.readFile (./. + "/style.css");
   };
 }

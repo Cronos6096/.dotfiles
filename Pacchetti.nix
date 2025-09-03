@@ -62,16 +62,7 @@
     winetricks
     protonup-qt
     protontricks
-
-    # Fusion 360
-    mokutil
-    gawk
-    bc
-    samba
-    spacenavd
-    glxinfo
-    lsb-release
-    gettext
+    inputs.nix-citizen.packages.${system}.star-citizen
 
     # Progetti e utilità varie
     nvd
