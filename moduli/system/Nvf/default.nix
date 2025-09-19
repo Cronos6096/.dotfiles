@@ -216,7 +216,7 @@
     hideSearchHighlight = true;
     binds = {
       cheatsheet.enable = true;
-      whichKey.enable = true;
+      # whichKey.enable = true;
     };
 
     lsp = {
