@@ -10,6 +10,7 @@
     kdePackages.kate # Notepad
     zed-editor # Ide
     kdePackages.kget
+    gimp3
 
     # archivi
     unp
