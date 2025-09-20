@@ -2,6 +2,9 @@
   nix.settings = {
     trusted-users = [ "andme" ];
 
+    substituters = ["https://nix-gaming.cachix.org"];
+    trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
+
     builders-use-substitutes = true;
     extra-substituters = [
       "https://anyrun.cachix.org"
