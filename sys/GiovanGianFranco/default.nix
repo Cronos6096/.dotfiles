@@ -39,9 +39,14 @@
   swapDevices = [
     {
       device = "/swapfile";
-      size = 32 * 1024;
+      size = 8 * 1024;
     }
   ];
+
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 16777216;
+    "fs.file-max" = 524288;
+  };
 
   # Hostname
   networking.hostName = "GiovanGianFranco";
