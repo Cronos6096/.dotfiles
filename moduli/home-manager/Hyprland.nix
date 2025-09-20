@@ -13,20 +13,21 @@
     systemd.enable = true;
   };
 
-  home.file."/home/andme/.config/hypr/hyprland.conf".source = lib.mkForce ../wm/hypr/hyprland.conf;
-  home.file."/home/andme/.config/hypr/pyprland.toml".source = lib.mkForce ../wm/hypr/pyprland.toml;
+  home = {
+    file."/home/andme/.config/hypr/hyprland.conf".source = lib.mkForce ../wm/hypr/hyprland.conf;
+    file."/home/andme/.config/hypr/pyprland.toml".source = lib.mkForce ../wm/hypr/pyprland.toml;
 
-  home.packages = with pkgs; [
-    wofi
-    wl-clipboard
-    clipse
-    hyprshot
-    pavucontrol
-    networkmanager
-    handlr
-    hyprsome
-    hyprpaper
-    better-control
-    pyprland
-  ];
+    packages = with pkgs; [
+      wl-clipboard
+      clipse
+      hyprshot
+      pavucontrol
+      networkmanager
+      handlr
+      hyprsome
+      hyprpaper
+      better-control
+      pyprland
+    ];
+  };
 }

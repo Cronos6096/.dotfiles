@@ -7,7 +7,7 @@ let
     rebuildpi = "nh os switch ~/.dotfiles/ -H GiovanGianFranco --update";
     rebuildnoup = "nh os switch ~/.dotfiles/ -H GiovanGianFranco";
     rebuildpush = " cdconf && git add * && git commit && git push && nh os switch . -H GiovanGianFranco";
-    clean = "nh clean all --keep=5";
+    clean = "nh clean all";
     cdconf = "cd ~/.dotfiles";
     cdpr = "cd ~/progetti";
     v = "nvim";
