@@ -7,19 +7,17 @@
     config = {
       plugins = with inputs.anyrun.packages.x86_64-linux; [
         applications
-        shell
-        randr
         kidex
         rink
         dictionary
-        # symbols
+        symbols
       ];
 
-      y.fraction = 0.3;
       hidePluginInfo = true;
       hideIcons = false;
       closeOnClick = true;
       maxEntries = null;
+      showResultsImmediately = false;
     };
 
     # extraCss = builtins.readFile (./. + "/style.css");
