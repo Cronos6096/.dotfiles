@@ -1,16 +1,16 @@
 {
   imports = [
-    ./Plasma.nix
-    ./Vm.nix
+    # ./Ollama.nix
     ./Adb.nix
     ./Lingua.nix
     ./Ly.nix
-    # ./Ollama.nix
+    ./Plasma.nix
     ./Python.nix
     ./Servizi.nix
     ./Solaar.nix
     ./Steam.nix
     ./Stylix.nix
+    ./Vm.nix
     ./Zig.nix
   ];
 }
