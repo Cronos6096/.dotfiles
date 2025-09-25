@@ -8,6 +8,7 @@
     ./Terminale.nix
     ./Waybar.nix
     ./Zen.nix
+    ./WlSunset.nix
 
     ./anyrun
     # ./vim
