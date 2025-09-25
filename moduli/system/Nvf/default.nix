@@ -258,6 +258,16 @@
         };
       };
 
+      clang = {
+        enable = true;
+        lsp.enable = true;
+      };
+
+      assembly = {
+        enable = true;
+        lsp.enable = true;
+      };
+
       python = {
         enable = true;
         format = {

@@ -1,6 +1,7 @@
 {
   imports = [
     ./Distrobox.nix
+    ./C.nix
     ./Dunst.nix
     ./Git.nix
     ./Hyprland.nix
