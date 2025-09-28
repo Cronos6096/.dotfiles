@@ -1,4 +1,6 @@
 { pkgs, ... }:
 {
-  programs.gcc.enable = true;
+  home.packages = [
+    pkgs.gcc
+  ];
 }
