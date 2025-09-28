@@ -21,20 +21,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  system.autoUpgrade = {
-    enable = true;
-
-    flake = inputs.self.outPath;
-    flags = [
-      "--update-input"
-      "nixpkgs"
-      "--print-build-logs"
-    ];
-
-    dates = "16:00";
-    randomizedDelaySec = "15min";
-  };
-
   # Swap
   swapDevices = [
     {

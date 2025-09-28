@@ -210,6 +210,10 @@
           vim.cmd("colorscheme cyberdream")
         '';
       };
+
+      visual-whitespace= {
+        package = visual-whitespace-nvim;
+      };
     };
 
     undoFile.enable = true;
