@@ -36,16 +36,26 @@
     };
 
     assistant = {
-      chatgpt = {
+      supermaven-nvim = {
         enable = true;
+        setupOpts = {
+          keymaps.accept_suggestion = "<CR";
+        };
       };
     };
 
     ui = {
       smartcolumn.enable = true;
-      # noice.enable = true;
-      borders.plugins.nvim-cmp.enable = true;
+      noice.enable = true;
+      borders.plugins = {
+        nvim-cmp.enable = true;
+        lsp-signature.enable = true;
+        which-key.enable = true;
+      };
       borders.enable = true;
+      breadcrumbs.enable = true;
+      breadcrumbs.navbuddy.enable = true;
+      colorful-menu-nvim.enable = true;
     };
 
     statusline.lualine.enable = true;
@@ -211,7 +221,7 @@
         '';
       };
 
-      visual-whitespace= {
+      visual-whitespace = {
         package = visual-whitespace-nvim;
       };
     };
@@ -220,7 +230,7 @@
     hideSearchHighlight = true;
     binds = {
       cheatsheet.enable = true;
-      # whichKey.enable = true;
+      whichKey.enable = true;
     };
 
     lsp = {
