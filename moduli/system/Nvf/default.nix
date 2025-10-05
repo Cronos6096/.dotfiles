@@ -57,7 +57,7 @@
       supermaven-nvim = {
         enable = true;
         setupOpts = {
-          keymaps.accept_suggestion = "<CR";
+          keymaps.accept_suggestion = "<CR>";
         };
       };
     };
