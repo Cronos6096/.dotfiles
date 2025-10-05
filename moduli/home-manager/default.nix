@@ -1,5 +1,6 @@
 {
   imports = [
+    ./Direnv.nix
     ./Distrobox.nix
     ./C.nix
     ./Dunst.nix
