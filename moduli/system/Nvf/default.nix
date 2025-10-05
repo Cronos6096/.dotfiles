@@ -26,8 +26,26 @@
     keymaps = [
       {
         mode = "n";
-        key = " z";
+        key = " f";
         action = ":lua vim.lsp.buf.format()<CR>";
+      }
+      {
+        mode = "n";
+        key = ";";
+        silent = true;
+        action = ":";
+      }
+      {
+        mode = "n";
+        key = ":";
+        silent = true;
+        action = ";";
+      }
+      {
+        key = "<leader>m";
+        mode = "n";
+        silent = true;
+        action = ":make<CR>";
       }
     ];
 
@@ -133,6 +151,7 @@
           };
         };
       };
+      indentscope.enable = true;
       pairs.enable = true;
       clue.enable = true;
       cursorword.enable = true;
