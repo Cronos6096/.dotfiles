@@ -26,7 +26,7 @@
     keymaps = [
       {
         mode = "n";
-        key = " f";
+        key = " h";
         action = ":lua vim.lsp.buf.format()<CR>";
       }
       {
@@ -93,6 +93,7 @@
           "icon-picker-nvim"
           "telescope"
           "trouble"
+          "supermaven-nvim"
         ];
       };
     };
