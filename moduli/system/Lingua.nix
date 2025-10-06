@@ -5,8 +5,10 @@
 
   services.xserver = {
     enable = true;
-    layout = "us";
-    xkbVariant = "intl";
+    xkb = {
+      layout = "us";
+      variant = "intl";
+    };
   };
 
   time.timeZone = "Europe/Rome";
