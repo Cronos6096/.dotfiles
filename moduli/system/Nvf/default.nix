@@ -53,18 +53,11 @@
       enable = true;
     };
 
-    assistant = {
-      supermaven-nvim = {
-        enable = true;
-        setupOpts = {
-          keymaps.accept_suggestion = "<CR>";
-        };
-      };
-    };
-
     ui = {
       smartcolumn.enable = true;
-      noice.enable = true;
+      noice = {
+        enable = true;
+     };
       borders.plugins = {
         nvim-cmp.enable = true;
         lsp-signature.enable = true;
@@ -72,7 +65,6 @@
       };
       borders.enable = true;
       breadcrumbs.enable = true;
-      breadcrumbs.navbuddy.enable = true;
       colorful-menu-nvim.enable = true;
     };
 
@@ -86,7 +78,6 @@
     };
 
     autocomplete = {
-      enableSharedCmpSources = true;
       nvim-cmp = {
         enable = true;
         sourcePlugins = [
