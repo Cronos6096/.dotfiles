@@ -2,9 +2,8 @@
 {
   # Docker
   virtualisation.docker.enable = true;
+  users.extraGroups.docker.members = [ "andme" ];
 
-  # FIXME stupido
-  users.extraGroups.docker.members = [ "username-with-access-to-socket" ];
   # Vm
   programs.virt-manager.enable = true;
 
