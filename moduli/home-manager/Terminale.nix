@@ -4,16 +4,18 @@ let
     ls = "eza";
     ff = "fastfetch";
     rebuild = "nh os switch ~/.dotfiles/ -H GiovanGianFranco --update";
-    rebuildpi = "nh os switch ~/.dotfiles/ -H GiovanGianFranco --update";
+    rb = "rebuild";
+    rbc = "rebuild && clean";
     rebuildnoup = "nh os switch ~/.dotfiles/ -H GiovanGianFranco";
     rebuildpush = " cdconf && git add * && git commit && git push && nh os switch . -H GiovanGianFranco";
     clean = "nh clean all";
-    cdconf = "cd ~/.dotfiles";
-    cdpr = "cd ~/progetti";
+    cdconf = "z ~/.dotfiles";
+    cdpr = "z ~/progetti";
     v = "nvim";
     py = "python";
     py3 = "python3";
     nixsearch = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
+    ns = "nixsearch";
     gas = "git add * && git stage *";
 
     cat = "bat";
@@ -28,7 +30,7 @@ in
     nh = {
       enable = true;
       clean.enable = true;
-      clean.extraArgs = "--keep-since 3d --keep 3";
+      clean.extraArgs = "--keep-since 1d --keep 3";
       flake = "~/.dotfiles/";
     };
 
@@ -37,6 +39,8 @@ in
       inherit shellAliases;
       interactiveShellInit = ''
         set fish_greeting
+        set -x GITHUB_TOKEN (cat /run/secrets.d/githubToken)
+        set -x OPENAI_API_KEY (cat /run/secrets.d/openAiToken)
       '';
     };
 

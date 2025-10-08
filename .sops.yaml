@@ -1,0 +1,11 @@
+keys:
+  - &users:
+    - &andme age1fxullgu9gww2kuy4eszmusemv7ara69nc8hs5y8lde662sfxrqqspjw337
+  - &hosts:
+    - &GiovanGianFranco age1pgwmnq9cqt55wwq2ttk55t9s3mh07c59vgnx0ryr0dpe9te474yqd6z9we
+creation_rules:
+  - path-regex: /secrets/secrets.yaml
+    key_groups:
+      - age:
+        - *andme
+        - *GiovanGianFranco

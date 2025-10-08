@@ -10,6 +10,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Segreti
+    sops-nix = {
+      url = "github:mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Nur
     nur = {
       url = "github:nix-community/NUR";
@@ -62,16 +68,17 @@
   outputs =
     {
       anyrun,
+      chaotic,
       home-manager,
+      nix-citizen,
       nix-search-tv,
       nixpkgs,
-      nvf,
       nur,
-      solaar,
-      stylix,
+      nvf,
       self,
-      chaotic,
-      nix-citizen,
+      solaar,
+      sops-nix,
+      stylix,
       ...
     }@inputs:
     let
@@ -115,6 +122,10 @@
 
             # Nur
             nur.modules.nixos.default
+
+            # sops
+            sops-nix.nixosModules.sops
+            ./secrets
 
             # Chaotic
             chaotic.nixosModules.default
