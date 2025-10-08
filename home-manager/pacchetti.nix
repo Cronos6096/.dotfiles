@@ -25,11 +25,6 @@
     icu77
     jetbrains-mono
 
-    # libreoffice
-    libreoffice-qt
-    hunspell
-    hunspellDicts.it_IT
-
     # utilities
     kdePackages.ark # File archiver
     bat # cat migliorato
@@ -40,8 +35,6 @@
     udiskie # Automontatore
     vesktop # Discord
     pandoc
-    cmake
-    pyright
     rustdesk
 
     # Video / Audio

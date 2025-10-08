@@ -49,7 +49,10 @@
     libva-utils
 
     # Produttività e documenti
-    libreoffice
+    libreoffice-qt
+    hunspell
+    hunspellDicts.it_IT
+
     qalculate-gtk
     kicad
 
