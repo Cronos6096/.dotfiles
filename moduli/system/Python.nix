@@ -5,8 +5,7 @@
 
     (python3.withPackages (
       ps: with ps; [
-        pip 
-        wheel 
+        wheel
         matplotlib
         requests
       ]
