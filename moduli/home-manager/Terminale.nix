@@ -14,8 +14,7 @@ let
     v = "nvim";
     py = "python";
     py3 = "python3";
-    nixsearch = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
-    ns = "nixsearch";
+    ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     gas = "git add * && git stage *";
 
     cat = "bat";
