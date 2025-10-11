@@ -14,7 +14,6 @@
     git
     ncdu
 
-    # Editor e strumenti di sviluppo
     self.packages.${pkgs.system}.default   # Neovim
 
     # Amministrazione di sistema
@@ -70,7 +69,6 @@
     # Progetti e utilità varie
     nvd
     orca-slicer    # Slicer 3D
-    impression     # Creazione ISO
   ];
 
   # Pacchetti liberi / Flake
