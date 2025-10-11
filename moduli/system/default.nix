@@ -6,10 +6,11 @@
     ./Ly.nix
     ./Plasma.nix
     ./Python.nix
+    ./Portals.nix
     ./Servizi.nix
     ./Solaar.nix
     ./Steam.nix
     ./Stylix.nix
-    ./Vm.nix
+    # ./Vm.nix
   ];
 }
