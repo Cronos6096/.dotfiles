@@ -11,6 +11,7 @@
     zed-editor # Ide
     kdePackages.kget
     gimp3
+    heynote
 
     # archivi
     unp
