@@ -53,9 +53,11 @@
       };
     };
 
-    anyrun = {
-      url = "github:anyrun-org/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
+    # Walker
+    elephant.url = "github:abenz1267/elephant";
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.elephant.follows = "elephant";
     };
 
     # Neovim
@@ -67,7 +69,6 @@
 
   outputs =
     {
-      anyrun,
       chaotic,
       home-manager,
       nix-citizen,
@@ -103,6 +104,10 @@
             ./nix
             ./moduli/system/Portals.nix
 
+            {
+              nixpkgs.config.platforms = [ "x86_64-linux" ];
+            }
+
             # Nix search
             {
               environment.systemPackages = [
@@ -129,9 +134,6 @@
 
             # Chaotic
             chaotic.nixosModules.default
-
-            # Anyrun
-            { environment.systemPackages = [ anyrun.packages.${system}.anyrun-with-all-plugins ]; }
 
             # Integrazione di solaar
             solaar.nixosModules.default
@@ -172,6 +174,7 @@
                   imports = [
                     ./home-manager/home.nix
                     inputs.zen-browser.homeModules.default
+                    inputs.walker.homeManagerModules.default
                   ];
                 };
               };
