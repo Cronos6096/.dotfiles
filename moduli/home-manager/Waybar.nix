@@ -8,12 +8,13 @@
         position = "top";
         modules-center = [ "clock" ];
         modules-left = [
-          "hyprland/workspaces"
-          "tray"
-          "hyprland/window"
+          "ext/workspaces"
+          "wlr/taskbar"
+          "dwl/window"
         ];
         modules-right = [
           "network"
+          "tray"
           "pulseaudio"
           "battery"
         ];
@@ -22,7 +23,7 @@
           interval = 1;
           tooltip = false;
         };
-        "hyprland/window" = {
+        "dwl/window" = {
           max-length = 64;
           separate-outputs = true;
         };
@@ -83,14 +84,12 @@
           on-click = "";
           tooltip = false;
         };
-        "hyprland/workspaces" = {
+        "ext/workspaces" = {
           format = "{icon}";
           on-click = "activate";
-          on-scroll-up = "hyprctl dispatch workspace e-1";
-          on-scroll-down = "hyprctl dispatch workspace e+1";
           format-icons = {
-            "active" = " ";
-            "urgent" = "󰚽 ";
+            "active" = "";
+            "urgent" = "󰚽";
             "default" = "";
           };
         };

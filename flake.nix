@@ -33,6 +33,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Mangowm
+    mango = {
+      url = "github:DreamMaoMao/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Stylix
     stylix = {
       url = "github:danth/stylix";
@@ -159,6 +165,16 @@
               };
             }
 
+            # Mangowm
+            inputs.mango.nixosModules.mango
+            {
+              programs.mango.enable = true;
+              services.seatd = {
+                enable = true;
+                user = "andme";
+              };
+            }
+
             # Home-manager
             home-manager.nixosModules.home-manager
 
@@ -168,13 +184,16 @@
                   inherit inputs;
                 };
 
+                useGlobalPkgs = true;
                 useUserPackages = true;
+                backupFileExtension = "backup";
 
                 users.andme = {
                   imports = [
                     ./home-manager/home.nix
                     inputs.zen-browser.homeModules.default
                     inputs.walker.homeManagerModules.default
+                    # inputs.mango.hmModules.mango
                   ];
                 };
               };

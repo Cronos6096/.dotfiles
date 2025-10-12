@@ -1,4 +1,9 @@
-{ pkgs, inputs, self, ... }:
+{
+  pkgs,
+  inputs,
+  self,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
@@ -14,7 +19,7 @@
     git
     ncdu
 
-    self.packages.${pkgs.system}.default   # Neovim
+    self.packages.${pkgs.system}.default # Neovim
 
     # Amministrazione di sistema
     bleachbit
@@ -46,6 +51,10 @@
     vulkan-validation-layers
     libva
     libva-utils
+    egl-wayland
+    libglvnd
+    wayland
+    wayland-protocols
 
     # Produttività e documenti
     libreoffice-qt
@@ -68,7 +77,7 @@
 
     # Progetti e utilità varie
     nvd
-    orca-slicer    # Slicer 3D
+    orca-slicer # Slicer 3D
   ];
 
   # Pacchetti liberi / Flake
