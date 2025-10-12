@@ -297,9 +297,11 @@
         enable = true;
         format = {
           enable = true;
-          type = "ruff";
+          type = "black-and-isort";
         };
-        lsp.enable = true;
+        lsp = {
+          enable = true;
+        };
         treesitter.enable = true;
       };
 
