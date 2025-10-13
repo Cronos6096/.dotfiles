@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   stylix = {
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/black-metal-immortal.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa-dragon.yaml";
     # base00: "#000000"
     # base01: "#121212"
     # base02: "#222222"
