@@ -16,6 +16,22 @@
       };
     };
 
+    formatter.conform-nvim = {
+      enable = true;
+      setupOpts.formatters_by_ft = {
+        python = [ "ruff" ];
+      };
+    };
+
+    spellcheck = {
+      enable = true;
+      languages = [
+        "en"
+        "it"
+      ];
+      vim-dirtytalk.enable = true;
+    };
+
     options = {
       tabstop = 2;
       shiftwidth = 2;
@@ -57,7 +73,7 @@
       smartcolumn.enable = true;
       noice = {
         enable = true;
-     };
+      };
       borders.plugins = {
         nvim-cmp.enable = true;
         lsp-signature.enable = true;
@@ -223,9 +239,6 @@
             transparent = true,
             saturation = 0.5,
             italic_comments = true,
-            hide_fillchars = true,
-            borderless_pickers = true,
-            terminal_colors = true,
           })
 
           vim.cmd("colorscheme cyberdream")
@@ -297,7 +310,7 @@
         enable = true;
         format = {
           enable = true;
-          type = "black-and-isort";
+          type = "ruff";
         };
         lsp = {
           enable = true;
