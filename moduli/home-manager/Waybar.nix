@@ -8,9 +8,8 @@
         position = "top";
         modules-center = [ "clock" ];
         modules-left = [
-          "ext/workspaces"
-          "wlr/taskbar"
-          "dwl/window"
+          "hyprland/workspaces"
+          "hyprland/window"
         ];
         modules-right = [
           "network"
@@ -23,7 +22,7 @@
           interval = 1;
           tooltip = false;
         };
-        "dwl/window" = {
+        "hyprland/window" = {
           max-length = 64;
           separate-outputs = true;
         };
@@ -84,13 +83,12 @@
           on-click = "";
           tooltip = false;
         };
-        "ext/workspaces" = {
-          format = "{icon}";
+        "hyprland/workspaces" = {
           on-click = "activate";
-          format-icons = {
-            "active" = "";
-            "urgent" = "󰚽";
-            "default" = "";
+          "format" = "{icon}";
+          "format-icons" = {
+            "default" = "";
+            "active" = "";
           };
         };
       }
@@ -103,44 +101,39 @@
 
       window#waybar {
         background: none;
-      }
-
-      .modules-right {
-        padding-left: 5px;
-        border-radius: 8px 0 0 8px;
-        margin-top: 2px;
-        background: #${config.lib.stylix.colors.base00};
-      }
-
-      .modules-center {
-        padding: 0 10px;
-        margin-top: 2px;
         border-radius: 8px;
-        background: #${config.lib.stylix.colors.base00};
       }
 
-      .modules-left {
-        padding-right: 5px;
-        border-radius: 0 8px 8px 0;
+      .modules {
+        padding-left: 5px;
+        border-radius: 8px;
         margin-top: 2px;
         background: #${config.lib.stylix.colors.base00};
       }
+
       #workspaces {
+        box-shadow: none;
+        text-shadow: none;
         background: none;
       }
 
       #workspaces button {
         color: #${config.lib.stylix.colors.base06};
+        box-shadow: none;
+        text-shadow: none;
+        transition: all 0.3s ease;
         background: none;
       }
 
       #workspaces button:hover {
         color: #${config.lib.stylix.colors.base0B};
+        transition: all 0.3s ease;
         background: none;
       }
 
       #workspaces button.active {
         color: #${config.lib.stylix.colors.base0C};
+        transition: all 0.3s ease;
         background: none;
       }
 
@@ -148,7 +141,7 @@
         color: #${config.lib.stylix.colors.base06};
       }
 
-      #window, #pulseaudio, #cpu, #memory, #network, #battery {
+      #window, #pulseaudio, #battery {
         margin: 4px 0px;
         margin-left: 7px;
         color: #${config.lib.stylix.colors.base06};

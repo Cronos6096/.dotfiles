@@ -24,7 +24,6 @@
 
     # Trova pacchetti
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
-
     # Hyprland
     hyprland = {
       type = "git";
@@ -57,13 +56,6 @@
         home-manager.follows = "home-manager";
         nixpkgs.follows = "nixpkgs";
       };
-    };
-
-    # Walker
-    elephant.url = "github:abenz1267/elephant";
-    walker = {
-      url = "github:abenz1267/walker";
-      inputs.elephant.follows = "elephant";
     };
 
     # Neovim
@@ -192,7 +184,6 @@
                   imports = [
                     ./home-manager/home.nix
                     inputs.zen-browser.homeModules.default
-                    inputs.walker.homeManagerModules.default
                     # inputs.mango.hmModules.mango
                   ];
                 };
