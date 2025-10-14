@@ -1,5 +1,7 @@
 { config, ... }:
 {
+  stylix.targets.waybar.enable = false;
+
   programs.waybar = {
     enable = true;
     settings = [
@@ -100,14 +102,31 @@
       }
 
       window#waybar {
+        border-radius: 12px;
+        margin-top: 2px;
         background: none;
-        border-radius: 8px;
       }
 
-      .modules {
-        padding-left: 5px;
+      .modules-right {
+        padding-left: 12px;
         border-radius: 8px;
         margin-top: 2px;
+        margin-right: 2px;
+        background: #${config.lib.stylix.colors.base00};
+      }
+
+      .modules-center {
+        padding: 0 10px;
+        margin-top: 2px;
+        border-radius: 8px;
+        background: #${config.lib.stylix.colors.base00};
+      }
+
+      .modules-left {
+        padding-right: 12px;
+        border-radius: 8px;
+        margin-top: 2px;
+        margin-left: 2px;
         background: #${config.lib.stylix.colors.base00};
       }
 
