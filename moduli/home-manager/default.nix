@@ -7,11 +7,11 @@
     ./Hyprland.nix
     ./Kitty.nix
     ./Terminale.nix
-    ./Walker.nix
     ./Waybar.nix
     ./Zen.nix
     ./WlSunset.nix
 
+    ./rofi
     # ./vim
     # ./wezterm
   ];

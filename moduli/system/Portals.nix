@@ -1,17 +1,19 @@
 { pkgs, ... }:
 {
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal
-      xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
-    ];
-  };
+  xdg = {
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal
+        kdePackages.xdg-desktop-portal-kde
+        xdg-desktop-portal-wlr
+      ];
+    };
 
-  xdg.menus.enable = true;
-  xdg.mime.enable = true;
+    menus.enable = true;
+    mime.enable = true;
+  };
 
   services.dbus.enable = true;
 }
