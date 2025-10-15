@@ -109,6 +109,7 @@
 
       .modules-right {
         padding-left: 12px;
+        padding-right: 12px;
         border-radius: 8px;
         margin-top: 2px;
         margin-right: 2px;
