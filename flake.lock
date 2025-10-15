@@ -802,11 +802,11 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1760539520,
-        "narHash": "sha256-JYiUIUeGhxglmDAe5WFI1/gJe/etyAF2dkWIZeu6QsU=",
+        "lastModified": 1760541988,
+        "narHash": "sha256-JU5jc+T66AV5TuNTl2GoDQnmKb8Vnc/uYH3UcWUddyE=",
         "owner": "DreamMaoMao",
         "repo": "mango",
-        "rev": "4954711b3b4585afd7d786075b49ce90619bb094",
+        "rev": "3547e567cb5e1f0c53df1c64ddc540d16beac8d1",
         "type": "github"
       },
       "original": {

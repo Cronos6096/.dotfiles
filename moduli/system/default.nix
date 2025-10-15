@@ -2,11 +2,12 @@
   imports = [
     # ./Ollama.nix
     ./Adb.nix
+    ./Docker.nix
     ./Lingua.nix
     ./Ly.nix
     ./Plasma.nix
-    ./Python.nix
     ./Portals.nix
+    ./Python.nix
     ./Servizi.nix
     ./Solaar.nix
     ./Steam.nix
