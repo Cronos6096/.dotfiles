@@ -61,6 +61,9 @@
     # Neovim
     nvf.url = "github:notashelf/nvf";
 
+    # Winboat
+    winboat.url = "github:TibixDev/winboat";
+
     # Starcitizen
     nix-citizen.url = "github:LovingMelody/nix-citizen";
   };

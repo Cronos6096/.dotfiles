@@ -5,5 +5,8 @@
   };
   users.extraGroups.docker.members = [ "andme" ];
 
-  environment.systemPackages = [ pkgs.docker-compose ];
+  environment.systemPackages = [
+    pkgs.docker-compose
+    pkgs.freerdp
+  ];
 }
