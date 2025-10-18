@@ -16,6 +16,7 @@ let
     py3 = "python3";
     ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     gas = "git add * && git stage *";
+    zj = "zellij";
 
     cat = "bat";
     find = "fd";
@@ -53,22 +54,10 @@ in
       enable = true;
     };
 
-    tmux = {
+    zellij = {
       enable = true;
-      sensibleOnTop = true;
-      shortcut = "a";
-      clock24 = true;
-      baseIndex = 1;
-      focusEvents = true;
-
-      plugins = with pkgs.tmuxPlugins; [
-        continuum
-        resurrect
-        sensible
-        tmux-which-key
-        yank
-        urlview
-      ];
+      enableFishIntegration = true;
+      attachExistingSession = true;
     };
   };
 }
