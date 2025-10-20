@@ -73,7 +73,7 @@
     winetricks
     protonup-qt
     protontricks
-    inputs.nix-citizen.packages.${system}.star-citizen
+    # inputs.nix-citizen.packages.${system}.star-citizen
 
     # Progetti e utilità varie
     nvd

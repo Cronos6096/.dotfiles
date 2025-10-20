@@ -1,4 +1,8 @@
 { config, ... }:
+let
+  owner = config.users.users.andme.name;
+  group = config.users.users.andme.group;
+in
 {
   sops = {
     defaultSopsFile = ./secrets.yaml;
@@ -13,14 +17,14 @@
     secrets = {
       passwordAndme = { };
       openAiToken = {
-        owner = config.users.users.andme.name;
-        group = config.users.users.andme.group;
+        inherit owner;
+        inherit group;
         path = "/run/secrets.d/openAiToken";
       };
       githubToken = {
-        owner = config.users.users.andme.name;
-        group = config.users.users.andme.group;
-        path = "/run/secrets.d/githubToken";
+        inherit owner;
+        inherit group;
+        path = "/etc/nixos/secrets/githubToken";
       };
     };
   };

@@ -22,13 +22,6 @@
     XDG_BIN_HOME = "\${HOME}/.local/bin";
   };
 
-  # Polkit
-  xdg.autostart.enable = true;
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [
-    pkgs.xdg-desktop-portal-gtk
-  ];
-
   nixpkgs.config.allowUnfree = true;
   home.stateVersion = "25.11";
 }

@@ -65,14 +65,14 @@
     winboat.url = "github:TibixDev/winboat";
 
     # Starcitizen
-    nix-citizen.url = "github:LovingMelody/nix-citizen";
+    # nix-citizen.url = "github:LovingMelody/nix-citizen";
   };
 
   outputs =
     {
       chaotic,
       home-manager,
-      nix-citizen,
+      # nix-citizen,
       nix-search-tv,
       nixpkgs,
       nur,
@@ -143,22 +143,22 @@
             stylix.nixosModules.stylix
 
             # Starcitizen
-            nix-citizen.nixosModules.StarCitizen
-            {
-              nix.settings = {
-                substituters = [ "https://nix-citizen.cachix.org" ];
-                trusted-public-keys = [ "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo=" ];
-              };
-
-              nix-citizen.starCitizen = {
-                enable = true;
-                preCommands = ''
-                  export DXVK_HUD=compiler;
-                  export MANGO_HUD=1;
-                '';
-                setLimits = true;
-              };
-            }
+            # nix-citizen.nixosModules.StarCitizen
+            # {
+            #   nix.settings = {
+            #     substituters = [ "https://nix-citizen.cachix.org" ];
+            #     trusted-public-keys = [ "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo=" ];
+            #   };
+            #
+            #   nix-citizen.starCitizen = {
+            #     enable = true;
+            #     preCommands = ''
+            #       export DXVK_HUD=compiler;
+            #       export MANGO_HUD=1;
+            #     '';
+            #     setLimits = true;
+            #   };
+            # }
 
             # Mangowm
             inputs.mango.nixosModules.mango

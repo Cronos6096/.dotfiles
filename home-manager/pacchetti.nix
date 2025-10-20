@@ -8,10 +8,9 @@
     obsidian # Note
     yazi # terminal file manager
     kdePackages.kate # Notepad
-    zed-editor # Ide
+    zed-editor
     kdePackages.kget
     gimp3
-    heynote
 
     # archivi
     unp

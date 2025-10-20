@@ -39,7 +39,6 @@ in
       inherit shellAliases;
       interactiveShellInit = ''
         set fish_greeting
-        set -x GITHUB_TOKEN (cat /run/secrets.d/githubToken)
         set -x OPENAI_API_KEY (cat /run/secrets.d/openAiToken)
       '';
     };
@@ -58,6 +57,17 @@ in
       enable = true;
       enableFishIntegration = true;
       attachExistingSession = true;
+      extraConfig = ''
+        simplified_ui true
+        pane_frames false
+
+        ui {
+            pane_frames {
+                rounded_corners true
+                hide_session_name true
+            }
+        }
+      '';
     };
   };
 }
