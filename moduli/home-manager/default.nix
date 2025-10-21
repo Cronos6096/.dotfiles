@@ -12,7 +12,6 @@
     ./WlSunset.nix
 
     ./rofi
-    # ./vim
     # ./wezterm
   ];
 }
