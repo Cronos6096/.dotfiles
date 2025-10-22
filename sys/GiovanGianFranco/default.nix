@@ -12,14 +12,20 @@
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
-  # Boot
   boot.loader = {
     systemd-boot = {
-      enable = true;
-      consoleMode = "max";
+      enable = false;
     };
     efi.canTouchEfiVariables = true;
+    limine = {
+      enable = true;
+      maxGenerations = 3;
+      secureBoot.enable = true;
+    };
   };
+  environment.systemPackages = [
+    pkgs.sbctl
+  ];
 
   # Swap
   swapDevices = [
