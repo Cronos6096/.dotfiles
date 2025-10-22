@@ -18,6 +18,7 @@
     wget
     git
     ncdu
+    any-nix-shell
 
     self.packages.${pkgs.system}.default # Neovim
 

@@ -40,6 +40,7 @@ in
       interactiveShellInit = ''
         set fish_greeting
         set -x OPENAI_API_KEY (cat /run/secrets.d/openAiToken)
+        ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
       '';
     };
 
