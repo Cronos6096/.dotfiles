@@ -61,6 +61,7 @@ in
       extraConfig = ''
         simplified_ui true
         pane_frames false
+        show_startup_tips false
 
         ui {
             pane_frames {

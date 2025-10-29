@@ -61,12 +61,13 @@
     libreoffice-qt
     hunspell
     hunspellDicts.it_IT
+    zathura
 
     qalculate-gtk
     kicad
 
     # Strumenti Raspberry Pi
-    rpi-imager
+    # rpi-imager
 
     # Giochi e compatibilità Windows
     prismlauncher

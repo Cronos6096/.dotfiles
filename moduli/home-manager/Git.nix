@@ -1,9 +1,11 @@
 {
   programs.git = {
     enable = true;
-    userName = "Cronos6096";
-    userEmail = "and.merciaro@gmail.com";
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Cronos6096";
+        email = "and.merciaro@gmail.com";
+      };
       init.defaultBranch = "master";
       safe.directory = "/home/andme/.dotfiles";
     };

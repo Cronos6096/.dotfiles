@@ -19,7 +19,6 @@
     efi.canTouchEfiVariables = true;
     limine = {
       enable = true;
-      maxGenerations = 3;
       secureBoot.enable = true;
     };
   };
