@@ -1,37 +1,13 @@
-{ pkgs, ... }:
 {
+  imports = [
+    ./Diagnostics.nix
+    ./Keymaps.nix
+    ./Ui.nix
+    ./ExtraPlugins.nix
+    ./Lsp.nix
+  ];
+
   vim = {
-    theme = {
-      enable = true;
-      name = "gruvbox";
-      style = "dark";
-      transparent = true;
-    };
-
-    diagnostics = {
-      enable = true;
-      config = {
-        update_in_insert = true;
-        virtual_text = true;
-      };
-    };
-
-    formatter.conform-nvim = {
-      enable = true;
-      setupOpts.formatters_by_ft = {
-        python = [ "ruff" ];
-      };
-    };
-
-    spellcheck = {
-      enable = true;
-      languages = [
-        "en"
-        "it"
-      ];
-      vim-dirtytalk.enable = true;
-    };
-
     options = {
       tabstop = 2;
       shiftwidth = 2;
@@ -39,54 +15,6 @@
       expandtab = true;
     };
 
-    keymaps = [
-      {
-        mode = "n";
-        key = " h";
-        action = ":lua vim.lsp.buf.format()<CR>";
-      }
-      {
-        mode = "n";
-        key = ";";
-        silent = true;
-        action = ":";
-      }
-      {
-        mode = "n";
-        key = ":";
-        silent = true;
-        action = ";";
-      }
-      {
-        key = "<leader>m";
-        mode = "n";
-        silent = true;
-        action = ":make<CR>";
-      }
-    ];
-
-    clipboard = {
-      enable = true;
-    };
-
-    ui = {
-      smartcolumn.enable = true;
-      noice = {
-        enable = true;
-      };
-      borders.plugins = {
-        nvim-cmp.enable = true;
-        lsp-signature.enable = true;
-        which-key.enable = true;
-      };
-      borders.enable = true;
-      breadcrumbs.enable = true;
-      colorful-menu-nvim.enable = true;
-    };
-
-    statusline.lualine.enable = true;
-
-    syntaxHighlighting = true;
 
     telescope = {
       enable = true;
@@ -167,145 +95,6 @@
       trailspace.enable = true;
       icons.enable = true;
       starter.enable = true;
-    };
-
-    extraPlugins = with pkgs.vimPlugins; {
-      plenary = {
-        package = plenary-nvim;
-        setup = ''
-          require("plenary")
-        '';
-      };
-
-      gitsigns = {
-        package = gitsigns-nvim;
-        setup = ''
-          require("gitsigns").setup()
-        '';
-      };
-
-      colorizer = {
-        package = nvim-colorizer-lua;
-        setup = ''
-          require("colorizer").setup()
-        '';
-      };
-
-      git-blame = {
-        package = git-blame-nvim;
-        setup = ''
-          require("gitblame")
-        '';
-      };
-
-      undotree = {
-        package = undotree;
-        setup = ''
-          vim.keymap.set("n", " u", vim.cmd.UndotreeToggle)
-        '';
-      };
-
-      # Snippet
-
-      luasnip = {
-        package = luasnip;
-        setup = ''
-          local ls = require("luasnip")
-
-          vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
-          vim.keymap.set({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})
-          vim.keymap.set({"i", "s"}, "<C-J>", function() ls.jump(-1) end, {silent = true})
-
-          vim.keymap.set({"i", "s"}, "<C-E>", function()
-             if ls.choice_active() then
-             ls.change_choice(1)
-            end
-          end, {silent = true})
-        '';
-      };
-
-      friendly-snippets = {
-        package = friendly-snippets;
-        setup = ''
-          require("luasnip.loaders.from_vscode").lazy_load()
-        '';
-      };
-    };
-
-    undoFile.enable = true;
-    hideSearchHighlight = true;
-    binds = {
-      cheatsheet.enable = true;
-      whichKey.enable = true;
-    };
-
-    lsp = {
-      enable = true;
-      trouble.enable = true;
-      lspSignature.enable = true;
-    };
-
-    languages = {
-      enableTreesitter = true;
-      enableFormat = true;
-      enableExtraDiagnostics = true;
-
-      markdown = {
-        enable = true;
-        format.enable = true;
-        extensions.render-markdown-nvim.enable = true;
-      };
-
-      nix = {
-        enable = true;
-        lsp = {
-          enable = true;
-          server = "nixd";
-        };
-        extraDiagnostics = {
-          enable = true;
-          types = [
-            "deadnix"
-            "statix"
-          ];
-        };
-        format = {
-          enable = true;
-          type = "nixfmt";
-        };
-        treesitter = {
-          enable = true;
-        };
-      };
-
-      clang = {
-        enable = true;
-        lsp.enable = true;
-      };
-
-      assembly = {
-        enable = true;
-        lsp.enable = true;
-      };
-
-      python = {
-        enable = true;
-        format = {
-          enable = true;
-          type = "ruff";
-        };
-        lsp = {
-          enable = true;
-        };
-        treesitter.enable = true;
-      };
-
-      lua = {
-        enable = true;
-        format.enable = true;
-        lsp.enable = true;
-        treesitter.enable = true;
-      };
     };
   };
 }
