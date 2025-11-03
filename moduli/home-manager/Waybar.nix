@@ -45,12 +45,9 @@
           icon-size = 16;
         };
         "pulseaudio" = {
-          format = "{icon} {volume}% {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
-          format-muted = "󰟎 {format_source}";
-          format-source = " {volume}%";
-          format-source-muted = "";
+          format = "{icon} {volume}%";
+          format-bluetooth = "{volume}% {icon} ";
+          format-muted = "󰟎 ";
           format-icons = {
             headphone = "󰋋";
             headset = "󰋎";
@@ -69,7 +66,7 @@
           };
           format = "{icon} {capacity}%";
           format-charging = "󰂄 {capacity}%";
-          format-plugged = "󱘖 {capacity}%";
+          format-plugged = "󰂄 {capacity}%";
           format-icons = [
             "󰁺"
             "󰁻"

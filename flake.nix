@@ -61,9 +61,6 @@
     # Neovim
     nvf.url = "github:notashelf/nvf";
 
-    # Winboat
-    winboat.url = "github:TibixDev/winboat";
-
     # Starcitizen
     # nix-citizen.url = "github:LovingMelody/nix-citizen";
   };
@@ -118,7 +115,7 @@
 
             # Neovim
             (
-              { pkgs, ... }@args:
+              { pkgs, ... }:
               {
                 environment.systemPackages = [
                   self.packages.${pkgs.system}.default
@@ -159,6 +156,9 @@
             #     setLimits = true;
             #   };
             # }
+
+            # HACK per via di cuda
+            { nixpkgs.config.allowBroken = true; }
 
             # Mangowm
             inputs.mango.nixosModules.mango

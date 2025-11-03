@@ -2,9 +2,9 @@
 {
   vim = {
     theme = {
-      enable = false;
-      name = "onedark";
-      style = "darker";
+      enable = true;
+      name = "gruvbox";
+      style = "dark";
       transparent = true;
     };
 
@@ -159,7 +159,6 @@
           };
         };
       };
-      indentscope.enable = true;
       pairs.enable = true;
       clue.enable = true;
       cursorword.enable = true;
@@ -167,9 +166,17 @@
       splitjoin.enable = true;
       trailspace.enable = true;
       icons.enable = true;
+      starter.enable = true;
     };
 
     extraPlugins = with pkgs.vimPlugins; {
+      plenary = {
+        package = plenary-nvim;
+        setup = ''
+          require("plenary")
+        '';
+      };
+
       gitsigns = {
         package = gitsigns-nvim;
         setup = ''
@@ -181,13 +188,6 @@
         package = nvim-colorizer-lua;
         setup = ''
           require("colorizer").setup()
-        '';
-      };
-
-      auto-session = {
-        package = auto-session;
-        setup = ''
-          require("auto-session").setup()
         '';
       };
 
@@ -229,24 +229,6 @@
         setup = ''
           require("luasnip.loaders.from_vscode").lazy_load()
         '';
-      };
-
-      cyberdream = {
-        package = cyberdream-nvim;
-        setup = ''
-          require("cyberdream").setup({
-            variant = "dark",
-            transparent = true,
-            saturation = 0.5,
-            italic_comments = true,
-          })
-
-          vim.cmd("colorscheme cyberdream")
-        '';
-      };
-
-      visual-whitespace = {
-        package = visual-whitespace-nvim;
       };
     };
 
