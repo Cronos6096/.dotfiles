@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   stylix = {
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/evenok-dark.yaml";
     # base00: "#1d2021"
     # base01: "#3c3836"
     # base02: "#504945"
