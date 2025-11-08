@@ -32,12 +32,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Mangowm
-    mango = {
-      url = "github:DreamMaoMao/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Stylix
     stylix = {
       url = "github:danth/stylix";
@@ -159,16 +153,6 @@
 
             # HACK per via di cuda
             { nixpkgs.config.allowBroken = true; }
-
-            # Mangowm
-            inputs.mango.nixosModules.mango
-            {
-              programs.mango.enable = true;
-              services.seatd = {
-                enable = true;
-                user = "andme";
-              };
-            }
 
             # Home-manager
             home-manager.nixosModules.home-manager
