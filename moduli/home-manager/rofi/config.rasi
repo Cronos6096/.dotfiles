@@ -7,7 +7,7 @@ configuration {
 	normalize-match: true;
 	show-icons: true;
 	icon-theme: "Papirus";
-	steal-focus: false;
+	steal-focus: true;
 
 	matching: "normal";
 	tokenize: true;
