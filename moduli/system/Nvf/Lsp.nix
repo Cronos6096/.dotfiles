@@ -51,6 +51,13 @@
         lsp.enable = true;
       };
 
+      rust = {
+        enable = true;
+        format.enable = true;
+        lsp.enable = true;
+        treesitter.enable = true;
+      };
+
       python = {
         enable = true;
         format = {

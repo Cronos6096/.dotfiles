@@ -28,6 +28,7 @@
       hyprpaper
       better-control
       pyprland
+      jq
     ];
   };
 }
