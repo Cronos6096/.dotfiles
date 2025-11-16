@@ -12,20 +12,6 @@
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
-  boot.loader = {
-    systemd-boot = {
-      enable = false;
-    };
-    efi.canTouchEfiVariables = true;
-    limine = {
-      enable = true;
-      secureBoot.enable = true;
-    };
-  };
-  environment.systemPackages = [
-    pkgs.sbctl
-  ];
-
   # Swap
   swapDevices = [
     {
@@ -33,11 +19,6 @@
       size = 32 * 1024;
     }
   ];
-
-  boot.kernel.sysctl = {
-    "vm.max_map_count" = 16777216;
-    "fs.file-max" = 524288;
-  };
 
   # Hostname
   networking.hostName = "GiovanGianFranco";
@@ -54,8 +35,8 @@
   stylix.enable = true;
 
   # Account
-  sops.secrets.passwordAndme.neededForUsers = true;
-  users.mutableUsers = false;
+  #  sops.secrets.passwordAndme.neededForUsers = true;
+  #  users.mutableUsers = false;
 
   users = {
     users.andme = {
@@ -69,7 +50,7 @@
       ];
       shell = pkgs.fish;
       home = "/home/andme";
-      hashedPasswordFile = config.sops.secrets.passwordAndme.path;
+      #      hashedPasswordFile = config.sops.secrets.passwordAndme.path;
     };
 
     groups.gcis = { };

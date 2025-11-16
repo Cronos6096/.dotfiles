@@ -16,6 +16,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.3";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Nur
     nur = {
       url = "github:nix-community/NUR";
@@ -61,9 +66,10 @@
 
   outputs =
     {
+      # nix-citizen,
       chaotic,
       home-manager,
-      # nix-citizen,
+      lanzaboote,
       nix-search-tv,
       nixpkgs,
       nur,
@@ -95,6 +101,25 @@
             ./sys/GiovanGianFranco
             ./nix
             ./moduli/system/Portals.nix
+
+            lanzaboote.nixosModules.lanzaboote
+
+            (
+              { pkgs, lib, ... }:
+              {
+
+                environment.systemPackages = [
+                  pkgs.sbctl
+                ];
+
+                boot.loader.systemd-boot.enable = lib.mkForce false;
+
+                boot.lanzaboote = {
+                  enable = true;
+                  pkiBundle = "/var/lib/sbctl";
+                };
+              }
+            )
 
             {
               nixpkgs.config.platforms = [ "x86_64-linux" ];

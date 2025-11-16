@@ -82,14 +82,6 @@
     orca-slicer # Slicer 3D
   ];
 
-  # Pacchetti liberi / Flake
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
-
   # Manager partizioni
   programs.partition-manager.enable = true;
 }
