@@ -7,18 +7,6 @@
         action = ":lua vim.lsp.buf.format()<CR>";
       }
       {
-        mode = "n";
-        key = ";";
-        silent = true;
-        action = ":";
-      }
-      {
-        mode = "n";
-        key = ":";
-        silent = true;
-        action = ";";
-      }
-      {
         key = "<leader>m";
         mode = "n";
         silent = true;
