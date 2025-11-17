@@ -3,6 +3,7 @@
     # ./Ollama.nix
     ./Adb.nix
     ./Docker.nix
+    ./Niri.nix
     ./Lingua.nix
     ./Ly.nix
     ./Plasma.nix
