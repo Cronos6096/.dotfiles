@@ -82,7 +82,7 @@
           on-click = "";
           tooltip = false;
         };
-        "hyprland/workspaces" = {
+        "niri/workspaces" = {
           on-click = "activate";
           "format" = "{icon}";
           "format-icons" = {

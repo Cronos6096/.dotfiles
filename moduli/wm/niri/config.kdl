@@ -62,7 +62,8 @@ layout {
     }
 }
 
-spawn-at-startup "waybar & diswon"
+spawn-sh-at-startup "waybar"
+spawn-sh-at-startup "waybar"
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "hyprpaper"
 spawn-at-startup "udiskie"
