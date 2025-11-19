@@ -23,6 +23,9 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  # Kernel
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/b93d1662-1ce3-4bf0-ac5d-25998cb4b0ec";
     fsType = "ext4";
@@ -39,10 +42,6 @@
       "dmask=0077"
     ];
   };
-
-  swapDevices = [
-    { device = "/dev/disk/by-uuid/0562aaf5-0cfc-4f3d-970b-d829ab4a26c9"; }
-  ];
 
   networking.useDHCP = lib.mkDefault true;
 

@@ -9,17 +9,6 @@
     ../../Pacchetti-NUR.nix
   ];
 
-  # Kernel
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
-
-  # Swap
-  swapDevices = [
-    {
-      device = "/swapfile";
-      size = 32 * 1024;
-    }
-  ];
-
   # Hostname
   networking.hostName = "GiovanGianFranco";
 
