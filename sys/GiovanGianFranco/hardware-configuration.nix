@@ -23,6 +23,16 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  # Swap
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 32 * 1024;
+    }
+  ];
+
+  hardware.bluetooth.package = pkgs.bluez-experimental;
+
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
 

@@ -5,12 +5,11 @@
     ckan # Kerbal Space Program mod manager
     fastfetch
     lutris # Launcher
-    obsidian # Note
     yazi # terminal file manager
     kdePackages.kate # Notepad
     zed-editor
-    kdePackages.kget
     gimp3
+    whatsapp-electron
 
     # archivi
     unp

@@ -1,11 +1,11 @@
 {
   imports = [
-    # ./Ollama.nix
     ./Adb.nix
     ./Docker.nix
-    ./Niri.nix
     ./Lingua.nix
     ./Ly.nix
+    ./Niri.nix
+    # ./Ollama.nix
     ./Plasma.nix
     ./Portals.nix
     ./Python.nix

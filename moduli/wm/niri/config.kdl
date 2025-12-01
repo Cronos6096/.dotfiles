@@ -115,6 +115,7 @@ binds {
     Mod+N {spawn-sh "kitty -e clipse";}
     Mod+P {spawn "prismlauncher";}
     Mod+S {spawn "steam";}
+    Mod+W {spawn "whatsapp-electron";}
 
     XF86Calculator {spawn "qalculate-gtk";}
     XF86Launch2 {spawn-sh "btop";}
