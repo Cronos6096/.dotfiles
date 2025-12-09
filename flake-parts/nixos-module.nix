@@ -37,6 +37,12 @@
 
         {
           environment.systemPackages = [
+            inputs.nix-search-tv.packages.x86_64-linux.default
+          ];
+        }
+
+        {
+          environment.systemPackages = [
             (inputs.nvf.lib.neovimConfiguration {
               pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
               modules = [ (import "${self}/moduli/system/Nvf") ];
