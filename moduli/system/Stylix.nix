@@ -24,6 +24,8 @@
     image = ./wallpaper.png;
     polarity = "dark";
 
+    enableReleaseChecks = false;
+
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";

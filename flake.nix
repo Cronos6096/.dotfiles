@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     home-manager = {
@@ -10,7 +11,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Segreti
     sops-nix = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,15 +21,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Nur
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Trova pacchetti
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
-    # Hyprland
+
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
@@ -37,13 +35,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Stylix
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Solaar
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,152 +53,17 @@
       };
     };
 
-    # Neovim
     nvf.url = "github:notashelf/nvf";
-
-    # Starcitizen
-    # nix-citizen.url = "github:LovingMelody/nix-citizen";
   };
 
   outputs =
-    {
-      # nix-citizen,
-      chaotic,
-      home-manager,
-      lanzaboote,
-      nix-search-tv,
-      nixpkgs,
-      nur,
-      nvf,
-      self,
-      solaar,
-      sops-nix,
-      stylix,
-      ...
-    }@inputs:
-    let
-      system = "x86_64-linux";
-    in
-    {
-      # Neovim
-      packages.${system}.default =
-        (nvf.lib.neovimConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
-          modules = [ ./moduli/system/Nvf ];
-        }).neovim;
+    inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "x86_64-linux" ];
 
-      nixosConfigurations = {
 
-        # Laptop
-        GiovanGianFranco = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs self; };
-          modules = [
-            ./sys/GiovanGianFranco
-            ./nix
-            ./moduli/system/Portals.nix
-
-            lanzaboote.nixosModules.lanzaboote
-
-            (
-              { pkgs, lib, ... }:
-              {
-
-                environment.systemPackages = [
-                  pkgs.sbctl
-                ];
-
-                boot.loader.systemd-boot.enable = lib.mkForce false;
-
-                boot.lanzaboote = {
-                  enable = true;
-                  pkiBundle = "/var/lib/sbctl";
-                };
-              }
-            )
-
-            {
-              nixpkgs.config.platforms = [ "x86_64-linux" ];
-            }
-
-            # Nix search
-            {
-              environment.systemPackages = [
-                nix-search-tv.packages.x86_64-linux.default
-              ];
-            }
-
-            # Neovim
-            (
-              { pkgs, ... }:
-              {
-                environment.systemPackages = [
-                  self.packages.${pkgs.system}.default
-                ];
-              }
-            )
-
-            # Nur
-            nur.modules.nixos.default
-
-            # sops
-            sops-nix.nixosModules.sops
-            ./secrets
-
-            # Chaotic
-            chaotic.nixosModules.default
-
-            # Integrazione di solaar
-            solaar.nixosModules.default
-
-            # Modulo di Stylix NixOS
-            stylix.nixosModules.stylix
-
-            # Starcitizen
-            # nix-citizen.nixosModules.StarCitizen
-            # {
-            #   nix.settings = {
-            #     substituters = [ "https://nix-citizen.cachix.org" ];
-            #     trusted-public-keys = [ "nix-citizen.cachix.org-1:lPMkWc2X8XD4/7YPEEwXKKBg+SVbYTVrAaLA2wQTKCo=" ];
-            #   };
-            #
-            #   nix-citizen.starCitizen = {
-            #     enable = true;
-            #     preCommands = ''
-            #       export DXVK_HUD=compiler;
-            #       export MANGO_HUD=1;
-            #     '';
-            #     setLimits = true;
-            #   };
-            # }
-
-            # HACK per via di cuda
-            { nixpkgs.config.allowBroken = true; }
-
-            # Home-manager
-            home-manager.nixosModules.home-manager
-
-            {
-              home-manager = {
-                extraSpecialArgs = {
-                  inherit inputs;
-                };
-
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                backupFileExtension = "backup";
-
-                users.andme = {
-                  imports = [
-                    ./home-manager/home.nix
-                    inputs.zen-browser.homeModules.default
-                    # inputs.mango.hmModules.mango
-                  ];
-                };
-              };
-            }
-          ];
-        };
-      };
+      imports = [
+        ./flake-parts/nixos-module.nix
+      ];
     };
 }

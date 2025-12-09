@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   programs.home-manager.enable = true;
 
@@ -22,6 +21,5 @@
     XDG_BIN_HOME = "\${HOME}/.local/bin";
   };
 
-  nixpkgs.config.allowUnfree = true;
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 }

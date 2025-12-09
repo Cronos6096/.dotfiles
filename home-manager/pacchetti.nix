@@ -33,7 +33,6 @@
     ripgrep
     udiskie # Automontatore
     vesktop # Discord
-    pandoc
     rustdesk
 
     # Video / Audio

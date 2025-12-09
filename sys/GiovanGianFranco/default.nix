@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -6,7 +6,6 @@
     ./audio.nix
     ../../moduli/system
     ../../Pacchetti.nix
-    ../../Pacchetti-NUR.nix
   ];
 
   # Hostname
@@ -48,9 +47,6 @@
       group = "gcis";
     };
   };
-
-  environment.etc."/xdg/menus/applications.menu".text =
-    builtins.readFile "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 
   # Fish shell
   programs.fish.enable = true;

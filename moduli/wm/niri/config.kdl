@@ -63,12 +63,10 @@ layout {
 }
 
 spawn-sh-at-startup "waybar"
-spawn-sh-at-startup "waybar"
 spawn-at-startup "kdeconnectd"
-spawn-at-startup "hyprpaper"
 spawn-at-startup "udiskie"
 spawn-at-startup "kdeconnect-indicator"
-spawn-at-startup "clipse -listen"
+spawn-sh-at-startup "clipse -listen"
 
 hotkey-overlay {
     skip-at-startup
@@ -86,18 +84,6 @@ window-rule {
     open-floating true
 }
 
-/-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
-
-    block-out-from "screen-capture"
-
-    // Use this instead if you want them visible on third-party screenshot tools.
-    // block-out-from "screencast"
-}
-
-// Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
 window-rule {
     geometry-corner-radius 0
     clip-to-geometry true
@@ -119,10 +105,6 @@ binds {
 
     XF86Calculator {spawn "qalculate-gtk";}
     XF86Launch2 {spawn-sh "btop";}
-// bind = , XF86Calculator, exec, qalculate-gtk
-// bind = , XF86Launch2, exec, $terminal -e "btop"
-// bindr = SHIFT, esc, exec, $terminal -e "btop"
-
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -173,8 +155,6 @@ binds {
     Mod+I              { focus-workspace-up; }
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
-    Mod+Ctrl+U         { move-column-to-workspace-down; }
-    Mod+Ctrl+I         { move-column-to-workspace-up; }
 
     Mod+Shift+Page_Down { move-workspace-down; }
     Mod+Shift+Page_Up   { move-workspace-up; }

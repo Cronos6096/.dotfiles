@@ -15,7 +15,6 @@
       expandtab = true;
     };
 
-
     telescope = {
       enable = true;
       mappings.buffers = " f";
@@ -63,7 +62,12 @@
         };
       };
       snacks-nvim.enable = true;
-      motion.flash-nvim.enable = true;
+      motion.flash-nvim = {
+        enable = true;
+        mappings = {
+          jump = "n";
+        };
+      };
     };
 
     mini = {

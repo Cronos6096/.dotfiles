@@ -19,8 +19,11 @@
     git
     ncdu
     any-nix-shell
+    opencode
 
-    self.packages.${pkgs.system}.default # Neovim
+    # self.packages.${pkgs.system}.default # Neovim
+
+    # inputs.self.packages.x86_64-linux.default
 
     # Amministrazione di sistema
     bleachbit
@@ -67,7 +70,7 @@
     kicad
 
     # Strumenti Raspberry Pi
-    # rpi-imager
+    rpi-imager
 
     # Giochi e compatibilità Windows
     prismlauncher
