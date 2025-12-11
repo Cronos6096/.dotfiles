@@ -10,6 +10,8 @@
         position = "top";
         modules-center = [ "clock" ];
         modules-left = [
+          "hyprland/workspaces"
+          "hyprland/window"
           "niri/workspaces"
           "niri/window"
         ];
@@ -24,9 +26,11 @@
           interval = 1;
           tooltip = false;
         };
+        "hyprland/window" = {
+          separate-outputs = true;
+        };
         "niri/window" = {
           separate-outputs = true;
-          icon = true;
         };
         "network" = {
           format-icons = [
@@ -82,7 +86,7 @@
           on-click = "";
           tooltip = false;
         };
-        "niri/workspaces" = {
+        "hyprland/workspaces" = {
           on-click = "activate";
           "format" = "{icon}";
           "format-icons" = {

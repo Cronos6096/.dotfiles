@@ -13,17 +13,14 @@
     p7zip
 
     # Strumenti da linea di comando
+    any-nix-shell
     fzf
+    git
+    links2
+    ncdu
+    opencode
     tldr
     wget
-    git
-    ncdu
-    any-nix-shell
-    opencode
-
-    # self.packages.${pkgs.system}.default # Neovim
-
-    # inputs.self.packages.x86_64-linux.default
 
     # Amministrazione di sistema
     bleachbit
