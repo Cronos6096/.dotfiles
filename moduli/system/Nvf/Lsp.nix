@@ -16,7 +16,7 @@
       markdown = {
         enable = true;
         format.enable = true;
-        extensions.render-markdown-nvim.enable = true;
+        extensions.markview-nvim.enable = true;
       };
 
       nix = {
@@ -33,6 +33,13 @@
         };
         format = {
           type = "nixfmt";
+        };
+      };
+
+      typst = {
+        enable = true;
+        extensions = {
+          typst-concealer.enable = true;
         };
       };
 
