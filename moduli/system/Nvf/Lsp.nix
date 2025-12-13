@@ -3,11 +3,15 @@
     lsp = {
       enable = true;
       trouble.enable = true;
-      lspSignature.enable = true;
+      formatOnSave = true;
+      harper-ls.enable = true;
+      inlayHints.enable = true;
+      lspconfig.enable = true;
     };
 
     syntaxHighlighting = true;
 
+    treesitter.context.enable = true;
     languages = {
       enableTreesitter = true;
       enableFormat = true;
@@ -16,13 +20,18 @@
       markdown = {
         enable = true;
         format.enable = true;
-        extensions.markview-nvim.enable = true;
+        extensions.markview-nvim = {
+          enable = true;
+          setupOpts = {
+            typst.enable = false;
+          };
+        };
       };
 
       nix = {
         enable = true;
         lsp = {
-          server = "nixd";
+          servers = [ "nixd" ];
         };
         extraDiagnostics = {
           enable = true;
@@ -32,14 +41,15 @@
           ];
         };
         format = {
-          type = "nixfmt";
+          type = [ "nixfmt" ];
         };
       };
 
       typst = {
         enable = true;
+        format.enable = true;
         extensions = {
-          typst-concealer.enable = true;
+          typst-preview-nvim.enable = true;
         };
       };
 
@@ -57,6 +67,7 @@
 
       python = {
         enable = true;
+        format.enable = true;
       };
 
       lua = {

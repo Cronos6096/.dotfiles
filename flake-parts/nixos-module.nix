@@ -5,6 +5,23 @@
   ...
 }:
 {
+  perSystem =
+    { pkgs, ... }:
+    let
+      nvfConfig = inputs.nvf.lib.neovimConfiguration {
+        inherit pkgs;
+        modules = [ (import ../moduli/system/Nvf) ];
+      };
+      nvfPackage = nvfConfig.neovim;
+    in
+    {
+      packages.default = nvfPackage;
+      apps.default = {
+        type = "app";
+        program = "${nvfPackage}/bin/nvim";
+      };
+    };
+
   flake.nixosConfigurations = {
     GiovanGianFranco = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";

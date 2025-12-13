@@ -7,7 +7,6 @@
       };
       borders.plugins = {
         nvim-cmp.enable = true;
-        lsp-signature.enable = true;
         which-key.enable = true;
       };
       borders.enable = true;

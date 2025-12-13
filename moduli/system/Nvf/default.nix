@@ -21,14 +21,21 @@
     };
 
     autocomplete = {
-      nvim-cmp = {
+      blink-cmp = {
         enable = true;
-        sourcePlugins = [
-          "icon-picker-nvim"
-          "telescope"
-          "trouble"
-          "supermaven-nvim"
-        ];
+        friendly-snippets.enable = true;
+        setupOpts = {
+          keymap.preset = "enter";
+          signature.enabled = true;
+          completion.documentation = {
+            auto_show = true;
+          };
+        };
+        sourcePlugins = {
+          emoji.enable = true;
+          ripgrep.enable = true;
+          spell.enable = true;
+        };
       };
     };
 

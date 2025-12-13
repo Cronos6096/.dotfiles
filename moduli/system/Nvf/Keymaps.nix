@@ -12,6 +12,12 @@
         silent = true;
         action = ":make<CR>";
       }
+      {
+        key = "<leader>y";
+        mode = "n";
+        silent = true;
+        action = ":TypstPreview<CR>";
+      }
     ];
 
     clipboard = {
