@@ -22,6 +22,13 @@
     tldr
     wget
 
+    # Codice
+    typst
+    typst-live
+    typstyle
+    nixd
+    nixfmt
+
     # Amministrazione di sistema
     bleachbit
     pciutils

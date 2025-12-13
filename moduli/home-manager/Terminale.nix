@@ -17,6 +17,7 @@ let
     ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     gas = "git add * && git stage *";
     zj = "zellij";
+    ssh = "kitten ssh";
 
     cat = "bat";
     find = "fd";
