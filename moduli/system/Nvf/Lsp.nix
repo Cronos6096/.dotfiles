@@ -4,7 +4,7 @@
       enable = true;
       trouble.enable = true;
       formatOnSave = true;
-      harper-ls.enable = true;
+      # harper-ls.enable = true;
       inlayHints.enable = true;
       lspconfig.enable = true;
     };
