@@ -8,7 +8,6 @@
     yazi # terminal file manager
     kdePackages.kate # Notepad
     zed-editor
-    gimp3
     whatsapp-electron
 
     # archivi
@@ -36,11 +35,11 @@
     rustdesk
 
     # Video / Audio
-    blender
-    # davinci-resolve # Video editor
     vlc # Media player
-    kdePackages.okular # Pdf
-    krita # Image editor
+    # blender
+    # davinci-resolve # Video editor
+    # krita # Image editor
+    # gimp3
 
     # Network
     aria2
@@ -48,9 +47,6 @@
     nmap
 
     # Terminale
-    cava # Audio visualizer
-    cmatrix
-    cowsay
     fd
     file
     lazygit
@@ -58,7 +54,6 @@
     gnused
     pinentry-all
     gnutar
-    undollar
     which
     zstd
     btop
