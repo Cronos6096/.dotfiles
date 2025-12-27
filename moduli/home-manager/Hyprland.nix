@@ -26,7 +26,6 @@
       handlr
       hyprsome
       hyprpaper
-      better-control
       pyprland
       jq
     ];

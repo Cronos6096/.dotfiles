@@ -178,7 +178,7 @@
 
       #tray menu {
         color: #${config.lib.stylix.colors.base06};
-        background: transparent;
+        background: #${config.lib.stylix.colors.base02};
         border-radius: 8px;
       }
 

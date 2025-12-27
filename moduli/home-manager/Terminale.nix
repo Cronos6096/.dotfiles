@@ -56,8 +56,8 @@ in
 
     zellij = {
       enable = true;
-      enableFishIntegration = true;
-      attachExistingSession = true;
+      # enableFishIntegration = true;
+      # attachExistingSession = true;
       extraConfig = ''
         simplified_ui true
         pane_frames false
