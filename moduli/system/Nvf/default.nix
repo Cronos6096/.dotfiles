@@ -14,6 +14,8 @@
       virtualedit = "all";
       expandtab = true;
     };
+    searchCase = "ignore";
+    git.enable = true;
 
     telescope = {
       enable = true;
@@ -29,6 +31,7 @@
           signature.enabled = true;
           completion.documentation = {
             auto_show = true;
+            auto_show_delay_ms = 0;
           };
         };
         sourcePlugins = {
@@ -47,14 +50,17 @@
       enable = true;
     };
 
+    assistant.supermaven-nvim = {
+      enable = true;
+    };
+
     terminal = {
       toggleterm = {
         enable = true;
+        mappings.open = " tt";
         lazygit = {
           enable = true;
-          mappings = {
-            open = " gg";
-          };
+          mappings.open = " gg";
         };
         setupOpts.enable_winbar = true;
       };

@@ -9,13 +9,6 @@
         '';
       };
 
-      gitsigns = {
-        package = gitsigns-nvim;
-        setup = ''
-          require("gitsigns").setup()
-        '';
-      };
-
       colorizer = {
         package = nvim-colorizer-lua;
         setup = ''
@@ -46,7 +39,7 @@
               saturation = 0.75,
               italic_comments = true,
               borderless_pickers = false,
-              terminal_colors = false,
+              terminal_colors = true,
               cache = false,
           })
 

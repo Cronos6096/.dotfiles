@@ -1,7 +1,17 @@
 {
   vim = {
     ui = {
-      smartcolumn.enable = true;
+      smartcolumn = {
+        enable = true;
+        setupOpts = {
+          disabled_filetypes = [
+            "help"
+            "text"
+            "markdown"
+            "typst"
+          ];
+        };
+      };
       noice = {
         enable = true;
       };
@@ -10,6 +20,7 @@
         which-key.enable = true;
       };
       borders.enable = true;
+      borders.globalStyle = "rounded";
       breadcrumbs.enable = true;
       colorful-menu-nvim.enable = true;
     };

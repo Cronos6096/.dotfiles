@@ -7,11 +7,12 @@
       # harper-ls.enable = true;
       inlayHints.enable = true;
       lspconfig.enable = true;
+      otter-nvim.enable = true;
     };
 
     syntaxHighlighting = true;
 
-    treesitter.context.enable = true;
+    # treesitter.context.enable = true;
     languages = {
       enableTreesitter = true;
       enableFormat = true;
@@ -53,26 +54,10 @@
         };
       };
 
-      clang = {
-        enable = true;
-      };
-
-      assembly = {
-        enable = true;
-      };
-
-      rust = {
-        enable = true;
-      };
-
-      python = {
-        enable = true;
-        format.enable = true;
-      };
-
-      lua = {
-        enable = true;
-      };
+      rust.enable = true;
+      python.enable = true;
+      lua.enable = true;
+      zig.enable = true;
     };
   };
 }
