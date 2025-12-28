@@ -32,7 +32,6 @@
     ripgrep
     udiskie # Automontatore
     vesktop # Discord
-    rustdesk
 
     # Video / Audio
     vlc # Media player

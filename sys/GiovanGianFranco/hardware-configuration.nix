@@ -35,6 +35,11 @@
 
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 16777216;
+    "fs.file-max" = 524288;
+  };
+  boot.loader.timeout = 0;
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/b93d1662-1ce3-4bf0-ac5d-25998cb4b0ec";
