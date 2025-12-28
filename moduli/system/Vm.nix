@@ -1,9 +1,5 @@
 { pkgs, ... }:
 {
-  # Docker
-  virtualisation.docker.enable = true;
-  users.extraGroups.docker.members = [ "andme" ];
-
   # Vm
   programs.virt-manager.enable = true;
 
@@ -14,15 +10,13 @@
   environment.systemPackages = with pkgs; [
     OVMF
     qemu_kvm
-    pkgs.adwaita-icon-theme
-    polkit
     spice
     spice-gtk
     spice-protocol
     virt-manager
     virt-viewer
     win-spice
-    win-virtio
+    virtio-win
   ];
 
   virtualisation = {
