@@ -82,6 +82,7 @@
     winetricks
     protonup-qt
     protontricks
+    inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.star-citizen
 
     # Progetti e utilità varie
     nvd

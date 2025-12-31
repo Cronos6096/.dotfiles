@@ -14,5 +14,6 @@
     ./Steam.nix
     ./Stylix.nix
     ./Vm.nix
+    ./Vr.nix
   ];
 }

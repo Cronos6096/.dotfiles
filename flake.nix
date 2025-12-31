@@ -28,6 +28,8 @@
 
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
 
+    nix-gaming.url = "github:fufexan/nix-gaming";
+
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
