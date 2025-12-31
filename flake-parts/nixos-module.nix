@@ -32,7 +32,6 @@
         inputs.nur.modules.nixos.default
         inputs.sops-nix.nixosModules.sops
         "${self}/secrets"
-        inputs.chaotic.nixosModules.default
         inputs.solaar.nixosModules.default
         inputs.stylix.nixosModules.stylix
         inputs.home-manager.nixosModules.home-manager
@@ -65,6 +64,20 @@
             }).neovim
           ];
         }
+
+        # Kernel
+        (
+          { pkgs, ... }:
+          {
+            nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.default ];
+            boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+
+            nix.settings.substituters = [
+            ];
+            nix.settings.trusted-public-keys = [
+            ];
+          }
+        )
 
         inputs.lanzaboote.nixosModules.lanzaboote
 
