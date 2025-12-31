@@ -1,7 +1,7 @@
 {
   imports = [
     ./Adb.nix
-    ./Docker.nix
+    # ./Docker.nix
     ./Lingua.nix
     ./Ly.nix
     ./Niri.nix

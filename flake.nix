@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -27,8 +26,6 @@
     };
 
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
-
-    nix-gaming.url = "github:fufexan/nix-gaming";
 
     hyprland = {
       type = "git";

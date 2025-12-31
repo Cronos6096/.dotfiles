@@ -28,6 +28,7 @@
     typstyle
     nixd
     nixfmt
+    github-cli
 
     # Amministrazione di sistema
     bleachbit
@@ -52,6 +53,7 @@
 
     # Grafica e GPU
     mesa
+    mesa_i686
     nvtopPackages.nvidia
     vulkan-loader
     vulkan-tools
@@ -63,6 +65,8 @@
     libglvnd
     wayland
     wayland-protocols
+    mangohud
+    dxvk
 
     # Produttività e documenti
     libreoffice-qt
@@ -80,9 +84,9 @@
     prismlauncher
     wineWowPackages.full
     winetricks
+    umu-launcher
     protonup-qt
     protontricks
-    inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.star-citizen
 
     # Progetti e utilità varie
     nvd

@@ -9,7 +9,7 @@
     ./Terminale.nix
     ./Waybar.nix
     ./Zen.nix
-    ./WlSunset.nix
+    # ./WlSunset.nix
 
     ./rofi
     # ./wezterm
