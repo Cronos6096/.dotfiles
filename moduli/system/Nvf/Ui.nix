@@ -16,7 +16,6 @@
         enable = true;
       };
       borders.plugins = {
-        nvim-cmp.enable = true;
         which-key.enable = true;
       };
       borders.enable = true;

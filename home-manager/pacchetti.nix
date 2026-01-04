@@ -31,7 +31,6 @@
     qbittorrent-enhanced
     ripgrep
     udiskie # Automontatore
-    vesktop # Discord
 
     # Video / Audio
     vlc # Media player
@@ -55,7 +54,9 @@
     gnutar
     which
     zstd
-    btop
+    btop-cuda
     caligula
   ];
+
+  # programs.vesktop.enable = true;
 }

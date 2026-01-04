@@ -70,12 +70,7 @@
           { pkgs, ... }:
           {
             nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.default ];
-            boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
-
-            nix.settings.substituters = [
-            ];
-            nix.settings.trusted-public-keys = [
-            ];
+            boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v4;
           }
         )
 
