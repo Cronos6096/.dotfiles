@@ -94,5 +94,91 @@
         )
       ];
     };
+
+    rpi5 = inputs.nixos-raspberrypi.lib.nixosSystemFull {
+      system = "aarch64-linux";
+      specialArgs = {
+        inherit inputs;
+        inherit (inputs) nixos-raspberrypi;
+      };
+      modules = [
+        "${self}/sys/rpi"
+        "${self}/nix/"
+        (
+          {
+            config,
+            pkgs,
+            lib,
+            nixos-raspberrypi,
+            ...
+          }:
+          {
+            imports = with nixos-raspberrypi.nixosModules; [
+              raspberry-pi-5.base
+              raspberry-pi-5.page-size-16k
+              raspberry-pi-5.display-vc4
+            ];
+          }
+        )
+        inputs.disko.nixosModules.disko
+        {
+          boot.tmp.useTmpfs = true;
+        }
+        {
+          environment.systemPackages = [
+            (inputs.nvf.lib.neovimConfiguration {
+              pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+              modules = [ (import "${self}/moduli/system/Nvf") ];
+            }).neovim
+          ];
+        }
+        # inputs.home-manager.nixosModules.home-manager
+        # {
+        #   home-manager = {
+        #     extraSpecialArgs = { inherit inputs; };
+        #     useGlobalPkgs = true;
+        #     useUserPackages = true;
+        #     backupFileExtension = "backup";
+        #     users.andme = {
+        #       imports = [
+        #         "${self}/moduli/home-manager/Terminale.nix"
+        #       ];
+        #       home.stateVersion = "25.11";
+        #     };
+        #   };
+        # }
+        (
+          {
+            config,
+            pkgs,
+            lib,
+            ...
+          }:
+          let
+            kernelBundle = pkgs.linuxAndFirmware.v6_6_31;
+          in
+          {
+            boot = {
+              loader.raspberryPi.firmwarePackage = kernelBundle.raspberrypifw;
+              loader.raspberryPi.bootloader = "kernel";
+              kernelPackages = kernelBundle.linuxPackages_rpi5;
+            };
+
+            nixpkgs.overlays = lib.mkAfter [
+              (self: super: {
+                # This is used in (modulesPath + "/hardware/all-firmware.nix") when at least
+                # enableRedistributableFirmware is enabled
+                # I know no easier way to override this package
+                inherit (kernelBundle) raspberrypiWirelessFirmware;
+                # Some derivations want to use it as an input,
+                # e.g. raspberrypi-dtbs, omxplayer, sd-image-* modules
+                inherit (kernelBundle) raspberrypifw;
+              })
+            ];
+          }
+        )
+
+      ];
+    };
   };
 }

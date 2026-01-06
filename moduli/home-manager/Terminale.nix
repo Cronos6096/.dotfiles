@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 let
   shellAliases = {
     ls = "eza";
@@ -52,6 +52,11 @@ in
     starship = {
       enableFishIntegration = true;
       enable = true;
+    };
+
+    nix-search-tv = {
+      enable = true;
+      package = inputs.nix-search-tv.packages.${pkgs.system}.default;
     };
 
     zellij = {
