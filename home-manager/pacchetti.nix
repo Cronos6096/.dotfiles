@@ -9,6 +9,7 @@
     kdePackages.kate # Notepad
     zed-editor
     whatsapp-electron
+    discord # Vesktop dei poveri
 
     # archivi
     unp
