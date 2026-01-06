@@ -1,7 +1,7 @@
 {
   imports = [
     ./Direnv.nix
-    ./Distrobox.nix
+    # ./Distrobox.nix
     ./Dunst.nix
     ./Git.nix
     ./Hyprland.nix

@@ -25,9 +25,10 @@
       networkmanager
       handlr
       hyprsome
-      hyprpaper
       pyprland
       jq
+      swww
+      waypaper
     ];
   };
 }

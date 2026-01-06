@@ -14,7 +14,7 @@
 
     # treesitter.context.enable = true;
     languages = {
-      enableTreesitter = true;
+      # enableTreesitter = true;
       enableFormat = true;
       enableExtraDiagnostics = true;
 
