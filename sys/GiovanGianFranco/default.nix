@@ -1,4 +1,9 @@
-{ pkgs, config, inputs, ... }:
+{
+  pkgs,
+  config,
+  inputs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -23,8 +28,7 @@
   stylix.enable = true;
 
   # Account
-  #  sops.secrets.passwordAndme.neededForUsers = true;
-  #  users.mutableUsers = false;
+  users.mutableUsers = false;
 
   users = {
     users.andme = {
@@ -38,7 +42,7 @@
       ];
       shell = pkgs.fish;
       home = "/home/andme";
-      #      hashedPasswordFile = config.sops.secrets.passwordAndme.path;
+      hashedPasswordFile = config.age.secrets.password.path;
     };
 
     groups.gcis = { };

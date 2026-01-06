@@ -30,8 +30,6 @@
         "${self}/nix"
         "${self}/moduli/system/Portals.nix"
         inputs.nur.modules.nixos.default
-        inputs.sops-nix.nixosModules.sops
-        "${self}/secrets"
         inputs.solaar.nixosModules.default
         inputs.stylix.nixosModules.stylix
         inputs.home-manager.nixosModules.home-manager
@@ -54,6 +52,14 @@
           environment.systemPackages = [
             inputs.nix-search-tv.packages.x86_64-linux.default
           ];
+        }
+
+        # Secrets
+        inputs.agenix.nixosModules.default
+        "${self}/secrets.nix"
+        {
+          environment.systemPackages = [ inputs.agenix.packages.x86_64-linux.default ];
+          age.identityPaths = [ "/home/andme/.ssh/id_ed25519" ];
         }
 
         {

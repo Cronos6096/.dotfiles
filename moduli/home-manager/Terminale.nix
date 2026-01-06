@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 let
   shellAliases = {
     ls = "eza";
@@ -41,6 +46,9 @@ in
       interactiveShellInit = ''
         set fish_greeting
         ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+        if test -f /run/agenix/envVars
+          source /run/agenix/envVars
+        end
       '';
     };
 

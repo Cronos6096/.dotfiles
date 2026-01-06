@@ -13,10 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sops-nix = {
-      url = "github:mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    agenix.url = "github:ryantm/agenix";
 
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.3";
