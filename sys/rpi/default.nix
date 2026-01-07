@@ -9,20 +9,11 @@
   imports = [
     ./pi5-configtxt.nix
     ./disko-btrfs.nix
+    ./server.nix
   ];
 
   networking.hostName = "rpi5";
   time.timeZone = "Europe/Rome";
-
-  users.users.nixos = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-      "video"
-    ];
-    initialHashedPassword = "";
-  };
 
   users.users.andme = {
     isNormalUser = true;
@@ -32,7 +23,6 @@
       "video"
     ];
     initialHashedPassword = "";
-    group = "andme";
   };
 
   users.groups.andme = { };
@@ -49,10 +39,29 @@
     wheelNeedsPassword = false;
   };
 
-  services.getty.autologinUser = "nixos";
+  services.getty.autologinUser = "andme";
 
-  networking.useNetworkd = true;
-  networking.firewall.allowedUDPPorts = [ 5353 ];
+  networking = {
+    useNetworkd = true;
+    firewall = {
+      allowedUDPPorts = [
+        5353
+        9000
+        8443
+      ];
+      allowedTCPPorts = [
+        5353
+        9000
+        8443
+      ];
+      allowedTCPPortRanges = [
+        {
+          from = 25500;
+          to = 25600;
+        }
+      ];
+    };
+  };
   systemd.network.networks = {
     "99-ethernet-default-dhcp".networkConfig.MulticastDNS = "yes";
     "99-wireless-client-dhcp".networkConfig.MulticastDNS = "yes";
@@ -71,9 +80,11 @@
   # };
 
   environment.systemPackages = with pkgs; [
+    git
+    btop
   ];
 
-  nix.settings.trusted-users = [ "nixos" ];
+  nix.settings.trusted-users = [ "andme" ];
 
   system.stateVersion = config.system.nixos.release;
 

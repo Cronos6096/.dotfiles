@@ -6,5 +6,5 @@
     };
   };
   age.secrets.password.file = ./secrets/password.age;
-  # age.secrets.server.file = ./secrets/server.age;
+  age.secrets.duckdnsToken.file = ./secrets/duckdnsToken.age;
 }

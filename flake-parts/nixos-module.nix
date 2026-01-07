@@ -107,6 +107,7 @@
         inherit inputs;
         inherit (inputs) nixos-raspberrypi;
       };
+
       modules = [
         "${self}/sys/rpi"
         "${self}/nix/"
@@ -126,14 +127,23 @@
             ];
           }
         )
+
         inputs.disko.nixosModules.disko
+
+        # Secrets
+        inputs.agenix.nixosModules.default
+        "${self}/secrets.nix"
+        {
+          environment.systemPackages = [ inputs.agenix.packages.aarch64-linux.default ];
+          age.identityPaths = [ "/home/andme/.ssh/id_ed25519" ];
+        }
         {
           boot.tmp.useTmpfs = true;
         }
         {
           environment.systemPackages = [
             (inputs.nvf.lib.neovimConfiguration {
-              pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+              pkgs = inputs.nixpkgs.legacyPackages.aarch64-linux;
               modules = [ (import "${self}/moduli/system/Nvf") ];
             }).neovim
           ];
@@ -172,18 +182,12 @@
 
             nixpkgs.overlays = lib.mkAfter [
               (self: super: {
-                # This is used in (modulesPath + "/hardware/all-firmware.nix") when at least
-                # enableRedistributableFirmware is enabled
-                # I know no easier way to override this package
                 inherit (kernelBundle) raspberrypiWirelessFirmware;
-                # Some derivations want to use it as an input,
-                # e.g. raspberrypi-dtbs, omxplayer, sd-image-* modules
                 inherit (kernelBundle) raspberrypifw;
               })
             ];
           }
         )
-
       ];
     };
   };

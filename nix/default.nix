@@ -1,3 +1,4 @@
+{ pkgs, lib, ... }:
 {
   imports = [ ./extra-binary-caches.nix ];
 
@@ -19,5 +20,7 @@
     ];
   };
 
-  # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  boot.binfmt.emulatedSystems = lib.optionals (pkgs.stdenv.hostPlatform.system == "x86_64-linux") [
+    "aarch64-linux"
+  ];
 }
