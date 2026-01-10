@@ -5,6 +5,11 @@
     enableOnBoot = true;
   };
 
+  services.home-assistant = {
+    enable = true;
+    config = null;
+  };
+
   users.users.andme.extraGroups = [ "docker" ];
 
   virtualisation.oci-containers = {
