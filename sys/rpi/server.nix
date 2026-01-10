@@ -41,7 +41,7 @@
 
   services.duckdns = {
     enable = true;
-    tokenFile = ./tokenFile;
+    tokenFile = config.age.secrets.duckdnsToken.path;
     domains = [ "serverdiminecraft" ];
   };
 }
