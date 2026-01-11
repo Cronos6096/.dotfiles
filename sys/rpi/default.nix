@@ -47,11 +47,13 @@
       allowedUDPPorts = [
         5353
         9000
+        8123
         8443
       ];
       allowedTCPPorts = [
         5353
         9000
+        8123
         8443
       ];
       allowedTCPPortRanges = [
@@ -82,6 +84,7 @@
   environment.systemPackages = with pkgs; [
     git
     btop
+    lazydocker
   ];
 
   nix.settings.trusted-users = [ "andme" ];

@@ -7,7 +7,7 @@
     lutris # Launcher
     yazi # terminal file manager
     kdePackages.kate # Notepad
-    zed-editor
+    # zed-editor
     whatsapp-electron
     discord # Vesktop dei poveri
 

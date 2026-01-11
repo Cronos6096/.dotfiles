@@ -55,5 +55,8 @@
   # Fish shell
   programs.fish.enable = true;
 
+  # Fix logrotate configuration
+  services.logrotate.enable = false;
+
   system.stateVersion = "25.11";
 }

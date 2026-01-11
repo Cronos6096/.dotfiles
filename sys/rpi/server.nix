@@ -19,7 +19,7 @@
 
       ports = [
         "8443:8443" # HTTPS
-        "8123:8123" # Dynmap
+        "8124:8124" # Dynmap
         "19132:19132/udp" # Bedrock
         "25500-25600:25500-25600" # Java MC port range
       ];
@@ -57,6 +57,7 @@
       extraOptions = [
         "--network=host"
         "--cap-add=NET_ADMIN"
+        "--cap-add=NET_RAW"
         "--cap-add=SYS_ADMIN"
       ];
     };
