@@ -26,10 +26,10 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        "${self}/flake-parts/giovan/home-manager.nix"
-        "${self}/flake-parts/giovan/neovim.nix"
-        "${self}/flake-parts/giovan/secrets.nix"
-        "${self}/flake-parts/giovan/system.nix"
+        "${self}/flake-parts/GiovanGianFranco/home-manager.nix"
+        "${self}/flake-parts/GiovanGianFranco/neovim.nix"
+        "${self}/flake-parts/GiovanGianFranco/secrets.nix"
+        "${self}/flake-parts/GiovanGianFranco/system.nix"
         "${self}/moduli/system/Portals.nix"
         "${self}/nix"
         "${self}/sys/GiovanGianFranco"
