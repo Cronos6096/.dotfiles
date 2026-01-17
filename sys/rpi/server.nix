@@ -66,6 +66,10 @@
   services.duckdns = {
     enable = true;
     tokenFile = config.age.secrets.duckdnsToken.path;
-    domains = [ "serverdiminecraft" ];
+    domains = [
+      # "serverdiminecraft"
+      "casindra"
+      "serverdiminchiaft"
+    ];
   };
 }
