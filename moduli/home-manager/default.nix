@@ -7,6 +7,7 @@
     ./Hyprland.nix
     ./Kitty.nix
     ./Terminale.nix
+    ./Noctalia.nix
     ./Waybar.nix
     ./Zen.nix
     # ./WlSunset.nix

@@ -48,8 +48,7 @@
     kdePackages.kservice
     kdePackages.qtsvg
     shared-mime-info
-    hyprpolkitagent
-    kdePackages.plasma-workspace
+    # kdePackages.plasma-workspace
 
     # Grafica e GPU
     mesa

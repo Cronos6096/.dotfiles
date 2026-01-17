@@ -31,6 +31,7 @@
       jq
       swww
       waypaper
+      hyprmon
     ];
   };
 }

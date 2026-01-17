@@ -6,14 +6,14 @@
     ./Ly.nix
     ./Niri.nix
     # ./Ollama.nix
-    ./Plasma.nix
+    # ./Plasma.nix
     ./Portals.nix
     ./Python.nix
     ./Servizi.nix
     ./Solaar.nix
     ./Steam.nix
     ./Stylix.nix
-    # ./Vm.nix
+    ./Vm.nix
     ./Vr.nix
   ];
 }
