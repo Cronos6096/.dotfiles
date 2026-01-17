@@ -1,10 +1,15 @@
 {
   inputs,
+  self,
   pkgs,
   lib,
   ...
 }:
 {
+  imports = [
+    ../../sys/GiovanGianFranco/options.nix
+  ];
+
   environment.systemPackages = [
     inputs.nix-search-tv.packages.${pkgs.system}.default
     pkgs.sbctl

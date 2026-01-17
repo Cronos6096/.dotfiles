@@ -1,6 +1,8 @@
+{ lib, config, ... }:
+with lib;
 {
   programs.wezterm = {
-    enable = true;
+    enable = mkIf config.moduli.home-manager.wezterm.enable true;
   };
 
   xdg.configFile = {

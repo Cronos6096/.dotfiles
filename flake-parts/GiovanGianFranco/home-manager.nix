@@ -5,7 +5,7 @@
 {
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    useGlobalPkgs = true;
+    useGlobalPkgs = false;
     useUserPackages = true;
     backupFileExtension = "backup";
     users.andme = {
@@ -13,7 +13,16 @@
         ../../home-manager/home.nix
         inputs.zen-browser.homeModules.default
         inputs.noctalia.homeModules.default
+        inputs.stylix.homeModules.stylix
       ];
+      nixpkgs.config.allowUnfreePredicate =
+        pkg:
+        builtins.elem (pkg.pname or "") [
+          "steam"
+          "steam-unwrapped"
+          "steam-runtime"
+          "unrar"
+        ];
     };
   };
 }

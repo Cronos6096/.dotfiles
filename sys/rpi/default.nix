@@ -10,6 +10,7 @@
     ./pi5-configtxt.nix
     ./disko-btrfs.nix
     ./server.nix
+    ./options.nix
   ];
 
   networking.hostName = "rpi5";

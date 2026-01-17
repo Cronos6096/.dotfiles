@@ -20,7 +20,7 @@
       };
       borders.enable = true;
       borders.globalStyle = "rounded";
-      breadcrumbs.enable = true;
+      # breadcrumbs.enable = true;
       colorful-menu-nvim.enable = true;
     };
 

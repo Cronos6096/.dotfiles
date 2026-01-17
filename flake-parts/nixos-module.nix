@@ -24,13 +24,14 @@
   flake.nixosConfigurations = {
     GiovanGianFranco = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs self; };
       modules = [
+        "${self}/moduli/system"
+        "${self}/moduli/options.nix"
         "${self}/flake-parts/GiovanGianFranco/home-manager.nix"
         "${self}/flake-parts/GiovanGianFranco/neovim.nix"
         "${self}/flake-parts/GiovanGianFranco/secrets.nix"
         "${self}/flake-parts/GiovanGianFranco/system.nix"
-        "${self}/moduli/system/Portals.nix"
         "${self}/nix"
         "${self}/sys/GiovanGianFranco"
         inputs.home-manager.nixosModules.home-manager
@@ -44,7 +45,7 @@
     rpi5 = inputs.nixos-raspberrypi.lib.nixosSystemFull {
       system = "aarch64-linux";
       specialArgs = {
-        inherit inputs;
+        inherit inputs self;
         inherit (inputs) nixos-raspberrypi;
       };
 

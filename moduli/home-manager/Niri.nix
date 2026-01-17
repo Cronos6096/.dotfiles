@@ -1,4 +1,7 @@
-{ lib, ... }:
+{ lib, config, ... }:
+with lib;
 {
-  home.file."/home/andme/.config/niri/config.kdl".source = lib.mkForce ../wm/niri/config.kdl;
+  config = mkIf config.moduli.home-manager.niri.enable {
+    home.file."/home/andme/.config/niri/config.kdl".source = ../../moduli/wm/niri/config.kdl;
+  };
 }

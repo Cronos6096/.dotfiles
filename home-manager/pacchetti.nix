@@ -33,10 +33,10 @@
     udiskie # Automontatore
 
     # Video / Audio
-    vlc # Media player
+    vlc
     # blender
-    # davinci-resolve # Video editor
-    # krita # Image editor
+    # davinci-resolve
+    krita
     # gimp3
 
     # Network

@@ -1,9 +1,11 @@
 {
   pkgs,
   inputs,
+  lib,
   config,
   ...
 }:
+with lib;
 let
   shellAliases = {
     ls = "eza";
@@ -32,58 +34,60 @@ let
   };
 in
 {
-  programs = {
-    # Nh
-    nh = {
-      enable = true;
-      clean.enable = true;
-      clean.extraArgs = "--keep-since 1d --keep 3";
-      flake = "~/.dotfiles/";
-    };
+  config = mkIf config.moduli.home-manager.terminale.enable {
+    programs = {
+      # Nh
+      nh = {
+        enable = true;
+        clean.enable = true;
+        clean.extraArgs = "--keep-since 1d --keep 3";
+        flake = "~/.dotfiles/";
+      };
 
-    fish = {
-      enable = true;
-      inherit shellAliases;
-      interactiveShellInit = ''
-        set fish_greeting
-        ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
-        if test -f /run/agenix/envVars
-          source /run/agenix/envVars
-        end
-      '';
-    };
+      fish = {
+        enable = true;
+        inherit shellAliases;
+        interactiveShellInit = ''
+          set fish_greeting
+          ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+          if test -f /run/agenix/envVars
+            source /run/agenix/envVars
+          end
+        '';
+      };
 
-    zoxide = {
-      enable = true;
-      enableFishIntegration = true;
-    };
+      zoxide = {
+        enable = true;
+        enableFishIntegration = true;
+      };
 
-    starship = {
-      enableFishIntegration = true;
-      enable = true;
-    };
+      starship = {
+        enableFishIntegration = true;
+        enable = true;
+      };
 
-    nix-search-tv = {
-      enable = true;
-      package = inputs.nix-search-tv.packages.${pkgs.system}.default;
-    };
+      nix-search-tv = {
+        enable = true;
+        package = inputs.nix-search-tv.packages.${pkgs.system}.default;
+      };
 
-    zellij = {
-      enable = true;
-      # enableFishIntegration = true;
-      # attachExistingSession = true;
-      extraConfig = ''
-        simplified_ui true
-        pane_frames false
-        show_startup_tips false
+      zellij = {
+        enable = true;
+        # enableFishIntegration = true;
+        # attachExistingSession = true;
+        extraConfig = ''
+          simplified_ui true
+          pane_frames false
+          show_startup_tips false
 
-        ui {
-            pane_frames {
-                rounded_corners true
-                hide_session_name true
-            }
-        }
-      '';
+          ui {
+              pane_frames {
+                  rounded_corners true
+                  hide_session_name true
+              }
+          }
+        '';
+      };
     };
   };
 }

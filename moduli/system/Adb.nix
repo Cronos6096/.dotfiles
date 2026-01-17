@@ -1,8 +1,14 @@
-{ pkgs, ... }:
-
 {
-  users.users.andme.extraGroups = [ "adbusers" ];
-  services.udev.packages = [
-    pkgs.android-tools
-  ];
+  lib,
+  pkgs,
+  config,
+  ...
+}:
+with lib;
+{
+  config = mkIf config.moduli.system.adb.enable {
+    services.udev.packages = [
+      pkgs.android-tools
+    ];
+  };
 }

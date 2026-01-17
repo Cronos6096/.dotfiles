@@ -62,7 +62,7 @@ layout {
     }
 }
 
-spawn-sh-at-startup "waybar"
+spawn-sh-at-startup "noctalia-shell"
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "udiskie"
 spawn-at-startup "kdeconnect-indicator"

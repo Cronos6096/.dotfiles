@@ -9,7 +9,7 @@
     ./hardware-configuration.nix
     ./gpu.nix
     ./audio.nix
-    ../../moduli/system
+    ./options.nix
     ../../Pacchetti.nix
   ];
 
@@ -23,9 +23,6 @@
 
   # Hyprland
   programs.hyprland.enable = true;
-
-  # Stylix
-  stylix.enable = true;
 
   # Account
   users.mutableUsers = false;

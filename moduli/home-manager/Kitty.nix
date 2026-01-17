@@ -1,21 +1,24 @@
+{ lib, config, ... }:
+with lib;
 {
-  # Terminale
-  programs.kitty = {
-    enable = true;
-    shellIntegration.enableFishIntegration = true;
-    enableGitIntegration = true;
-    settings = {
-      scrollback_lines = 10000;
-      confirm_os_window_close = 0;
-      enable_audio_bell = false;
-      mouse_hide_wait = "0.5";
-    };
+  config = mkIf config.moduli.home-manager.kitty.enable {
+    programs.kitty = {
+      enable = true;
+      shellIntegration.enableFishIntegration = true;
+      enableGitIntegration = true;
+      settings = {
+        scrollback_lines = 10000;
+        confirm_os_window_close = 0;
+        enable_audio_bell = false;
+        mouse_hide_wait = "0.5";
+      };
 
-    extraConfig = ''
-      disable_ligatures never
-      cursor_blink_interval 0
-      cursor_trail 1
-      background_opacity 0.75
-    '';
+      extraConfig = ''
+        disable_ligatures never
+        cursor_blink_interval 0
+        cursor_trail 1
+        background_opacity 0.75
+      '';
+    };
   };
 }

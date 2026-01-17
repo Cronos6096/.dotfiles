@@ -1,6 +1,10 @@
+{ lib, config, ... }:
+with lib;
 {
-  programs.direnv = {
-    enable = true;
-    # enableFishIntegration = true;
+  config = mkIf config.moduli.home-manager.direnv.enable {
+    programs.direnv = {
+      enable = true;
+      # enableFishIntegration = true;
+    };
   };
 }
