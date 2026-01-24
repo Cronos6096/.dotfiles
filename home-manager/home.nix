@@ -36,7 +36,7 @@
     terminale.enable = true;
     waybar.enable = true;
     wezterm.enable = false;
-    wlsunset.enable = false;
+    wlsunset.enable = true;
     zen.enable = true;
   };
 

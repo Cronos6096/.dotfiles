@@ -7,6 +7,7 @@
 with lib;
 {
   config = mkIf config.moduli.system.stylix.enable {
+    environment.systemPackages = [ pkgs.bibata-cursors ];
     stylix = {
       base16Scheme = "${pkgs.base16-schemes}/share/themes/evenok-dark.yaml";
       # base00: "#000000"

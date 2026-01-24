@@ -35,6 +35,7 @@ with lib;
         swww
         waypaper
         hyprmon
+        bibata-cursors
       ];
     };
   };
