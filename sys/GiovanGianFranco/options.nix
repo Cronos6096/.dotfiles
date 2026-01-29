@@ -6,7 +6,7 @@
       lingua.enable = true;
       ly.enable = true;
       niri.enable = true;
-      ollama.enable = false;
+      ollama.enable = true;
       plasma.enable = false;
       portals.enable = true;
       python.enable = true;

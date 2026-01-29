@@ -13,11 +13,13 @@
       "https://cache.nixos.org"
       "https://attic.xuyh0120.win/lantian"
       "https://nixos-raspberrypi.cachix.org"
+      "https://cuda-maintainers.cachix.org"
     ];
 
     extra-trusted-public-keys = [
       # "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
+      "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
     ];
   };
 }
