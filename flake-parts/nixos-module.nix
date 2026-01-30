@@ -28,10 +28,7 @@
       modules = [
         "${self}/moduli/system"
         "${self}/moduli/options.nix"
-        "${self}/flake-parts/GiovanGianFranco/home-manager.nix"
-        "${self}/flake-parts/GiovanGianFranco/neovim.nix"
-        "${self}/flake-parts/GiovanGianFranco/secrets.nix"
-        "${self}/flake-parts/GiovanGianFranco/system.nix"
+        "${self}/flake-parts/GiovanGianFranco"
         "${self}/nix"
         "${self}/sys/GiovanGianFranco"
         inputs.home-manager.nixosModules.home-manager
@@ -50,9 +47,7 @@
       };
 
       modules = [
-        "${self}/flake-parts/rpi5/base.nix"
-        "${self}/flake-parts/rpi5/kernel.nix"
-        "${self}/flake-parts/rpi5/secrets.nix"
+        "${self}/flake-parts/rpi5/"
         "${self}/nix/"
         "${self}/sys/rpi"
         inputs.disko.nixosModules.disko
