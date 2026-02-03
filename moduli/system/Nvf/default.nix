@@ -78,7 +78,7 @@
       motion.flash-nvim = {
         enable = true;
         mappings = {
-          jump = "n";
+          jump = "N";
         };
       };
     };

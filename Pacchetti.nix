@@ -75,6 +75,9 @@
 
     qalculate-gtk
     kicad
+    kikit
+    kicadAddons.kikit
+    kicadAddons.kikit-library
 
     # Strumenti Raspberry Pi
     rpi-imager
