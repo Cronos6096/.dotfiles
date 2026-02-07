@@ -29,6 +29,7 @@
     nixd
     nixfmt
     github-cli
+    lmstudio
 
     # Amministrazione di sistema
     bleachbit
