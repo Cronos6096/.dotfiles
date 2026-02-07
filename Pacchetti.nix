@@ -91,6 +91,13 @@
     protonup-qt
     protontricks
 
+    yad
+    gawk
+    mokutil
+    samba
+    bc
+    lsb-release
+
     # Progetti e utilità varie
     nvd
     orca-slicer # Slicer 3D
