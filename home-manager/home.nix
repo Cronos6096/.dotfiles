@@ -23,6 +23,8 @@
     XDG_BIN_HOME = "\${HOME}/.local/bin";
   };
 
+  stylix.targets.qt.standardDialogs = "kde";
+
   moduli.home-manager = {
     direnv.enable = true;
     distrobox.enable = true;

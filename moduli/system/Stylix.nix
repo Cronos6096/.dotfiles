@@ -29,7 +29,6 @@ with lib;
 
       image = ../wallpaper.png;
       polarity = "dark";
-      enableReleaseChecks = false;
 
       cursor = {
         package = pkgs.bibata-cursors;
@@ -39,10 +38,10 @@ with lib;
 
       autoEnable = true;
 
-      homeManagerIntegration = {
-        followSystem = true;
-        autoImport = true;
-      };
+      # icons = {
+      #   enable = true;
+      #   package = pkgs.kuyen-icons;
+      # };
 
       opacity = {
         terminal = 0.75;

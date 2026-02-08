@@ -52,6 +52,9 @@
   # Fish shell
   programs.fish.enable = true;
 
+  # Stylix
+  stylix.enable = true;
+
   # Fix logrotate configuration
   services.logrotate.enable = false;
 

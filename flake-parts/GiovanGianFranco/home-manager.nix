@@ -13,7 +13,6 @@
         ../../home-manager/home.nix
         inputs.zen-browser.homeModules.default
         inputs.noctalia.homeModules.default
-        inputs.stylix.homeModules.stylix
       ];
       nixpkgs.config.allowUnfreePredicate =
         pkg:

@@ -30,6 +30,13 @@
         '';
       };
 
+      kitty-scrollback = {
+        package = kitty-scrollback-nvim;
+        setup = ''
+          require('kitty-scrollback').setup({})
+        '';
+      };
+
       cyberdream = {
         package = cyberdream-nvim;
         setup = ''
