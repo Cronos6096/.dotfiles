@@ -34,7 +34,7 @@
     kitty.enable = true;
     niri.enable = true;
     noctalia.enable = true;
-    rofi.enable = true;
+    rofi.enable = false;
     terminale.enable = true;
     waybar.enable = true;
     wezterm.enable = false;

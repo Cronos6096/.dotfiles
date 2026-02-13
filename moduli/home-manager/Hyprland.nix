@@ -36,6 +36,7 @@ with lib;
         waypaper
         hyprmon
         bibata-cursors
+        vicinae
       ];
     };
   };
