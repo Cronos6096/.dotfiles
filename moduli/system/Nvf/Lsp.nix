@@ -57,6 +57,7 @@
       rust.enable = true;
       python.enable = true;
       lua.enable = true;
+      clang.enable = true;
       zig.enable = false;
     };
   };
