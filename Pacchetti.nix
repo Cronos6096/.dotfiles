@@ -54,7 +54,6 @@
     # Grafica e GPU
     mesa
     mesa_i686
-    nvtopPackages.nvidia
     vulkan-loader
     vulkan-tools
     vulkan-extension-layer
@@ -85,7 +84,7 @@
 
     # Giochi e compatibilità Windows
     prismlauncher
-    wineWowPackages.full
+    wineWow64Packages.full
     winetricks
     umu-launcher
     protonup-qt

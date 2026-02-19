@@ -4,7 +4,7 @@
       adb.enable = true;
       docker.enable = false;
       lingua.enable = true;
-      ly.enable = true; # TODO riabilita
+      ly.enable = true;
       niri.enable = true;
       ollama.enable = false;
       plasma.enable = false;

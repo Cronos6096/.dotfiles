@@ -15,7 +15,8 @@
     pkgs.sbctl
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v4;
 
   boot.loader.systemd-boot.enable = lib.mkForce false;
 
