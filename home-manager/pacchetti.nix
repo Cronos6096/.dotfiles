@@ -9,6 +9,7 @@
     kdePackages.kate # Notepad
     whatsapp-electron
     vesktop
+    prismlauncher
 
     # archivi
     unp
@@ -24,13 +25,12 @@
     jetbrains-mono
 
     # utilities
-    kdePackages.ark # File archiver
-    bat # cat migliorato
-    eza # ls migliorato
+    bat
+    eza
     fzf
     qbittorrent-enhanced
-    ripgrep
     udiskie # Automontatore
+    orca-slicer # Slicer 3D
 
     # Video / Audio
     vlc
@@ -45,18 +45,10 @@
     nmap
 
     # Terminale
-    fd
-    file
     lazygit
-    gnupg
-    gnused
     pinentry-all
-    gnutar
     which
-    zstd
     btop-cuda
     caligula
   ];
-
-  # programs.vesktop.enable = true;
 }

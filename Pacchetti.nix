@@ -1,26 +1,22 @@
 {
   pkgs,
-  inputs,
-  self,
   ...
 }:
 
 {
   environment.systemPackages = with pkgs; [
-    # Archivi
-    cabextract
-    unzip
-    p7zip
-
     # Strumenti da linea di comando
     any-nix-shell
     fzf
     git
     links2
     ncdu
+    dysk
     opencode
-    tldr
+    tealdeer
     wget
+    ripgrep
+    ripgrep-all
 
     # Codice
     typst
@@ -33,12 +29,9 @@
 
     # Amministrazione di sistema
     bleachbit
-    pciutils
     home-manager
 
     # Integrazione desktop
-    desktop-file-utils
-    appimage-run
     kdePackages.kdeconnect-kde
 
     # File manager e KDE
@@ -49,7 +42,7 @@
     kdePackages.kservice
     kdePackages.qtsvg
     shared-mime-info
-    # kdePackages.plasma-workspace
+    kdePackages.ark
 
     # Grafica e GPU
     mesa
@@ -79,17 +72,14 @@
     kicadAddons.kikit
     kicadAddons.kikit-library
 
-    # Strumenti Raspberry Pi
-    rpi-imager
-
     # Giochi e compatibilità Windows
-    prismlauncher
     wineWow64Packages.full
     winetricks
     umu-launcher
     protonup-qt
     protontricks
 
+    # Per fusion 360
     yad
     gawk
     mokutil
@@ -98,8 +88,6 @@
     lsb-release
 
     # Progetti e utilità varie
-    nvd
-    orca-slicer # Slicer 3D
   ];
 
   # Manager partizioni

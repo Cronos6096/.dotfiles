@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   imports = [
     ./Diagnostics.nix
@@ -43,17 +42,8 @@
       };
     };
 
-    comments.comment-nvim = {
-      enable = true;
-    };
-
-    notes.todo-comments = {
-      enable = true;
-    };
-
-    assistant.supermaven-nvim = {
-      enable = true;
-    };
+    comments.comment-nvim.enable = true;
+    notes.todo-comments.enable = true;
 
     terminal = {
       toggleterm = {

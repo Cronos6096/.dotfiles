@@ -15,15 +15,18 @@
       noice = {
         enable = true;
       };
-      borders.plugins = {
-        which-key.enable = true;
+      borders = {
+        enable = true;
+        globalStyle = "rounded";
+        plugins = {
+          which-key.enable = true;
+        };
       };
-      borders.enable = true;
-      borders.globalStyle = "rounded";
-      # breadcrumbs.enable = true;
+
       colorful-menu-nvim.enable = true;
     };
 
     statusline.lualine.enable = true;
+    visuals.rainbow-delimiters.enable = true;
   };
 }
