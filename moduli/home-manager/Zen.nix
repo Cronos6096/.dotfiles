@@ -10,6 +10,7 @@ with lib;
     stylix.targets.zen-browser.enable = false;
     programs.zen-browser = {
       enable = true;
+      suppressXdgMigrationWarning = true;
       nativeMessagingHosts = [ pkgs.firefoxpwa ];
       policies = {
         AutofillAddressEnabled = false;

@@ -20,23 +20,36 @@ let
 in
 {
   config = mkIf config.moduli.system.ly.enable {
+    services.displayManager = {
+      enable = true;
+      autoLogin = {
+        enable = true;
+        user = "andme";
+      };
+    };
+
     services.displayManager.ly = {
       enable = true;
       package = ly;
-      # settings = {
-      #   # none     -> Nothing
-      #   # doom     -> PSX DOOM fire
-      #   # matrix   -> CMatrix
-      #   # colormix -> Color mixing shader
-      #   # gameoflife -> John Conway's Game of Life
-      #   animation = "none";
-      #
-      #   # bigclock = "en";
-      #   # asterisk = "·";
-      #   # blankbox = "false";
-      #   # # clock = "null";
-      # };
+      settings = {
+        animation = "none";
+
+        autologin = "andme";
+        autologin_session = "Hyprland";
+        clear_password = "true";
+
+        battery_id = "BAT0";
+        bigclock = "en";
+        asterisk = "0x2022";
+        blankbox = "true";
+        hide_borders = "true";
+        hide_version_string = "true";
+        hide_key_hints = "true";
+        hide_keyboard_locks = "true";
+        clock = "en";
+      };
     };
+
     environment.systemPackages = [
       pkgs.brightnessctl
     ];
