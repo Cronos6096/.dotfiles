@@ -10,6 +10,7 @@
     whatsapp-electron
     vesktop
     prismlauncher
+    rimsort
 
     # archivi
     unp

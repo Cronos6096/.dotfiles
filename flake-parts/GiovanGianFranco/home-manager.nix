@@ -21,6 +21,8 @@
           "steam-unwrapped"
           "steam-runtime"
           "unrar"
+          "rimsort"
+          "steamworkspy"
         ];
     };
   };

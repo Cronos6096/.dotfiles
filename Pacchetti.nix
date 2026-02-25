@@ -43,6 +43,7 @@
     kdePackages.qtsvg
     shared-mime-info
     kdePackages.ark
+    kdePackages.filelight
 
     # Grafica e GPU
     mesa

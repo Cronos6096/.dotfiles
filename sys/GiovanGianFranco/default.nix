@@ -22,7 +22,10 @@
   hardware.bluetooth.powerOnBoot = true;
 
   # Hyprland
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = false;
+  };
 
   # Account
   users.mutableUsers = false;

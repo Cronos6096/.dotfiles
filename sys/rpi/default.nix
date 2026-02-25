@@ -48,12 +48,14 @@
       allowedUDPPorts = [
         5353
         9000
+        8080
         8123
         8443
       ];
       allowedTCPPorts = [
         5353
         9000
+        8080
         8123
         8443
       ];
@@ -94,7 +96,7 @@
 
   system.nixos.tags =
     let
-      cfg = config.boot.loader.raspberryPi;
+      cfg = config.boot.loader.raspberry-pi;
     in
     [
       "raspberry-pi-${cfg.variant}"

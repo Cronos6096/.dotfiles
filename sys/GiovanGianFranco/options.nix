@@ -5,7 +5,7 @@
       docker.enable = false;
       lingua.enable = true;
       ly.enable = true;
-      niri.enable = true;
+      niri.enable = false;
       ollama.enable = false;
       plasma.enable = false;
       portals.enable = true;

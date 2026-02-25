@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   lib,
   config,
@@ -20,33 +21,35 @@ let
 in
 {
   config = mkIf config.moduli.system.ly.enable {
-    services.displayManager = {
-      enable = true;
-      autoLogin = {
+    services = {
+      displayManager = {
         enable = true;
-        user = "andme";
+        autoLogin = {
+          enable = true;
+          user = "andme";
+        };
       };
-    };
 
-    services.displayManager.ly = {
-      enable = true;
-      package = ly;
-      settings = {
-        animation = "none";
+      displayManager.ly = {
+        enable = true;
+        package = ly;
+        settings = {
+          animation = "none";
 
-        autologin = "andme";
-        autologin_session = "Hyprland";
-        clear_password = "true";
+          autologin = "andme";
+          autologin_session = "/run/current-system/sw/bin/hyprland";
+          clear_password = "true";
 
-        battery_id = "BAT0";
-        bigclock = "en";
-        asterisk = "0x2022";
-        blankbox = "true";
-        hide_borders = "true";
-        hide_version_string = "true";
-        hide_key_hints = "true";
-        hide_keyboard_locks = "true";
-        clock = "en";
+          battery_id = "BAT0";
+          bigclock = "en";
+          asterisk = "0x2022";
+          blankbox = "true";
+          hide_borders = "true";
+          hide_version_string = "true";
+          hide_key_hints = "true";
+          hide_keyboard_locks = "true";
+          clock = "en";
+        };
       };
     };
 
