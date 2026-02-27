@@ -68,10 +68,10 @@
     zathura
 
     qalculate-gtk
-    kicad
-    kikit
-    kicadAddons.kikit
-    kicadAddons.kikit-library
+    # kicad
+    # kikit
+    # kicadAddons.kikit
+    # kicadAddons.kikit-library
 
     # Giochi e compatibilità Windows
     wineWow64Packages.full

@@ -23,7 +23,6 @@
     liberation_ttf
     times-newer-roman
     icu77
-    jetbrains-mono
 
     # utilities
     bat
@@ -37,7 +36,7 @@
     vlc
     # blender
     # davinci-resolve
-    krita
+    # krita
     # gimp3
 
     # Network
