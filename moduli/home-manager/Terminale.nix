@@ -89,5 +89,30 @@ in
         '';
       };
     };
+
+    home.packages = with pkgs; [
+      any-nix-shell
+      fzf
+      git
+      links2
+      ncdu
+      dysk
+      opencode
+      tealdeer
+      wget
+      ripgrep
+      ripgrep-all
+      lazygit
+      which
+      bat
+      eza
+      fzf
+
+      unp
+      unrar
+      unzip
+      xz
+      zip
+    ];
   };
 }

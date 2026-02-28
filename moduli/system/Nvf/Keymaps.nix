@@ -30,24 +30,6 @@
         silent = true;
         action = ":cback<CR>";
       }
-      {
-        key = "<leader>at";
-        mode = "n";
-        silent = true;
-        action = ":SupermavenStop<CR>";
-      }
-      {
-        key = "<leader>aa";
-        mode = "n";
-        silent = true;
-        action = ":SupermavenStart<CR>";
-      }
-      {
-        key = "<leader>ar";
-        mode = "n";
-        silent = true;
-        action = ":SupermavenRestart<CR>";
-      }
     ];
 
     clipboard = {
