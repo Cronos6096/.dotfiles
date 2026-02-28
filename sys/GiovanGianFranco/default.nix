@@ -59,10 +59,6 @@
   # Stylix
   stylix.enable = true;
 
-  # environment.systemPackages = with pkgs; [
-  #   boost
-  # ];
-
   # Fix logrotate configuration
   services.logrotate.enable = false;
 

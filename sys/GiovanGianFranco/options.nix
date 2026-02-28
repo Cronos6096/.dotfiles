@@ -8,7 +8,7 @@
       niri.enable = false;
       ollama.enable = false;
       plasma.enable = false;
-      portals.enable = true;
+      portals.enable = false;
       python.enable = true;
       servizi.enable = true;
       solaar.enable = true;
