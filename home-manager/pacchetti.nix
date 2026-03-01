@@ -12,22 +12,12 @@
     prismlauncher
     rimsort
 
-    # archivi
-    unp
-    unrar
-    unzip
-    xz
-    zip
-
     # font
     liberation_ttf
     times-newer-roman
     icu77
 
     # utilities
-    bat
-    eza
-    fzf
     qbittorrent-enhanced
     udiskie # Automontatore
     orca-slicer # Slicer 3D
@@ -45,9 +35,7 @@
     nmap
 
     # Terminale
-    lazygit
     pinentry-all
-    which
     btop-cuda
     caligula
   ];

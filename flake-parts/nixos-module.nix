@@ -51,6 +51,7 @@
         "${self}/nix/"
         "${self}/sys/rpi"
         inputs.disko.nixosModules.disko
+        inputs.home-manager.nixosModules.home-manager
       ];
     };
   };

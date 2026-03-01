@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 {
   virtualisation.docker = {
     enable = true;
@@ -62,27 +62,6 @@
           "--cap-add=SYS_ADMIN"
         ];
       };
-
-      searxng = {
-        image = "docker.io/searxng/searxng:latest";
-        # autoStart = true;
-
-        environment = {
-          TZ = "Europe/Rome";
-        };
-
-        ports = [
-          "8080:8080"
-        ];
-
-        volumes = [
-          "/var/lib/searxng:/etc/searxng"
-        ];
-
-        extraOptions = [
-          "--restart=unless-stopped"
-        ];
-      };
     };
   };
 
@@ -96,5 +75,19 @@
         "serverdiminchiaft"
       ];
     };
+    # searx = {
+    #   enable = true;
+    #   settings = {
+    #     server = {
+    #       port = 8888;
+    #       bind_address = "127.0.0.1";
+    #       secret_key = "secret key";
+    #     };
+    #   };
+    # };
   };
+
+  environment.systemPackages = with pkgs; [
+    # searxng
+  ];
 }

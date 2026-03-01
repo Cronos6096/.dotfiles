@@ -101,7 +101,6 @@ in
       tealdeer
       wget
       ripgrep
-      ripgrep-all
       lazygit
       which
       bat

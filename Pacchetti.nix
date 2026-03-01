@@ -5,19 +5,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # Strumenti da linea di comando
-    any-nix-shell
-    fzf
-    git
-    links2
-    ncdu
-    dysk
-    opencode
-    tealdeer
-    wget
-    ripgrep
-    ripgrep-all
-
     # Codice
     typst
     typst-live
