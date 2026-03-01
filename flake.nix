@@ -28,10 +28,7 @@
     nix-search-tv.url = "github:3timeslazy/nix-search-tv";
 
     hyprland = {
-      type = "git";
-      url = "https://github.com/hyprwm/Hyprland";
-      submodules = true;
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:hyprwm/Hyprland";
     };
 
     noctalia = {

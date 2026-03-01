@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ config, ... }:
 {
   virtualisation.docker = {
     enable = true;
@@ -75,19 +75,5 @@
         "serverdiminchiaft"
       ];
     };
-    # searx = {
-    #   enable = true;
-    #   settings = {
-    #     server = {
-    #       port = 8888;
-    #       bind_address = "127.0.0.1";
-    #       secret_key = "secret key";
-    #     };
-    #   };
-    # };
   };
-
-  environment.systemPackages = with pkgs; [
-    # searxng
-  ];
 }

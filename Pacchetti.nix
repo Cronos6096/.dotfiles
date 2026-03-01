@@ -49,9 +49,9 @@
     dxvk
 
     # Produttività e documenti
-    libreoffice-qt
-    hunspell
-    hunspellDicts.it_IT
+    # libreoffice-qt
+    # hunspell
+    # hunspellDicts.it_IT
     zathura
 
     qalculate-gtk

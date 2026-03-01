@@ -20,6 +20,7 @@
           VISUAL = "nvim";
         };
         stateVersion = "25.11";
+        enableNixpkgsReleaseCheck = false;
       };
       moduli.home-manager.terminale.enable = true;
     };

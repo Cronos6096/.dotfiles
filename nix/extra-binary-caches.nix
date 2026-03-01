@@ -3,6 +3,15 @@
     trusted-users = [ "andme" ];
 
     builders-use-substitutes = true;
+    substituters = [
+      "https://attic.xuyh0120.win/lantian"
+      "https://cache.garnix.io"
+      "https://cache.nixos.org"
+      "https://cuda-maintainers.cachix.org"
+      "https://hyprland.cachix.org"
+      "https://nixos-raspberrypi.cachix.org"
+    ];
+
     trusted-substituters = [
       "https://attic.xuyh0120.win/lantian"
       "https://cache.garnix.io"
