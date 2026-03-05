@@ -14,7 +14,7 @@
       solaar.enable = true;
       steam.enable = true;
       stylix.enable = true;
-      vm.enable = true;
+      vm.enable = false;
       vr.enable = true;
     };
   };

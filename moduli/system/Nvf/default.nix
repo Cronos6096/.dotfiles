@@ -57,6 +57,22 @@
       };
     };
 
+    navigation.harpoon = {
+      enable = true;
+      mappings = {
+        file1 = "<C-h>";
+        file2 = "<C-j>";
+        file3 = "<C-k>";
+        file4 = "<C-l>";
+        markFile = " a";
+        listMarks = " hl";
+      };
+      setupOpts.defaults = {
+        save_on_toggle = true;
+        sync_on_ui_close = true;
+      };
+    };
+
     utility = {
       yazi-nvim = {
         enable = true;
