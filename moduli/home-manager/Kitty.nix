@@ -19,11 +19,6 @@ with lib;
         disable_ligatures never
         cursor_blink_interval 0
         cursor_trail 1
-
-        map f1 create_marker
-        map f2 remove_marker
-        map ctrl+shift+n scroll_to_mark prev
-        map ctrl+n scroll_to_mark next
       '';
     };
   };
