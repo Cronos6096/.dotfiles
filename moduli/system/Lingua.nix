@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 with lib;
 {
   config = mkIf config.moduli.system.lingua.enable {
@@ -8,11 +13,25 @@ with lib;
 
     services.xserver = {
       enable = true;
-      xkb = {
-        layout = "us";
-        variant = "intl";
+      xkb.layout = "us";
+      xkb.options = "compose:ralt";
+    };
+
+    services.keyd = {
+      enable = true;
+      keyboards.default = {
+        ids = [ "*" ];
+        settings = {
+          main = {
+            multi_key = "rightalt";
+          };
+        };
       };
     };
+
+    environment.systemPackages = [
+      pkgs.keyd
+    ];
 
     time.timeZone = "Europe/Rome";
 
