@@ -11,7 +11,6 @@ with lib;
     ./Plasma.nix
     ./Portals.nix
     ./Servizi.nix
-    ./Solaar.nix
     ./Steam.nix
     ./Stylix.nix
     ./Vm.nix
@@ -28,7 +27,6 @@ with lib;
     plasma.enable = mkDefault false;
     portals.enable = mkDefault false;
     servizi.enable = mkDefault false;
-    solaar.enable = mkDefault false;
     steam.enable = mkDefault false;
     stylix.enable = mkDefault false;
     vm.enable = mkDefault false;

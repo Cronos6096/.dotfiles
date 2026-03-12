@@ -13,7 +13,6 @@ with lib;
       portals.enable = mkEnableOption "XDG portals";
       python.enable = mkEnableOption "Python";
       servizi.enable = mkEnableOption "System services";
-      solaar.enable = mkEnableOption "Solaar";
       steam.enable = mkEnableOption "Steam";
       stylix.enable = mkEnableOption "Auto theming";
       vm.enable = mkEnableOption "Virtual machines";

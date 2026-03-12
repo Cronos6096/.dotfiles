@@ -34,7 +34,6 @@
         inputs.home-manager.nixosModules.home-manager
         inputs.lanzaboote.nixosModules.lanzaboote
         inputs.nur.modules.nixos.default
-        inputs.solaar.nixosModules.default
         inputs.stylix.nixosModules.stylix
       ];
     };

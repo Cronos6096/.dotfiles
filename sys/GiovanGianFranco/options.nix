@@ -11,7 +11,6 @@
       portals.enable = false;
       python.enable = true;
       servizi.enable = true;
-      solaar.enable = true;
       steam.enable = true;
       stylix.enable = true;
       vm.enable = false;
