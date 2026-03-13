@@ -13,7 +13,7 @@
       servizi.enable = true;
       steam.enable = true;
       stylix.enable = true;
-      vm.enable = false;
+      vm.enable = true;
       vr.enable = true;
     };
   };
