@@ -60,10 +60,10 @@
     navigation.harpoon = {
       enable = true;
       mappings = {
-        file1 = "<C-h>";
-        file2 = "<C-j>";
-        file3 = "<C-k>";
-        file4 = "<C-l>";
+        file1 = "<C-1>";
+        file2 = "<C-2>";
+        file3 = "<C-3>";
+        file4 = "<C-4>";
         markFile = " a";
         listMarks = " hl";
       };

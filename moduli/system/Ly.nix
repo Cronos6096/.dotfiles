@@ -24,6 +24,7 @@ in
     services = {
       displayManager = {
         enable = true;
+        defaultSession = "hyprland";
         autoLogin = {
           enable = true;
           user = "andme";
@@ -36,8 +37,6 @@ in
         settings = {
           animation = "none";
 
-          autologin = "andme";
-          autologin_session = "/run/current-system/sw/bin/hyprland";
           clear_password = "true";
 
           battery_id = "BAT0";
