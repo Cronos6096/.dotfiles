@@ -10,7 +10,6 @@
     whatsapp-electron
     vesktop
     prismlauncher
-    rimsort
 
     # font
     liberation_ttf

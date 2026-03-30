@@ -14,7 +14,6 @@ with lib;
     services.wivrn = {
       enable = true;
       openFirewall = true;
-      defaultRuntime = true;
       steam.importOXRRuntimes = true;
       config.enable = true;
     };
