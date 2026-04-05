@@ -91,6 +91,8 @@ with lib;
           lockOnSuspend = true;
           showSessionButtonsOnLockScreen = true;
           showHibernateOnLockScreen = false;
+          lockScreenAnimations = true;
+          enableLockScreenMediaControls = false;
           enableShadows = false;
           telemetryEnabled = false;
         };
@@ -152,30 +154,6 @@ with lib;
           size = 1.25;
         };
 
-        sessionMenu = {
-          enableCountdown = true;
-          countdownDuration = 10000;
-          position = "center";
-          showHeader = true;
-          largeButtonsStyle = true;
-          largeButtonsLayout = "grid";
-          showNumberLabels = true;
-          powerOptions = [
-            {
-              action = "shutdown";
-              enabled = true;
-            }
-            {
-              action = "reboot";
-              enabled = true;
-            }
-            {
-              action = "logout";
-              enabled = true;
-            }
-          ];
-        };
-
         notifications = {
           location = "bottom";
         };
@@ -192,6 +170,44 @@ with lib;
 
         colorSchemes = {
           useWallpaperColors = true;
+        };
+
+        sessionMenu = {
+          enableCountdown = true;
+          countdownDuration = 3000;
+          position = "center";
+          showHeader = true;
+          showKeybinds = false;
+          largeButtonsStyle = true;
+          largeButtonsLayout = "single-row";
+          powerOptions = [
+            {
+              action = "lock";
+              command = "";
+              countdownEnabled = true;
+              enabled = true;
+              keybind = "1";
+            }
+            {
+              action = "shutdown";
+              command = "";
+              countdownEnabled = true;
+              enabled = true;
+              keybind = "2";
+            }
+            {
+              action = "logout";
+              command = "";
+              countdownEnabled = true;
+              enabled = true;
+              keybind = "3";
+            }
+          ];
+        };
+
+        plugins = {
+          autoUpdate = true;
+          notifyUpdates = false;
         };
 
         nightLight = {

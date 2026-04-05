@@ -105,7 +105,7 @@ in
       which
       bat
       eza
-      fzf
+      fd
 
       unp
       unrar

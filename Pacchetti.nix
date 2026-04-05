@@ -55,10 +55,7 @@
     zathura
 
     qalculate-gtk
-    # kicad
-    # kikit
-    # kicadAddons.kikit
-    # kicadAddons.kikit-library
+    kicad
 
     # Giochi e compatibilità Windows
     wineWow64Packages.full
@@ -66,16 +63,6 @@
     umu-launcher
     protonup-qt
     protontricks
-
-    # Per fusion 360
-    yad
-    gawk
-    mokutil
-    samba
-    bc
-    lsb-release
-
-    # Progetti e utilità varie
   ];
 
   # Manager partizioni

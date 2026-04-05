@@ -33,7 +33,7 @@ with lib;
         hyprsome
         pyprland
         jq
-        swww
+        awww
         waypaper
         hyprmon
         bibata-cursors

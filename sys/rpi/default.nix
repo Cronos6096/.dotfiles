@@ -103,4 +103,5 @@
       cfg.bootloader
       config.boot.kernelPackages.kernel.version
     ];
+  nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
 }

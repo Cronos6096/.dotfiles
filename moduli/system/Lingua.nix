@@ -13,7 +13,7 @@ with lib;
 
     services.xserver = {
       enable = true;
-      xkb.layout = "us";
+      xkb.layout = "us,it";
       xkb.options = "compose:ralt";
     };
 

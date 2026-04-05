@@ -23,7 +23,6 @@
 
   flake.nixosConfigurations = {
     GiovanGianFranco = inputs.nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
       specialArgs = { inherit inputs self; };
       modules = [
         "${self}/moduli/system"
@@ -39,7 +38,6 @@
     };
 
     rpi5 = inputs.nixos-raspberrypi.lib.nixosSystemFull {
-      system = "aarch64-linux";
       specialArgs = {
         inherit inputs self;
         inherit (inputs) nixos-raspberrypi;
