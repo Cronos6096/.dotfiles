@@ -21,7 +21,10 @@
       "sdhci_pci"
     ];
     initrd.kernelModules = [ ];
-    kernelModules = [ "kvm-amd" ];
+    kernelModules = [
+      "kvm-amd"
+      "ntsync"
+    ];
     extraModulePackages = [ ];
   };
 

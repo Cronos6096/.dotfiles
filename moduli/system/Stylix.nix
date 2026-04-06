@@ -27,6 +27,8 @@ with lib;
       # base0E: "#9095ff"
       # base0F: "#d47ada"
 
+      #https://tinted-theming.github.io/tinted-gallery/
+
       image = ../wallpaper.png;
       polarity = "dark";
 
@@ -37,11 +39,6 @@ with lib;
       };
 
       autoEnable = true;
-
-      # icons = {
-      #   enable = true;
-      #   package = pkgs.kuyen-icons;
-      # };
 
       opacity = {
         terminal = 0.75;
