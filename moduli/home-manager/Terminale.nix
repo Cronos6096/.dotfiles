@@ -90,6 +90,9 @@ in
       };
     };
 
+    programs.nix-index-database.comma.enable = true;
+    programs.nix-index.enable = true;
+
     home.packages = with pkgs; [
       any-nix-shell
       fzf
@@ -106,6 +109,7 @@ in
       bat
       eza
       fd
+      inputs.nix-alien.packages.${pkgs.system}.default
 
       unp
       unrar

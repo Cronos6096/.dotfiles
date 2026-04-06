@@ -11,6 +11,7 @@
       imports = [
         ../../moduli/home-manager/Terminale.nix
         ../../moduli/options.nix
+        inputs.nix-index-database.homeModules.default
       ];
       home = {
         username = "andme";
