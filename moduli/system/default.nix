@@ -2,7 +2,6 @@
 with lib;
 {
   imports = [
-    ./Adb.nix
     ./Docker.nix
     ./Lingua.nix
     ./Ly.nix
@@ -18,7 +17,6 @@ with lib;
   ];
 
   config.moduli.system = {
-    adb.enable = mkDefault false;
     docker.enable = mkDefault false;
     lingua.enable = mkDefault false;
     ly.enable = mkDefault false;

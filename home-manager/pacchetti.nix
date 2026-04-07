@@ -29,6 +29,7 @@
     orca-slicer
     qbittorrent-enhanced
     yazi
+    androidenv.androidPkgs.platform-tools
 
     # Codice
     typst

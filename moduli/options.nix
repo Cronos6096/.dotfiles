@@ -3,7 +3,6 @@ with lib;
 {
   options.moduli = {
     system = {
-      adb.enable = mkEnableOption "Android Debug Bridge";
       docker.enable = mkEnableOption "Docker";
       lingua.enable = mkEnableOption "Language settings";
       ly.enable = mkEnableOption "Ly display manager";

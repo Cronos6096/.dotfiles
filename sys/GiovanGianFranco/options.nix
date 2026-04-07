@@ -1,7 +1,6 @@
 {
   moduli = {
     system = {
-      adb.enable = true;
       docker.enable = false;
       lingua.enable = true;
       ly.enable = true;
