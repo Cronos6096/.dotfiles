@@ -100,11 +100,9 @@ in
       links2
       ncdu
       dysk
-      opencode
       tealdeer
       wget
       ripgrep
-      lazygit
       which
       bat
       eza

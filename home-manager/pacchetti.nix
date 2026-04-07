@@ -1,25 +1,56 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # Roba
-    ckan # Kerbal Space Program mod manager
-    fastfetch
-    lutris # Launcher
-    yazi # terminal file manager
-    kdePackages.kate # Notepad
-    whatsapp-electron
-    vesktop
+    ckan
+    lutris
     prismlauncher
+    vesktop
+    whatsapp-electron
+
+    # File manager e KDE
+    kdePackages.breeze-icons
+    kdePackages.dolphin
+    kdePackages.kio
+    kdePackages.kio-extras
+    kdePackages.kservice
+    kdePackages.qtsvg
+    shared-mime-info
+    kdePackages.ark
+    kdePackages.filelight
+    kdePackages.kdeconnect-kde
 
     # font
+    icu77
     liberation_ttf
     times-newer-roman
-    icu77
 
     # utilities
+    bleachbit
+    orca-slicer
     qbittorrent-enhanced
-    udiskie # Automontatore
-    orca-slicer # Slicer 3D
+    yazi
+
+    # Codice
+    typst
+    typst-live
+    typstyle
+    nixd
+    nixfmt
+    github-cli
+    lmstudio
+    opencode
+    claude-code
+    lazyssh
+    lazygit
+    lazyjournal
+
+    # Produttività e documenti
+    # libreoffice-qt
+    # hunspell
+    # hunspellDicts.it_IT
+    zathura
+    qalculate-gtk
+    kicad
 
     # Video / Audio
     vlc
