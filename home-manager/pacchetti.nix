@@ -6,6 +6,7 @@
     prismlauncher
     vesktop
     whatsapp-electron
+    easyeffects
 
     # File manager e KDE
     kdePackages.breeze-icons
@@ -38,7 +39,6 @@
     nixd
     nixfmt
     github-cli
-    lmstudio
     opencode
     claude-code
     lazyssh
