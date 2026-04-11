@@ -7,7 +7,7 @@ with lib;
       lingua.enable = mkEnableOption "Language settings";
       ly.enable = mkEnableOption "Ly display manager";
       niri.enable = mkEnableOption "Niri window manager";
-      ollama.enable = mkEnableOption "Ollama";
+      Ai.enable = mkEnableOption "Ollama";
       plasma.enable = mkEnableOption "Plasma desktop environment";
       portals.enable = mkEnableOption "XDG portals";
       python.enable = mkEnableOption "Python";

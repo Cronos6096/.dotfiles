@@ -6,7 +6,7 @@ with lib;
     ./Lingua.nix
     ./Ly.nix
     ./Niri.nix
-    ./Ollama.nix
+    ./Ai.nix
     ./Plasma.nix
     ./Portals.nix
     ./Servizi.nix
@@ -21,7 +21,7 @@ with lib;
     lingua.enable = mkDefault false;
     ly.enable = mkDefault false;
     niri.enable = mkDefault false;
-    ollama.enable = mkDefault false;
+    Ai.enable = mkDefault false;
     plasma.enable = mkDefault false;
     portals.enable = mkDefault false;
     servizi.enable = mkDefault false;

@@ -34,6 +34,7 @@
         inputs.lanzaboote.nixosModules.lanzaboote
         inputs.nur.modules.nixos.default
         inputs.stylix.nixosModules.stylix
+        inputs.hermes-agent.nixosModules.default
       ];
     };
 
