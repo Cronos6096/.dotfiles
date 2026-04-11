@@ -48,10 +48,16 @@ in
         enable = true;
         inherit shellAliases;
         interactiveShellInit = ''
-          set fish_greeting
-          ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
-          if test -f /run/agenix/envVars
-            source /run/agenix/envVars
+            set fish_greeting
+            ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+            if test -f /run/agenix/envVars
+            while read -l line
+              set line (string trim -- $line)
+              if string match -qr '^[^#=]' -- $line
+                set -l parts (string split -m1 '=' -- $line)
+                set -gx (string trim -- $parts[1]) $parts[2]
+              end
+            end < /run/agenix/envVars
           end
         '';
       };
