@@ -23,16 +23,19 @@
       "networkmanager"
       "video"
     ];
-    initialHashedPassword = "";
+    shell = pkgs.fish;
+    hashedPasswordFile = config.age.secrets.password.path;
   };
 
-  users.groups.andme = { };
+  programs.fish.enable = true;
 
-  users.users.root.initialHashedPassword = "";
+  nix.settings.trusted-users = [ "andme" ];
 
   services.openssh = {
     enable = true;
-    settings.PermitRootLogin = "yes";
+    settings = {
+      PermitRootLogin = "yes";
+    };
   };
 
   security.sudo = {
@@ -43,6 +46,7 @@
   services.getty.autologinUser = "andme";
 
   networking = {
+    wireless.enable = false;
     useNetworkd = true;
     firewall = {
       allowedUDPPorts = [
@@ -71,26 +75,6 @@
     "99-ethernet-default-dhcp".networkConfig.MulticastDNS = "yes";
     "99-wireless-client-dhcp".networkConfig.MulticastDNS = "yes";
   };
-
-  # networking.wireless.enable = false;
-  # networking.wireless.iwd = {
-  #   enable = true;
-  #   settings = {
-  #     Network = {
-  #       EnableIPv6 = true;
-  #       RoutePriorityOffset = 300;
-  #     };
-  #     Settings.AutoConnect = true;
-  #   };
-  # };
-
-  environment.systemPackages = with pkgs; [
-    git
-    btop
-    lazydocker
-  ];
-
-  nix.settings.trusted-users = [ "andme" ];
 
   system.stateVersion = config.system.nixos.release;
 
