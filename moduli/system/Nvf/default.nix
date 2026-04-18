@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   imports = [
     ./Diagnostics.nix
@@ -8,6 +9,11 @@
   ];
 
   vim = {
+    extraPackages = with pkgs; [
+      fzf
+      ripgrep
+    ];
+
     options = {
       tabstop = 2;
       shiftwidth = 2;
@@ -74,6 +80,7 @@
     };
 
     utility = {
+      direnv.enable = true;
       yazi-nvim = {
         enable = true;
         mappings = {

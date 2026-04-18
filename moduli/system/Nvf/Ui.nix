@@ -26,7 +26,24 @@
       colorful-menu-nvim.enable = true;
     };
 
+    visuals = {
+      rainbow-delimiters.enable = true;
+      nvim-web-devicons.enable = true;
+      cinnamon-nvim = {
+        enable = true;
+        setupOpts = {
+          keymaps = {
+            basic = true;
+            extra = true;
+          };
+          options = {
+            mode = "cursor";
+          };
+        };
+      };
+    };
+
+    notify.nvim-notify.enable = true;
     statusline.lualine.enable = true;
-    visuals.rainbow-delimiters.enable = true;
   };
 }
