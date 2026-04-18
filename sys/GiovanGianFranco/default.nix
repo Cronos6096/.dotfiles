@@ -11,7 +11,7 @@
     ./gpu.nix
     ./audio.nix
     ./options.nix
-    ../../Pacchetti.nix
+    ./Pacchetti.nix
   ];
 
   # Hostname
