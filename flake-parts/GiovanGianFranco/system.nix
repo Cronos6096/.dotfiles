@@ -16,14 +16,16 @@
   ];
 
   nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v4;
+  boot = {
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v4;
 
-  boot.loader.systemd-boot.enable = lib.mkForce false;
+    loader.systemd-boot.enable = lib.mkForce false;
 
-  boot.lanzaboote = {
-    enable = true;
-    pkiBundle = "/var/lib/sbctl";
-    configurationLimit = 10;
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/var/lib/sbctl";
+      configurationLimit = 10;
+    };
   };
 
   boot.loader.efi.canTouchEfiVariables = true;

@@ -20,7 +20,7 @@ with lib;
     users.users.andme.extraGroups = [ "hermes" ];
 
     services.hermes-agent = {
-      enable = true;
+      enable = false;
       user = "andme";
       group = "users";
       createUser = false;

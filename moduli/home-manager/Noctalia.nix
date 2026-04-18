@@ -12,7 +12,7 @@ with lib;
         bar = {
           position = "top";
           monitors = [ ];
-          density = "confortable";
+          density = "default";
           showOutline = false;
           showCapsule = true;
           capsuleOpacity = mkForce 0.9;
@@ -56,8 +56,32 @@ with lib;
                 maxWidth = 450;
               }
               {
+                defaultSettings = {
+                  camFilterRegex = "";
+                  enableToast = true;
+                  hideInactive = false;
+                  iconSpacing = 4;
+                  micFilterRegex = "";
+                  removeMargins = false;
+                };
+                id = "plugin:privacy-indicator";
+              }
+              {
+                defaultSettings = { };
+                id = "plugin:kde-connect";
+              }
+              {
+                blacklist = [
+                  "KDE*"
+                ];
+
+                chevronColor = "none";
+                colorizeIcons = true;
+                drawerEnabled = false;
+                hidePassive = false;
                 id = "Tray";
               }
+
               {
                 id = "NotificationHistory";
               }
