@@ -44,14 +44,15 @@
     "fs.file-max" = 524288;
   };
   boot.loader.timeout = 0;
+  boot.initrd.systemd.enable = true;
+  boot.kernelParams = [ "video=1920x1080@144" ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/b93d1662-1ce3-4bf0-ac5d-25998cb4b0ec";
     fsType = "ext4";
   };
 
-  boot.initrd.luks.devices."luks-26655e7b-78c1-47bb-b42f-e9ecf53f7a28".device =
-    "/dev/disk/by-uuid/26655e7b-78c1-47bb-b42f-e9ecf53f7a28";
+  boot.initrd.luks.devices."main".device = "/dev/disk/by-uuid/26655e7b-78c1-47bb-b42f-e9ecf53f7a28";
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/F7D6-6DF6";

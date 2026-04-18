@@ -12,7 +12,7 @@ let
     ff = "fastfetch";
     rebuild = "nh os switch ~/.dotfiles/ -H GiovanGianFranco --update";
     rb = "rebuild";
-    rbpi = "sudo nixos-rebuild switch --flake ~/.dotfiles/#rpi5 --target-host andme@192.168.1.167 --use-remote-sudo";
+    rbpi = "sudo nixos-rebuild switch --flake ~/.dotfiles/#rpi5 --target-host andme@192.168.1.167 --sudo";
     rbc = "rebuild && clean";
     rebuildnoup = "nh os switch ~/.dotfiles/ -H GiovanGianFranco";
     rebuildpush = " cdconf && git add * && git commit && git push && nh os switch . -H GiovanGianFranco";

@@ -4,7 +4,7 @@
   ...
 }:
 let
-  kernelBundle = pkgs.linuxAndFirmware.v6_6_31;
+  kernelBundle = pkgs.linuxAndFirmware.default;
 in
 {
   boot = {
