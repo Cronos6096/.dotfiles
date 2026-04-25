@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
 }:
 with lib;
@@ -10,12 +9,8 @@ with lib;
   config = mkIf config.moduli.home-manager.hyprland.enable {
     wayland.windowManager.hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage =
-        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-      settings = {
-        xwayland.enable = true;
-      };
+      package = null;
+      portalPackage = null;
     };
 
     home = {

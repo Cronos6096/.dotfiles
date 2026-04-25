@@ -63,6 +63,13 @@
     ];
   };
 
+  # Hibernation
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend-then-hibernate";
+    HandleLidSwitchExternalPower = "hibernate";
+    HandleLidSwitchDocked = "ignore";
+  };
+
   networking.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
