@@ -15,8 +15,9 @@ with lib;
 
     home = {
       file."/home/andme/.config/hypr/hyprland.conf".source =
-        lib.mkForce ../../moduli/wm/hypr/hyprland.conf;
-      file."/home/andme/.config/pypr/config.toml".source = ../../moduli/wm/hypr/pyprland.toml;
+        config.lib.file.mkOutOfStoreSymlink ../../moduli/wm/hypr/hyprland.conf;
+      file."/home/andme/.config/pypr/config.toml".source =
+        config.lib.file.mkOutOfStoreSymlink ../../moduli/wm/hypr/pyprland.toml;
 
       packages = with pkgs; [
         wl-clipboard
