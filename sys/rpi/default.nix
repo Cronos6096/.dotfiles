@@ -58,6 +58,7 @@
         8080
         8123
         8443
+        25565
       ];
       allowedTCPPorts = [
         5353
@@ -65,6 +66,7 @@
         8080
         8123
         8443
+        25565
       ];
       allowedTCPPortRanges = [
         {
