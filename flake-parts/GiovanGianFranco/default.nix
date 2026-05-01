@@ -5,4 +5,11 @@
     ./secrets.nix
     ./system.nix
   ];
+  nixpkgs.overlays = [
+    (_: prev: {
+      openldap = prev.openldap.overrideAttrs {
+        doCheck = false;
+      };
+    })
+  ];
 }
