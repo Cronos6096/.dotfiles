@@ -72,9 +72,4 @@
   ];
 
   programs.vesktop.enable = true;
-  stylix.targets.vesktop = {
-    enable = true;
-    colors.enable = true;
-    fonts.enable = true;
-  };
 }
