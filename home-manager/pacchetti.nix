@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     ckan
-    lutris
+    lutris-free
     prismlauncher
     vesktop
     whatsapp-electron

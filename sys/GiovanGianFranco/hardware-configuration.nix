@@ -63,6 +63,8 @@
     ];
   };
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   # Hibernation
   services.logind.settings.Login = {
     HandleLidSwitch = "suspend-then-hibernate";

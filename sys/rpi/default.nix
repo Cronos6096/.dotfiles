@@ -29,7 +29,10 @@
 
   programs.fish.enable = true;
 
-  nix.settings.trusted-users = [ "andme" ];
+  nix.settings = {
+    trusted-users = [ "andme" ];
+    sandbox = false;
+  };
 
   services.openssh = {
     enable = true;
