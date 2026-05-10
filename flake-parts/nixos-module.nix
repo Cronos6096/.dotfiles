@@ -38,7 +38,9 @@
       ];
     };
 
-    rpi5 = inputs.nixos-raspberrypi.lib.nixosSystemFull {
+    rpi5 = inputs.nixpkgs.lib.nixosSystem {
+      system = "aarch64-linux";
+
       specialArgs = {
         inherit inputs self;
         inherit (inputs) nixos-raspberrypi;

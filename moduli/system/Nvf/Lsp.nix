@@ -54,11 +54,11 @@
         };
       };
 
-      rust.enable = true;
-      python.enable = true;
       lua.enable = true;
+      python.enable = true;
       clang.enable = false;
-      zig.enable = false;
+      # rust.enable = true;
+      # zig.enable = true;
     };
   };
 }

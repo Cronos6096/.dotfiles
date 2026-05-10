@@ -12,24 +12,18 @@ let
     ff = "fastfetch";
     rebuild = "nh os switch ~/.dotfiles/ -H GiovanGianFranco --update";
     rb = "rebuild";
-    rbpi = "nixos-rebuild switch --flake ~/.dotfiles/#rpi5 --target-host andme@192.168.1.167 --use-remote-sudo";
+    rbpi = "nixos-rebuild switch --flake ~/.dotfiles/#rpi5 --target-host root@rpi5.local --sudo --use-substitutes --build-host root@rpi5.local";
     rbc = "rebuild && clean";
     rebuildnoup = "nh os switch ~/.dotfiles/ -H GiovanGianFranco";
-    rebuildpush = " cdconf && git add * && git commit && git push && nh os switch . -H GiovanGianFranco";
     clean = "nh clean all";
     cdconf = "z ~/.dotfiles";
-    cdpr = "z ~/progetti";
     v = "nvim";
     py = "python";
-    py3 = "python3";
     ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
-    gas = "git add * && git stage *";
     zj = "zellij";
     ssh = "kitten ssh";
-
     cat = "bat";
-    find = "fd";
-    grep = "rg";
+    cd = "z";
     tree = "eza --git --icons --tree";
   };
 in
