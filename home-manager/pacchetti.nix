@@ -7,7 +7,6 @@
     vesktop
     whatsapp-electron
     easyeffects
-    blanket
 
     # File manager e KDE
     kdePackages.breeze-icons
