@@ -10,34 +10,6 @@
   virtualisation.oci-containers = {
     backend = "docker";
     containers = {
-      crafty = {
-        image = "registry.gitlab.com/crafty-controller/crafty-4:latest";
-        autoStart = true;
-
-        environment = {
-          TZ = "Europe/Rome";
-        };
-
-        ports = [
-          "8443:8443" # HTTPS
-          "25500-25600:25500-25600" # Java MC port range
-        ];
-
-        volumes = [
-          "/var/lib/crafty/backups:/crafty/backups"
-          "/var/lib/crafty/logs:/crafty/logs"
-          "/var/lib/crafty/servers:/crafty/servers"
-          "/var/lib/crafty/config:/crafty/app/config"
-          "/var/lib/crafty/import:/crafty/import"
-        ];
-
-        extraOptions = [
-          "--network=host"
-          "--cap-add=NET_ADMIN"
-          "--cap-add=SYS_ADMIN"
-        ];
-      };
-
       home-assistant = {
         image = "ghcr.io/home-assistant/home-assistant:stable";
         autoStart = true;

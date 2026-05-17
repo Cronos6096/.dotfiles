@@ -39,6 +39,7 @@
     settings = {
       PermitRootLogin = "yes";
     };
+    extraConfig = "IPQoS none";
   };
 
   security.sudo = {

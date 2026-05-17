@@ -7,6 +7,7 @@
     vesktop
     whatsapp-electron
     easyeffects
+    blanket
 
     # File manager e KDE
     kdePackages.breeze-icons
@@ -66,7 +67,6 @@
     nmap
 
     # Terminale
-    pinentry-all
     btop-cuda
     caligula
   ];

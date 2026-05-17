@@ -65,7 +65,7 @@ hl.bind(mainMod .. "+ SHIFT + F", hl.dsp.window.fullscreen({ "maximised" }))
 
 hl.bind(mainMod .. "+" .. "C", hl.dsp.window.center())
 hl.bind(mainMod .. "+" .. "Z", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. "+" .. "Y", hl.dsp.window.kill())
+hl.bind(mainMod .. "+" .. "Y", hl.dsp.window.close())
 
 -- Scrolling layout
 hl.bind(mainMod .. "+" .. "X", function()
