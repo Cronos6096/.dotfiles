@@ -16,7 +16,7 @@ with lib;
           showOutline = false;
           showCapsule = true;
           capsuleOpacity = mkForce 0.9;
-          backgroundOpacity = mkForce 0.0;
+          backgroundOpacity = mkForce 0;
           useSeparateOpacity = true;
           floating = false;
           marginVertical = 4;

@@ -21,16 +21,13 @@ with lib;
     home-manager = {
       direnv.enable = mkEnableOption "Direnv";
       distrobox.enable = mkEnableOption "Distrobox";
-      dunst.enable = mkEnableOption "Dunst daemon";
       git.enable = mkEnableOption "Git";
       hyprland.enable = mkEnableOption "Hyprland window manager";
       kitty.enable = mkEnableOption "Kitty";
       niri.enable = mkEnableOption "Niri window manager (home-manager)";
       noctalia.enable = mkEnableOption "Noctalia shell";
-      rofi.enable = mkEnableOption "Rofi app launcher";
       terminale.enable = mkEnableOption "Terminale";
       waybar.enable = mkEnableOption "Waybar";
-      wezterm.enable = mkEnableOption "WezTerm terminal";
       wlsunset.enable = mkEnableOption "Wl-sunset";
       zen.enable = mkEnableOption "Zen browser";
     };
