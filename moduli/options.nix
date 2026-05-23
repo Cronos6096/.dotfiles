@@ -10,7 +10,6 @@ with lib;
       Ai.enable = mkEnableOption "Ollama";
       plasma.enable = mkEnableOption "Plasma desktop environment";
       portals.enable = mkEnableOption "XDG portals";
-      python.enable = mkEnableOption "Python";
       servizi.enable = mkEnableOption "System services";
       steam.enable = mkEnableOption "Steam";
       stylix.enable = mkEnableOption "Auto theming";

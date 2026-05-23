@@ -17,22 +17,6 @@ with lib;
       xkb.options = "compose:ralt";
     };
 
-    services.keyd = {
-      enable = true;
-      keyboards.default = {
-        ids = [ "*" ];
-        settings = {
-          main = {
-            multi_key = "rightalt";
-          };
-        };
-      };
-    };
-
-    environment.systemPackages = [
-      pkgs.keyd
-    ];
-
     time.timeZone = "Europe/Rome";
 
     i18n.extraLocaleSettings = {

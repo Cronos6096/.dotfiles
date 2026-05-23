@@ -8,7 +8,6 @@
       niri.enable = false;
       plasma.enable = false;
       portals.enable = false;
-      python.enable = true;
       servizi.enable = true;
       steam.enable = true;
       stylix.enable = true;
