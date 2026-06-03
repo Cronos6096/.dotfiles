@@ -1,6 +1,4 @@
 {
-  description = "NixOS configuration";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -97,7 +95,7 @@
     };
 
     hermes-agent = {
-      url = "github:/nousresearch/hermes-agent";
+      url = "github:nousresearch/hermes-agent";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
@@ -119,7 +117,6 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         disko.follows = "disko";
-        flake-parts.follows = "flake-parts";
       };
     };
   };

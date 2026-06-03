@@ -43,7 +43,6 @@ with lib;
       opacity = {
         terminal = 0.75;
         desktop = 0.00;
-        popups = 0.90;
       };
 
       fonts = {

@@ -7,8 +7,6 @@ with lib;
     programs.noctalia-shell = {
       enable = true;
       settings = {
-        settingsVersion = 0;
-
         bar = {
           position = "top";
           monitors = [ ];
@@ -26,10 +24,6 @@ with lib;
           hideOnOverview = false;
           widgets = {
             left = [
-              {
-                id = "ControlCenter";
-                useDistroLogo = true;
-              }
               {
                 id = "Workspace";
                 labelMode = "none";

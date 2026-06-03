@@ -56,6 +56,9 @@
     };
   };
 
+  # HACK https://github.com/NixOS/nixpkgs/issues/409986
+  environment.etc."xdg/menus/applications.menu".source = ./applications.menu;
+
   # Fish shell
   programs.fish.enable = true;
 

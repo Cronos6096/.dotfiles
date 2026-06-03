@@ -37,7 +37,7 @@ hl.bind(mainMod .. "+" .. "V", hl.dsp.exec_cmd(terminal .. [[ -e "clipse"]]))
 hl.bind(mainMod .. "+" .. "SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
 
 -- Scratchpad
-hl.bind(mainMod .. "+" .. "W", hl.dsp.exec_cmd("pypr toggle term"))
+hl.bind(mainMod .. "+" .. "W", hl.dsp.exec_cmd("pypr-client toggle term"))
 
 -- Media keys
 hl.bind("XF86Calculator", hl.dsp.exec_cmd("qalculate-gtk"))

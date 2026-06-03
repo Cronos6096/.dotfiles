@@ -74,13 +74,6 @@ hl.window_rule({
 })
 
 hl.window_rule({
-	name = "float-dropterm",
-	match = { class = "kitty-dropterm" },
-	float = true,
-	no_focus = true,
-})
-
-hl.window_rule({
 	name = "suppress-maximize-events",
 	match = { class = ".*" },
 	suppress_event = "maximize",

@@ -25,6 +25,7 @@ let
     cat = "bat";
     cd = "z";
     tree = "eza --git --icons --tree";
+    dnd = "kitten dnd";
   };
 in
 {
