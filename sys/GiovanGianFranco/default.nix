@@ -64,6 +64,7 @@
 
   # Stylix
   stylix.enable = true;
+  stylix.targets.kmscon.enable = false;
 
   # Fix logrotate configuration
   services.logrotate.enable = false;
