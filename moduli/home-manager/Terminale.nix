@@ -109,6 +109,7 @@ in
       eza
       fd
       inputs.nix-alien.packages.${pkgs.system}.default
+      devenv
 
       unp
       unrar

@@ -26,13 +26,13 @@ end
 
 hl.bind(mainMod .. "+" .. "B", hl.dsp.exec_cmd("zen-beta"))
 hl.bind(mainMod .. "+" .. "E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. "+" .. "M", hl.dsp.exec_cmd("noctalia-shell ipc call sessionMenu toggle"))
+hl.bind(mainMod .. "+" .. "M", hl.dsp.exec_cmd("noctalia ipc call sessionMenu toggle"))
 hl.bind(mainMod .. "+" .. "P", hl.dsp.exec_cmd("prismlauncher"))
 hl.bind(mainMod .. "+" .. "Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. "+" .. "R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. "+" .. "SHIFT + D", hl.dsp.exec_cmd("vesktop"))
 hl.bind(mainMod .. "+" .. "SHIFT + S", hl.dsp.exec_cmd("steam"))
-hl.bind(mainMod .. "+" .. "T", hl.dsp.exec_cmd("noctalia-shell ipc call bar toggle"))
+hl.bind(mainMod .. "+" .. "T", hl.dsp.exec_cmd("noctalia ipc call bar toggle"))
 hl.bind(mainMod .. "+" .. "V", hl.dsp.exec_cmd(terminal .. [[ -e "clipse"]]))
 hl.bind(mainMod .. "+" .. "SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
 

@@ -1,7 +1,7 @@
 hl.on("hyprland.start", function()
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("kdeconnectd & vicinae server")
-	hl.exec_cmd("noctalia-shell -d & awww-daemon")
+	hl.exec_cmd("noctalia -d & awww-daemon")
 	hl.exec_cmd("awww img ~/.dotfiles/moduli/wallpaper.png")
 	hl.exec_cmd("nm-applet & udiskie")
 	hl.exec_cmd("kdeconnect-indicator & pypr & easyeffects -w")
