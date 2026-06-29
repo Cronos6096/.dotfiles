@@ -12,7 +12,7 @@ let
     ff = "fastfetch";
     rebuild = "nh os switch ~/.dotfiles/ -H GiovanGianFranco --update";
     rb = "rebuild";
-    rbpi = "nixos-rebuild switch --flake ~/.dotfiles/#rpi5 --target-host root@rpi5.local --sudo --use-substitutes --build-host root@rpi5.local";
+    rbpi = "nixos-rebuild switch --flake ~/.dotfiles/#rpi5 --target-host root@rpi5.local --sudo --use-substitutes";
     rbc = "rebuild && clean";
     rebuildnoup = "nh os switch ~/.dotfiles/ -H GiovanGianFranco";
     clean = "nh clean all";

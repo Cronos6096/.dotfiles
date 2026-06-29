@@ -33,17 +33,16 @@
     androidenv.androidPkgs.platform-tools
 
     # Codice
+    claude-code
+    github-cli
+    lazygit
+    mcp-nixos
+    nixd
+    nixfmt
+    opencode
     typst
     typst-live
     typstyle
-    nixd
-    nixfmt
-    github-cli
-    opencode
-    claude-code
-    lazyssh
-    lazygit
-    lazyjournal
 
     # Produttività e documenti
     # libreoffice-qt

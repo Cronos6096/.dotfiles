@@ -9,7 +9,7 @@
     backupFileExtension = "backup";
     users.andme = {
       imports = [
-        ../../moduli/home-manager/Terminale.nix
+        # ../../moduli/home-manager/Terminale.nix
         ../../moduli/options.nix
         inputs.nix-index-database.homeModules.default
       ];

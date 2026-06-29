@@ -32,22 +32,24 @@ with lib;
           config.lib.file.mkOutOfStoreSymlink ./../wm/hypr/monitors.lua
         );
         ".config/pypr/config.toml".source = mkForce (
-          config.lib.file.mkOutOfStoreSymlink ./../wm/hypr/pyprland.toml
+          config.lib.file.mkOutOfStoreSymlink ./../wm/pypr/config.toml
         );
       };
+
       packages = with pkgs; [
-        wl-clipboard
-        clipse
-        hyprshot
-        networkmanager
-        hyprsome
-        pyprland
-        jq
         awww
-        waypaper
-        hyprmon
         bibata-cursors
+        clipse
+        hyprmon
+        hyprshot
+        hyprshutdown
+        hyprsome
+        jq
+        networkmanager
+        pyprland
         vicinae
+        waypaper
+        wl-clipboard
       ];
     };
   };
