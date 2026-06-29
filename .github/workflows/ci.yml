@@ -14,12 +14,16 @@ jobs:
       matrix:
         include:
           - host: GiovanGianFranco
-            runner: x86_64-linux
+            runner: ubuntu-latest
           - host: rpi5
-            runner: aarch64-linux
+            runner: ubuntu-24.04-arm
 
     steps:
       - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - uses: DeterminateSystems/magic-nix-cache-action@main
 
       - name: Build toplevel
         run: |
