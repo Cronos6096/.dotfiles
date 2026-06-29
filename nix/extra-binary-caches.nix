@@ -11,6 +11,7 @@
       "https://hyprland.cachix.org"
       "https://nixos-raspberrypi.cachix.org"
       "https://noctalia.cachix.org"
+      "https://system.cachix.org"
     ];
 
     extra-trusted-public-keys = [
@@ -20,6 +21,7 @@
       "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
       "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+      "system.cachix.org-1:F8Q6CP+ye/x4wzpCziyJrMw90Sjd1EATiR9DLJK9aco="
     ];
   };
 }

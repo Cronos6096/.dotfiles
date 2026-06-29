@@ -23,11 +23,10 @@ jobs:
 
       - uses: DeterminateSystems/nix-installer-action@main
 
-      - uses: nix-community/cache-nix-action@v6
+      - uses: cachix/cachix-action@v15
         with:
-          primary-key: nix-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('flake.lock') }}
-          restore-prefixes-first-match: nix-${{ runner.os }}-${{ runner.arch }}-
-          gc-max-store-size-linux: 7516192768  # 7 GiB (10 GiB limit)
+          name: cronos6096
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
       - name: Build toplevel
         run: |
