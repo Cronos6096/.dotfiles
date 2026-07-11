@@ -26,6 +26,7 @@
       "ntsync"
     ];
     extraModulePackages = [ ];
+    tmp.cleanOnBoot = true;
   };
 
   # Swap

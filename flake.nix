@@ -74,7 +74,6 @@
       url = "github:notashelf/nvf";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
       };
     };
 

@@ -21,7 +21,13 @@
       expandtab = true;
     };
     searchCase = "ignore";
-    git.enable = true;
+    git = {
+      enable = true;
+      neogit = {
+        enable = true;
+        mappings.open = " gg";
+      };
+    };
 
     telescope = {
       enable = true;
@@ -55,10 +61,6 @@
       toggleterm = {
         enable = true;
         mappings.open = " tt";
-        lazygit = {
-          enable = true;
-          mappings.open = " gg";
-        };
         setupOpts.enable_winbar = true;
       };
     };
@@ -81,6 +83,7 @@
 
     utility = {
       direnv.enable = true;
+      csvview.enable = true;
       yazi-nvim = {
         enable = true;
         mappings = {

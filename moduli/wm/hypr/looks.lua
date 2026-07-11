@@ -1,9 +1,13 @@
 local active_border = "rgba(00bab3d0)"
 local inactive_border = "rgba(000000d0)"
+
+local gaps_in = 0
+local gaps_out = 4
+
 hl.config({
 	general = {
-		gaps_in = 4,
-		gaps_out = 8,
+		gaps_in = gaps_in,
+		gaps_out = gaps_out,
 		border_size = 2,
 
 		col = {
@@ -18,8 +22,8 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 10,
-		rounding_power = 2,
+		rounding = 0,
+		rounding_power = 0,
 
 		active_opacity = 1.0,
 		inactive_opacity = 1.0,
@@ -51,8 +55,8 @@ hl.config({
 })
 
 -- Smart gaps
-hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 8, gaps_in = 0 })
-hl.workspace_rule({ workspace = "f[1]", gaps_out = 8, gaps_in = 0 })
+hl.workspace_rule({ workspace = "w[tv1]", gaps_out = gaps_out, gaps_in = 0 })
+hl.workspace_rule({ workspace = "f[1]", gaps_out = gaps_out, gaps_in = 0 })
 hl.window_rule({
 	name = "no-gaps-wtv1",
 	match = { float = false, workspace = "w[tv1]" },

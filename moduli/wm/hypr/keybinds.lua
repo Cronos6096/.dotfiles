@@ -26,7 +26,7 @@ end
 
 hl.bind(mainMod .. "+" .. "B", hl.dsp.exec_cmd("zen-beta"))
 hl.bind(mainMod .. "+" .. "E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. "+" .. "M", hl.dsp.exec_cmd("hyrpshutdown"))
+hl.bind(mainMod .. "+" .. "M", hl.dsp.exec_cmd("hyprshutdown"))
 hl.bind(mainMod .. "+" .. "P", hl.dsp.exec_cmd("prismlauncher"))
 hl.bind(mainMod .. "+" .. "Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. "+" .. "R", hl.dsp.exec_cmd(menu))

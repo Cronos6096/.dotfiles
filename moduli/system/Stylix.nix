@@ -42,7 +42,7 @@ with lib;
 
       opacity = {
         terminal = 0.75;
-        desktop = 0.00;
+        desktop = 0.75;
       };
 
       fonts = {

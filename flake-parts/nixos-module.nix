@@ -4,6 +4,11 @@
   ...
 }:
 {
+  systems = [
+    "x86_64-linux"
+    "aarch64-linux"
+  ];
+
   perSystem =
     { pkgs, ... }:
     let
@@ -32,9 +37,10 @@
         "${self}/sys/GiovanGianFranco"
         inputs.home-manager.nixosModules.home-manager
         inputs.lanzaboote.nixosModules.lanzaboote
-        inputs.nur.modules.nixos.default
         inputs.stylix.nixosModules.stylix
         # inputs.hermes-agent.nixosModules.default
+
+        inputs.nur.modules.nixos.default
       ];
     };
 

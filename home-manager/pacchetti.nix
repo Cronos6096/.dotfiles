@@ -5,6 +5,7 @@
     lutris-free
     prismlauncher
     vesktop
+    nur.repos.rogreat.amethyst-mod-manager
     whatsapp-electron
     easyeffects
 
@@ -45,9 +46,9 @@
     typstyle
 
     # Produttività e documenti
-    # libreoffice-qt
-    # hunspell
-    # hunspellDicts.it_IT
+    libreoffice-qt
+    hunspell
+    hunspellDicts.it_IT
     zathura
     qalculate-gtk
     kicad
