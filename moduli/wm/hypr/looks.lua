@@ -5,67 +5,67 @@ local gaps_in = 0
 local gaps_out = 4
 
 hl.config({
-	general = {
-		gaps_in = gaps_in,
-		gaps_out = gaps_out,
-		border_size = 2,
+  general = {
+    gaps_in = gaps_in,
+    gaps_out = gaps_out,
+    border_size = 2,
 
-		col = {
-			active_border = { colors = { active_border } },
-			inactive_border = inactive_border,
-		},
+    col = {
+      active_border = { colors = { active_border } },
+      inactive_border = inactive_border,
+    },
 
-		resize_on_border = false,
-		allow_tearing = false,
+    resize_on_border = false,
+    allow_tearing = false,
 
-		layout = "dwindle",
-	},
+    layout = "dwindle",
+  },
 
-	decoration = {
-		rounding = 0,
-		rounding_power = 0,
+  decoration = {
+    rounding = 0,
+    rounding_power = 1,
 
-		active_opacity = 1.0,
-		inactive_opacity = 1.0,
+    active_opacity = 1.0,
+    inactive_opacity = 1.0,
 
-		shadow = {
-			enabled = false,
-		},
+    shadow = {
+      enabled = false,
+    },
 
-		blur = {
-			enabled = true,
-			size = 3,
-			passes = 1,
-			vibrancy = 0.1696,
-		},
-	},
+    blur = {
+      enabled = true,
+      size = 3,
+      passes = 1,
+      vibrancy = 0.1696,
+    },
+  },
 
-	animations = {
-		enabled = true,
-	},
+  animations = {
+    enabled = true,
+  },
 
-	cursor = {
-		no_hardware_cursors = true,
-		default_monitor = "HDMI-A-1",
-	},
+  cursor = {
+    no_hardware_cursors = true,
+    default_monitor = "HDMI-A-1",
+  },
 
-	xwayland = {
-		force_zero_scaling = true,
-	},
+  xwayland = {
+    force_zero_scaling = true,
+  },
 })
 
 -- Smart gaps
 hl.workspace_rule({ workspace = "w[tv1]", gaps_out = gaps_out, gaps_in = 0 })
 hl.workspace_rule({ workspace = "f[1]", gaps_out = gaps_out, gaps_in = 0 })
 hl.window_rule({
-	name = "no-gaps-wtv1",
-	match = { float = false, workspace = "w[tv1]" },
-	border_size = 0,
+  name = "no-gaps-wtv1",
+  match = { float = false, workspace = "w[tv1]" },
+  border_size = 0,
 })
 hl.window_rule({
-	name = "no-gaps-f1",
-	match = { float = false, workspace = "f[1]" },
-	border_size = 0,
+  name = "no-gaps-f1",
+  match = { float = false, workspace = "f[1]" },
+  border_size = 0,
 })
 
 -- Animations

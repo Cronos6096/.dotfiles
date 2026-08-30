@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   vim = {
     lsp = {
@@ -8,6 +9,18 @@
       inlayHints.enable = true;
       lspconfig.enable = true;
       otter-nvim.enable = true;
+
+      servers = {
+        basedpyright.settings = {
+          basedpyright = {
+            analysis = {
+              typeCheckingMode = "standard";
+              autoImportCompletions = true;
+              useLibraryCodeForTypes = true;
+            };
+          };
+        };
+      };
     };
 
     syntaxHighlighting = true;

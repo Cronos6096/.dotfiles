@@ -18,7 +18,6 @@
         "en"
         "it"
       ];
-      vim-dirtytalk.enable = true;
     };
   };
 }
