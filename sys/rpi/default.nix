@@ -8,7 +8,7 @@
 {
   imports = [
     ./pi5-configtxt.nix
-    ./disko-btrfs.nix
+    ./disko.nix
     ./server.nix
     ./options.nix
   ];
@@ -84,14 +84,10 @@
 
   system.stateVersion = config.system.nixos.release;
 
-  system.nixos.tags =
-    let
-      cfg = config.boot.loader.raspberry-pi;
-    in
-    [
-      "raspberry-pi-${cfg.variant}"
-      cfg.bootloader
-      config.boot.kernelPackages.kernel.version
-    ];
+  system.nixos.tags = [
+    "raspberry-pi-5"
+    "generic-extlinux-compatible"
+    config.boot.kernelPackages.kernel.version
+  ];
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
 }

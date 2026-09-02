@@ -2,7 +2,6 @@
   pkgs,
   config,
   inputs,
-  lib,
   ...
 }:
 {
@@ -56,8 +55,10 @@
     };
   };
 
-  # HACK https://github.com/NixOS/nixpkgs/issues/409986
-  environment.etc."xdg/menus/applications.menu".source = ./applications.menu;
+  # HACK: https://github.com/NixOS/nixpkgs/issues/409986
+  environment.etc."xdg/menus/applications.menu".source = pkgs.runCommand "applications.menu" { } ''
+    cp ${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu $out
+  '';
 
   # Fish shell
   programs.fish.enable = true;

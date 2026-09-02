@@ -97,7 +97,7 @@ in
                   let
                     subvolAbsPath = lib.strings.normalizePath "${btrfsMntPoint}/${subvol.name}";
                     dst = "${subvolAbsPath}-blank";
-                    # NOTE: this one-liner has the same functionality (inspired by zfs hook)
+                    #NOTE: this one-liner has the same functionality (inspired by zfs hook)
                     # btrfs subvolume list -s mnt/rootfs | grep -E ' rootfs-blank$' || btrfs subvolume snapshot -r mnt/rootfs mnt/rootfs-blank
                   in
                   ''

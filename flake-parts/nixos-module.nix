@@ -47,10 +47,7 @@
     rpi5 = inputs.nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
 
-      specialArgs = {
-        inherit inputs self;
-        inherit (inputs) nixos-raspberrypi;
-      };
+      specialArgs = { inherit inputs self; };
 
       modules = [
         "${self}/flake-parts/rpi5/"

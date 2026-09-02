@@ -69,7 +69,6 @@
       enable = true;
       tokenFile = config.age.secrets.duckdnsToken.path;
       domains = [
-        # "serverdiminecraft"
         "casindra"
         "serverdiminchiaft"
       ];

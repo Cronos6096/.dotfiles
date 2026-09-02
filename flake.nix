@@ -3,13 +3,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
 
-    # Kernel
-    nix-cachyos-kernel = {
-      url = "github:xddxdd/nix-cachyos-kernel/release";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-      };
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = {
@@ -87,19 +83,6 @@
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # hermes-agent = {
-    #   url = "github:nousresearch/hermes-agent";
-    #   inputs = {
-    #     nixpkgs.follows = "nixpkgs";
-    #     flake-parts.follows = "flake-parts";
-    #   };
-    # };
-
-    nixos-raspberrypi = {
-      url = "github:nvmd/nixos-raspberrypi/develop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
