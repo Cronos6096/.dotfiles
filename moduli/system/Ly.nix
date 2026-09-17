@@ -8,9 +8,9 @@ with lib;
 {
   config = mkIf config.moduli.system.ly.enable {
     services = {
+      # greetd?
       displayManager = {
         enable = true;
-        defaultSession = "hyprland";
         autoLogin = {
           enable = true;
           user = "andme";
@@ -19,6 +19,7 @@ with lib;
 
       displayManager.ly = {
         enable = true;
+        x11Support = false;
         settings = {
           animation = "none";
 

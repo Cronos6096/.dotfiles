@@ -5,7 +5,7 @@
     lutris-free
     prismlauncher
     vesktop
-    nur.repos.rogreat.amethyst-mod-manager
+    # nur.repos.rogreat.amethyst-mod-manager
     whatsapp-electron
     easyeffects
 
@@ -34,7 +34,6 @@
     androidenv.androidPkgs.platform-tools
 
     # Codice
-    claude-code
     github-cli
     lazygit
     mcp-nixos
@@ -52,6 +51,7 @@
     zathura
     qalculate-gtk
     kicad
+    kicadAddons.kikit
 
     # Video / Audio
     vlc

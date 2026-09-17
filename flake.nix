@@ -98,6 +98,11 @@
         disko.follows = "disko";
       };
     };
+
+    droidspaces = {
+      url = "github:ravindu644/Droidspaces-OSS";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

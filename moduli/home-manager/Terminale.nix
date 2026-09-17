@@ -13,6 +13,7 @@ let
     rebuild = "nh os switch ~/.dotfiles/ -H GiovanGianFranco --update";
     rb = "rebuild";
     rbpi = "nixos-rebuild switch --flake ~/.dotfiles/#rpi5 --target-host root@rpi5.local --sudo --use-substitutes";
+    rbpad = "nixos-rebuild switch --flake ~/.dotfiles/#tablet --build-host root@Oneplus-Pad-4.local --target-host root@Oneplus-Pad-4.local";
     rbc = "rebuild && clean";
     rebuildnoup = "nh os switch ~/.dotfiles/ -H GiovanGianFranco";
     clean = "nh clean all";

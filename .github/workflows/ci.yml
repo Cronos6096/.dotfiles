@@ -17,6 +17,8 @@ jobs:
             runner: ubuntu-latest
           - host: rpi5
             runner: ubuntu-24.04-arm
+          - host: tablet
+            runner: ubuntu-24.04-arm
 
     steps:
       - uses: actions/checkout@v4

@@ -38,8 +38,6 @@
         inputs.home-manager.nixosModules.home-manager
         inputs.lanzaboote.nixosModules.lanzaboote
         inputs.stylix.nixosModules.stylix
-        # inputs.hermes-agent.nixosModules.default
-
         inputs.nur.modules.nixos.default
       ];
     };
@@ -55,6 +53,20 @@
         "${self}/sys/rpi"
         inputs.disko.nixosModules.disko
         inputs.home-manager.nixosModules.home-manager
+      ];
+    };
+
+    tablet = inputs.nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs self; };
+
+      modules = [
+        "${self}/moduli/system"
+        "${self}/moduli/options.nix"
+        "${self}/flake-parts/tablet/"
+        "${self}/nix/"
+        "${self}/sys/tablet"
+        inputs.home-manager.nixosModules.home-manager
+        inputs.stylix.nixosModules.stylix
       ];
     };
   };
