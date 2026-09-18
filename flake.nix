@@ -34,11 +34,6 @@
       };
     };
 
-    nix-search-tv = {
-      url = "github:3timeslazy/nix-search-tv";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";

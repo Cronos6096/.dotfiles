@@ -8,6 +8,7 @@
   imports = [
     ./hardware-configuration.nix
     ./gpu.nix
+    ./passthrough.nix
     ./audio.nix
     ./options.nix
     ./Pacchetti.nix

@@ -27,6 +27,7 @@ let
     cd = "z";
     tree = "eza --git --icons --tree";
     dnd = "kitten dnd";
+    looking-glass = "looking-glass-client -m 99 -F";
   };
 in
 {
@@ -70,7 +71,6 @@ in
 
       nix-search-tv = {
         enable = true;
-        package = inputs.nix-search-tv.packages.${pkgs.system}.default;
       };
 
       zellij = {
