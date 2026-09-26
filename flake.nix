@@ -1,7 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-parts.url = "github:hercules-ci/flake-parts";
 
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
@@ -26,14 +25,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-      };
-    };
-
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -46,11 +37,7 @@
 
     stylix = {
       url = "github:nix-community/stylix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        nur.follows = "nur";
-        flake-parts.follows = "flake-parts";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     zen-browser = {
@@ -86,26 +73,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-anywhere = {
-      url = "github:nix-community/nixos-anywhere";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        disko.follows = "disko";
-      };
-    };
-
     droidspaces = {
       url = "github:ravindu644/Droidspaces-OSS";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs =
-    inputs@{ flake-parts, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-
-      imports = [
-        ./flake-parts/nixos-module.nix
-      ];
-    };
+  outputs = inputs@{ self, ... }: import ./outputs.nix { inherit inputs self; };
 }

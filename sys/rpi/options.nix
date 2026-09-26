@@ -1,6 +1,0 @@
-{
-  moduli = {
-    system = { };
-    home-manager = { };
-  };
-}
