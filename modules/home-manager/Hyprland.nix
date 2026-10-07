@@ -37,7 +37,6 @@ with lib;
         );
       };
 
-      # Every external command invoked from hyprland/*.lua must be on PATH.
       packages = with pkgs; [
         awww
         bibata-cursors

@@ -5,35 +5,35 @@ local mainMod = "SUPER"
 
 -- Switch workspace
 for i = 1, 10 do
-	local key = i % 10
-	hl.bind(mainMod .. " + " .. key, function()
-		local mon = hl.get_active_monitor()
-		local ws = i
-		if mon and mon.name == "HDMI-A-1" then
-			ws = i + 10
-		end
-		hl.dispatch(hl.dsp.focus({ workspace = ws }))
-	end)
-	hl.bind(mainMod .. " + SHIFT + " .. key, function()
-		local mon = hl.get_active_monitor()
-		local ws = i
-		if mon and mon.name == "HDMI-A-1" then
-			ws = i + 10
-		end
-		hl.dispatch(hl.dsp.window.move({ workspace = ws }))
-	end)
+  local key = i % 10
+  hl.bind(mainMod .. " + " .. key, function()
+    local mon = hl.get_active_monitor()
+    local ws = i
+    if mon and mon.name == "HDMI-A-1" then
+      ws = i + 10
+    end
+    hl.dispatch(hl.dsp.focus({ workspace = ws }))
+  end)
+  hl.bind(mainMod .. " + SHIFT + " .. key, function()
+    local mon = hl.get_active_monitor()
+    local ws = i
+    if mon and mon.name == "HDMI-A-1" then
+      ws = i + 10
+    end
+    hl.dispatch(hl.dsp.window.move({ workspace = ws }))
+  end)
 end
 
 hl.bind(mainMod .. "+" .. "B", hl.dsp.exec_cmd("zen-beta"))
 hl.bind(mainMod .. "+" .. "E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. "+" .. "M", hl.dsp.exec_cmd("hyprshutdown"))
+hl.bind(mainMod .. "+" .. "M", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
 hl.bind(mainMod .. "+" .. "P", hl.dsp.exec_cmd("prismlauncher"))
 hl.bind(mainMod .. "+" .. "Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. "+" .. "R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. "+" .. "SHIFT + D", hl.dsp.exec_cmd("vesktop"))
 hl.bind(mainMod .. "+" .. "SHIFT + S", hl.dsp.exec_cmd("steam"))
 hl.bind(mainMod .. "+" .. "T", hl.dsp.exec_cmd("noctalia msg session lock"))
-hl.bind(mainMod .. "+" .. "V", hl.dsp.exec_cmd(terminal .. [[ -e "clipse"]]))
+hl.bind(mainMod .. "+" .. "V", hl.dsp.exec_cmd(terminal .. [[ --class clipse -e "clipse"]]))
 hl.bind(mainMod .. "+" .. "SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
 
 -- Scratchpad
@@ -69,9 +69,9 @@ hl.bind(mainMod .. "+" .. "Y", hl.dsp.window.close())
 
 -- Scrolling layout
 hl.bind(mainMod .. "+" .. "X", function()
-	local current = hl.get_config("general.layout")
-	local next_layout = (current == "dwindle") and "scrolling" or "dwindle"
-	hl.config({ general = { layout = next_layout } })
+  local current = hl.get_config("general.layout")
+  local next_layout = (current == "dwindle") and "scrolling" or "dwindle"
+  hl.config({ general = { layout = next_layout } })
 end)
 hl.bind(mainMod .. "+" .. "period", hl.dsp.layout("consume_or_expel next"))
 hl.bind(mainMod .. "+" .. "comma", hl.dsp.layout("consume_or_expel prev"))
@@ -79,8 +79,8 @@ hl.bind(mainMod .. "+" .. "C", hl.dsp.layout("colresize +conf"))
 
 -- Cycle windows
 hl.bind("SUPER + Tab", function()
-	hl.dispatch(hl.dsp.window.cycle_next())
-	hl.dispatch(hl.dsp.exec_cmd("hyprctl dispatch bringactivetotop"))
+  hl.dispatch(hl.dsp.window.cycle_next())
+  hl.dispatch(hl.dsp.exec_cmd("hyprctl dispatch bringactivetotop"))
 end)
 
 -- Screenshots
@@ -98,24 +98,24 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Function keys
 hl.bind(
-	"XF86AudioRaiseVolume",
-	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
-	{ locked = true, repeating = true }
+  "XF86AudioRaiseVolume",
+  hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
+  { locked = true, repeating = true }
 )
 hl.bind(
-	"XF86AudioLowerVolume",
-	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
-	{ locked = true, repeating = true }
+  "XF86AudioLowerVolume",
+  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
+  { locked = true, repeating = true }
 )
 hl.bind(
-	"XF86AudioMute",
-	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
-	{ locked = true, repeating = true }
+  "XF86AudioMute",
+  hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+  { locked = true, repeating = true }
 )
 hl.bind(
-	"XF86AudioMicMute",
-	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
-	{ locked = true, repeating = true }
+  "XF86AudioMicMute",
+  hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
+  { locked = true, repeating = true }
 )
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })

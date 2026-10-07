@@ -14,10 +14,7 @@
 
     agenix = {
       url = "github:ryantm/agenix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     lanzaboote = {

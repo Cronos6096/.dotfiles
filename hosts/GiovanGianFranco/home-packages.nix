@@ -8,7 +8,6 @@
     lutris-free
     prismlauncher
     vesktop
-    whatsapp-electron
     easyeffects
 
     # File manager e KDE
@@ -45,6 +44,7 @@
     typst
     typst-live
     typstyle
+    python3
 
     # documets
     libreoffice-qt

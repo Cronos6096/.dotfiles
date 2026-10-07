@@ -22,7 +22,7 @@ let
     py = "python";
     ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     zj = "zellij";
-    ssh = "kitten ssh";
+    # ssh = "kitten ssh";
     cat = "bat";
     cd = "z";
     tree = "eza --git --icons --tree";
@@ -99,7 +99,6 @@ in
       any-nix-shell
       fzf
       git
-      links2
       ncdu
       dysk
       tealdeer

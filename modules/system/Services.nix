@@ -16,8 +16,8 @@ with lib;
           src = pkgs.fetchFromGitHub {
             owner = "libratbag";
             repo = "libratbag";
-            rev = "874c01732a7d3c074baefd8055c0d3efe8c9a935";
-            sha256 = "sha256-O9DxwAieUEy+otwDSM2412vCCQJkHIrDOPVYevg0l44=";
+            rev = "master";
+            sha256 = "sha256-8V/LIki/tI/9Wi6kuFJp6k1p+moMh8Gc8RNP1BUlZO8=";
           };
 
           postPatch = (oldAttrs.postPatch or "") + ''
@@ -47,9 +47,7 @@ with lib;
 
       udisks2.enable = true;
 
-      ratbagd = {
-        enable = true;
-      };
+      ratbagd.enable = true;
     };
 
     environment.systemPackages = [

@@ -8,7 +8,7 @@ with lib;
 {
   config = mkIf config.moduli.system.vr.enable {
     environment.systemPackages = with pkgs; [
-      sidequest
+      # sidequest
       # wlx-overlay-s
     ];
     services.wivrn = {

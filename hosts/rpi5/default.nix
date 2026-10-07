@@ -68,7 +68,19 @@
     wheelNeedsPassword = false;
   };
 
-  users.users.andme.extraGroups = [
-    "video"
+  users.users.andme = {
+    extraGroups = [
+      "video"
+    ];
+
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE0eWmYUr3u6FFhpv5Zj6LlcQIm8O4ZSJiZkuOtVM9NL andme@GiovanGianFranco"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE/06jWRdLOoCwgUk5SpMubBitLY4TMHZNvmushyv/30 andme@rpi5"
+    ];
+  };
+
+  users.users.root.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE0eWmYUr3u6FFhpv5Zj6LlcQIm8O4ZSJiZkuOtVM9NL andme@GiovanGianFranco"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE/06jWRdLOoCwgUk5SpMubBitLY4TMHZNvmushyv/30 andme@rpi5"
   ];
 }

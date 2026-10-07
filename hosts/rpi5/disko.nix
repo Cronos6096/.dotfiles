@@ -1,8 +1,8 @@
 { config, lib, ... }:
 
 let
-  firmwarePartition = lib.recursiveUpdate {
-    # label = "FIRMWARE";
+  firmwarePartition = {
+    label = "FIRMWARE";
     priority = 1;
 
     type = "0700"; # Microsoft basic data
@@ -10,41 +10,34 @@ let
       0 # Required Partition
     ];
 
-    size = "1024M";
+    size = "512M";
     content = {
       type = "filesystem";
       format = "vfat";
-      # mountpoint = "/boot/firmware";
-      mountOptions = [
-        "noatime"
-        "noauto"
-        "x-systemd.automount"
-        "x-systemd.idle-timeout=1min"
-      ];
+      mountpoint = "/boot/firmware";
+      mountOptions = [ "noatime" ];
     };
   };
 
-  espPartition = lib.recursiveUpdate {
+  espPartition = {
+    label = "ESP";
+
     type = "EF00"; # EFI System Partition (ESP)
     attributes = [
       2
     ];
 
-    size = "1024M";
+    size = "100%";
     content = {
       type = "filesystem";
       format = "vfat";
-      # mountpoint = "/boot";
+      mountpoint = "/boot";
       mountOptions = [
         "noatime"
-        "noauto"
-        "x-systemd.automount"
-        "x-systemd.idle-timeout=1min"
         "umask=0077"
       ];
     };
   };
-
 in
 {
 
@@ -59,6 +52,20 @@ in
     "/var/log".neededForBoot = true;
   };
 
+  disko.devices.disk.sd = {
+    type = "disk";
+    device = "/dev/sda";
+    imageSize = "9G";
+
+    content = {
+      type = "gpt";
+      partitions = {
+        FIRMWARE = firmwarePartition;
+        ESP = espPartition;
+      };
+    };
+  };
+
   disko.devices.disk.main = {
     type = "disk";
     device = "/dev/nvme0n1";
@@ -67,18 +74,8 @@ in
       type = "gpt";
       partitions = {
 
-        FIRMWARE = firmwarePartition {
-          label = "FIRMWARE";
-          content.mountpoint = "/boot/firmware";
-        };
-
-        ESP = espPartition {
-          label = "ESP";
-          content.mountpoint = "/boot";
-        };
-
         system = {
-          type = "8305"; # Linux ARM64 root (/)
+          type = "830C";
 
           size = "100%";
           content = {
