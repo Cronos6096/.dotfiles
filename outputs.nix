@@ -80,13 +80,6 @@ in
         ];
     };
 
-    rpi5-installer = nixOS {
-      system = "aarch64-linux";
-      modules = [
-        "${self}/hosts/rpi5/installer.nix"
-      ];
-    };
-
     tablet = nixOS {
       system = "aarch64-linux";
       modules = commonModules ++ [

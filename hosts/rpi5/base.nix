@@ -1,6 +1,5 @@
 {
   inputs,
-  pkgs,
   ...
 }:
 {
@@ -16,6 +15,4 @@
   ];
 
   boot.tmp.useTmpfs = true;
-
-  boot.kernelPackages = pkgs.linuxPackages;
 }
