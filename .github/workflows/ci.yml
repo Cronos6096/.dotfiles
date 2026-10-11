@@ -16,9 +16,9 @@ jobs:
           - host: GiovanGianFranco
             runner: ubuntu-latest
           - host: rpi5
-            runner: ubuntu-24.04-arm
+            runner: ubuntu-26.04-arm
           - host: tablet
-            runner: ubuntu-24.04-arm
+            runner: ubuntu-26.04-arm
 
     steps:
       - uses: actions/checkout@v4
