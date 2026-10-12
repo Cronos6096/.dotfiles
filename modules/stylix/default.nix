@@ -1,14 +1,11 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }:
 with lib;
 {
-  # Enabled on every host: the Hyprland/Zen/Noctalia feature modules below
-  # reference stylix targets, so the option has to exist even where nothing is
-  # actually themed. Individual hosts override the palette, and
-  # modules/system/Ly.nix keeps the console untouched.
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/evenok-dark.yaml";
@@ -50,6 +47,11 @@ with lib;
         name = "Symbols Nerd Font";
       };
     };
+  };
+
+  home-manager.users.andme.stylix.targets = {
+    zen-browser.enable = mkIf config.home-manager.users.andme.moduli.home-manager.zen.enable false;
+    noctalia-shell.enable = mkIf config.home-manager.users.andme.moduli.home-manager.noctalia.enable true;
   };
 
   environment.systemPackages = [ pkgs.bibata-cursors ];

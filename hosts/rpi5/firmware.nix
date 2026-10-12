@@ -1,19 +1,11 @@
+{ ... }:
 {
-  ...
-}:
-{
-  hardware.raspberry-pi = {
-    firmware = {
+  boot.loader.raspberry-pi.bootloader = "kernel";
+
+  hardware.raspberry-pi.config.all."base-dt-params" = {
+    pciex1 = {
       enable = true;
-      uboot.enable = true;
-    };
-    configtxt.settings = {
-      all = {
-        dtparam = [
-          "pciex1"
-          "pciex1_gen=3"
-        ];
-      };
+      value = "on";
     };
   };
 }

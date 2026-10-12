@@ -4,7 +4,7 @@
 }:
 {
   imports = [
-    inputs.nixos-hardware.nixosModules.raspberry-pi-5
+    inputs.nixos-raspberrypi.nixosModules.raspberry-pi-5.base
   ];
 
   nixpkgs.overlays = [

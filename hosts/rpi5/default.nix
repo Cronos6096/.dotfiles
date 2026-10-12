@@ -54,11 +54,15 @@
 
   system.stateVersion = "25.11";
 
-  system.nixos.tags = [
-    "raspberry-pi-5"
-    "generic-extlinux-compatible"
-    config.boot.kernelPackages.kernel.version
-  ];
+  system.nixos.tags =
+    let
+      cfg = config.boot.loader.raspberry-pi;
+    in
+    [
+      "raspberry-pi-${cfg.variant}"
+      cfg.bootloader
+      config.boot.kernelPackages.kernel.version
+    ];
 
   nix.settings.sandbox = true;
 

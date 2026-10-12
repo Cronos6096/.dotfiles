@@ -18,7 +18,6 @@ with lib;
     ./Portals.nix
     ./Services.nix
     ./Steam.nix
-    ./Stylix.nix
     ./Vm.nix
     ./Vr.nix
   ];

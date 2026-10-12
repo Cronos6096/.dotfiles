@@ -10,31 +10,16 @@ let
       0 # Required Partition
     ];
 
-    size = "512M";
+    size = "1024M";
     content = {
       type = "filesystem";
       format = "vfat";
       mountpoint = "/boot/firmware";
-      mountOptions = [ "noatime" ];
-    };
-  };
-
-  espPartition = {
-    label = "ESP";
-
-    type = "EF00"; # EFI System Partition (ESP)
-    attributes = [
-      2
-    ];
-
-    size = "100%";
-    content = {
-      type = "filesystem";
-      format = "vfat";
-      mountpoint = "/boot";
       mountOptions = [
         "noatime"
-        "umask=0077"
+        "noauto"
+        "x-systemd.automount"
+        "x-systemd.idle-timeout=1min"
       ];
     };
   };
@@ -52,20 +37,6 @@ in
     "/var/log".neededForBoot = true;
   };
 
-  disko.devices.disk.sd = {
-    type = "disk";
-    device = "/dev/sda";
-    imageSize = "9G";
-
-    content = {
-      type = "gpt";
-      partitions = {
-        FIRMWARE = firmwarePartition;
-        ESP = espPartition;
-      };
-    };
-  };
-
   disko.devices.disk.main = {
     type = "disk";
     device = "/dev/nvme0n1";
@@ -73,6 +44,7 @@ in
     content = {
       type = "gpt";
       partitions = {
+        FIRMWARE = firmwarePartition;
 
         system = {
           type = "830C";

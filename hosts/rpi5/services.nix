@@ -5,6 +5,11 @@
     enableOnBoot = true;
   };
 
+  services.fail2ban = {
+    enable = true;
+    bantime-increment.enable = true;
+  };
+
   users.users.andme.extraGroups = [ "docker" ];
 
   virtualisation.oci-containers = {

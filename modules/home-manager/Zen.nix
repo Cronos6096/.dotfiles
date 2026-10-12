@@ -10,7 +10,6 @@ with lib;
   imports = [ inputs.zen-browser.homeModules.default ];
 
   config = mkIf config.moduli.home-manager.zen.enable {
-    stylix.targets.zen-browser.enable = false;
     programs.zen-browser = {
       enable = true;
       nativeMessagingHosts = [ pkgs.firefoxpwa ];

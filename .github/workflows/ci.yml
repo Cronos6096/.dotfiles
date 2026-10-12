@@ -35,4 +35,5 @@ jobs:
           nix build \
             ".#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel" \
             --no-link \
-            --print-build-logs
+            --print-build-logs \
+            --accept-flake-config
