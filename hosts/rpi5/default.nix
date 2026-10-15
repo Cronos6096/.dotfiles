@@ -9,6 +9,7 @@
     ./firmware.nix
     ./disko.nix
     ./services.nix
+    ./nixflix.nix
   ];
 
   networking = {
@@ -19,14 +20,18 @@
     firewall = {
       allowedUDPPorts = [
         5353
+        6881
         8080
         8123
         8443
         25565
       ];
       allowedTCPPorts = [
+        80
         443
         5353
+        6881
+        8282
         8080
         8123
         8443
@@ -42,8 +47,32 @@
   };
 
   systemd.network.networks = {
-    "99-ethernet-default-dhcp".networkConfig.MulticastDNS = "yes";
-    "99-wireless-client-dhcp".networkConfig.MulticastDNS = "yes";
+    "99-ethernet-default-dhcp" = {
+      networkConfig = {
+        MulticastDNS = "yes";
+        DNS = [
+          "9.9.9.9"
+          "149.112.112.112"
+          "2620:fe::fe"
+          "2620:fe::9"
+        ];
+      };
+      dhcpV4Config.UseDNS = false;
+      dhcpV6Config.UseDNS = false;
+    };
+    "99-wireless-client-dhcp" = {
+      networkConfig = {
+        MulticastDNS = "yes";
+        DNS = [
+          "9.9.9.9"
+          "149.112.112.112"
+          "2620:fe::fe"
+          "2620:fe::9"
+        ];
+      };
+      dhcpV4Config.UseDNS = false;
+      dhcpV6Config.UseDNS = false;
+    };
   };
 
   time.timeZone = "Europe/Rome";

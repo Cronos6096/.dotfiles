@@ -10,4 +10,17 @@ in
   "env.age".publicKeys = users;
   "password.age".publicKeys = users;
   "duckdnsToken.age".publicKeys = users;
+
+  "nixflix/sonarr-api-key.age".publicKeys = users;
+  "nixflix/sonarr-password.age".publicKeys = users;
+  "nixflix/radarr-api-key.age".publicKeys = users;
+  "nixflix/radarr-password.age".publicKeys = users;
+  "nixflix/prowlarr-api-key.age".publicKeys = users;
+  "nixflix/prowlarr-password.age".publicKeys = users;
+  "nixflix/jellyfin-api-key.age".publicKeys = users;
+  "nixflix/jellyfin-admin-password.age".publicKeys = users;
+  "nixflix/seerr-api-key.age".publicKeys = users;
+  "nixflix/rtorrent-username.age".publicKeys = users;
+  "nixflix/rtorrent-password.age".publicKeys = users;
+  "nixflix/qbittorrent-password.age".publicKeys = users;
 }

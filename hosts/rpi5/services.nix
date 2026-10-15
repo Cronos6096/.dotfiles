@@ -12,6 +12,8 @@
 
   users.users.andme.extraGroups = [ "docker" ];
 
+  networking.hosts."127.0.0.1" = [ "homeassistant.casindra.duckdns.org" ];
+
   virtualisation.oci-containers = {
     backend = "docker";
     containers = {
@@ -22,10 +24,6 @@
         environment = {
           TZ = "Europe/Rome";
         };
-
-        ports = [
-          "8123:8123"
-        ];
 
         volumes = [
           "/var/lib/home-assistant:/config"
@@ -44,11 +42,6 @@
   security.acme = {
     acceptTerms = true;
     defaults.email = "and.merciaro@gmail.com";
-    certs."homeassistant.casindra.duckdns.org" = {
-      dnsProvider = "duckdns";
-      credentialFiles.DUCKDNS_TOKEN_FILE = config.age.secrets.duckdnsToken.path;
-      group = "nginx";
-    };
   };
 
   services = {
@@ -78,7 +71,7 @@
         };
 
         "homeassistant.casindra.duckdns.org" = {
-          useACMEHost = "homeassistant.casindra.duckdns.org";
+          useACMEHost = "casindra.duckdns.org";
           onlySSL = true;
           locations."/" = {
             proxyPass = "http://127.0.0.1:8123";
