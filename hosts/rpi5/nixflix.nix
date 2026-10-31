@@ -2,6 +2,7 @@
   config,
   inputs,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -123,21 +124,33 @@ in
       system.pluginRepositories = {
         IAmParadox = {
           url = "https://www.iamparadox.dev/jellyfin/plugins/manifest.json";
-          hash = "sha256-93n3Ehh6hWts8ONd6Dp/GYZd0g1Wb2lbHz4Kn6fhrwg=";
+          hash = "sha256-Idybc1kQxm/85FBVfh2zicR6cmzdattDJTw2mnCgmUs=";
         };
         SeerrFin = {
           url = "https://raw.githubusercontent.com/varunaditya-plus/SeerrFin/main/manifest.json";
-          hash = "sha256-NtPAR35Q9t5b4MVZfIZSEmtjDQnJbwE49pyLFJ9VVXI=";
+          hash = "sha256-qkDHkyJ6nFw+mQXS9yGsruHXcIhPbFJaCRWyCRSD+A8=";
+        };
+        IntroSkipper = {
+          # intro-skipper.org/manifest.json redirects to an HTML page; real
+          # Jellyfin-12 manifest lives in the dedicated manifest repo.
+          url = "https://raw.githubusercontent.com/intro-skipper/manifest/main/12/manifest.json";
+          hash = "sha256-OE2mDp8H9ZzZ7hnUpCdO0s1k9r0gPRAIPBGuy4UaH3U=";
         };
       };
 
       plugins = {
         "File Transformation" = {
           enable = true;
-          package = inputs.nixflix.lib.jellyfinPlugins.fromRepo {
-            version = "3.0.0.0";
-            hash = "sha256-R3CU913Hfy1a88pZw+Qtdw+AP+u6BJmYzdH2/eFQbnw=";
-            repository = "IAmParadox";
+          # The IAmParadox manifest ships one release per targetAbi (10.11.x,
+          # 12.0.0, ..., 12.4.0) for every version, and every build targets a
+          # Jellyfin <= 12.4, so `fromRepo` always resolves more than one match
+          # and throws "matched multiple releases". Pin the archive for the
+          # 12.4 ABI directly instead of going through the resolver.
+          package = pkgs.fetchzip {
+            name = "jellyfin-plugin-file-transformation";
+            url = "https://github.com/IAmParadox27/jellyfin-plugin-file-transformation/releases/download/3.0.3.0/Release-12.4.0.zip";
+            hash = "sha256-L9GFSHvFZ3h4f6Lr6bYSwzen3fMZ/3ZHHhihF0a637E=";
+            stripRoot = false;
           };
         };
 
@@ -159,6 +172,73 @@ in
           enable = true;
           config.ExtractionDuringLibraryScan = true;
         };
+
+        "Intro Skipper" = {
+          package = inputs.nixflix.lib.jellyfinPlugins.fromRepo {
+            version = "12.0.6.0";
+            hash = "sha256-g8Oiyt4NK8pyCXt2M1B7EpEL71kUGGkxtXSzKndUuOQ=";
+            repository = "IntroSkipper";
+          };
+          config = {
+            ExcludeSeries = "";
+            AutoDetectIntros = true;
+            AnalyzeSeasonZero = false;
+            PreferChromaprint = false;
+            CacheFingerprints = true;
+            UseAlternativeBlackFrameAnalyzer = false;
+            UpdateMediaSegments = true;
+            RebuildMediaSegments = true;
+            ScanIntroduction = true;
+            ScanCredits = true;
+            ScanRecap = true;
+            ScanPreview = true;
+            ScanCommercial = false;
+            AnalysisPercent = "25";
+            AnalysisLengthLimit = "10";
+            FullLengthChapters = false;
+            SkipFirstEpisode = false;
+            SkipFirstEpisodeAnime = false;
+            MinimumIntroDuration = "15";
+            MaximumIntroDuration = "120";
+            MinimumCreditsDuration = "15";
+            MaximumCreditsDuration = "450";
+            MaximumMovieCreditsDuration = "900";
+            MinimumRecapDuration = "15";
+            MaximumRecapDuration = "120";
+            MinimumPreviewDuration = "15";
+            MaximumPreviewDuration = "120";
+            MinimumCommercialDuration = "15";
+            MaximumCommercialDuration = "120";
+            BlackFrameMinimumPercentage = "85";
+            BlackFrameThreshold = "28";
+            UseChapterMarkersBlackFrame = true;
+            AdjustIntroBasedOnChapters = true;
+            AdjustIntroBasedOnSilence = true;
+            SnapToKeyframe = true;
+            EndSnapThreshold = "2";
+            AdjustWindowInward = "5";
+            AdjustWindowOutward = "2";
+            ChapterAnalyzerIntroductionPattern = "(^|\\s)(Intro|Introduction|OP|Opening)(?!\\sEnd)(\\s|$)";
+            ChapterAnalyzerEndCreditsPattern = "(^|\\s)(Credits?|ED|Ending|Outro)(?!\\sEnd)(\\s|$)";
+            ChapterAnalyzerPreviewPattern = "(^|\\s)(Preview|PV|Sneak\\s?Peek|Coming\\s?(Up|Soon)|Next\\s+(time|on|episode)|Extra|Teaser|Trailer)(?!\\sEnd)(\\s|:|$)";
+            ChapterAnalyzerRecapPattern = "(^|\\s)(Re?cap|Sum{1,2}ary|Prev(ious(ly)?)?|(Last|Earlier)(\\s\\w+)?|Catch[ -]up)(?!\\sEnd)(\\s|:|$)";
+            ChapterAnalyzerCommercialPattern = "(^|\\s)(Ad(vert(isement)?)?|Commercial)(?!\\sEnd)(\\s|$)";
+            IntroEndOffset = "0";
+            IntroStartOffset = "0";
+            MaximumFingerprintPointDifferences = 6;
+            MaximumTimeSkip = 3.5;
+            InvertedIndexShift = 2;
+            SilenceDetectionMaximumNoise = "-50";
+            SilenceDetectionMinimumDuration = "0.33";
+            MaxParallelism = "2";
+            ProcessThreads = "0";
+            ProcessPriority = "BelowNormal";
+            UseFileTransformationPlugin = false;
+            SkipbuttonHideDelay = "8";
+            EnableMainMenu = true;
+            FileTransformationPluginEnabled = false;
+          };
+        };
       };
     };
 
@@ -175,9 +255,11 @@ in
       serverConfig = {
         LegalNotice.Accepted = true;
         BitTorrent.Session.Port = 6881;
-        Preferences.WebUI.Address = "*";
-        Preferences.WebUI.Username = "admin";
-        Preferences.WebUI.Password_PBKDF2 = "@ByteArray(e2hJ3Uz+kVA4f4dRajtXmQ==:KwMQW9U+eF6drlm1ZsfHWylDQncFaqcSZk9bPTamT208NQj3aJrV3+JU5quyKIczylNXpKFoyyVQ2IQ6akUHHA==)";
+        Preferences.WebUI = {
+          Address = "*";
+          Username = "admin";
+          Password_PBKDF2 = "@ByteArray(e2hJ3Uz+kVA4f4dRajtXmQ==:KwMQW9U+eF6drlm1ZsfHWylDQncFaqcSZk9bPTamT208NQj3aJrV3+JU5quyKIczylNXpKFoyyVQ2IQ6akUHHA==)";
+        };
       };
     };
   };

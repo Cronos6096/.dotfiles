@@ -17,7 +17,7 @@ with lib;
             owner = "libratbag";
             repo = "libratbag";
             rev = "master";
-            sha256 = "sha256-8V/LIki/tI/9Wi6kuFJp6k1p+moMh8Gc8RNP1BUlZO8=";
+            sha256 = "sha256-0uRBbVI5GrXyUUvDlpa2w5djyRWMbl6rzpdOWR2TkPg=";
           };
 
           postPatch = (oldAttrs.postPatch or "") + ''

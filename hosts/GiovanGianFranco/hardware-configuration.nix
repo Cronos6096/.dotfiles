@@ -47,7 +47,6 @@
     "fs.file-max" = 524288;
   };
   boot.loader.timeout = 0;
-  boot.initrd.systemd.enable = true;
   boot.kernelParams = [ "video=1920x1080@144" ];
 
   fileSystems."/" = {

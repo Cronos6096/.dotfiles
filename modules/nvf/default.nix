@@ -21,13 +21,7 @@
       expandtab = true;
     };
     searchCase = "ignore";
-    git = {
-      enable = true;
-      neogit = {
-        enable = true;
-        mappings.open = " gg";
-      };
-    };
+    git.enable = true;
 
     telescope = {
       enable = true;

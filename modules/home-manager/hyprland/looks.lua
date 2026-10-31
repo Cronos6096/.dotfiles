@@ -9,6 +9,7 @@ hl.config({
     gaps_in = gaps_in,
     gaps_out = gaps_out,
     border_size = 2,
+    snap = { enabled = true },
 
     col = {
       active_border = { colors = { active_border } },
@@ -34,7 +35,7 @@ hl.config({
 
     blur = {
       enabled = true,
-      size = 3,
+      size = 8,
       passes = 1,
       vibrancy = 0.1696,
     },
