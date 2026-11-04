@@ -93,6 +93,11 @@
       config.boot.kernelPackages.kernel.version
     ];
 
+  system.autoUpgrade = {
+    enable = true;
+    runGarbageCollection = true;
+  };
+
   nix.settings.sandbox = true;
 
   services.openssh.enable = true;

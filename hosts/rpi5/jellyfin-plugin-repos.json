@@ -1,0 +1,25 @@
+{
+  "jellyfinAbi": "12.4.0",
+  "repos": {
+    "IAmParadox": {
+      "url": "https://www.iamparadox.dev/jellyfin/plugins/manifest.json"
+    },
+    "SeerrFin": {
+      "url": "https://raw.githubusercontent.com/varunaditya-plus/SeerrFin/main/manifest.json"
+    },
+    "IntroSkipper": {
+      "url": "https://raw.githubusercontent.com/intro-skipper/manifest/main/12/manifest.json"
+    }
+  },
+  "plugins": {
+    "File Transformation": {
+      "github": "IAmParadox27/jellyfin-plugin-file-transformation"
+    },
+    "SeerrFin": {
+      "repo": "SeerrFin"
+    },
+    "Intro Skipper": {
+      "repo": "IntroSkipper"
+    }
+  }
+}
