@@ -3,9 +3,71 @@ name: "Build"
 on:
   push:
     branches: [master]
+  schedule:
+    - cron: "0 4 * * 6"
+  workflow_dispatch:
   pull_request:
 
 jobs:
+  update-flake:
+    name: "Update flake.lock"
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    concurrency:
+      group: update-flake
+      cancel-in-progress: false
+    env:
+      AUTO_TOKEN: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Check automation token
+        if: env.AUTO_TOKEN == ''
+        run: |
+          echo "::warning::WORKFLOW_GITHUB_TOKEN secret is not set; skipping the flake.lock update."
+
+      - name: Update flake.lock
+        id: update
+        if: env.AUTO_TOKEN != ''
+        run: nix flake update
+
+      - name: Show diff
+        if: steps.update.outcome == 'success' && env.AUTO_TOKEN != ''
+        run: git --no-pager diff --stat flake.lock
+
+      - name: Create pull request
+        id: pr
+        if: steps.update.outcome == 'success' && env.AUTO_TOKEN != ''
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
+          branch: chore/flake-lock-update
+          delete-branch: true
+          title: "auto: update flake.lock"
+          commit-message: "auto: update flake.lock"
+          body: |
+            Auto-generated weekly by the `update-flake` job in `.github/workflows/ci.yml`
+            (`nix flake update`).
+
+      - name: Auto-merge
+        if: steps.pr.outputs.pull-request-number != ''
+        env:
+          GH_TOKEN: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
+        run: |
+          nr="${{ steps.pr.outputs.pull-request-number }}"
+          repo="${{ github.repository }}"
+          if gh pr merge --squash --auto --delete-branch "$nr" --repo "$repo"; then
+            echo "auto-merge queued for #$nr; merging once the build CI passes"
+          else
+            # Repo auto-merge may be disabled (repo-level setting); merge directly.
+            gh pr merge --squash --delete-branch "$nr" --repo "$repo"
+          fi
+
   nixos:
     name: "nixosConfigurations.${{ matrix.host }}"
     runs-on: ${{ matrix.runner }}

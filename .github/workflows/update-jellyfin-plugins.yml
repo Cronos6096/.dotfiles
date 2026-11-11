@@ -2,7 +2,7 @@ name: "Update Jellyfin plugin pins"
 
 on:
   schedule:
-    - cron: "0 4 * * 1" # Mondays 04:00 UTC
+    - cron: "0 4 * * 6" # Mondays 04:00 UTC
   workflow_dispatch:
 
 permissions:
@@ -28,8 +28,6 @@ jobs:
         if: env.AUTO_TOKEN == ''
         run: |
           echo "::warning::WORKFLOW_GITHUB_TOKEN secret is not set; skipping the Jellyfin pins update."
-          echo "WORKFLOW_GITHUB_TOKEN: a PAT with contents:write + pull-requests:write is required"
-          echo "so that the PR's build CI runs and auto-merge can complete."
 
       - name: Refresh pins
         id: pins
