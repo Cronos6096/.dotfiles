@@ -53,7 +53,6 @@
     zathura
     qalculate-gtk
     kicad
-    kicadAddons.kikit
 
     # Video / Audio
     vlc
