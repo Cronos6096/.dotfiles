@@ -1,7 +1,7 @@
 {
   manifestHashes = {
     IAmParadox = "sha256-Idybc1kQxm/85FBVfh2zicR6cmzdattDJTw2mnCgmUs=";
-    SeerrFin = "sha256-ArNHxz0XYMggHDo6bsssnxZEY4KhtIv0KpJoQS3R4+A=";
+    SeerrFin = "sha256-cSdRtxI8t//+dyCUT+916LKC/Itu4pZLxeZLB69CBYs=";
     IntroSkipper = "sha256-OE2mDp8H9ZzZ7hnUpCdO0s1k9r0gPRAIPBGuy4UaH3U=";
   };
 
@@ -17,9 +17,9 @@
       hash = "sha256-pOnqTVfpcqPLctqTwwd2MC3XtFI3Vy8aAQ9T7CFoey8=";
     };
     "SeerrFin" = {
-      version = "1.9.2.2";
-      url = "https://github.com/varunaditya-plus/SeerrFin/releases/download/1.9.2.2/Jellyfin.Plugin.SeerrFin_12.0.0.zip";
-      hash = "sha256-PtnfxVrYf9I0gKPVEqE6qdeNuiKSqC8jfhqWMlyb8jw=";
+      version = "1.9.4.0";
+      url = "https://github.com/varunaditya-plus/SeerrFin/releases/download/1.9.4.0/Jellyfin.Plugin.SeerrFin_12.0.0.zip";
+      hash = "sha256-z8STAHLo/3Axera2x2o/0NhXilGh/gPpASuupaFCOS4=";
     };
   };
 }
