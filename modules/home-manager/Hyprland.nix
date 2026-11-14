@@ -9,8 +9,6 @@ with lib;
   config = mkIf config.moduli.home-manager.hyprland.enable {
     wayland.windowManager.hyprland = {
       enable = true;
-      package = null;
-      portalPackage = null;
       configType = "hyprlang";
     };
 
@@ -53,7 +51,6 @@ with lib;
         pyprland
         udiskie
         vicinae
-        waypaper
         wireplumber # wpctl
         wl-clipboard
       ];

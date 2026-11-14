@@ -71,7 +71,7 @@
       python.enable = true;
       clang.enable = false;
       # rust.enable = true;
-      # zig.enable = true;
+      zig.enable = true;
     };
   };
 }

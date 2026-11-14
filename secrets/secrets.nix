@@ -7,7 +7,6 @@ let
   ];
 in
 {
-  "env.age".publicKeys = users;
   "password.age".publicKeys = users;
   "duckdnsToken.age".publicKeys = users;
 
