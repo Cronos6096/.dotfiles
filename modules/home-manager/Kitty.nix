@@ -1,5 +1,18 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 with lib;
+let
+  kittyShell = pkgs.writeShellScript "kitty-zellij-shell" ''
+    if [ -z "''${ZELLIJ:-}" ]; then
+      exec ${getExe pkgs.zellij} attach --create main
+    fi
+    exec ${getExe pkgs.fish}
+  '';
+in
 {
   config = mkIf config.moduli.home-manager.kitty.enable {
     programs.kitty = {
@@ -13,6 +26,7 @@ with lib;
         confirm_os_window_close = 0;
         enable_audio_bell = false;
         mouse_hide_wait = "0.5";
+        shell = "${kittyShell}";
       };
 
       extraConfig = ''

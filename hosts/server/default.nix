@@ -1,20 +1,18 @@
 {
-  config,
   lib,
   ...
 }:
 {
   imports = [
-    ./base.nix
-    ./firmware.nix
+    ./hardware.nix
+    ./boot.nix
     ./disko.nix
     ./services.nix
     ./nixflix.nix
   ];
 
   networking = {
-    hostName = "rpi5";
-    wireless.enable = false;
+    hostName = "server";
     useNetworkd = true;
 
     firewall = {
@@ -60,41 +58,23 @@
       dhcpV4Config.UseDNS = false;
       dhcpV6Config.UseDNS = false;
     };
-    "99-wireless-client-dhcp" = {
-      networkConfig = {
-        MulticastDNS = "yes";
-        DNS = [
-          "9.9.9.9"
-          "149.112.112.112"
-          "2620:fe::fe"
-          "2620:fe::9"
-        ];
-      };
-      dhcpV4Config.UseDNS = false;
-      dhcpV6Config.UseDNS = false;
-    };
   };
 
   time.timeZone = "Europe/Rome";
 
-  services.getty.autologinUser = "andme";
-
-  nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   system.stateVersion = "25.11";
 
-  system.nixos.tags =
-    let
-      cfg = config.boot.loader.raspberry-pi;
-    in
-    [
-      "raspberry-pi-${cfg.variant}"
-      cfg.bootloader
-      config.boot.kernelPackages.kernel.version
-    ];
-
   system.autoUpgrade = {
     enable = true;
+    flake = "github:Cronos6096/.dotfiles#server";
+    # `--upgrade` only updates channels, which this host does not use.
+    upgrade = false;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+    ];
     runGarbageCollection = true;
   };
 
@@ -108,18 +88,13 @@
   };
 
   users.users.andme = {
-    extraGroups = [
-      "video"
-    ];
-
+    extraGroups = [ "video" ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE0eWmYUr3u6FFhpv5Zj6LlcQIm8O4ZSJiZkuOtVM9NL andme@GiovanGianFranco"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE/06jWRdLOoCwgUk5SpMubBitLY4TMHZNvmushyv/30 andme@rpi5"
     ];
   };
 
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE0eWmYUr3u6FFhpv5Zj6LlcQIm8O4ZSJiZkuOtVM9NL andme@GiovanGianFranco"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE/06jWRdLOoCwgUk5SpMubBitLY4TMHZNvmushyv/30 andme@rpi5"
   ];
 }

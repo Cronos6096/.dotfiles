@@ -18,64 +18,10 @@ let
       };
     };
 
-  nixOSRPi =
-    {
-      system,
-      modules,
-    }:
-    inputs.nixos-raspberrypi.lib.nixosSystem {
-      inherit system modules;
-      specialArgs = {
-        inherit inputs self;
-      };
-    };
-
-  rpi5Installer = inputs.nixos-raspberrypi.lib.nixosInstaller {
-    specialArgs = {
-      inherit inputs self;
-    };
-    modules = [
-      inputs.nixos-images.nixosModules.sdimage-installer
-      (
-        {
-          lib,
-          modulesPath,
-          ...
-        }:
-        {
-          disabledModules = [
-            (modulesPath + "/installer/sd-card/sd-image-aarch64-installer.nix")
-          ];
-          networking.wireless.enable = lib.mkForce false;
-        }
-      )
-      (
-        { nixos-raspberrypi, ... }:
-        {
-          imports = with nixos-raspberrypi.nixosModules; [
-            raspberry-pi-5.base
-            raspberry-pi-5.page-size-16k
-          ];
-
-          users.users.nixos.openssh.authorizedKeys.keys = [
-            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE0eWmYUr3u6FFhpv5Zj6LlcQIm8O4ZSJiZkuOtVM9NL andme@GiovanGianFranco"
-          ];
-          users.users.root.openssh.authorizedKeys.keys = [
-            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE0eWmYUr3u6FFhpv5Zj6LlcQIm8O4ZSJiZkuOtVM9NL andme@GiovanGianFranco"
-          ];
-        }
-      )
-    ];
-  };
-
-  systems = [
-    "x86_64-linux"
-    "aarch64-linux"
-  ];
+  systems = [ "x86_64-linux" ];
 
   common = f: "${self}/hosts/common/${f}";
 
-  # Shared by every host (no stylix by default).
   commonModules = [
     "${self}/modules/system"
     inputs.home-manager.nixosModules.home-manager
@@ -83,18 +29,9 @@ let
     (common "ssh.nix")
   ];
 
-  # Stylix for hosts that support it (GiovanGianFranco, tablet).
   stylixModules = [
     inputs.stylix.nixosModules.stylix
     "${self}/modules/stylix"
-  ];
-
-  # rpi5-specific modules without stylix (26.05 incompatibility).
-  commonModulesRPi = [
-    "${self}/modules/system"
-    inputs.home-manager.nixosModules.home-manager
-    (common "home-manager.nix")
-    (common "ssh.nix")
   ];
 
   agenixModules = [
@@ -133,13 +70,13 @@ in
         ++ stylixModules;
     };
 
-    rpi5 = nixOSRPi {
-      system = "aarch64-linux";
+    server = nixOS {
+      system = "x86_64-linux";
       modules =
-        commonModulesRPi
+        commonModules
         ++ agenixModules
         ++ [
-          "${self}/hosts/rpi5"
+          "${self}/hosts/server"
           inputs.disko.nixosModules.disko
         ];
     };
@@ -154,12 +91,6 @@ in
         ]
         ++ stylixModules;
     };
-
-    rpi5-installer = rpi5Installer;
-  };
-
-  installerImages = {
-    rpi5 = rpi5Installer.config.system.build.sdImage;
   };
 
   packages = lib.genAttrs systems (

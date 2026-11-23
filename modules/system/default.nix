@@ -28,6 +28,7 @@ with lib;
     hyprland.enable = mkDefault false;
     locale.enable = mkDefault false;
     ly.enable = mkDefault false;
+    nvim.enable = mkDefault false;
     portals.enable = mkDefault false;
     services.enable = mkDefault false;
     steam.enable = mkDefault false;

@@ -77,8 +77,8 @@ jobs:
         include:
           - host: GiovanGianFranco
             runner: ubuntu-latest
-          - host: rpi5
-            runner: ubuntu-26.04-arm
+          - host: server
+            runner: ubuntu-latest
           - host: tablet
             runner: ubuntu-26.04-arm
 

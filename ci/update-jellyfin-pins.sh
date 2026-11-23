@@ -2,8 +2,8 @@
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 
-CFG="hosts/rpi5/jellyfin-plugin-repos.json"
-PINS="hosts/rpi5/nixflix-pins.nix"
+CFG="hosts/server/jellyfin-plugin-repos.json"
+PINS="hosts/server/nixflix-pins.nix"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 

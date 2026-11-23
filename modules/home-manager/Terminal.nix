@@ -12,7 +12,7 @@ let
     ff = "fastfetch";
     rebuild = "nh os switch ~/.dotfiles/ -H GiovanGianFranco --update";
     rb = "rebuild";
-    rbpi = "nixos-rebuild switch --flake ~/.dotfiles/#rpi5 --build-host root@rpi5.local --target-host root@rpi5.local --sudo --use-substitutes";
+    rbsrv = "nixos-rebuild switch --flake ~/.dotfiles/#server --build-host root@192.168.1.167 --target-host root@192.168.1.167 --sudo --use-substitutes";
     rbpad = "nixos-rebuild switch --flake ~/.dotfiles/#tablet --build-host root@Oneplus-Pad-4.local --target-host root@Oneplus-Pad-4.local";
     rbc = "rebuild && clean";
     rebuildnoup = "nh os switch ~/.dotfiles/ -H GiovanGianFranco";
@@ -64,23 +64,7 @@ in
         enable = true;
       };
 
-      zellij = {
-        enable = true;
-        # enableFishIntegration = true;
-        # attachExistingSession = true;
-        extraConfig = ''
-          simplified_ui true
-          pane_frames false
-          show_startup_tips false
-
-          ui {
-              pane_frames {
-                  rounded_corners true
-                  hide_session_name true
-              }
-          }
-        '';
-      };
+      zellij.enable = true;
     };
 
     programs.nix-index-database.comma.enable = true;

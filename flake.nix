@@ -2,10 +2,6 @@
   inputs = {
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst";
 
-    nixos-raspberrypi = {
-      url = "github:nvmd/nixos-raspberrypi/main";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -72,18 +68,6 @@
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixos-anywhere = {
-      url = "github:nix-community/nixos-anywhere";
-    };
-
-    nixos-images = {
-      url = "github:nvmd/nixos-images/sdimage-installer";
-      inputs = {
-        nixos-stable.follows = "nixpkgs";
-        nixos-unstable.follows = "nixpkgs";
-      };
     };
 
     droidspaces = {

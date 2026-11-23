@@ -1,13 +1,17 @@
 {
+  config,
   inputs,
+  lib,
   pkgs,
   ...
 }:
 {
-  environment.systemPackages = [
-    (inputs.nvf.lib.neovimConfiguration {
-      inherit pkgs;
-      modules = [ ../nvf ];
-    }).neovim
-  ];
+  config = lib.mkIf config.moduli.system.nvim.enable {
+    environment.systemPackages = [
+      (inputs.nvf.lib.neovimConfiguration {
+        inherit pkgs;
+        modules = [ ../nvf ];
+      }).neovim
+    ];
+  };
 }

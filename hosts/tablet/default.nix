@@ -21,6 +21,8 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
 
+  moduli.system.nvim.enable = true;
+
   environment.systemPackages = with pkgs; [
     btop
     file
