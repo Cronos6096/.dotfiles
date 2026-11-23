@@ -47,26 +47,6 @@ in
 {
   imports = [ inputs.nixflix.nixosModules.default ];
 
-  nixpkgs.overlays = [
-    (
-      _final: prev:
-      let
-        unstable = inputs.nixpkgs.legacyPackages.${prev.stdenv.hostPlatform.system};
-      in
-      {
-        jellyfin = unstable.jellyfin;
-        jellyfin-web = unstable.jellyfin-web;
-        jellyfin-ffmpeg = unstable.jellyfin-ffmpeg;
-        sonarr = unstable.sonarr;
-        radarr = unstable.radarr;
-        prowlarr = unstable.prowlarr;
-        seerr = unstable.seerr;
-        recyclarr = unstable.recyclarr;
-        qbittorrent-nox = unstable.qbittorrent-nox;
-      }
-    )
-  ];
-
   age.secrets = {
     nixflix-jellyfin-admin-password.file = ../../secrets/nixflix/jellyfin-admin-password.age;
     nixflix-jellyfin-api-key.file = ../../secrets/nixflix/jellyfin-api-key.age;
@@ -130,6 +110,11 @@ in
       enable = true;
       openFirewall = true;
       apiKey._secret = config.age.secrets.nixflix-jellyfin-api-key.path;
+
+      encoding = {
+        hardwareAccelerationType = "vaapi";
+        vaapiDevice = "/dev/dri/renderD128";
+      };
 
       network.localNetworkAddresses = [ ];
       network.enablePublishedServerUriByRequest = true;
@@ -261,6 +246,7 @@ in
   };
 
   systemd.services.seerr.environment.HOST = lib.mkForce "0.0.0.0";
+  systemd.services.jellyfin.environment.LIBVA_DRIVER_NAME = "iHD";
 
   security.acme.certs.${domain} = {
     domain = "*.${domain}";
