@@ -56,6 +56,7 @@
         enable = true;
         mappings.open = " tt";
         setupOpts.enable_winbar = true;
+        lazygit.enable = true;
       };
     };
 
@@ -78,6 +79,7 @@
     utility = {
       direnv.enable = true;
       csvview.enable = true;
+      undotree.enable = true;
       yazi-nvim = {
         enable = true;
         mappings = {

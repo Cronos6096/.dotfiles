@@ -10,6 +10,7 @@ with lib;
     hyprland.enable = true;
     locale.enable = true;
     ly.enable = true;
+    nvim.enable = true;
     portals.enable = false;
     services.enable = true;
     steam.enable = true;

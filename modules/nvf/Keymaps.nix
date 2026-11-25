@@ -2,39 +2,36 @@
   vim = {
     keymaps = [
       {
-        mode = "n";
-        key = " h";
-        action = ":lua vim.lsp.buf.format()<CR>";
-      }
-      {
-        key = "<leader>m";
-        mode = "n";
-        silent = true;
-        action = ":make<CR>";
-      }
-      {
         key = "<leader>y";
         mode = "n";
-        silent = true;
-        action = ":TypstPreview<CR>";
+        desc = "Toggle Typst preview";
+        action = "<cmd>TypstPreview<cr>";
       }
       {
         key = "<leader>cn";
         mode = "n";
-        silent = true;
-        action = ":cnext<CR>";
+        desc = "Next quickfix entry";
+        action = "<cmd>cnext<cr>";
       }
       {
         key = "<leader>cb";
         mode = "n";
-        silent = true;
-        action = ":cback<CR>";
+        desc = "Previous quickfix entry";
+        action = "<cmd>cback<cr>";
+      }
+      {
+        key = "<leader>u";
+        mode = "n";
+        desc = "Toggle undo tree";
+        action = "<cmd>UndotreeToggle<cr>";
+      }
+      {
+        key = "<leader>du";
+        mode = "n";
+        desc = "Toggle DAP view";
+        action = "<cmd>DapViewToggle<cr>";
       }
     ];
-
-    clipboard = {
-      enable = true;
-    };
 
     undoFile.enable = true;
 

@@ -3,8 +3,10 @@
     diagnostics = {
       enable = true;
       config = {
-        update_in_insert = true;
-        virtual_text = true;
+        update_in_insert = false;
+        severity_sort = true;
+        virtual_text.spacing = 2;
+        float.border = "rounded";
       };
     };
 

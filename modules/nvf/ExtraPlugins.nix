@@ -2,13 +2,6 @@
 {
   vim = {
     extraPlugins = with pkgs.vimPlugins; {
-      plenary = {
-        package = plenary-nvim;
-        setup = ''
-          require("plenary")
-        '';
-      };
-
       colorizer = {
         package = nvim-colorizer-lua;
         setup = ''
@@ -16,17 +9,17 @@
         '';
       };
 
-      git-blame = {
-        package = git-blame-nvim;
+      codi = {
+        package = codi-vim;
         setup = ''
-          require("gitblame")
+          vim.keymap.set("n", " rc", "<cmd>Codi<cr>")
         '';
       };
 
-      undotree = {
-        package = undotree;
+      nvim-dap-view = {
+        package = nvim-dap-view;
         setup = ''
-          vim.keymap.set("n", " u", vim.cmd.UndotreeToggle)
+          require("dap-view").setup({})
         '';
       };
 

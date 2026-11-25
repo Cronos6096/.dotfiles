@@ -5,6 +5,7 @@
       enable = true;
       trouble.enable = true;
       formatOnSave = true;
+      mappings.format = " h";
       # harper-ls.enable = true;
       inlayHints.enable = true;
       lspconfig.enable = true;
@@ -67,8 +68,13 @@
         };
       };
 
+      python = {
+        enable = true;
+        dap.enable = true;
+      };
+
+      typescript.enable = true;
       lua.enable = true;
-      python.enable = true;
       clang.enable = false;
       # rust.enable = true;
       zig.enable = true;
