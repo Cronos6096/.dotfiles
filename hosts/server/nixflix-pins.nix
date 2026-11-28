@@ -1,8 +1,8 @@
 {
   manifestHashes = {
     IAmParadox = "sha256-Idybc1kQxm/85FBVfh2zicR6cmzdattDJTw2mnCgmUs=";
-    SeerrFin = "sha256-ArNHxz0XYMggHDo6bsssnxZEY4KhtIv0KpJoQS3R4+A=";
-    IntroSkipper = "sha256-OE2mDp8H9ZzZ7hnUpCdO0s1k9r0gPRAIPBGuy4UaH3U=";
+    SeerrFin = "sha256-sd/o/GQaUr527SRoQYNFstDy3qXAcA64Uch9PCJ04po=";
+    IntroSkipper = "sha256-weyxCtZOtMn8Ab6u3UJwBb/6hwbu/UucrZD7objqRhU=";
   };
 
   plugins = {
@@ -12,14 +12,14 @@
       hash = "sha256-L9GFSHvFZ3h4f6Lr6bYSwzen3fMZ/3ZHHhihF0a637E=";
     };
     "Intro Skipper" = {
-      version = "12.0.6.0";
-      url = "https://github.com/intro-skipper/intro-skipper/releases/download/12.0/v12.0.6.0/intro-skipper-v12.0.6.0.zip";
-      hash = "sha256-pOnqTVfpcqPLctqTwwd2MC3XtFI3Vy8aAQ9T7CFoey8=";
+      version = "12.0.8.0";
+      url = "https://github.com/intro-skipper/intro-skipper/releases/download/12.0/v12.0.8.0/intro-skipper-v12.0.8.0.zip";
+      hash = "sha256-33yHwBwTUpTI0Gjl9mh3JcFVibK5JNxeD3CCW4cGS6k=";
     };
     "SeerrFin" = {
-      version = "1.9.2.2";
-      url = "https://github.com/varunaditya-plus/SeerrFin/releases/download/1.9.2.2/Jellyfin.Plugin.SeerrFin_12.0.0.zip";
-      hash = "sha256-PtnfxVrYf9I0gKPVEqE6qdeNuiKSqC8jfhqWMlyb8jw=";
+      version = "1.9.6.0";
+      url = "https://github.com/varunaditya-plus/SeerrFin/releases/download/1.9.6.0/Jellyfin.Plugin.SeerrFin_12.0.0.zip";
+      hash = "sha256-YM6XB3x0XheuCLfeySnGA3a4Ve7J72j0gFcCi/YBDo0=";
     };
   };
 }
